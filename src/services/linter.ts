@@ -8,14 +8,21 @@ import { fileURLToPath } from 'node:url';
 const execFileAsync = promisify(execFile);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Resolve the locally installed CLI binary rather than shelling out to npx,
-// so linting/diffing works offline after `npm install` and doesn't silently
-// fetch a different version at call time. On Windows the npm bin is a `.cmd`
-// wrapper that `execFile` only resolves if the extension is explicit.
-const CLI_BIN =
-  process.platform === 'win32'
-    ? join(__dirname, '..', '..', 'node_modules', '.bin', 'designmd.cmd')
-    : join(__dirname, '..', '..', 'node_modules', '.bin', 'designmd');
+// Resolve the locally installed CLI entry point and run it through the current
+// node binary rather than shelling out to the npm `.bin` shim. This works
+// offline after `npm install`/`yarn install`, doesn't silently fetch a
+// different version at call time, and avoids Windows `.cmd` spawn quirks
+// (execFile cannot launch batch wrappers without a shell).
+const CLI_ENTRY = join(
+  __dirname,
+  '..',
+  '..',
+  'node_modules',
+  '@google',
+  'design.md',
+  'dist',
+  'index.js'
+);
 
 export interface LintFinding {
   severity: 'error' | 'warning' | 'info';
@@ -41,9 +48,13 @@ export async function lintDesignMdContent(content: string): Promise<LintResult> 
   const filePath = join(dir, 'DESIGN.md');
   try {
     await writeFile(filePath, content, 'utf-8');
-    const { stdout } = await execFileAsync(CLI_BIN, ['lint', '--format', 'json', filePath], {
-      timeout: 15000,
-    });
+    const { stdout } = await execFileAsync(
+      process.execPath,
+      [CLI_ENTRY, 'lint', '--format', 'json', filePath],
+      {
+        timeout: 15000,
+      }
+    );
     return JSON.parse(stdout) as LintResult;
   } catch (err: unknown) {
     const asExecError = err as { stdout?: string; message?: string };
@@ -88,9 +99,13 @@ export async function diffDesignMdContent(
   try {
     await writeFile(beforePath, beforeContent, 'utf-8');
     await writeFile(afterPath, afterContent, 'utf-8');
-    const { stdout } = await execFileAsync(CLI_BIN, ['diff', beforePath, afterPath], {
-      timeout: 15000,
-    });
+    const { stdout } = await execFileAsync(
+      process.execPath,
+      [CLI_ENTRY, 'diff', beforePath, afterPath],
+      {
+        timeout: 15000,
+      }
+    );
     return JSON.parse(stdout) as DiffResult;
   } catch (err: unknown) {
     // Non-zero exit on regression still prints the JSON to stdout.
