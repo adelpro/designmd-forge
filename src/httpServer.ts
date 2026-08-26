@@ -89,6 +89,33 @@ app.delete(MCP_PATH, (_req: Request, res: Response) => {
   });
 });
 
+// MCP Remote Server Card (SEP-1620 / SEP-1649). Advertised so registries (e.g.
+// Smithery) and discovery tools can read server metadata without an interactive
+// scan. Built from the registered tools so the tool list stays in sync.
+app.get('/.well-known/mcp/server-card.json', async (_req: Request, res: Response) => {
+  try {
+    const srv = createServer() as unknown as {
+      _registeredTools: Record<string, { name: string; description?: string }>;
+    };
+    const tools = Object.values(srv._registeredTools).map((t) => ({
+      name: t.name,
+      description: t.description ?? '',
+    }));
+    res.json({
+      serverInfo: {
+        name: SERVER_NAME,
+        version: SERVER_VERSION,
+      },
+      tools,
+      resources: [],
+      prompts: [],
+    });
+  } catch (error) {
+    console.error('server card error:', error);
+    res.status(500).json({ error: 'failed to build server card' });
+  }
+});
+
 app.listen(PORT, () => {
   console.error(`${SERVER_NAME} (Streamable HTTP) listening on port ${PORT}, endpoint ${MCP_PATH}`);
 });
