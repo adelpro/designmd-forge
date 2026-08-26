@@ -1,6 +1,6 @@
 {
   "name": "designmd-forge",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Free, offline MCP server for browsing/searching/fetching DESIGN.md design-system specs (colors, typography, components) across web, mobile and iOS sources, with lint/diff/scaffold authoring tools.",
   "type": "module",
   "main": "dist/index.js",
