@@ -51,8 +51,9 @@
     "typescript-eslint": "^8.68.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19.0"
   },
+  "packageManager": "yarn@4.6.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adelpro/designmd-forge.git"
