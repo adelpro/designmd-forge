@@ -1,0 +1,57 @@
+{
+  "name": "designmd-forge",
+  "version": "1.2.0",
+  "description": "Free, offline MCP server for browsing/searching/fetching DESIGN.md design-system specs (colors, typography, components) across web, mobile and iOS sources, with lint/diff/scaffold authoring tools.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "designmd-forge": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/copy-data.mjs",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "prepare": "npm run build",
+    "refresh-data:web": "rm -rf .repo-tmp && git clone --depth 1 https://github.com/VoltAgent/awesome-design-md.git .repo-tmp && node scripts/build-index-web.mjs .repo-tmp && rm -rf .repo-tmp",
+    "refresh-data:mobile": "rm -rf .repo-tmp-mobile && git clone --depth 1 https://github.com/TrustOtc/awesome-mobile-design-md.git .repo-tmp-mobile && node scripts/build-index-mobile.mjs .repo-tmp-mobile && rm -rf .repo-tmp-mobile",
+    "refresh-data:ios": "rm -rf .repo-tmp-ios && git clone --depth 1 https://github.com/meliwat/awesome-ios-design-md.git .repo-tmp-ios && node scripts/build-index-ios.mjs .repo-tmp-ios && rm -rf .repo-tmp-ios",
+    "refresh-data": "npm run refresh-data:web && npm run refresh-data:mobile && npm run refresh-data:ios && npm run load-data",
+    "load-data": "node scripts/load-data.mjs",
+    "start:http": "node dist/httpServer.js",
+    "test": "node --test dist/__tests__/*.test.js",
+    "pretest": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "design",
+    "design-system",
+    "design-tokens"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@google/design.md": "^0.4.0",
+    "@modelcontextprotocol/sdk": "^1.25.0",
+    "express": "^4.21.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adelpro/designmd-forge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adelpro/designmd-forge/issues"
+  },
+  "homepage": "https://github.com/adelpro/designmd-forge#readme",
+  "author": "adelpro"
+}

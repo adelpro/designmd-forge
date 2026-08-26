@@ -1,0 +1,11 @@
+startCommand:
+  type: stdio
+  commandFunction: >-
+    (_config) => ({
+      command: "npx",
+      args: ["-y", "designmd-forge"]
+    })
+
+configSchema:
+  type: object
+  properties: {}
