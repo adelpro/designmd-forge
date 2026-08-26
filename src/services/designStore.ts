@@ -1,16 +1,16 @@
-import { readFileSync } from "node:fs";
-import { join, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-import type { DesignIndex, DesignIndexEntry } from "../types.js";
+import { readFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import type { DesignIndex, DesignIndexEntry } from '../types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DATA_DIR = join(__dirname, "..", "data");
+const DATA_DIR = join(__dirname, '..', 'data');
 
 let cachedIndex: DesignIndex | null = null;
 
 export function loadIndex(): DesignIndex {
   if (cachedIndex) return cachedIndex;
-  const raw = readFileSync(join(DATA_DIR, "index.json"), "utf-8");
+  const raw = readFileSync(join(DATA_DIR, 'index.json'), 'utf-8');
   cachedIndex = JSON.parse(raw) as DesignIndex;
   return cachedIndex;
 }
@@ -21,8 +21,8 @@ export function getEntryBySlug(slug: string): DesignIndexEntry | undefined {
 }
 
 export function readDesignMdContent(slug: string): string {
-  const path = join(DATA_DIR, "designs", `${slug}.md`);
-  return readFileSync(path, "utf-8");
+  const path = join(DATA_DIR, 'designs', `${slug}.md`);
+  return readFileSync(path, 'utf-8');
 }
 
 export function listCategories(): string[] {
@@ -35,7 +35,7 @@ export function listCategories(): string[] {
  */
 export function searchDesigns(
   query: string,
-  opts: { category?: string; platform?: "web" | "mobile" | "ios"; limit?: number } = {}
+  opts: { category?: string; platform?: 'web' | 'mobile' | 'ios'; limit?: number } = {}
 ): Array<DesignIndexEntry & { score: number }> {
   const { designs } = loadIndex();
   const terms = query
@@ -45,7 +45,9 @@ export function searchDesigns(
     .filter(Boolean);
 
   const scored = designs
-    .filter((d) => (opts.category ? d.category.toLowerCase() === opts.category.toLowerCase() : true))
+    .filter((d) =>
+      opts.category ? d.category.toLowerCase() === opts.category.toLowerCase() : true
+    )
     .filter((d) => (opts.platform ? d.platform === opts.platform : true))
     .map((d) => {
       const haystacks: Array<[string, number]> = [

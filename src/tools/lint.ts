@@ -1,7 +1,7 @@
-import { z } from "zod";
-import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { getEntryBySlug, readDesignMdContent } from "../services/designStore.js";
-import { lintDesignMdContent } from "../services/linter.js";
+import { z } from 'zod';
+import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { getEntryBySlug, readDesignMdContent } from '../services/designStore.js';
+import { lintDesignMdContent } from '../services/linter.js';
 
 const LintInputSchema = z
   .object({
@@ -27,9 +27,9 @@ type LintInput = z.infer<typeof LintInputSchema>;
 
 export function registerLintTool(server: McpServer): void {
   server.registerTool(
-    "designmd_lint",
+    'designmd_lint',
     {
-      title: "Lint a DESIGN.md File",
+      title: 'Lint a DESIGN.md File',
       description: `Validate a DESIGN.md file for structural correctness using the official @google/design.md linter (the same tool the format's spec maintainers publish).
 
 Checks include: YAML frontmatter presence and shape, orphaned tokens (colors/typography/etc. defined but never referenced by any component), and other structural issues. This validates STRUCTURE only — it cannot tell you whether your prose is specific enough or whether your Do's and Don'ts section actually covers your product's real failure modes. Pair this with designmd_get_authoring_guide for that.
@@ -72,7 +72,7 @@ Examples:
         return {
           content: [
             {
-              type: "text",
+              type: 'text',
               text: "Error: Provide exactly one of 'content' or 'slug', not both and not neither.",
             },
           ],
@@ -87,7 +87,7 @@ Examples:
           return {
             content: [
               {
-                type: "text",
+                type: 'text',
                 text: `Error: No design found for slug '${params.slug}'. Call designmd_search_designs or designmd_list_designs to find the correct slug.`,
               },
             ],
@@ -102,13 +102,13 @@ Examples:
       try {
         const result = await lintDesignMdContent(content);
         return {
-          content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+          content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
           structuredContent: result as unknown as Record<string, unknown>,
         };
       } catch (err: unknown) {
         const message = err instanceof Error ? err.message : String(err);
         return {
-          content: [{ type: "text", text: `Error: ${message}` }],
+          content: [{ type: 'text', text: `Error: ${message}` }],
           isError: true,
         };
       }

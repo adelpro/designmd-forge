@@ -6,64 +6,64 @@
  */
 
 export const CANONICAL_SECTIONS = [
-  "overview",
-  "colors",
-  "typography",
-  "layout",
-  "elevation",
-  "shapes",
-  "components",
-  "dos_and_donts",
-  "responsive",
-  "iteration_guide",
-  "known_gaps",
-  "agent_prompt_guide",
+  'overview',
+  'colors',
+  'typography',
+  'layout',
+  'elevation',
+  'shapes',
+  'components',
+  'dos_and_donts',
+  'responsive',
+  'iteration_guide',
+  'known_gaps',
+  'agent_prompt_guide',
   // Mobile-specific sections (TrustOtc/awesome-mobile-design-md archetypes)
-  "design_principles",
-  "safe_area",
-  "touch_interaction",
-  "navigation",
-  "motion",
-  "iconography",
-  "accessibility",
-  "platform_adaptation",
+  'design_principles',
+  'safe_area',
+  'touch_interaction',
+  'navigation',
+  'motion',
+  'iconography',
+  'accessibility',
+  'platform_adaptation',
 ] as const;
 
 export type CanonicalSection = (typeof CANONICAL_SECTIONS)[number];
 
 const HEADING_ALIASES: Record<string, CanonicalSection> = {
-  "overview": "overview",
-  "visual theme & atmosphere": "overview",
-  "colors": "colors",
-  "color palette & roles": "colors",
-  "typography": "typography",
-  "typography rules": "typography",
-  "layout": "layout",
-  "layout principles": "layout",
-  "elevation": "elevation",
-  "elevation & depth": "elevation",
-  "depth & elevation": "elevation",
-  "shapes": "shapes",
-  "components": "components",
-  "component stylings": "components",
-  "do's and don'ts": "dos_and_donts",
-  "responsive behavior": "responsive",
-  "iteration guide": "iteration_guide",
-  "known gaps": "known_gaps",
-  "agent prompt guide": "agent_prompt_guide",
+  overview: 'overview',
+  'visual theme & atmosphere': 'overview',
+  colors: 'colors',
+  'color palette & roles': 'colors',
+  typography: 'typography',
+  'typography rules': 'typography',
+  layout: 'layout',
+  'layout principles': 'layout',
+  elevation: 'elevation',
+  'elevation & depth': 'elevation',
+  'depth & elevation': 'elevation',
+  shapes: 'shapes',
+  components: 'components',
+  'component stylings': 'components',
+  "do's and don'ts": 'dos_and_donts',
+  'responsive behavior': 'responsive',
+  'iteration guide': 'iteration_guide',
+  'known gaps': 'known_gaps',
+  'agent prompt guide': 'agent_prompt_guide',
   // Mobile archetypes (TrustOtc/awesome-mobile-design-md)
-  "design principles": "design_principles",
-  "color system": "colors",
-  "spacing system": "layout",
-  "layout & safe area": "safe_area",
-  "touch & interaction": "touch_interaction",
-  "navigation patterns": "navigation",
-  "motion": "motion",
-  "iconography": "iconography",
-  "accessibility": "accessibility",
-  "platform adaptation": "platform_adaptation",
-  "do / don't": "dos_and_donts",
-  "do and don't": "dos_and_donts",
+  'design principles': 'design_principles',
+  'color system': 'colors',
+  'spacing system': 'layout',
+  'layout & safe area': 'safe_area',
+  'touch & interaction': 'touch_interaction',
+  'navigation patterns': 'navigation',
+  motion: 'motion',
+  iconography: 'iconography',
+  accessibility: 'accessibility',
+  'platform adaptation': 'platform_adaptation',
+  "do / don't": 'dos_and_donts',
+  "do and don't": 'dos_and_donts',
 };
 
 interface ParsedSection {
@@ -74,7 +74,10 @@ interface ParsedSection {
 
 function normalizeHeading(raw: string): CanonicalSection | null {
   // Strip a leading "N. " numbering prefix, then lowercase for lookup
-  const cleaned = raw.replace(/^\d+\.\s*/, "").trim().toLowerCase();
+  const cleaned = raw
+    .replace(/^\d+\.\s*/, '')
+    .trim()
+    .toLowerCase();
   return HEADING_ALIASES[cleaned] ?? null;
 }
 
@@ -84,7 +87,7 @@ function normalizeHeading(raw: string): CanonicalSection | null {
  * intro prose) is not included in any section.
  */
 export function parseSections(content: string): ParsedSection[] {
-  const lines = content.split("\n");
+  const lines = content.split('\n');
   const sections: ParsedSection[] = [];
   let current: { heading: string; canonical: CanonicalSection; lines: string[] } | null = null;
 
@@ -95,7 +98,7 @@ export function parseSections(content: string): ParsedSection[] {
         sections.push({
           canonical: current.canonical,
           heading: current.heading,
-          content: current.lines.join("\n").trim(),
+          content: current.lines.join('\n').trim(),
         });
       }
       const canonical = normalizeHeading(match[1]);
@@ -107,7 +110,7 @@ export function parseSections(content: string): ParsedSection[] {
       sections.push({
         canonical: current.canonical,
         heading: current.heading,
-        content: current.lines.join("\n").trim(),
+        content: current.lines.join('\n').trim(),
       });
       current = null;
       continue;
@@ -118,7 +121,7 @@ export function parseSections(content: string): ParsedSection[] {
     sections.push({
       canonical: current.canonical,
       heading: current.heading,
-      content: current.lines.join("\n").trim(),
+      content: current.lines.join('\n').trim(),
     });
   }
   return sections;
@@ -141,17 +144,17 @@ export interface ComponentGroup {
  * best-effort (exact, then substring either direction).
  */
 export function getComponentGroups(sectionBody: string): ComponentGroup[] {
-  const lines = sectionBody.split("\n");
+  const lines = sectionBody.split('\n');
   const groups: ComponentGroup[] = [];
   let current: ComponentGroup | null = null;
   for (const line of lines) {
     const m = line.match(/^###\s+(.+?)\s*$/);
     if (m) {
       if (current) groups.push(current);
-      current = { heading: m[1].trim(), content: "" };
+      current = { heading: m[1].trim(), content: '' };
       continue;
     }
-    if (current) current.content += line + "\n";
+    if (current) current.content += line + '\n';
   }
   if (current) groups.push(current);
   return groups.map((g) => ({ heading: g.heading, content: g.content.trim() }));

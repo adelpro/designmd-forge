@@ -1,7 +1,7 @@
-import { z } from "zod";
-import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { getEntryBySlug, readDesignMdContent } from "../services/designStore.js";
-import { diffDesignMdContent, type DiffResult } from "../services/linter.js";
+import { z } from 'zod';
+import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { getEntryBySlug, readDesignMdContent } from '../services/designStore.js';
+import { diffDesignMdContent, type DiffResult } from '../services/linter.js';
 
 const SideSchema = z
   .object({
@@ -24,8 +24,8 @@ const SideSchema = z
 
 const DiffInputSchema = z
   .object({
-    before: SideSchema.describe("The baseline DESIGN.md side (before)."),
-    after: SideSchema.describe("The changed DESIGN.md side (after)."),
+    before: SideSchema.describe('The baseline DESIGN.md side (before).'),
+    after: SideSchema.describe('The changed DESIGN.md side (after).'),
   })
   .strict();
 
@@ -49,9 +49,9 @@ function countTokenChanges(result: DiffResult): number {
 
 export function registerDiffTool(server: McpServer): void {
   server.registerTool(
-    "designmd_diff",
+    'designmd_diff',
     {
-      title: "Diff Two DESIGN.md Files",
+      title: 'Diff Two DESIGN.md Files',
       description: `Compare two DESIGN.md documents with the official @google/design.md CLI's diff command.\n\nIt diffs declared design tokens (colors, typography, rounded, spacing, components) and reports a "regression" flag — whether the after file introduced a token regression compared to before. Use it to spot changes between a draft and the version you're building on, or to check that an edit didn't silently lose a token.\n\nEach side (before and after) is given EITHER as raw "content" markdown (a file you're drafting) OR a bundled "slug" (e.g. 'stripe'). Mixing is fine: compare a bundled reference against your own draft.\n\nThis validates TOKEN regressions only — it does not judge prose quality (see designmd_get_authoring_guide for that).\n\nArgs:\n  - before: { content | slug }  (exactly one) — the baseline side\n  - after:  { content | slug }  (exactly one) — the changed side\n\nReturns:\n  JSON with schema:\n  {\n    "tokens": { "<group>": { "added": [], "removed": [], "modified": [] } },  // per token group\n    "findings": { "before": {errors,warnings,infos}, "after": {...}, "delta": {errors,warnings} },\n    "regression": boolean\n  }\n  A human-readable one-line summary is prepended to the output text.\n\nExamples:\n  - Use when: "did my edit to the draft change any color tokens?" -> before={content: draft-before}, after={content: draft-after}\n  - Use when: "how does my draft compare to Stripe's tokens?" -> before={slug: "stripe"}, after={content: my-draft}\n  - Don't use when: you only want structure/validation of one file (use designmd_lint)`,
       inputSchema: DiffInputSchema.shape,
       annotations: {
@@ -70,7 +70,7 @@ export function registerDiffTool(server: McpServer): void {
       } catch (err) {
         return {
           content: [
-            { type: "text", text: `Error: ${err instanceof Error ? err.message : String(err)}` },
+            { type: 'text', text: `Error: ${err instanceof Error ? err.message : String(err)}` },
           ],
           isError: true,
         };
@@ -82,7 +82,7 @@ export function registerDiffTool(server: McpServer): void {
       } catch (err) {
         return {
           content: [
-            { type: "text", text: `Error: ${err instanceof Error ? err.message : String(err)}` },
+            { type: 'text', text: `Error: ${err instanceof Error ? err.message : String(err)}` },
           ],
           isError: true,
         };
@@ -91,7 +91,7 @@ export function registerDiffTool(server: McpServer): void {
       const changes = countTokenChanges(result);
       const summaryLine = `diff: ${changes} token change(s); ${result.findings.delta.errors} new error(s), ${result.findings.delta.warnings} new warning(s); regression: ${result.regression}`;
       return {
-        content: [{ type: "text", text: `${summaryLine}\n${JSON.stringify(result, null, 2)}` }],
+        content: [{ type: 'text', text: `${summaryLine}\n${JSON.stringify(result, null, 2)}` }],
         structuredContent: result as unknown as Record<string, unknown>,
       };
     }

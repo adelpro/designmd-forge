@@ -1,0 +1,9 @@
+dist
+node_modules
+src/data
+.repo-tmp
+.staging
+.pnp.cjs
+.pnp.loader.mjs
+.yarn
+package-lock.json

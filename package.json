@@ -4,9 +4,7 @@
   "description": "Free, offline MCP server for browsing/searching/fetching DESIGN.md design-system specs (colors, typography, components) across web, mobile and iOS sources, with lint/diff/scaffold authoring tools.",
   "type": "module",
   "main": "dist/index.js",
-  "bin": {
-    "designmd-forge": "dist/index.js"
-  },
+  "bin": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -22,7 +20,11 @@
     "load-data": "node scripts/load-data.mjs",
     "start:http": "node dist/httpServer.js",
     "test": "node --test dist/__tests__/*.test.js",
-    "pretest": "npm run build"
+    "pretest": "npm run build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [
     "mcp",
@@ -38,9 +40,15 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/express": "^4.17.21",
     "@types/node": "^22.10.5",
-    "typescript": "^5.7.3"
+    "eslint": "^10.9.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.11.0",
+    "prettier": "^3.9.6",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.68.0"
   },
   "engines": {
     "node": ">=18"

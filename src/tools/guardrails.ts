@@ -1,8 +1,8 @@
-import { z } from "zod";
-import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { getEntryBySlug, readDesignMdContent } from "../services/designStore.js";
-import { getSection } from "../services/sectionParser.js";
-import { SOURCE_REPO, SOURCE_LICENSE } from "../constants.js";
+import { z } from 'zod';
+import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { getEntryBySlug, readDesignMdContent } from '../services/designStore.js';
+import { getSection } from '../services/sectionParser.js';
+import { SOURCE_REPO, SOURCE_LICENSE } from '../constants.js';
 
 const GetGuardrailsInputSchema = z
   .object({
@@ -20,7 +20,7 @@ type GetGuardrailsInput = z.infer<typeof GetGuardrailsInputSchema>;
 
 export function registerGuardrailsTool(server: McpServer): void {
   server.registerTool(
-    "designmd_get_guardrails",
+    'designmd_get_guardrails',
     {
       title: "Get Design Guardrails (Do's and Don'ts)",
       description: `Fetch ONLY the "Do's and Don'ts" section for one design system — the behavioral rules, not the color/typography/spacing token values.
@@ -62,7 +62,7 @@ Examples:
         return {
           content: [
             {
-              type: "text",
+              type: 'text',
               text: `Error: No design found for slug '${params.slug}'. Call designmd_search_designs or designmd_list_designs to find the correct slug.`,
             },
           ],
@@ -71,12 +71,12 @@ Examples:
       }
 
       const fullContent = readDesignMdContent(entry.slug);
-      const found = getSection(fullContent, "dos_and_donts");
+      const found = getSection(fullContent, 'dos_and_donts');
       if (!found) {
         return {
           content: [
             {
-              type: "text",
+              type: 'text',
               text: `Error: No Do's and Don'ts section found for '${entry.slug}'. Fall back to designmd_get_design_md for the full file.`,
             },
           ],
@@ -93,7 +93,7 @@ Examples:
       };
 
       return {
-        content: [{ type: "text", text: found.content }],
+        content: [{ type: 'text', text: found.content }],
         structuredContent: output,
       };
     }

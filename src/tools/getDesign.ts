@@ -1,10 +1,20 @@
-import { z } from "zod";
-import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { getEntryBySlug, readDesignMdContent } from "../services/designStore.js";
-import { CANONICAL_SECTIONS, getSection, findComponentGroup, type CanonicalSection } from "../services/sectionParser.js";
-import { CHARACTER_LIMIT, SOURCE_LICENSE, SOURCE_BY_PLATFORM, type Platform } from "../constants.js";
+import { z } from 'zod';
+import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { getEntryBySlug, readDesignMdContent } from '../services/designStore.js';
+import {
+  CANONICAL_SECTIONS,
+  getSection,
+  findComponentGroup,
+  type CanonicalSection,
+} from '../services/sectionParser.js';
+import {
+  CHARACTER_LIMIT,
+  SOURCE_LICENSE,
+  SOURCE_BY_PLATFORM,
+  type Platform,
+} from '../constants.js';
 
-const FLAVORS = ["swiftui", "expo", "android"] as const;
+const FLAVORS = ['swiftui', 'expo', 'android'] as const;
 const flavorSuffix = (flavor: (typeof FLAVORS)[number]) => `-${flavor}`;
 
 const GetDesignMdInputSchema = z
@@ -20,7 +30,7 @@ const GetDesignMdInputSchema = z
       .enum(CANONICAL_SECTIONS)
       .optional()
       .describe(
-        `Optional: fetch only one section instead of the whole file. One of: ${CANONICAL_SECTIONS.join(", ")}. Omit to get the full file. Use "dos_and_donts" specifically when you only need behavioral guardrails, not token values — see designmd_get_guardrails for a purpose-built shortcut to that. Works best against the framework-neutral spec (no flavor).`
+        `Optional: fetch only one section instead of the whole file. One of: ${CANONICAL_SECTIONS.join(', ')}. Omit to get the full file. Use "dos_and_donts" specifically when you only need behavioral guardrails, not token values — see designmd_get_guardrails for a purpose-built shortcut to that. Works best against the framework-neutral spec (no flavor).`
       ),
     flavor: z
       .enum(FLAVORS)
@@ -43,9 +53,9 @@ type GetDesignMdInput = z.infer<typeof GetDesignMdInputSchema>;
 
 export function registerGetDesignTool(server: McpServer): void {
   server.registerTool(
-    "designmd_get_design_md",
+    'designmd_get_design_md',
     {
-      title: "Get Full DESIGN.md File",
+      title: 'Get Full DESIGN.md File',
       description: `Fetch DESIGN.md content for one design system by slug — either the full file, or (with the optional "section" param) just one section.
 
 The returned file follows the Stitch DESIGN.md format: visual theme, color palette with hex values, typography hierarchy, component styling (buttons, cards, inputs, nav), layout/spacing principles, depth/elevation, do's and don'ts, responsive behavior, and an agent prompt guide. Content is sourced from local snapshots of VoltAgent/awesome-design-md (web), TrustOtc/awesome-mobile-design-md (mobile archetypes), and Meliwat/awesome-ios-design-md (iOS app systems; MIT licensed) — reverse-engineered design specs only, no logos or copyrighted imagery.
@@ -54,7 +64,7 @@ IMPORTANT for whoever consumes this output (agent or human): color hex codes and
 
 Args:
   - slug (string, required): Exact slug, e.g. "stripe", "ios-spotify", "midnight-pro". Get valid slugs from designmd_list_designs or designmd_search_designs first if unsure.
-  - section (string, optional): One of ${CANONICAL_SECTIONS.join(", ")}. Fetch just this section instead of the whole file — useful to avoid flooding context with irrelevant tokens when only one aspect (e.g. "components" or "dos_and_donts") is needed. Omit for the full file.
+  - section (string, optional): One of ${CANONICAL_SECTIONS.join(', ')}. Fetch just this section instead of the whole file — useful to avoid flooding context with irrelevant tokens when only one aspect (e.g. "components" or "dos_and_donts") is needed. Omit for the full file.
   - flavor (swiftui|expo|android, optional): For iOS designs only, fetch the framework implementation variant instead of the neutral spec. Omit for the neutral file.
   - component (string, optional): On the framework-neutral spec only (not with flavor), fetch just ONE component sub-group of the Component Stylings section (e.g. "navigation", "buttons", "cards"). Best-effort match against the file's "### " sub-headings.
 
@@ -98,7 +108,7 @@ Examples:
         return {
           content: [
             {
-              type: "text",
+              type: 'text',
               text: `Error: No design found for slug '${params.slug}'. Call designmd_search_designs or designmd_list_designs to find the correct slug.`,
             },
           ],
@@ -106,11 +116,11 @@ Examples:
         };
       }
 
-      if (params.flavor && entry.platform !== "ios") {
+      if (params.flavor && entry.platform !== 'ios') {
         return {
           content: [
             {
-              type: "text",
+              type: 'text',
               text: `Error: Design '${params.slug}' (platform ${entry.platform}) has no '${params.flavor}' flavor variant — only iOS designs ship framework implementations. Omit flavor to fetch the neutral spec.`,
             },
           ],
@@ -118,7 +128,9 @@ Examples:
         };
       }
 
-      const variantSlug = params.flavor ? `${entry.slug}${flavorSuffix(params.flavor)}` : entry.slug;
+      const variantSlug = params.flavor
+        ? `${entry.slug}${flavorSuffix(params.flavor)}`
+        : entry.slug;
       let fullContent: string;
       try {
         fullContent = readDesignMdContent(variantSlug);
@@ -126,7 +138,7 @@ Examples:
         return {
           content: [
             {
-              type: "text",
+              type: 'text',
               text: `Error: No '${params.flavor}' flavor variant available for '${params.slug}'. Try the neutral spec (omit flavor), or check the slugs via designmd_list_designs.`,
             },
           ],
@@ -141,7 +153,7 @@ Examples:
         return {
           content: [
             {
-              type: "text",
+              type: 'text',
               text: `Error: Cannot combine 'component' (a refinement of the framework-neutral spec) with 'flavor' (a framework implementation). Fetch one or the other.`,
             },
           ],
@@ -149,11 +161,11 @@ Examples:
         };
       }
 
-      if (params.component && params.section && params.section !== "components") {
+      if (params.component && params.section && params.section !== 'components') {
         return {
           content: [
             {
-              type: "text",
+              type: 'text',
               text: `Error: 'component' is a sub-group of the Component Stylings section, so it can't be combined with section '${params.section}'. Omit section (or use section=components).`,
             },
           ],
@@ -162,12 +174,12 @@ Examples:
       }
 
       if (params.component) {
-        const compSec = getSection(fullContent, "components");
+        const compSec = getSection(fullContent, 'components');
         if (!compSec) {
           return {
             content: [
               {
-                type: "text",
+                type: 'text',
                 text: `Error: Design '${params.slug}' has no Component Stylings section to search within.`,
               },
             ],
@@ -179,14 +191,14 @@ Examples:
           return {
             content: [
               {
-                type: "text",
-                text: `Error: No component group matching '${params.component}' found in '${params.slug}'. Available groups: ${available.length ? available.join(", ") : "none"}.`,
+                type: 'text',
+                text: `Error: No component group matching '${params.component}' found in '${params.slug}'. Available groups: ${available.length ? available.join(', ') : 'none'}.`,
               },
             ],
             isError: true,
           };
         }
-        section = "components";
+        section = 'components';
         content = group.content;
       } else if (params.section) {
         const found = getSection(fullContent, params.section as CanonicalSection);
@@ -194,7 +206,7 @@ Examples:
           return {
             content: [
               {
-                type: "text",
+                type: 'text',
                 text: `Error: Section '${params.section}' not found in '${params.slug}'. Not every file includes every canonical section. Try designmd_get_design_md without a section to see what's available, or call designmd_get_guardrails for the do's/don'ts specifically.`,
               },
             ],
@@ -212,7 +224,7 @@ Examples:
         truncated = true;
       }
 
-      const platform = (entry.platform ?? "web") as Platform;
+      const platform = (entry.platform ?? 'web') as Platform;
       const output = {
         slug: entry.slug,
         title: entry.title,
@@ -230,7 +242,7 @@ Examples:
       };
 
       return {
-        content: [{ type: "text", text: content }],
+        content: [{ type: 'text', text: content }],
         structuredContent: output,
       };
     }

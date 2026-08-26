@@ -1,9 +1,9 @@
-import { execFile } from "node:child_process";
-import { promisify } from "node:util";
-import { writeFile, unlink, mkdtemp } from "node:fs/promises";
-import { join, dirname } from "node:path";
-import { tmpdir } from "node:os";
-import { fileURLToPath } from "node:url";
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { writeFile, unlink, mkdtemp } from 'node:fs/promises';
+import { join, dirname } from 'node:path';
+import { tmpdir } from 'node:os';
+import { fileURLToPath } from 'node:url';
 
 const execFileAsync = promisify(execFile);
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -13,12 +13,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // fetch a different version at call time. On Windows the npm bin is a `.cmd`
 // wrapper that `execFile` only resolves if the extension is explicit.
 const CLI_BIN =
-  process.platform === "win32"
-    ? join(__dirname, "..", "..", "node_modules", ".bin", "designmd.cmd")
-    : join(__dirname, "..", "..", "node_modules", ".bin", "designmd");
+  process.platform === 'win32'
+    ? join(__dirname, '..', '..', 'node_modules', '.bin', 'designmd.cmd')
+    : join(__dirname, '..', '..', 'node_modules', '.bin', 'designmd');
 
 export interface LintFinding {
-  severity: "error" | "warning" | "info";
+  severity: 'error' | 'warning' | 'info';
   message: string;
   path?: string;
   rule?: string;
@@ -37,11 +37,11 @@ export interface LintResult {
  * portability across platforms.
  */
 export async function lintDesignMdContent(content: string): Promise<LintResult> {
-  const dir = await mkdtemp(join(tmpdir(), "designmd-lint-"));
-  const filePath = join(dir, "DESIGN.md");
+  const dir = await mkdtemp(join(tmpdir(), 'designmd-lint-'));
+  const filePath = join(dir, 'DESIGN.md');
   try {
-    await writeFile(filePath, content, "utf-8");
-    const { stdout } = await execFileAsync(CLI_BIN, ["lint", "--format", "json", filePath], {
+    await writeFile(filePath, content, 'utf-8');
+    const { stdout } = await execFileAsync(CLI_BIN, ['lint', '--format', 'json', filePath], {
       timeout: 15000,
     });
     return JSON.parse(stdout) as LintResult;
@@ -54,7 +54,9 @@ export async function lintDesignMdContent(content: string): Promise<LintResult> 
         // fall through to rethrow below
       }
     }
-    throw new Error(`designmd lint CLI failed: ${asExecError.message ?? String(err)}`);
+    throw new Error(`designmd lint CLI failed: ${asExecError.message ?? String(err)}`, {
+      cause: err,
+    });
   } finally {
     await unlink(filePath).catch(() => {});
   }
@@ -76,14 +78,17 @@ export interface DiffResult {
  * spacing, components) and reports a `regression` flag (exit 1 = regression).
  * Returns the parsed JSON it prints to stdout.
  */
-export async function diffDesignMdContent(beforeContent: string, afterContent: string): Promise<DiffResult> {
-  const dir = await mkdtemp(join(tmpdir(), "designmd-diff-"));
-  const beforePath = join(dir, "before.DESIGN.md");
-  const afterPath = join(dir, "after.DESIGN.md");
+export async function diffDesignMdContent(
+  beforeContent: string,
+  afterContent: string
+): Promise<DiffResult> {
+  const dir = await mkdtemp(join(tmpdir(), 'designmd-diff-'));
+  const beforePath = join(dir, 'before.DESIGN.md');
+  const afterPath = join(dir, 'after.DESIGN.md');
   try {
-    await writeFile(beforePath, beforeContent, "utf-8");
-    await writeFile(afterPath, afterContent, "utf-8");
-    const { stdout } = await execFileAsync(CLI_BIN, ["diff", beforePath, afterPath], {
+    await writeFile(beforePath, beforeContent, 'utf-8');
+    await writeFile(afterPath, afterContent, 'utf-8');
+    const { stdout } = await execFileAsync(CLI_BIN, ['diff', beforePath, afterPath], {
       timeout: 15000,
     });
     return JSON.parse(stdout) as DiffResult;
@@ -97,7 +102,9 @@ export async function diffDesignMdContent(beforeContent: string, afterContent: s
         // fall through to rethrow below
       }
     }
-    throw new Error(`designmd diff CLI failed: ${asExecError.message ?? String(err)}`);
+    throw new Error(`designmd diff CLI failed: ${asExecError.message ?? String(err)}`, {
+      cause: err,
+    });
   } finally {
     await unlink(beforePath).catch(() => {});
     await unlink(afterPath).catch(() => {});

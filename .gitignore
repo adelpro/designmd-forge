@@ -3,3 +3,22 @@ dist/
 .repo-tmp/
 .staging/
 *.log
+
+# Yarn (Berry / PnP) local artifacts
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/cache
+.pnp.cjs
+.pnp.loader.mjs
+
+# Env & editor
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+
+# Tests
+coverage/

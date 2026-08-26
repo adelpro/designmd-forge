@@ -1,13 +1,13 @@
-import { z } from "zod";
-import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { readFileSync } from "node:fs";
-import { join, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import { z } from 'zod';
+import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { readFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 function loadAuthoringGuide(): string {
-  return readFileSync(join(__dirname, "..", "data", "authoring-guide.md"), "utf-8");
+  return readFileSync(join(__dirname, '..', 'data', 'authoring-guide.md'), 'utf-8');
 }
 
 const ScaffoldInputSchema = z
@@ -16,7 +16,7 @@ const ScaffoldInputSchema = z
       .string()
       .min(1)
       .max(100)
-      .default("Your Product")
+      .default('Your Product')
       .describe("Name to use in the scaffold's placeholder comments (default: 'Your Product')."),
   })
   .strict();
@@ -87,9 +87,9 @@ have prevented it. Also seed it with known team pain points:
 
 export function registerAuthoringTools(server: McpServer): void {
   server.registerTool(
-    "designmd_get_authoring_guide",
+    'designmd_get_authoring_guide',
     {
-      title: "Get DESIGN.md Authoring Guide",
+      title: 'Get DESIGN.md Authoring Guide',
       description: `Fetch a condensed, field-tested guide on WRITING a DESIGN.md file's prose sections — not fetching an existing one.
 
 Covers: why token-only DESIGN.md files under-perform, which sections tend to carry most of the improvement (Overview, Colors, Do's and Don'ts), concrete prose-writing principles (specificity, negative constraints, edge-case coverage, conciseness), a recommended draft-then-refine process, and known format limitations. This is reference material for a human or agent about to draft or improve a DESIGN.md for their OWN product — it does not fetch any of the bundled example designs (use designmd_get_design_md for that).
@@ -112,14 +112,14 @@ Examples:
     },
     async () => {
       const guide = loadAuthoringGuide();
-      return { content: [{ type: "text", text: guide }] };
+      return { content: [{ type: 'text', text: guide }] };
     }
   );
 
   server.registerTool(
-    "designmd_scaffold_template",
+    'designmd_scaffold_template',
     {
-      title: "Scaffold a New DESIGN.md Template",
+      title: 'Scaffold a New DESIGN.md Template',
       description: `Generate a fill-in-the-blank DESIGN.md skeleton for a NEW file, structured around the three sections that tend to matter most (Overview, Colors, Do's and Don'ts) with inline prompts guiding what to write in each — rather than a bare empty section list.
 
 This is a starting scaffold, not a finished file: the YAML token block is a stub you fill in with your own real values, and the prose comments are prompts, not filler — replace them with your product's actual answers. Pair with designmd_get_authoring_guide for the reasoning behind why the scaffold is shaped this way, and designmd_lint once drafted.
@@ -142,7 +142,7 @@ Examples:
     },
     async (params: ScaffoldInput) => {
       const scaffold = buildScaffold(params.product_name);
-      return { content: [{ type: "text", text: scaffold }] };
+      return { content: [{ type: 'text', text: scaffold }] };
     }
   );
 }
