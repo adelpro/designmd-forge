@@ -35,7 +35,7 @@ export function listCategories(): string[] {
  */
 export function searchDesigns(
   query: string,
-  opts: { category?: string; platform?: 'web' | 'mobile' | 'ios'; limit?: number } = {}
+  opts: { category?: string; platform?: 'web' | 'mobile' | 'ios' | 'shadcn'; limit?: number } = {}
 ): Array<DesignIndexEntry & { score: number }> {
   const { designs } = loadIndex();
   const terms = query

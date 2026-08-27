@@ -81,7 +81,7 @@ Returns:
   {
     "source": string,          // primary (web) upstream repo URL
     "license": string,         // "MIT"
-    "sources": { "web": string, "mobile": string, "ios": string },  // upstream repo per platform
+    "sources": { "web": string, "mobile": string, "ios": string, "shadcn": string },  // upstream repo per platform
     "categories": [
       { "name": string, "count": number }
     ]

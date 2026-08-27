@@ -5,8 +5,8 @@ export interface DesignIndexEntry {
   short_description: string;
   long_description: string;
   word_count: number;
-  /** Which upstream collection this design came from. "web" = VoltAgent desktop sites, "mobile" = TrustOtc mobile archetypes, "ios" = Meliwat iOS app systems. */
-  platform?: 'web' | 'mobile' | 'ios';
+  /** Which collection this design came from. "web" = VoltAgent desktop sites, "mobile" = TrustOtc mobile archetypes, "ios" = Meliwat iOS app systems, "shadcn" = authored shadcn/ui design system. */
+  platform?: 'web' | 'mobile' | 'ios' | 'shadcn';
 }
 
 export interface DesignIndex {

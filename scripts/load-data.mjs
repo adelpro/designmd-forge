@@ -56,7 +56,7 @@ const indexJson = {
   source: primarySource,
   license: fragments[0]?.license ?? 'MIT',
   sources,
-  note: 'Design tokens extracted from publicly visible CSS values of each site, per upstream LICENSE notices. No trademarked assets, logos, or copyrighted imagery are included. Web = VoltAgent/awesome-design-md · Mobile = TrustOtc/awesome-mobile-design-md · iOS = Meliwat/awesome-ios-design-md.',
+  note: 'Design tokens extracted from publicly visible CSS values of each site, per upstream LICENSE notices. No trademarked assets, logos, or copyrighted imagery are included. Web = VoltAgent/awesome-design-md · Mobile = TrustOtc/awesome-mobile-design-md · iOS = Meliwat/awesome-ios-design-md · shadcn = shadcn/ui New York (authored reference).',
   generated_at: new Date().toISOString(),
   count: designs.length,
   platforms: [...new Set(designs.map((e) => e.platform))].filter(Boolean).sort(),

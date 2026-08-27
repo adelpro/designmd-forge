@@ -74,7 +74,7 @@ Returns:
     "slug": string,
     "title": string,
     "category": string,
-    "platform": "web" | "mobile" | "ios",
+    "platform": "web" | "mobile" | "ios" | "shadcn",
     "flavor": string | null,   // null when the neutral spec was returned
     "component": string | null, // the requested component sub-group, or null
     "source": string,

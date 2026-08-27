@@ -4,20 +4,23 @@
   "sources": {
     "ios": "https://github.com/meliwat/awesome-ios-design-md",
     "mobile": "https://github.com/TrustOtc/awesome-mobile-design-md",
-    "web": "https://github.com/VoltAgent/awesome-design-md"
+    "web": "https://github.com/VoltAgent/awesome-design-md",
+    "shadcn": "https://ui.shadcn.com"
   },
-  "note": "Design tokens extracted from publicly visible CSS values of each site, per upstream LICENSE notices. No trademarked assets, logos, or copyrighted imagery are included. Web = VoltAgent/awesome-design-md · Mobile = TrustOtc/awesome-mobile-design-md · iOS = Meliwat/awesome-ios-design-md.",
+  "note": "Design tokens extracted from publicly visible CSS values of each site, per upstream LICENSE notices. No trademarked assets, logos, or copyrighted imagery are included. Web = VoltAgent/awesome-design-md · Mobile = TrustOtc/awesome-mobile-design-md · iOS = Meliwat/awesome-ios-design-md · shadcn = shadcn/ui New York (authored reference).",
   "generated_at": "2026-08-26T19:54:44.347Z",
-  "count": 284,
+  "count": 285,
   "platforms": [
     "ios",
     "mobile",
+    "shadcn",
     "web"
   ],
   "categories": [
     "AI & LLM Platforms",
     "Automotive",
     "Backend, Database & DevOps",
+    "Component Library",
     "Dating",
     "Design & Creative Tools",
     "Developer Tools & IDEs",
@@ -2595,6 +2598,15 @@
       "short_description": "Automation platform. Warm orange, friendly illustration-driven",
       "long_description": "An inspired interpretation of Zapier's design language — a workflow-automation platform whose surface combines warm-cream neutrals (`#fffefb` canvas, `#f8f4f0` soft cream) with deep coffee ink (`#201515`) and a single saturated orange CTA accent (`#ff4f00`); typography pairs the proprietary Degular Display family at hero scale with Inter for sub-displays and body, giving the brand a confident-warm rather than cool-tech voice.",
       "word_count": 2663
+    },
+    {
+      "slug": "shadcn",
+      "title": "shadcn/ui (New York)",
+      "category": "Component Library",
+      "platform": "shadcn",
+      "short_description": "An authored reference to the open-source shadcn/ui component design system (New York variant), built on Tailwind CSS and Radix UI primitives. The system is toke",
+      "long_description": "## Overview",
+      "word_count": 1241
     }
   ]
 }
