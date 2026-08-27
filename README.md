@@ -61,7 +61,7 @@ This compiles TypeScript to `dist/` and copies the bundled data (`src/data/index
 Two entry points, both built from `npm run build`:
 
 - **stdio** (`dist/index.js`, `npm start`) — for local MCP clients (Claude Desktop, Claude Code) that spawn the server as a subprocess.
-- **Streamable HTTP** (`dist/httpServer.js`, `npm run start:http`) — for remote hosting as a connector, stateless mode, no auth. Env vars: `PORT` (default 3000), `MCP_PATH` (default `/mcp`). See `DEPLOY.md` for hosting this behind a Cloudflare Tunnel on a custom domain, matching the pattern used for `mcp.quran.us.kg`.
+- **Streamable HTTP** (`dist/httpServer.js`, `npm run start:http`) — for remote hosting as a connector, stateless mode, no auth. MCP is served at the root path (`/`, matching the `mcp.quran.us.kg` connector) so clients connect straight to the host URL. Env vars: `PORT` (default 3000), `MCP_PATH` (default `/`). See `DEPLOY.md` for hosting this behind a Cloudflare Tunnel on a custom domain, matching the pattern used for `mcp.quran.us.kg`.
 
 ## Use with an MCP client (e.g. Claude Desktop, Claude Code) — stdio, local
 

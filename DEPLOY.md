@@ -28,7 +28,7 @@ environment I built this in, so the Dockerfile is untested — worth a
 The server exposes:
 - `GET /` — basic info/status JSON
 - `GET /health` — plain "ok", for uptime checks
-- `POST /mcp` — the actual MCP endpoint (Streamable HTTP, stateless mode)
+- `POST /` — the actual MCP endpoint (Streamable HTTP, stateless mode, served at the root path)
 
 ## 2. Point a Cloudflare Tunnel at it
 
@@ -50,8 +50,8 @@ if that hostname isn't already routed, and restart/reload the tunnel.
 ## 3. Point an MCP client at it
 
 Claude Desktop/Web, or any Streamable-HTTP-capable client, can connect
-directly to `https://mcp.designmd.<yourdomain>/mcp` with no auth — same
-as the quran-search-engine-mcp remote connector.
+directly to `https://mcp.designmd.<yourdomain>/` with no auth — same
+as the quran-search-engine-mcp remote connector (root-path endpoint).
 
 ## Notes on statelessness
 

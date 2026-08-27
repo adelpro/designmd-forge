@@ -4,7 +4,9 @@ import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/
 import { createServer, SERVER_NAME, SERVER_VERSION } from './server.js';
 
 const PORT = Number(process.env.PORT ?? 3000);
-const MCP_PATH = process.env.MCP_PATH ?? '/mcp';
+// Serve MCP at the root ("/") by default, matching the quran-search-engine
+// remote connector pattern. Override with MCP_PATH if you need a subpath.
+const MCP_PATH = process.env.MCP_PATH ?? '/';
 
 const app = express();
 app.use(express.json({ limit: '2mb' }));
