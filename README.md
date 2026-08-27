@@ -1,6 +1,6 @@
-# designmd-forge
+# DesignMD Forge
 
-A free, local MCP server for browsing and searching **DESIGN.md** files — plain-text design-system documents (colors, typography, components, layout) that AI coding agents read to generate UI matching a target visual style.
+DesignMD Forge is a free MCP server for browsing and searching **DESIGN.md** files. These are plain text design system documents (colors, typography, components, layout) that AI coding agents read to generate UI matching a target visual style.
 
 Data is a bundled, offline snapshot of four MIT-licensed sources — 74 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 10 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), and an original authored **shadcn/ui (New York)** design-system reference we maintain in-repo (285 design specs). No paid API, no rate limits, no network calls at runtime. The sources extract only publicly visible CSS / app values (colors, type scale, spacing) or are original DESIGN.md documents — no logos, trademarks, or copyrighted imagery, so it's safe to redistribute and reuse.
 
@@ -61,7 +61,7 @@ This compiles TypeScript to `dist/` and copies the bundled data (`src/data/index
 Two entry points, both built from `npm run build`:
 
 - **stdio** (`dist/index.js`, `npm start`) — for local MCP clients (Claude Desktop, Claude Code) that spawn the server as a subprocess.
-- **Streamable HTTP** (`dist/httpServer.js`, `npm run start:http`) — for remote hosting as a connector, stateless mode, no auth. MCP is served at the root path (`/`, matching the `mcp.quran.us.kg` connector) so clients connect straight to the host URL. Env vars: `PORT` (default 3000), `MCP_PATH` (default `/`). See `DEPLOY.md` for hosting this behind a Cloudflare Tunnel on a custom domain, matching the pattern used for `mcp.quran.us.kg`.
+- **Streamable HTTP** (`dist/httpServer.js`, `npm run start:http`) — for hosting remotely as a connector. Stateless, no auth, and served at the root path (`/`) so any client connects straight to the host URL. Env vars: `PORT` (default 3000) and `MCP_PATH` (default `/`). See `DEPLOY.md` for running this behind a Cloudflare Tunnel on your own domain.
 
 ## Use with an MCP client (e.g. Claude Desktop, Claude Code) — stdio, local
 
@@ -79,6 +79,23 @@ Add to your MCP client config (for Claude Desktop, `claude_desktop_config.json`)
 ```
 
 Restart the client. You should see the nine `designmd_*` tools available.
+
+## Connect over Streamable HTTP (remote)
+
+For a remotely hosted instance you point the client at a URL instead of launching a subprocess. DesignMD Forge speaks Streamable HTTP over TLS in stateless mode with no auth, and it serves the protocol at the root path, so you connect straight to the bare host URL:
+
+```json
+{
+  "mcpServers": {
+    "designmd": {
+      "type": "http",
+      "url": "https://designmd-forge.adelpro.us.kg"
+    }
+  }
+}
+```
+
+This works with any client that supports remote HTTP MCP servers (Claude Desktop, Claude Code, Cursor, and others). To run your own instance, `npm run start:http` starts the server locally; `DEPLOY.md` walks through the tunneled Cloudflare setup on your own domain. A health check at `https://<host>/health` confirms the server is up.
 
 ## Refreshing the data
 
