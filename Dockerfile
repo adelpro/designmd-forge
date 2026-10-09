@@ -1,15 +1,17 @@
 FROM node:22-alpine AS build
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+RUN corepack enable
+COPY package.json yarn.lock .yarnrc.yml ./
+RUN yarn install --immutable
 COPY . .
-RUN npm run build
+RUN yarn build
 
 FROM node:22-alpine
 WORKDIR /app
 ENV NODE_ENV=production
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+RUN corepack enable
+COPY package.json yarn.lock .yarnrc.yml ./
+RUN yarn workspaces focus --all --production
 COPY --from=build /app/dist ./dist
 EXPOSE 3000
 ENV PORT=3000
