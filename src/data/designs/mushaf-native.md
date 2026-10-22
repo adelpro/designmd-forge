@@ -120,6 +120,8 @@ Surah and chapter cards are full-width rows, 80 pixels tall, with a 5 pixel radi
 
 `components/TopMenu/` holds the reading-context controls (theme, riwaya, font size and the rest of the reading preferences), so the bar and the menu never show the same control twice. Page movement is `PageNavigator`, a dedicated control rather than a menu entry, and `ReadingPositionBanner` anchors the current position whenever it is not obvious from the page itself. The tabs own the primary destinations, so the menu is scoped to the reader's current context and never becomes a second navigation tree.
 
+### Footer
+
 There is no footer region: the tab bar owns the bottom edge, and the reading surfaces (mushaf page, juz view, search results) each decide their own bottom padding so the last line of a page is never covered. Anything that would otherwise be a footer action is either a banner above the page or a control in the top menu, because a reader holding a page wants nothing between the page and the bottom edge.
 
 ### Input Fields

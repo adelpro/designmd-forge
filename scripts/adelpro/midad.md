@@ -166,6 +166,8 @@ The default card is `elevated`: no border, `surface` fill, and the tinted soft s
 
 Navigation is shallow by design, which is why the rail carries actions rather than a navigator. The one menu in the app appears inside the editor: selection actions are ranked, only as many render as fit, and the remainder sit in a labelled `⋯` sheet, where each row also carries a pin that promotes it to the head of the row. `⋯` is the only control learn mode leaves live, because it reveals controls instead of acting on the design. Sheets themselves are platform-owned, so drag-to-dismiss, back-press, Escape, focus trapping and body-scroll lock come from the OS.
 
+### Footer
+
 There is no footer region. The bottom of the screen belongs to the tab bar and to sheets: a sheet anchors to the bottom edge and therefore casts upward, which is why `shadows.sheet` alone carries a negative `offsetY` of -4 while `card`, `panel` and `float` cast down. Lists pad beyond the tab bar so the last row is never trapped under it, and a snackbar floats above content rather than sitting in a footer slot.
 
 ### Input Fields

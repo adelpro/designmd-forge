@@ -123,6 +123,8 @@ On a phone the header is `.shell__bar`, one brand and one disclosure, and it doe
 
 The navigation column is `.nav` with `gap: 2px` and `margin-top: var(--space-6)`. A row is `.nav__link`: `8px 12px` padding, `--radius-sm`, `--caption-strong`, `--ink-secondary`, and a 150ms `ease-out` transition on background, colour, shadow and transform. Hover washes the row with `--canvas-parchment`, raises `--shadow-premium` and moves it 2px along the inline axis, which `[dir='rtl'] .nav__link:hover` flips to -2px; the active row is `--primary` on `--tint-selected` with `--shadow-inner`. Below the column sits the account block, `--radius-md` on parchment with the premium shadow, and inside it a two-option locale switch with no menu at all, because a menu for two options is a click for nothing. The disclosure that opens the panel on a phone lives in `.shell__bar`, and because the panel is never unmounted, opening it costs a class change rather than a render.
 
+### Footer
+
 The footer is a four-column grid, 1080px in `2fr 1fr 1fr 1fr`, so the brand column carries four times the weight of each link column. Its links are ordinary `.nav__link`-tier text at `--caption-strong` and reuse the 150ms `ease-out` interaction rather than inventing a footer-specific timing. It sits below the `.shell__main` content column, which is capped at 1000px with `--space-12` side padding, so the footer reads wider than the content on purpose. `--canvas-parchment` is the shared wash behind the shell, the hover state and the footer.
 
 ### Input Fields
