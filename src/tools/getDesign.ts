@@ -10,12 +10,14 @@ import {
 import {
   CHARACTER_LIMIT,
   SOURCE_LICENSE,
-  SOURCE_BY_PLATFORM,
+  FLAVORS,
+  availableFlavors,
+  sourceUrlFor,
+  type Flavor,
   type Platform,
 } from '../constants.js';
 
-const FLAVORS = ['swiftui', 'expo', 'android'] as const;
-const flavorSuffix = (flavor: (typeof FLAVORS)[number]) => `-${flavor}`;
+const flavorSuffix = (flavor: Flavor) => `-${flavor}`;
 
 const GetDesignMdInputSchema = z
   .object({
@@ -36,7 +38,7 @@ const GetDesignMdInputSchema = z
       .enum(FLAVORS)
       .optional()
       .describe(
-        "Optional: for an iOS design (platform 'ios'), fetch the paste-ready framework implementation instead of the neutral spec. One of: swiftui, expo, android. Only iOS designs ship these variants. Omit for the framework-neutral DESIGN.md."
+        'Optional: fetch a paste-ready framework implementation instead of the neutral spec. One of: swiftui, expo, android. Available when the entry declares that flavour — every iOS design ships all three, and authored entries (e.g. Expo / React Native projects) declare their own in the index. Omit for the framework-neutral DESIGN.md.'
       ),
     component: z
       .string()
@@ -44,7 +46,7 @@ const GetDesignMdInputSchema = z
       .max(60)
       .optional()
       .describe(
-        "Optional: for the framework-neutral spec (not used with 'flavor'), fetch just ONE component sub-group of the Component Stylings section (e.g. 'navigation', 'buttons', 'cards', 'inputs'). Matches the '### ' sub-headings inside that section; names vary per design, so the match is best-effort. Returns the matched group's content. Use only on the neutral spec."
+        "Optional: fetch just ONE '### ' sub-group instead of a whole section — e.g. 'navigation', 'buttons', 'cards', 'inputs'. Searches inside the section named by 'section' (default 'components', the Component Stylings section), so component groups also work in the 'motion' section ('durations & easings', 'reduced motion'). Names vary per design, so the match is best-effort. Not valid together with 'flavor'."
       ),
   })
   .strict();
@@ -64,9 +66,9 @@ IMPORTANT for whoever consumes this output (agent or human): color hex codes and
 
 Args:
   - slug (string, required): Exact slug, e.g. "stripe", "ios-spotify", "midnight-pro". Get valid slugs from designmd_list_designs or designmd_search_designs first if unsure.
-  - section (string, optional): One of ${CANONICAL_SECTIONS.join(', ')}. Fetch just this section instead of the whole file — useful to avoid flooding context with irrelevant tokens when only one aspect (e.g. "components" or "dos_and_donts") is needed. Omit for the full file.
-  - flavor (swiftui|expo|android, optional): For iOS designs only, fetch the framework implementation variant instead of the neutral spec. Omit for the neutral file.
-  - component (string, optional): On the framework-neutral spec only (not with flavor), fetch just ONE component sub-group of the Component Stylings section (e.g. "navigation", "buttons", "cards"). Best-effort match against the file's "### " sub-headings.
+  - section (string, optional): One of ${CANONICAL_SECTIONS.join(', ')}. Fetch just this section instead of the whole file — useful to avoid flooding context with irrelevant tokens when only one aspect (e.g. "components", "motion" or "dos_and_donts") is needed. Omit for the full file.
+  - flavor (swiftui|expo|android, optional): Fetch the framework implementation variant instead of the neutral spec, when the entry declares that flavour. Every iOS design ships all three; authored entries declare their own (an Expo / React Native project may ship only "expo"). Omit for the neutral file.
+  - component (string, optional): Fetch just ONE "### " sub-group of the requested section (default section: "components") — e.g. "navigation", "buttons", "cards" inside Component Stylings, or "reduced motion" / "durations & easings" inside Motion. Best-effort match against the file's "### " sub-headings. Not valid with flavor.
 
 Returns:
   The raw Markdown content (full file, requested section, component group, or flavor variant) as text, plus a structuredContent object:
@@ -77,7 +79,9 @@ Returns:
     "platform": "web" | "mobile" | "ios" | "shadcn",
     "flavor": string | null,   // null when the neutral spec was returned
     "component": string | null, // the requested component sub-group, or null
-    "source": string,
+    "source": string,           // attribution URL: upstream collection or author
+    "provenance": string,       // "upstream" for derived entries, or the authoring source (e.g. "adelpro")
+    "flavors": string[] | null, // framework implementations this entry ships
     "license": string,
     "section": string | null,  // the effective section, or null if full file
     "content": string   // markdown, may be truncated if extremely long (truncation is noted)
@@ -86,11 +90,13 @@ Returns:
 Error Handling:
   - Returns "Error: No design found for slug '<slug>'" with suggestions if the slug doesn't exist — call designmd_search_designs first to find the correct slug.
   - Returns "Error: Section '<section>' not found in '<slug>'" if that file doesn't have that section (not all files include every canonical section).
-  - Returns an error if a flavor is requested for a non-iOS design, or if the flavor variant is missing.
+  - Returns an error listing the available flavours if a flavour is requested that this entry does not ship, or if the flavour variant file is missing.
 
 Examples:
   - Use when: "get me the Stripe design system" -> slug="stripe"
   - Use when: "just the color palette for Notion" -> slug="notion", section="colors"
+  - Use when: "how does this system animate things?" -> slug="<slug>", section="motion"
+  - Use when: "only the reduced-motion rules" -> slug="<slug>", section="motion", component="reduced motion"
   - Use when: "give me the SwiftUI implementation of Spotify's iOS app" -> slug="ios-spotify", flavor="swiftui"
   - Use when: user picked a result from designmd_search_designs -> pass that result's slug
   - Don't use when: you don't know which site you want yet (use designmd_search_designs or designmd_list_designs first)`,
@@ -116,12 +122,15 @@ Examples:
         };
       }
 
-      if (params.flavor && entry.platform !== 'ios') {
+      const flavors = availableFlavors(entry);
+      if (params.flavor && !flavors.includes(params.flavor)) {
         return {
           content: [
             {
               type: 'text',
-              text: `Error: Design '${params.slug}' (platform ${entry.platform}) has no '${params.flavor}' flavor variant — only iOS designs ship framework implementations. Omit flavor to fetch the neutral spec.`,
+              text: flavors.length
+                ? `Error: Design '${params.slug}' (platform ${entry.platform}) has no '${params.flavor}' flavor variant. Available flavours: ${flavors.join(', ')}. Omit flavor to fetch the neutral spec.`
+                : `Error: Design '${params.slug}' (platform ${entry.platform}) ships no framework flavour variants. Omit flavor to fetch the neutral spec.`,
             },
           ],
           isError: true,
@@ -161,44 +170,37 @@ Examples:
         };
       }
 
-      if (params.component && params.section && params.section !== 'components') {
-        return {
-          content: [
-            {
-              type: 'text',
-              text: `Error: 'component' is a sub-group of the Component Stylings section, so it can't be combined with section '${params.section}'. Omit section (or use section=components).`,
-            },
-          ],
-          isError: true,
-        };
-      }
+      // 'component' selects a '### ' sub-group inside whichever section is
+      // being fetched. Default target stays 'components' so the original
+      // component-only call keeps working unchanged.
+      const groupSection: CanonicalSection = (params.section ?? 'components') as CanonicalSection;
 
       if (params.component) {
-        const compSec = getSection(fullContent, 'components');
-        if (!compSec) {
+        const targetSec = getSection(fullContent, groupSection);
+        if (!targetSec) {
           return {
             content: [
               {
                 type: 'text',
-                text: `Error: Design '${params.slug}' has no Component Stylings section to search within.`,
+                text: `Error: Design '${params.slug}' has no '${groupSection}' section to search within.`,
               },
             ],
             isError: true,
           };
         }
-        const { group, available } = findComponentGroup(compSec.content, params.component);
+        const { group, available } = findComponentGroup(targetSec.content, params.component);
         if (!group) {
           return {
             content: [
               {
                 type: 'text',
-                text: `Error: No component group matching '${params.component}' found in '${params.slug}'. Available groups: ${available.length ? available.join(', ') : 'none'}.`,
+                text: `Error: No sub-group matching '${params.component}' found in the '${groupSection}' section of '${params.slug}'. Available groups: ${available.length ? available.join(', ') : 'none'}.`,
               },
             ],
             isError: true,
           };
         }
-        section = 'components';
+        section = groupSection;
         content = group.content;
       } else if (params.section) {
         const found = getSection(fullContent, params.section as CanonicalSection);
@@ -232,7 +234,9 @@ Examples:
         platform,
         flavor: params.flavor ?? null,
         component: params.component ?? null,
-        source: SOURCE_BY_PLATFORM[platform],
+        source: sourceUrlFor(entry),
+        provenance: entry.source ?? 'upstream',
+        flavors: availableFlavors(entry).length ? availableFlavors(entry) : null,
         license: SOURCE_LICENSE,
         section,
         content,

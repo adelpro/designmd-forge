@@ -2,21 +2,21 @@
 
 DesignMD Forge is a free MCP server for browsing and searching **DESIGN.md** files. These are plain text design system documents (colors, typography, components, layout) that AI coding agents read to generate UI matching a target visual style.
 
-Data is a bundled, offline snapshot of four MIT-licensed sources — 74 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 10 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), and an original authored **shadcn/ui (New York)** design-system reference we maintain in-repo (285 design specs). No paid API, no rate limits, no network calls at runtime. The sources extract only publicly visible CSS / app values (colors, type scale, spacing) or are original DESIGN.md documents — no logos, trademarks, or copyrighted imagery, so it's safe to redistribute and reuse.
+Data is a bundled, offline snapshot of five sources — 76 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 12 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), an original authored **shadcn/ui (New York)** design-system reference, and four authored specs for the maintainer's own projects under the **Quran & Arabic Tech** category (`midad`, `open-mushaf-native`, `open-tarteel`, `uslub`) — 289 design specs in total. No paid API, no rate limits, no network calls at runtime. The upstream sources extract only publicly visible CSS / app values (colors, type scale, spacing) and the authored entries are written from each project's own token source — no logos, trademarks, or copyrighted imagery are included, so it is safe to redistribute and reuse.
 
 ## Tools
 
-| Tool | Purpose |
-|---|---|
-| `designmd_list_categories` | List all categories with counts, optionally filtered by platform (e.g. "Fintech & Crypto", "Automotive", "Mobile") |
-| `designmd_list_designs` | List all designs, optionally filtered by category and/or platform (`web` / `mobile` / `ios` / `shadcn`) — title, slug, one-line description |
-| `designmd_search_designs` | Free-text search over title/slug/category/description, ranked by relevance, optionally filtered by category/platform |
-| `designmd_get_design_md` | Fetch the full DESIGN.md, one section, one component sub-group, or an iOS framework flavor (swiftui/expo/android) for one design by slug |
-| `designmd_get_guardrails` | Fetch only the "Do's and Don'ts" section — behavioral rules, not token values |
-| `designmd_lint` | Validate a DESIGN.md's structure using the official `@google/design.md` linter |
-| `designmd_diff` | Compare two DESIGN.md files (token-level) with the official CLI and flag regressions |
-| `designmd_get_authoring_guide` | Fetch condensed, field-tested guidance on *writing* a DESIGN.md's prose |
-| `designmd_scaffold_template` | Generate a fill-in-the-blank DESIGN.md skeleton, prompted around the highest-leverage sections |
+| Tool                           | Purpose                                                                                                                                                                                |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `designmd_list_categories`     | List all categories with counts, optionally filtered by platform (e.g. "Fintech & Crypto", "Automotive", "Mobile")                                                                     |
+| `designmd_list_designs`        | List all designs, optionally filtered by category, platform (`web` / `mobile` / `ios` / `shadcn`) or provenance (`source`: `upstream` / `adelpro`) — title, slug, one-line description |
+| `designmd_search_designs`      | Free-text search over title/slug/category/description, ranked by relevance, optionally filtered by category/platform/source                                                            |
+| `designmd_get_design_md`       | Fetch the full DESIGN.md, one section, one `### ` sub-group of any section, or a framework flavor (swiftui/expo/android) where the entry declares one, for one design by slug          |
+| `designmd_get_guardrails`      | Fetch only the "Do's and Don'ts" section — behavioral rules, not token values                                                                                                          |
+| `designmd_lint`                | Validate a DESIGN.md's structure using the official `@google/design.md` linter                                                                                                         |
+| `designmd_diff`                | Compare two DESIGN.md files (token-level) with the official CLI and flag regressions                                                                                                   |
+| `designmd_get_authoring_guide` | Fetch condensed, field-tested guidance on _writing_ a DESIGN.md's prose                                                                                                                |
+| `designmd_scaffold_template`   | Generate a fill-in-the-blank DESIGN.md skeleton, prompted around the highest-leverage sections                                                                                         |
 
 Two flows this server supports:
 
@@ -25,23 +25,31 @@ Two flows this server supports:
 
 ### Why there's a dedicated guardrails tool, and a linter, and an authoring guide
 
-Color hex codes and type scales tell an agent *what* the values are, not *how* to use them. Token-only DESIGN.md files reliably produce token-correct but decision-wrong output — an agent applying a brand accent color as a background tint on every info banner, or giving every card the same shadow regardless of hierarchy. Two things address this from different angles:
+Color hex codes and type scales tell an agent _what_ the values are, not _how_ to use them. Token-only DESIGN.md files reliably produce token-correct but decision-wrong output — an agent applying a brand accent color as a background tint on every info banner, or giving every card the same shadow regardless of hierarchy. Two things address this from different angles:
 
 - Each bundled file's "Do's and Don'ts" section is where usage rules and anti-patterns live — `designmd_get_guardrails` (or `designmd_get_design_md` with `section: "dos_and_donts"`) pulls just that.
 - `designmd_lint` wraps the format spec's own official CLI (`@google/design.md`, npm-published, MIT-adjacent to the spec itself) to catch structural issues — missing frontmatter, orphaned tokens never referenced by any component — before you commit a file. It validates structure only, not whether your prose constraints are the right ones.
-- `designmd_get_authoring_guide` and `designmd_scaffold_template` exist for writing your *own* file well in the first place, since the reference collection is only useful as structural inspiration — copying another brand's prose into your file doesn't help, because it describes a different product.
+- `designmd_get_authoring_guide` and `designmd_scaffold_template` exist for writing your _own_ file well in the first place, since the reference collection is only useful as structural inspiration — copying another brand's prose into your file doesn't help, because it describes a different product.
 
 ### Section-level fetching
 
-`designmd_get_design_md` accepts an optional `section` param to avoid pulling the whole file when only one part is relevant. Web sections: `overview`, `colors`, `typography`, `layout`, `elevation`, `shapes`, `components`, `dos_and_donts`, `responsive`, `iteration_guide`, `known_gaps`, `agent_prompt_guide`. Mobile archetypes use their own headings, mapped to compatible canonicals where possible (`color system`→`colors`, `spacing system`→`layout`, `do / don't`→`dos_and_donts`) plus mobile-specific ones (`design_principles`, `safe_area`, `touch_interaction`, `navigation`, `motion`, `iconography`, `accessibility`, `platform_adaptation`). The authored `shadcn` entry uses its own headings (`color system`→`colors`, `dark mode`, `components`, `do's & don'ts`→`dos_and_donts`, `elevation & focus`, `radius & shapes`, `agent prompt guide`). Not every file has every section — omitting `section` always returns the full file as a fallback.
+`designmd_get_design_md` accepts an optional `section` param to avoid pulling the whole file when only one part is relevant. Web sections: `overview`, `colors`, `typography`, `layout`, `elevation`, `shapes`, `components`, `motion`, `dos_and_donts`, `responsive`, `iteration_guide`, `known_gaps`, `agent_prompt_guide`. `motion` is canonical for every platform: how a system moves is a design decision an agent has to reproduce, so a `## Motion`, `## Motion & Interaction` or `## Animation` heading all resolve to it. Mobile archetypes use their own headings, mapped to compatible canonicals where possible (`color system`→`colors`, `spacing system`→`layout`, `do / don't`→`dos_and_donts`) plus mobile-specific ones (`design_principles`, `safe_area`, `touch_interaction`, `navigation`, `iconography`, `accessibility`, `platform_adaptation`). Anti-pattern headings (`## Anti-Patterns (Banned)`, `## Banned Patterns`) resolve to `dos_and_donts`, since that is what they are. The authored `shadcn` entry uses its own headings (`color system`→`colors`, `dark mode`, `components`, `do's & don'ts`→`dos_and_donts`, `elevation & focus`, `radius & shapes`, `agent prompt guide`). Not every file has every section — omitting `section` always returns the full file as a fallback.
 
-### iOS framework flavors
+### Framework flavors
 
 Every iOS design (`platform: ios`, slug like `ios-spotify`) ships four files: the framework-neutral `DESIGN.md` plus paste-ready `DESIGN-swiftui.md`, `DESIGN-expo.md`, and `DESIGN-android.md` implementations. `designmd_get_design_md` indexes the neutral spec; pass `flavor: "swiftui" | "expo" | "android"` to fetch the framework implementation instead. iOS slugs are prefixed `ios-` so they never collide with web/mobile slugs (e.g. `spotify` is web, `ios-spotify` is the iOS app).
 
+Flavours are not iOS-only. An entry may declare its own in `index.json` — `"flavors": ["expo"]` on a `platform: mobile` entry means `designmd_get_design_md(slug, flavor: "expo")` reads `<slug>-expo.md`, which is how an Expo / React Native project ships a framework implementation without pretending to be an iOS app. Entries with no `flavors` field and a non-`ios` platform refuse flavour requests with an error listing what (nothing) is available; iOS entries keep the historical three-flavour default.
+
 ### Component sub-groups
 
-The framework-neutral "Component Stylings" section breaks into `### ` sub-groups (Buttons, Cards & Containers, Navigation, Input Fields, Distinctive Components — names vary per design). Pass `component: "navigation"` etc. to `designmd_get_design_md` to fetch just that one sub-group instead of the whole section. The match is best-effort against the file's sub-headings and is only valid on the neutral spec (not combined with `flavor`).
+Any section that breaks into `### ` sub-headings is fetchable one group at a time. Inside the framework-neutral "Component Stylings" section that means Buttons, Cards & Containers, Navigation, Input Fields, Distinctive Components (names vary per design); inside Motion it means Durations & Easings, Motion Roles, Reduced Motion, Banned Motion. Pass `component: "navigation"` plus, when it is not the components section, `section: "motion"` to `designmd_get_design_md` to fetch just that one group. The match is best-effort against the file's sub-headings and is not valid together with `flavor`.
+
+Page regions belong in this same vocabulary: `### Header`, `### Navigation & Menu`, `### Footer`. A region is a component, not a section, because what an agent needs from it is a fill, a height, a border and a sticky rule. Keeping them as component groups means `component: "footer"` resolves without growing the `section` enum, and a tap target, a disclosure or an active state is specified in the same place as the control that carries it. Write "there is no footer region" rather than omitting the group when a platform genuinely has none: a stated absence stops an agent inventing one.
+
+### Provenance
+
+`platform` describes the runtime target; it is not authorship. Each entry may carry `source` — absent (`upstream`) for files derived from the MIT collections, `adelpro` for files authored in-repo for one of the maintainer's own projects. `designmd_get_design_md` returns both `provenance` and the attribution URL in `source`, and `designmd_list_designs` / `designmd_search_designs` accept a `source` filter, so authored entries stay distinguishable from borrowed brand systems in any listing.
 
 ## Companion skill: designmd-authoring
 

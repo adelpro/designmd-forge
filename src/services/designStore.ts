@@ -35,7 +35,12 @@ export function listCategories(): string[] {
  */
 export function searchDesigns(
   query: string,
-  opts: { category?: string; platform?: 'web' | 'mobile' | 'ios' | 'shadcn'; limit?: number } = {}
+  opts: {
+    category?: string;
+    platform?: 'web' | 'mobile' | 'ios' | 'shadcn';
+    source?: string;
+    limit?: number;
+  } = {}
 ): Array<DesignIndexEntry & { score: number }> {
   const { designs } = loadIndex();
   const terms = query
@@ -49,6 +54,7 @@ export function searchDesigns(
       opts.category ? d.category.toLowerCase() === opts.category.toLowerCase() : true
     )
     .filter((d) => (opts.platform ? d.platform === opts.platform : true))
+    .filter((d) => (opts.source ? (d.source ?? 'upstream') === opts.source : true))
     .map((d) => {
       const haystacks: Array<[string, number]> = [
         [d.title.toLowerCase(), 5],

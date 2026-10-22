@@ -26,12 +26,21 @@ npm test
 
 The reference designs under `src/data/designs/` are a snapshot of
 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
-(MIT licensed), not something to hand-edit. To pull a fresh snapshot:
+(MIT licensed) plus the other upstream collections, not something to hand-edit.
+To pull a fresh snapshot:
 
 ```bash
-npm run refresh-data
-npm run build
+yarn refresh-data
+yarn build
 ```
+
+Authored sources are the exception: `shadcn` and the `adelpro` set
+(`midad`, `mushaf-native`, `open-tarteel`, `uslub`) have no upstream clone.
+Their specs live in `scripts/shadcn/` and `scripts/adelpro/`, and
+`scripts/build-index-<name>.mjs` writes the design file and merges the index
+entry. A full `refresh-data` keeps them because each script also stages a
+fragment in `.staging/` with its own `key` and `label`; without that key the
+loader would attribute the source to whichever platform its first design uses.
 
 Don't hand-edit files under `src/data/designs/` directly — `refresh-data`
 regenerates that whole directory from a fresh clone and will silently

@@ -48,8 +48,8 @@ to fill them in for real, one question at a time rather than all at once:
   to someone who's never seen it — specifically, what does it deliberately
   avoid?" Push back on vague answers ("clean and modern" isn't usable —
   ask what "clean" rules out).
-- **Colors**: for each meaningful token, ask what it's *for* and where it
-  should *never* appear. "Reserved for interactive elements, never on
+- **Colors**: for each meaningful token, ask what it's _for_ and where it
+  should _never_ appear. "Reserved for interactive elements, never on
   backgrounds" is the shape of a useful answer.
 - **Do's and Don'ts**: ask about concrete past failures — "has an
   AI-generated screen from this project gotten something visually wrong
@@ -101,7 +101,47 @@ as confirmation the file is finished. Fix any errors; use warnings as
 prompts to double check (an orphaned color token is often a sign a
 Colors-section sentence is missing, not just unused CSS).
 
-### 8. Wire it into the agent's existing config
+Two structural checks the linter makes that are easy to get wrong:
+
+- The frontmatter token schema is closed: `colors`, `typography`, `spacing`,
+  `rounded`, `components`. Any other token map (a `motion:` block, say) is
+  flagged `token-like-ignored` and dropped by export commands. Put durations
+  and easings in the Motion section body instead.
+- A missing `colors.primary` is a warning for a reason: without it the agent
+  auto-generates key colours and you lose control of the palette. Map the
+  project's actual action colour to `primary` even when the codebase calls it
+  something else, and say so in the Color System section.
+
+### 8. Give motion the same treatment as components
+
+A `## Motion` / `## Motion & Interaction` section is canonical and worth the
+space, because how a system moves is a design decision an agent otherwise
+invents. Split it into `### Durations & Easings`, `### Motion Roles`,
+`### Reduced Motion` and `### Banned Motion`, so each behaviour is fetchable
+with `component:` the way component groups are. Repeat the one-line bans in
+Do's & Don'ts too: agents call `designmd_get_guardrails` and never read the
+motion section on their own.
+
+Page regions are component groups, not sections: `### Header`,
+`### Navigation & Menu`, `### Footer`. What an agent needs from a region is a
+fill, a height, a border, a sticky rule and where its disclosure lives, which is
+component grammar, and keeping them here means `component: "footer"` resolves
+without adding to the `section` enum. State an absence ("there is no footer
+region, the tab bar owns the bottom edge") rather than dropping the group, or the
+agent will invent the region it thinks it is missing. Menu behaviour itself
+(what collapses behind `⋯`, what stays live, how overlays open) belongs in the
+same group, because the control and its spec should not be read separately.
+
+### 9. Verify the headings actually map
+
+The server resolves a `## ` heading through an alias table and silently drops
+anything it does not recognise, so a file can look complete and serve nothing
+for that section. After authoring, check every heading you wrote against the
+canonical names (`overview`, `colors`, `typography`, `layout`, `components`,
+`motion`, `responsive`, `dos_and_donts`, `known_gaps`,
+`agent_prompt_guide`), and prefer the canonical name over a decorative one.
+
+### 10. Wire it into the agent's existing config
 
 Remind the user to add one line to their CLAUDE.md, AGENTS.md, or
 equivalent pointing the agent at the DESIGN.md for UI generation — the two

@@ -39,11 +39,27 @@ if (staged.length === 0) {
 
 const fragments = [];
 const sources = {};
+/** Provenance labels, one per source, so the note is assembled instead of hardcoded. */
+const DEFAULT_LABELS = {
+  web: 'Web = VoltAgent/awesome-design-md',
+  mobile: 'Mobile = TrustOtc/awesome-mobile-design-md',
+  ios: 'iOS = Meliwat/awesome-ios-design-md',
+  shadcn: 'shadcn = shadcn/ui New York (authored reference)',
+  adelpro: 'adelpro = Quran & Arabic Tech (authored in-repo, MIT)',
+};
+const labels = [];
 for (const file of staged) {
   const frag = JSON.parse(readFileSync(join(stagingDir, file), 'utf-8'));
   fragments.push(frag);
   const platform = frag.designs?.[0]?.platform;
-  if (frag.source && platform) sources[platform] = frag.source;
+  // A fragment may declare its own source key when it is not one-platform,
+  // e.g. the authored adelpro entries span both web and mobile. Without a
+  // declared key, two sources on the same platform would overwrite each
+  // other's attribution URL.
+  const key = frag.key ?? platform;
+  if (frag.source && key) sources[key] = frag.source;
+  const label = frag.label ?? DEFAULT_LABELS[key];
+  if (label) labels.push(label);
 }
 
 const designs = fragments.flatMap((f) => f.designs);
@@ -56,7 +72,7 @@ const indexJson = {
   source: primarySource,
   license: fragments[0]?.license ?? 'MIT',
   sources,
-  note: 'Design tokens extracted from publicly visible CSS values of each site, per upstream LICENSE notices. No trademarked assets, logos, or copyrighted imagery are included. Web = VoltAgent/awesome-design-md · Mobile = TrustOtc/awesome-mobile-design-md · iOS = Meliwat/awesome-ios-design-md · shadcn = shadcn/ui New York (authored reference).',
+  note: `Design tokens extracted from publicly visible CSS values of each site, or authored in-repo from the project's own token source, per each source's LICENSE. No trademarked assets, logos, or copyrighted imagery are included. ${labels.join(' · ')}.`,
   generated_at: new Date().toISOString(),
   count: designs.length,
   platforms: [...new Set(designs.map((e) => e.platform))].filter(Boolean).sort(),
