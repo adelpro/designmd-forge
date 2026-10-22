@@ -18,12 +18,15 @@ export const CANONICAL_SECTIONS = [
   'iteration_guide',
   'known_gaps',
   'agent_prompt_guide',
+  // Motion is canonical for every design, not just mobile archetypes: how a
+  // system moves is a design decision an agent has to reproduce, and it is the
+  // section most often lost when a file is authored with a custom heading.
+  'motion',
   // Mobile-specific sections (TrustOtc/awesome-mobile-design-md archetypes)
   'design_principles',
   'safe_area',
   'touch_interaction',
   'navigation',
-  'motion',
   'iconography',
   'accessibility',
   'platform_adaptation',
@@ -51,6 +54,15 @@ const HEADING_ALIASES: Record<string, CanonicalSection> = {
   'iteration guide': 'iteration_guide',
   'known gaps': 'known_gaps',
   'agent prompt guide': 'agent_prompt_guide',
+  // Motion aliases: files authored with the fuller heading must not lose the
+  // section, which is what happened before ('motion & interaction' mapped to
+  // nothing and was dropped silently).
+  motion: 'motion',
+  'motion & interaction': 'motion',
+  'motion and interaction': 'motion',
+  'motion design': 'motion',
+  animation: 'motion',
+  'animations & transitions': 'motion',
   // Mobile archetypes (TrustOtc/awesome-mobile-design-md)
   'design principles': 'design_principles',
   'color system': 'colors',
@@ -58,12 +70,17 @@ const HEADING_ALIASES: Record<string, CanonicalSection> = {
   'layout & safe area': 'safe_area',
   'touch & interaction': 'touch_interaction',
   'navigation patterns': 'navigation',
-  motion: 'motion',
   iconography: 'iconography',
   accessibility: 'accessibility',
   'platform adaptation': 'platform_adaptation',
   "do / don't": 'dos_and_donts',
   "do and don't": 'dos_and_donts',
+  // Anti-pattern sections are guardrails by another name.
+  'anti-patterns': 'dos_and_donts',
+  'anti-patterns (banned)': 'dos_and_donts',
+  'anti patterns': 'dos_and_donts',
+  'banned patterns': 'dos_and_donts',
+  "do's & don'ts": 'dos_and_donts',
 };
 
 interface ParsedSection {

@@ -64,3 +64,50 @@ test('getSection returns undefined for a section not present', () => {
   const result = getSection(plainFormat, 'shapes');
   assert.equal(result, undefined);
 });
+
+test('motion and anti-pattern headings map to canonical sections', () => {
+  const md = `## 6. Motion & Interaction
+
+Springs on press, never linear.
+
+### Durations & Easings
+
+Fast 120ms, base 220ms.
+
+## 8. Anti-Patterns (Banned)
+
+No gradients, no drop shadows.
+`;
+  const sections = parseSections(md);
+  assert.deepEqual(
+    sections.map((s) => s.canonical),
+    ['motion', 'dos_and_donts']
+  );
+  const motion = getSection(md, 'motion');
+  assert.ok(motion, 'motion section should be found under its fuller heading');
+  assert.match(motion!.content, /Springs on press/);
+});
+
+test('animation headings are treated as motion', () => {
+  const md = `## Animation
+
+Fade 160ms.
+`;
+  assert.ok(getSection(md, 'motion'));
+});
+
+test('component sub-groups are readable inside the motion section', () => {
+  const md = `## Motion & Interaction
+
+### Durations & Easings
+
+Fast 120ms.
+
+### Reduced Motion
+
+Collapse to opacity-only.
+`;
+  const motion = getSection(md, 'motion');
+  assert.ok(motion);
+  assert.match(motion!.content, /### Reduced Motion/);
+});

@@ -3,6 +3,9 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { loadIndex, listCategories, searchDesigns } from '../services/designStore.js';
 import { SOURCE_REPO, SOURCE_LICENSE, SOURCE_BY_PLATFORM, PLATFORMS } from '../constants.js';
 
+const SOURCE_FILTER_DESCRIPTION =
+  "Optional provenance filter: 'adelpro' for entries authored in-repo for the maintainer's own projects, 'upstream' for entries derived from the upstream MIT collections. Omit for all.";
+
 const ListDesignsInputSchema = z
   .object({
     category: z
@@ -17,6 +20,7 @@ const ListDesignsInputSchema = z
       .describe(
         "Optional platform to filter by: 'web' (VoltAgent desktop design systems) or 'mobile' (TrustOtc mobile archetypes). Omit for both."
       ),
+    source: z.string().optional().describe(SOURCE_FILTER_DESCRIPTION),
   })
   .strict();
 
@@ -39,6 +43,7 @@ const SearchDesignsInputSchema = z
       .enum(PLATFORMS)
       .optional()
       .describe("Optional platform to restrict the search to: 'web' or 'mobile'. Omit for both."),
+    source: z.string().optional().describe(SOURCE_FILTER_DESCRIPTION),
     limit: z
       .number()
       .int()
@@ -158,6 +163,7 @@ Examples:
       const index = loadIndex();
       const filtered = index.designs.filter((d) => {
         if (params.platform && d.platform !== params.platform) return false;
+        if (params.source && (d.source ?? 'upstream') !== params.source) return false;
         if (params.category && d.category.toLowerCase() !== params.category!.toLowerCase())
           return false;
         return true;
@@ -183,6 +189,7 @@ Examples:
           title: d.title,
           category: d.category,
           platform: d.platform ?? 'web',
+          source: d.source ?? 'upstream',
           short_description: d.short_description,
         })),
       };
@@ -234,6 +241,7 @@ Examples:
       const results = searchDesigns(params.query, {
         category: params.category,
         platform: params.platform,
+        source: params.source,
         limit: params.limit,
       });
 
@@ -258,6 +266,7 @@ Examples:
           title: r.title,
           category: r.category,
           platform: r.platform ?? 'web',
+          source: r.source ?? 'upstream',
           short_description: r.short_description,
           score: r.score,
         })),
