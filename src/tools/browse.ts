@@ -86,7 +86,7 @@ Returns:
   {
     "source": string,          // primary (web) upstream repo URL
     "license": string,         // "MIT"
-    "sources": { "web": string, "mobile": string, "ios": string, "shadcn": string },  // upstream repo per platform
+    "sources": { "web": string, "mobile": string, "ios": string, "shadcn": string, "adelpro": string },  // attribution URL per source, as recorded in the index
     "categories": [
       { "name": string, "count": number }
     ]
@@ -113,7 +113,9 @@ Returns:
       const output = {
         source: SOURCE_REPO,
         license: SOURCE_LICENSE,
-        sources: SOURCE_BY_PLATFORM,
+        // Static per-platform URLs, overridden by whatever the index actually
+        // records, so authored sources (e.g. adelpro) appear here too.
+        sources: { ...SOURCE_BY_PLATFORM, ...(index.sources ?? {}) },
         categories,
       };
       return {
