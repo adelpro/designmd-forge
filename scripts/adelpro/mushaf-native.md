@@ -108,13 +108,19 @@ The page geometry is the image ratio: `aspectRatio: 0.7` in landscape and a full
 
 `ThemedButton` is the only button primitive. It renders a 50 pixel tall, 8 pixel radius block at 90 percent width capped at 640, with 12 by 20 padding, a 1 pixel border, elevation 5 and a soft 0 5 5 shadow. Nine variants exist: `primary`, `secondary`, `outlined-primary`, `outlined-secondary`, `danger`, `danger-secondary`, `outlined-danger`, `outlined-danger-secondary` and `default`. Filled variants paint both fill and border with the same token and set the label to white; outlined variants keep a transparent fill and colour the border and label with the token. Press feedback is opacity 0.8 through `activeOpacity` plus a redundant pressed-state opacity, with no scale and no colour shift. Labels are `Tajawal_500Medium` at 18.
 
+### Header
+
+The top bar is `SurahAyaNavigator`, which shows the current surah name at the reading position and opens the surah and ayah pickers as modals, each with its own `modalHeader`, so there is no system header's title to duplicate (`headerShown: false` is set in the tab layout). The surah name is drawn in the Amiri display face at 22/24, which is the clearest signal in the app that the reader is inside a surah rather than a list. Do not stack a second bar under it: reading tools live in `components/TopMenu/`, which takes the reading context rather than the route.
+
 ### Cards & Containers
 
 Surah and chapter cards are full-width rows, 80 pixels tall, with a 5 pixel radius, a 1 pixel hairline border, a 1 pixel outer padding and elevation 3. Inside, a 50 pixel ornamental badge holds the surah number and the name sits in Amiri at 22. Reading-chart panels are 90 percent width with a 12 pixel radius and 16 pixel padding. The top menu is a bottom-only rounded bar: square top corners, 16 pixel bottom radius, a hairline border on three sides and a soft 0 3 5 shadow at 10 percent. Elevation is shallow everywhere; nothing floats more than a few pixels off the page.
 
-### Navigation
+### Navigation & Menu
 
-Navigation is a top menu, a bottom control strip and a pager. The top menu is an absolutely positioned translucent bar holding the surah name and number, juz caption, a centred page badge and up to four actions; each action is a 34 pixel square with a 10 pixel radius above a 10 pixel label, and sections are separated by a hairline divider at 55 percent opacity. Icons come from `@expo/vector-icons` (Feather, Ionicons, FontAwesome6) at 20 to 32 pixels. `PageNavigator` renders numbered pages with single-ellipsis gaps around the current page, and collapses to a tap-to-edit field on compact widths. Tabs use the selected green `tint` against `tabIconDefault` for the rest.
+`components/TopMenu/` holds the reading-context controls (theme, riwaya, font size and the rest of the reading preferences), so the bar and the menu never show the same control twice. Page movement is `PageNavigator`, a dedicated control rather than a menu entry, and `ReadingPositionBanner` anchors the current position whenever it is not obvious from the page itself. The tabs own the primary destinations, so the menu is scoped to the reader's current context and never becomes a second navigation tree.
+
+There is no footer region: the tab bar owns the bottom edge, and the reading surfaces (mushaf page, juz view, search results) each decide their own bottom padding so the last line of a page is never covered. Anything that would otherwise be a footer action is either a banner above the page or a control in the top menu, because a reader holding a page wants nothing between the page and the bottom edge.
 
 ### Input Fields
 

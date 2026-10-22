@@ -110,13 +110,19 @@ Rhythm is tight and utility driven. Padding steps in halves and small integers (
 
 Filled mode switches in the player use `rounded-lg px-4 py-3 text-sm font-semibold`; the selected state is `bg-blue-600 text-white` with `hover:bg-blue-700`, the resting state `bg-gray-200 text-gray-700` with `hover:bg-gray-300` and dark counterparts. Transport icon buttons are `h-9 w-9` (36px) with `rounded` (4px) and hover only adds a grey wash, with no border and no colour change. Riwaya filter chips are `rounded-lg border px-4 py-2 text-sm font-semibold`, the active one replacing the border with a `from-brand-CTA-blue-600 to-brand-CTA-blue-500` gradient and a tinted shadow. Press feedback appears once, on the reciter selector bar, which scales to 95 per cent via `active:scale-95`. Focus is a 2px ring, usually `focus-visible:ring-2 focus-visible:ring-brand-CTA-blue-500`, with `ring-offset-2` on cards.
 
+### Header
+
+There is no app-level header component: every page opens with its own `Hero`, so the nearest thing to a header is the reciter selector bar, a `max-w-lg` row with a grey gradient fill (`from-gray-100 to-gray-200/80`), `rounded-xl`, `p-3`, a 200px truncated reciter name and share, favourite and search glyphs between 22 and 30px. Pages that are not the player (`about`, `contact`, `privacy`) carry an in-page `headerRow` instead of a chrome bar. Do not introduce a sticky site header: the layout has none, and a page that needs orientation uses the hero.
+
 ### Cards & Containers
 
 Reciter cards are `rounded-2xl` (16px) with a `border-gray-100` hairline, white fill, `p-4` and no shadow; hover lifts them to 103 per cent over 300ms and tints the border. Playlist rows are denser at `rounded-xl` (12px), `p-3`, `shadow-sm`, and lift 1 per cent over 200ms into a blue to white gradient. The player panel is deliberately squarer, `rounded-md` (6px) with `border-gray-200` and `p-2`, so controls read as a tool rather than a promo card. Dialogs wrap their content in `rounded-2xl` with `shadow-2xl`, at 98 per cent width up to `max-w-4xl`, over a `backdrop:bg-zinc-500/50` scrim. Settings sections only become bordered white surfaces from `md` upwards.
 
-### Navigation
+### Navigation & Menu
 
-Navigation is a fixed bottom bar on phones and a static centred row from `sm` upwards. The bar is `bg-background/80` with `backdrop-blur-md` and a top hairline, each link `text-xs font-medium text-zinc-500` at 70 per cent opacity, rising `hover:-translate-y-0.5` and reaching full opacity on hover. Link labels are `sr-only` on mobile and revealed at `sm`. A fixed cluster at `right-4 top-4` holds the network indicator, the language menu (a `min-w-32 rounded-lg` popover with `shadow-lg`) and a 32px circular theme toggle. A settings shortcut is separate from the bar. There is no top navigation bar, no breadcrumb and no sidebar.
+Two mechanisms, never both at once. The player collapses five secondary controls (fullscreen, visualiser toggle, speed, sleep timer, playlist) into a `⋯` menu, so the transport row keeps only what is needed mid-recitation; the same disclosure pattern opens the advanced search options and the riwaya picker. Settings and the language switch are separate links rather than entries in a menu. Every overlay opened from the menu is a dialog, `w-[98%]` at every breakpoint and capped at `max-w-4xl`, never a slide-over. Mode switches use the 44px segmented control, and the disclosure triggers themselves are 32px, which is below the target this system should hold.
+
+The footer is the app's navigation on a phone and a credit line on a desktop. Below `sm` it is a fixed bottom bar: `fixed bottom-0 left-0 z-50`, `w-full`, `bg-background/80`, `backdrop-blur-md`, `border-t border-zinc-200/80` (`dark:border-slate-800/80`), `p-2`, holding four icon links (home, about, contact, privacy) with `sr-only` labels. From `sm` it becomes `sm:static`, `sm:flex-col`, `sm:mt-5`, `sm:border-0`, `sm:bg-transparent`, `sm:backdrop-blur-none`, centred with visible labels, so the bar stops floating once there is room to lay it out. The blur exists so the fixed bar stays legible over artwork scrolled beneath it, and it is the one translucent surface in the system.
 
 ### Input Fields
 

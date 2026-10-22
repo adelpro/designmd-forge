@@ -154,13 +154,19 @@ All brand primitives live in `src/components/ui/`. The custom kit owns every bra
 
 Flat and tactile. Primary is an Iron Ink fill with an `on-ink` label, secondary is a `surface-alt` fill with a hairline border, and danger is the oxblood `danger` fill. Heights are 44 and 52 with radius 8. Press feedback is scale 0.97 starting on touch-down, settling back by spring. Labels always render in the language-correct bold UI font, and a loading state replaces the label with a spinner rather than widening the button.
 
+### Header
+
+Screens draw their own header, because the native one is disabled (`headerShown: false`): a screen header carries the title and a count, and creation is the 56pt ink FAB rather than a header action, which keeps one primary action per screen. A collapsible header is allowed where content is long: the gallery's `GalleryHeader` is driven by a scroll offset shared with the list, so the header shrinks as the canvas scrolls instead of pinning a second toolbar. The editor deliberately has no floating header at all; its contextual rail sits in the column flow (see Layout).
+
 ### Cards & Containers
 
 The default card is `elevated`: no border, `surface` fill, and the tinted soft shadow at radius 10. An `outline` variant keeps the hairline for structural grouping only. Corner radius is 12. Never stack borders everywhere: tone separates surfaces, and a line is drawn only when structure demands it.
 
-### Navigation
+### Navigation & Menu
 
-One primary action per screen, so navigation stays shallow: the header carries title plus count, and creation lives in the 56pt ink FAB. Floating translucent docks and bars (semi-transparent surface plus hairline) hold navigation that must stay reachable, and they sit over the content, which scrolls beneath them. Every icon-only control carries an accessibility label and an enforced 44pt hit target through auto hit-slop.
+Navigation is shallow by design, which is why the rail carries actions rather than a navigator. The one menu in the app appears inside the editor: selection actions are ranked, only as many render as fit, and the remainder sit in a labelled `⋯` sheet, where each row also carries a pin that promotes it to the head of the row. `⋯` is the only control learn mode leaves live, because it reveals controls instead of acting on the design. Sheets themselves are platform-owned, so drag-to-dismiss, back-press, Escape, focus trapping and body-scroll lock come from the OS.
+
+There is no footer region. The bottom of the screen belongs to the tab bar and to sheets: a sheet anchors to the bottom edge and therefore casts upward, which is why `shadows.sheet` alone carries a negative `offsetY` of -4 while `card`, `panel` and `float` cast down. Lists pad beyond the tab bar so the last row is never trapped under it, and a snackbar floats above content rather than sitting in a footer slot.
 
 ### Input Fields
 

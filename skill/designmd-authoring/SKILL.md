@@ -122,6 +122,16 @@ with `component:` the way component groups are. Repeat the one-line bans in
 Do's & Don'ts too: agents call `designmd_get_guardrails` and never read the
 motion section on their own.
 
+Page regions are component groups, not sections: `### Header`,
+`### Navigation & Menu`, `### Footer`. What an agent needs from a region is a
+fill, a height, a border, a sticky rule and where its disclosure lives, which is
+component grammar, and keeping them here means `component: "footer"` resolves
+without adding to the `section` enum. State an absence ("there is no footer
+region, the tab bar owns the bottom edge") rather than dropping the group, or the
+agent will invent the region it thinks it is missing. Menu behaviour itself
+(what collapses behind `⋯`, what stays live, how overlays open) belongs in the
+same group, because the control and its spec should not be read separately.
+
 ### 9. Verify the headings actually map
 
 The server resolves a `## ` heading through an alias table and silently drops

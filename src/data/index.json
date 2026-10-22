@@ -2618,7 +2618,7 @@
       "source": "adelpro",
       "short_description": "مِداد (midad) is an Arabic-first calligraphy editor whose interface behaves like a quiet desk: warm bone paper, iron-gall ink, and a single saffron accent that ",
       "long_description": "Midad is an Arabic-first calligraphy editor: a canvas where the writer places glyphs, ornaments, icons and images, then exports the composition. The interface is the quiet room around the artwork.",
-      "word_count": 2190
+      "word_count": 2398
     },
     {
       "slug": "mushaf-native",
@@ -2628,7 +2628,7 @@
       "source": "adelpro",
       "short_description": "A reference to open-mushaf-native, an offline Quran mushaf reader for mobile and web. It reads as paper, with warm ivory page tints, one deep green primary, a m",
       "long_description": "Open-Mushaf Native is an MIT-licensed Quran mushaf reader built with React Native and Expo for Android, iOS, web and macOS. It reads offline from cached page images in the Hafs and Warsh riwayas, and adds verse search, tafsir popups, page navigation, a daily wird tracker and a reading-position banner on top of that canvas. The interface is Arabic and RTL throughout; there is no second language mode.",
-      "word_count": 2656
+      "word_count": 2802
     },
     {
       "slug": "uslub",
@@ -2638,7 +2638,7 @@
       "source": "adelpro",
       "short_description": "Uslub is a writing-voice web client built from paper and hairlines rather than chrome. A white canvas sits inside a parchment shell, one measured blue carries e",
       "long_description": "Uslub is a web client for keeping a writer's voice consistent wherever they write. This entry covers the browser app: the public landing page, the signed-in shell with its sidebar and account block, the auth screens, and the two handoff surfaces where a key or a bootstrap prompt is revealed.",
-      "word_count": 2943
+      "word_count": 3145
     },
     {
       "slug": "open-tarteel",
@@ -2648,7 +2648,7 @@
       "source": "adelpro",
       "short_description": "An authored reference to Open Tarteel, a free and open-source Quran recitation player built with Next.js and Tailwind CSS. The atmosphere is quiet and devotiona",
       "long_description": "Open Tarteel is a browser based Quran recitation player. It lists reciters from several audio sources, keeps a per reciter playlist of surahs, plays them from a fixed control panel, and caches whole playlists in Cache Storage for offline listening behind an app shell service worker. The interface is Arabic first, with English and German locales, and it runs as an installable progressive web app.",
-      "word_count": 2635
+      "word_count": 2831
     }
   ]
 }
