@@ -9,23 +9,29 @@ home server.
 Either directly:
 
 ```bash
-npm install
-npm run build
-PORT=3000 npm run start:http
+yarn install
+yarn build
+PORT=3000 yarn start:http
 ```
 
-Or via Docker:
+Or via Docker (this is how the live instance runs):
 
 ```bash
-docker build -t designmd-forge .
-docker run -d --name designmd-mcp -p 3000:3000 --restart unless-stopped designmd-forge
+docker build -t designmd-forge:new .
+docker rm -f designmd-forge
+docker run -d --name designmd-forge \
+  -p 127.0.0.1:9200:9200 -e PORT=9200 -e NODE_ENV=production \
+  --restart unless-stopped designmd-forge:new
 ```
 
-**Not yet verified**: I don't have a Docker daemon available in the
-environment I built this in, so the Dockerfile is untested — worth a
-`docker build` locally before relying on it.
+The Dockerfile is verified: it builds with Yarn through corepack, which matters
+because the repo ships `yarn.lock` and no `package-lock.json` (an `npm ci` build
+stage fails at `COPY`). The deployed container mounts nothing, so the design
+data is baked into the image and **any** data or code change needs a rebuild and
+a container recreate; there is no live reload.
 
 The server exposes:
+
 - `GET /` — basic info/status JSON
 - `GET /health` — plain "ok", for uptime checks
 - `POST /` — the actual MCP endpoint (Streamable HTTP, stateless mode, served at the root path)
