@@ -2,7 +2,7 @@ import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { getEntryBySlug, readDesignMdContent } from '../services/designStore.js';
 import { getSection } from '../services/sectionParser.js';
-import { SOURCE_REPO, SOURCE_LICENSE } from '../constants.js';
+import { SOURCE_LICENSE, sourceUrlFor } from '../constants.js';
 
 const GetGuardrailsInputSchema = z
   .object({
@@ -35,7 +35,9 @@ Returns:
   {
     "slug": string,
     "title": string,
-    "source": string,
+    "platform": string,
+    "source": string,      // attribution URL: upstream collection or author
+    "provenance": string,  // "upstream" or the authoring source (e.g. "adelpro")
     "license": string,
     "guardrails": string   // raw markdown of the Do's and Don'ts section
   }
@@ -87,7 +89,9 @@ Examples:
       const output = {
         slug: entry.slug,
         title: entry.title,
-        source: SOURCE_REPO,
+        platform: entry.platform ?? 'web',
+        source: sourceUrlFor(entry),
+        provenance: entry.source ?? 'upstream',
         license: SOURCE_LICENSE,
         guardrails: found.content,
       };
