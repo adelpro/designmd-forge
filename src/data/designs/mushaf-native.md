@@ -96,7 +96,7 @@ Sizes step 10, 12, 14, 16, 18, 20, 22, 32 and 42, with 16 as the workhorse. Line
 
 ## Layout
 
-The layout is a single centred column with a hard `maxWidth: 640` on the page canvas, the reading banner, buttons, surah cards and the chart container. Breakpoints are 370 (compact), 640 (mobile) and 1024 (tablet); page-number pagination shows 1, 3 or 5 neighbours depending on which side of 640 and 1024 the window falls, and the top menu swaps to a compact type scale below 370.
+The layout is a single centred column with a hard `maxWidth: 640` on the page canvas, the reading banner, buttons and surah cards; the reading chart has no cap of its own and simply takes 90 percent of the 640 column it sits in. Breakpoints are 370 (compact), 640 (mobile) and 1024 (tablet); page-number pagination shows 1, 3 or 5 neighbours depending on which side of 640 and 1024 the window falls, and the top menu swaps to a compact type scale below 380, because `TopMenuBar` hard-codes `width < 380` while the `BREAKPOINTS.COMPACT` constant says 370, so the two disagree.
 
 Spacing is a de facto scale of 2, 4, 6, 8, 10, 12, 15, 16 and 20. The top menu uses 6 pixel gaps and 8 pixel bottom padding, cards and chart panels use 16 pixel padding with 12 to 16 pixel margins, list rows carry `LIST_HORIZONTAL_SPACE` of 10, and the banner stacks its two rows with a 15 pixel gap.
 
@@ -110,7 +110,7 @@ The page geometry is the image ratio: `aspectRatio: 0.7` in landscape and a full
 
 ### Header
 
-The top bar is `SurahAyaNavigator`, which shows the current surah name at the reading position and opens the surah and ayah pickers as modals, each with its own `modalHeader`, so there is no system header's title to duplicate (`headerShown: false` is set in the tab layout). The surah name is drawn in the Amiri display face at 22/24, which is the clearest signal in the app that the reader is inside a surah rather than a list. Do not stack a second bar under it: reading tools live in `components/TopMenu/`, which takes the reading context rather than the route.
+The top bar is `SurahAyaNavigator`, which shows the current surah name at the reading position and opens the surah and ayah pickers as modals, each with its own `modalHeader`, so there is no system header's title to duplicate (`headerShown: false` is set in the tab layout). The surah name and the picker selector are both `Amiri_400Regular` at 16, which is the clearest signal in the app that the reader is inside a surah rather than a list; the 22/26 Amiri pair belongs to `ChapterCard` names, not to this bar. Do not stack a second bar under it: reading tools live in `components/TopMenu/`, which takes the reading context rather than the route.
 
 ### Cards & Containers
 
@@ -136,7 +136,7 @@ The mushaf page canvas is the product. A single page image fills the 640 column 
 
 ### Durations & Easings
 
-Durations are mostly not tokenised; the values that exist are local. Page swipes settle with a spring of damping 20 and stiffness 90, and the motion-cue overlay uses damping 18, stiffness 120 and mass 0.8. Skeleton loaders pulse opacity between 0.4 and 0.8 over 800 milliseconds each way and repeat indefinitely. The splash screen fades out over 1000 milliseconds. Notification and hizb banners auto-dismiss after 3000 milliseconds. There is no duration scale, no easing token set and no shared timing hook.
+Durations are mostly not tokenised; the values that exist are local. Page swipes settle with a spring of damping 20 and stiffness 90, and the motion-cue overlay uses damping 18, stiffness 120 and mass 0.8. The reading top menu arrives on `SlideInUp.duration(320)` and leaves on `SlideOutUp.duration(220)`, which are the only two explicit durations in the system and are still local rather than shared. Skeleton loaders pulse opacity between 0.4 and 0.8 over 800 milliseconds each way and repeat indefinitely. The splash screen fades out over 1000 milliseconds. Notification and hizb banners auto-dismiss after 3000 milliseconds. There is no duration scale, no easing token set and no shared timing hook.
 
 ### Motion Roles
 
@@ -180,7 +180,7 @@ Contrast is strongest in the high-contrast reading theme and weakest under `sepi
 
 Several things an implementer will look for are simply not in the code. There is no motion token set: durations, springs and skeleton timings are literals in the components that use them, and the splash fade is the only named duration. There is no spacing scale constant either; the 2 to 20 values are repeated per component, and only `LIST_HORIZONTAL_SPACE` is exported. Border colours for cards, the search bar and the options icon are literal greys in component styles, outside `Colors.ts` and untokenised. The link colour in `ThemedText` is a leftover from the Expo template and belongs to no role.
 
-`Amiri_700Bold` is loaded at startup but no style uses it, so bold Amiri is available yet unused. The `default` button variant resolves to raw `blue`, which no token covers. There is no `border`, `disabled` or `tabIconDefault` entry in the palette above; those are read from `Colors` but were left out of the token map, and `tabIconDefault` is the only tab-inactive colour. Dark-mode contrast is a runtime overlay strength (an adjustable opacity plus an `rgba(26, 26, 26, ...)` backdrop) rather than a token, so effective reading contrast cannot be read from the palette. Reduced motion is unimplemented. Font metrics differ per platform (Android font padding, iOS line-height rounding), and the landscape page relies on `ScrollView` because the image is taller than the viewport, which no token describes.
+`Amiri_700Bold` is loaded at startup but no style uses it, so bold Amiri is available yet unused. The `default` button variant resolves to raw `blue`, which no token covers. The palette above omits `border` entirely, and the real keys for the remaining chrome are `tabIconDefault` (`#A0A0A0` light, `#666` dark), `tabIconSelected` (aliased to `primary` and `tintColorDark`) and `disabledIcon` (`#CCCCCC` light, `#323232` dark); those are read from `Colors` but were left out of the token map. Dark-mode contrast is a runtime overlay strength (an adjustable opacity plus an `rgba(26, 26, 26, ...)` backdrop) rather than a token, so effective reading contrast cannot be read from the palette. Reduced motion is unimplemented. Font metrics differ per platform (Android font padding, iOS line-height rounding), and the landscape page relies on `ScrollView` because the image is taller than the viewport, which no token describes.
 
 ## Agent Prompt Guide
 

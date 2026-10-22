@@ -2628,7 +2628,7 @@
       "source": "adelpro",
       "short_description": "A reference to open-mushaf-native, an offline Quran mushaf reader for mobile and web. It reads as paper, with warm ivory page tints, one deep green primary, a m",
       "long_description": "Open-Mushaf Native is an MIT-licensed Quran mushaf reader built with React Native and Expo for Android, iOS, web and macOS. It reads offline from cached page images in the Hafs and Warsh riwayas, and adds verse search, tafsir popups, page navigation, a daily wird tracker and a reading-position banner on top of that canvas. The interface is Arabic and RTL throughout; there is no second language mode.",
-      "word_count": 2804
+      "word_count": 2891
     },
     {
       "slug": "uslub",
@@ -2648,7 +2648,7 @@
       "source": "adelpro",
       "short_description": "An authored reference to Open Tarteel, a free and open-source Quran recitation player built with Next.js and Tailwind CSS. The atmosphere is quiet and devotiona",
       "long_description": "Open Tarteel is a browser based Quran recitation player. It lists reciters from several audio sources, keeps a per reciter playlist of surahs, plays them from a fixed control panel, and caches whole playlists in Cache Storage for offline listening behind an app shell service worker. The interface is Arabic first, with English and German locales, and it runs as an installable progressive web app.",
-      "word_count": 2833
+      "word_count": 2871
     }
   ]
 }
