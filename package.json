@@ -1,6 +1,6 @@
 {
   "name": "designmd-forge",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Free, offline MCP server for browsing/searching/fetching DESIGN.md design-system specs (colors, typography, components, motion) across web, mobile, iOS and authored sources, with lint/diff/scaffold authoring tools.",
   "type": "module",
   "main": "dist/index.js",
@@ -17,7 +17,8 @@
     "refresh-data:mobile": "rm -rf .repo-tmp-mobile && git clone --depth 1 https://github.com/TrustOtc/awesome-mobile-design-md.git .repo-tmp-mobile && node scripts/build-index-mobile.mjs .repo-tmp-mobile && rm -rf .repo-tmp-mobile",
     "refresh-data:ios": "rm -rf .repo-tmp-ios && git clone --depth 1 https://github.com/meliwat/awesome-ios-design-md.git .repo-tmp-ios && node scripts/build-index-ios.mjs .repo-tmp-ios && rm -rf .repo-tmp-ios",
     "refresh-data:shadcn": "node scripts/build-index-shadcn.mjs",
-    "refresh-data": "npm run refresh-data:web && npm run refresh-data:mobile && npm run refresh-data:ios && npm run refresh-data:shadcn && npm run load-data",
+    "refresh-data:adelpro": "node scripts/build-index-adelpro.mjs",
+    "refresh-data": "npm run refresh-data:web && npm run refresh-data:mobile && npm run refresh-data:ios && npm run refresh-data:shadcn && npm run refresh-data:adelpro && npm run load-data",
     "load-data": "node scripts/load-data.mjs",
     "start:http": "node dist/httpServer.js",
     "test": "node --test dist/__tests__/*.test.js",

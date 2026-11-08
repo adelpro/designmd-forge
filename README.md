@@ -2,7 +2,7 @@
 
 DesignMD Forge is a free MCP server for browsing and searching **DESIGN.md** files. These are plain text design system documents (colors, typography, components, layout) that AI coding agents read to generate UI matching a target visual style.
 
-Data is a bundled, offline snapshot of five sources — 76 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 12 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), an original authored **shadcn/ui (New York)** design-system reference, and four authored specs for the maintainer's own projects under the **Quran & Arabic Tech** category (`midad`, `open-mushaf-native`, `open-tarteel`, `uslub`) — 289 design specs in total. No paid API, no rate limits, no network calls at runtime. The upstream sources extract only publicly visible CSS / app values (colors, type scale, spacing) and the authored entries are written from each project's own token source — no logos, trademarks, or copyrighted imagery are included, so it is safe to redistribute and reuse.
+Data is a bundled, offline snapshot of five sources — 84 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 10 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), an original authored **shadcn/ui (New York)** design-system reference, and five authored specs for the maintainer's own projects under the **Quran & Arabic Tech** category (`midad`, `open-mushaf-native`, `open-tarteel`, `open-tilawa`, `uslub`) — 300 design specs in total. No paid API, no rate limits, no network calls at runtime. The upstream sources extract only publicly visible CSS / app values (colors, type scale, spacing) and the authored entries are written from each project's own token source — no logos, trademarks, or copyrighted imagery are included, so it is safe to redistribute and reuse.
 
 ## Tools
 
@@ -46,6 +46,18 @@ Flavours are not iOS-only. An entry may declare its own in `index.json` — `"fl
 Any section that breaks into `### ` sub-headings is fetchable one group at a time. Inside the framework-neutral "Component Stylings" section that means Buttons, Cards & Containers, Navigation, Input Fields, Distinctive Components (names vary per design); inside Motion it means Durations & Easings, Motion Roles, Reduced Motion, Banned Motion. Pass `component: "navigation"` plus, when it is not the components section, `section: "motion"` to `designmd_get_design_md` to fetch just that one group. The match is best-effort against the file's sub-headings and is not valid together with `flavor`.
 
 Page regions belong in this same vocabulary: `### Header`, `### Navigation & Menu`, `### Footer`. A region is a component, not a section, because what an agent needs from it is a fill, a height, a border and a sticky rule. Keeping them as component groups means `component: "footer"` resolves without growing the `section` enum, and a tap target, a disclosure or an active state is specified in the same place as the control that carries it. Write "there is no footer region" rather than omitting the group when a platform genuinely has none: a stated absence stops an agent inventing one.
+
+### Searching across designs
+
+`designmd_search_designs` is **metadata search, not full-text search**. It ranks matches over each entry's title, slug, category and description; it does not index the prose inside sections or the `###` sub-groups. There is therefore no single "find every design with a footer/menu" call — the component vocabulary is a way to fetch one design, not to query the whole catalogue.
+
+To find a region across the collection:
+
+1. Shortlist by brand, atmosphere or category with `designmd_search_designs` / `designmd_list_designs`.
+2. Fetch the group from each candidate: `designmd_get_design_md({ slug: "open-tarteel", section: "components", component: "footer" })`.
+3. If a design has no matching `###` group, the error lists the headings that file actually uses, and omitting `component` returns the whole section as a fallback.
+
+This is deliberate: a component group is a slice of one system's prose, not a keyword that can be ranked across unrelated products. Search by what the product is; fetch by what it is made of.
 
 ### Provenance
 
@@ -114,11 +126,12 @@ npm run refresh-data:web       # VoltAgent/awesome-design-md  -> .staging/web.js
 npm run refresh-data:mobile    # TrustOtc/awesome-mobile-design-md -> .staging/mobile.json
 npm run refresh-data:ios       # Meliwat/awesome-ios-design-md -> .staging/ios.json
 npm run refresh-data:shadcn    # bundled authored shadcn/ui entry -> .staging/shadcn.json
+npm run refresh-data:adelpro   # authored Quran & Arabic Tech specs -> .staging/adelpro.json
 npm run load-data              # merge all staged sources -> src/data/index.json
 npm run build
 ```
 
-`npm run refresh-data` runs all five steps in sequence. The web/mobile/ios build scripts re-clone their upstream repo into a temp dir, write the design files to `src/data/designs/`, emit the source fragment to `.staging/`, then clean up the clone; `refresh-data:shadcn` has no upstream clone — it stages and re-merges the authored `scripts/shadcn/shadcn.md` spec. `npm run load-data` merges every staged fragment into `src/data/index.json` and clears `.staging/`. Run the individual `refresh-data:<source>` scripts to refresh only one source.
+`npm run refresh-data` runs the five source steps and the merge in sequence. The web/mobile/ios build scripts re-clone their upstream repo into a temp dir, write the design files to `src/data/designs/`, emit the source fragment to `.staging/`, then clean up the clone; `refresh-data:shadcn` and `refresh-data:adelpro` have no upstream clone — they stage and re-merge their authored specs in `scripts/shadcn/` and `scripts/adelpro/`. `npm run load-data` merges every staged fragment into `src/data/index.json` and clears `.staging/`. Run the individual `refresh-data:<source>` scripts to refresh only one source.
 
 ## Testing
 
