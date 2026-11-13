@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.adelpro/designmd-forge",
+  "title": "DesignMD Forge",
+  "description": "Offline DESIGN.md design-system specs: component search, palettes, themes, authoring tools.",
+  "repository": {
+    "url": "https://github.com/adelpro/designmd-forge",
+    "source": "github"
+  },
+  "version": "2.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "designmd-forge",
+      "version": "2.0.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://designmd-forge.adelpro.us.kg/"
+    }
+  ]
+}

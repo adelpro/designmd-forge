@@ -4,6 +4,18 @@ DesignMD Forge is a free MCP server for browsing and searching **DESIGN.md** fil
 
 Data is a bundled, offline snapshot of six sources — 77 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 12 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), an original authored **shadcn/ui (New York)** reference, four authored specs for the maintainer's own projects under **Quran & Arabic Tech** (`midad`, `open-mushaf-native`, `open-tarteel`, `uslub`), and an authored **Astryx (Meta)** reference in **Component Library** — **290 design specs in total**. Astryx is MIT and pinned to its published release; its seven themes ship as a separate facet. No paid API, no rate limits, no network calls at runtime. The upstream sources extract only publicly visible CSS / app values (colors, type scale, spacing) and the authored entries are written from each project's own token source — no logos, trademarks, or copyrighted imagery are included, so it is safe to redistribute and reuse.
 
+## What's new in v2.0
+
+Five capabilities, two behaviour changes, and a list of what is deliberately absent — full notes at [docs/whats-new-v2.html](https://adelpro.github.io/designmd-forge/whats-new-v2.html).
+
+- **Component patterns across the collection** — `designmd_search_sections` finds "footers with social links" or "3D or hover buttons" by reading the `### Footer` / `### Buttons` prose of every design, which the brand search could never do.
+- **Brands, not collections** — the same product in two sets (`spotify` + `ios-spotify`) is one row, with both platforms listed.
+- **Derived palettes** — `mode`, `hue` and `brand` filters computed from declared tokens, and every filtered response prints its coverage (69 of 290).
+- **Official themes** — Astryx's seven with mode and type pairing; `theme` returns a delta, never a copy of the parent.
+- **MCP prompts** — `pick-a-design`, `section-inspiration`, `theme-pick`, `author-design-md`.
+
+Behaviour changes: `search_designs` accepts an empty query when a filter is set, and multi-word section text is AND with a stopword list. Worked, reproducible transcripts: [docs/examples.html](https://adelpro.github.io/designmd-forge/examples.html).
+
 ## Tools
 
 | Tool                           | Purpose                                                                                                                                                                                             |

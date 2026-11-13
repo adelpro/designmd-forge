@@ -1,12 +1,13 @@
 {
   "name": "designmd-forge",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "Free, offline MCP server for browsing/searching/fetching DESIGN.md design-system specs (colors, typography, components, motion), searching component groups across designs, deriving palettes, listing official themes, and linting/diffing/scaffolding authored specs \u2014 with MCP prompts for the common flows.",
   "type": "module",
   "main": "dist/index.js",
   "bin": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "docs"
   ],
   "scripts": {
     "build": "tsc && node scripts/build-section-index.mjs && node scripts/build-palettes.mjs && node scripts/copy-data.mjs",
@@ -70,5 +71,6 @@
     "url": "https://github.com/adelpro/designmd-forge/issues"
   },
   "homepage": "https://github.com/adelpro/designmd-forge#readme",
-  "author": "adelpro"
+  "author": "adelpro",
+  "mcpName": "io.github.adelpro/designmd-forge"
 }

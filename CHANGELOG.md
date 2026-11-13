@@ -6,10 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
-## [1.6.0]
+## [2.0.0]
 
 Sections searched across the collection, brands deduplicated, palettes derived, official
-themes exposed, and MCP prompts added.
+themes exposed, MCP prompts added — a major version because the surface moved, not because
+anything was removed. No tool or parameter was deleted; the two behaviour changes are listed
+below so an existing caller is not surprised.
 
 ### Added
 
