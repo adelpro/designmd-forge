@@ -36,6 +36,16 @@ export async function callTool(name: string, args: Record<string, unknown>): Pro
 }
 
 export async function listToolNames(): Promise<string[]> {
+  return (await listTools()).map((tool) => tool.name).sort();
+}
+
+export interface ToolInfo {
+  name: string;
+  description?: string;
+  annotations?: { readOnlyHint?: boolean };
+}
+
+export async function listTools(): Promise<ToolInfo[]> {
   const server = createServer();
   const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
   const client = new Client({ name: 'test-client', version: '1.0.0' });
@@ -43,7 +53,7 @@ export async function listToolNames(): Promise<string[]> {
   await client.connect(clientTransport);
   try {
     const { tools } = await client.listTools();
-    return tools.map((tool) => tool.name).sort();
+    return tools as ToolInfo[];
   } finally {
     await client.close();
     await server.close();

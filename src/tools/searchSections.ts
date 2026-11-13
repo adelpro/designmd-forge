@@ -118,37 +118,29 @@ export function registerSearchSectionsTool(server: McpServer): void {
     'designmd_search_sections',
     {
       title: 'Search Component Groups Across Designs',
-      description: `Find component groups ("### Footer", "### Buttons", "### Navigation") ACROSS the whole collection instead of one design at a time — the query designmd_search_designs cannot answer, because it only searches titles and descriptions.
+      description: `Find component groups across the WHOLE collection — "footers with social links", "3D or hover buttons", "navigation with a drawer" — which designmd_search_designs cannot answer (it only searches titles and descriptions).
 
-Use it for inspiration questions: "a footer with social links", "3d or hover buttons", "navigation with a drawer". Results are ranked prose excerpts (a snippet plus the derived facets), not components: the collection stores brand analyses, so you read three footers and then write your own against your tokens.
-
-Each result carries \`facets\` derived from the group's prose (position, divider, columns, items, states, traits). Derived means exactly that: an unstated facet is absent, not false, so treat a missing 'sticky' as unknown rather than as 'static'.
+Results are ranked prose excerpts with derived facets, not components: you read three footers, then write your own against your tokens. An unstated facet is absent, not false.
 
 Args:
-  - group (string, optional): canonical group — footer, buttons, cards, navigation, header, inputs, modals, tables, tabs, badges, avatars, icons, lists, empty_states, or the motion groups.
-  - section (string, optional): restrict to a canonical section; groups live in 'components', motion groups in 'motion'. A mismatch returns zero matches and says so.
-  - text (string, optional): words matched inside the group body, expanded through a synonym map (hamburger → menu button/drawer/bottom bar; 3d → bevel/raised). Omit to list every group of that type.
-  - has (string[], optional): every entry must appear in the derived items/states/traits — ['social'], ['sticky'], ['hover'].
-  - position (static|sticky|fixed, optional): derived position filter.
-  - platform (web|mobile|ios|shadcn, optional): source platform filter.
-  - limit (number, optional): 1-50, default 10.
+  - group (optional): footer, buttons, cards, navigation, header, inputs, modals, tables, tabs, badges, avatars, icons, lists, empty_states, or the motion groups.
+  - section (optional): canonical section; groups live in 'components', motion groups in 'motion'. A mismatch returns [] plus a note.
+  - text (optional): words matched in the group body, expanded by a synonym map (hamburger → menu button/drawer; 3d → bevel/raised).
+  - has (optional): every entry must appear in derived items/states/traits, e.g. ['social'].
+  - position (optional): static | sticky | fixed.
+  - platform (optional): web | mobile | ios | shadcn.
+  - limit (optional): 1-50, default 10.
 
 Returns:
-  {
-    "matches": [{ "slug", "title", "platform", "group", "variant", "section", "score", "snippet", "facets", "platforms" }],
-    "coverage": { "neutral_designs", "designs_with_groups", "excluded_flavor_files", "groups", "by_group" },
-    "note": string   // "N of M designs match; showing K", or why nothing matched
-  }
+  { matches: [{ slug, brand, title, platform, group, variant, section, score, snippet, facets, platforms }], coverage, note }
 
 Error Handling:
-  - Never errors on an empty result: returns an empty array plus a note naming how many designs could have matched.
-  - Framework flavour files are not indexed; excluded_flavor_files states how many were left out.
+  - Never errors on an empty result; the note names how many designs could have matched and how many flavour files were excluded from indexing.
 
 Examples:
-  - Use when: "show me footers with social links" -> group="footer", text="social icons"
-  - Use when: "3D or hover buttons" -> group="buttons", text="3d hover"
-  - Use when: "sticky footers only" -> group="footer", position="sticky"
-  - Don't use when: you already know the design and want its actual section (use designmd_get_design_md with component), or you are choosing a brand rather than a component (use designmd_search_designs).`,
+  - "footers with social links" -> group="footer", text="social icons"
+  - "3D or hover buttons" -> group="buttons", text="3d hover"
+  - Don't use when: you know the design and want its real section (designmd_get_design_md), or you are choosing a brand (designmd_search_designs).`,
       inputSchema: SearchSectionsInputSchema.shape,
       annotations: {
         readOnlyHint: true,

@@ -54,35 +54,28 @@ export function registerThemeTools(server: McpServer): void {
     'designmd_list_themes',
     {
       title: 'List Official Design-System Themes',
-      description: `List themes that a design system actually SHIPS as variants — today that is Astryx's seven (butter, chocolate, gothic, matcha, neutral, stone, y2k).
+      description: `List themes a system actually SHIPS as variants — today Astryx's seven (butter, chocolate, gothic, matcha, neutral, stone, y2k).
 
-This is not a corpus-wide palette search. 289 of the 290 bundled designs are single-look systems; their colours are searched with designmd_search_designs (mode, hue). A "theme" here means an official alternate presentation with its own token set and type pairing, and inventing themes for single-look brands would be fabrication.
-
-Each row carries the mode, the display/body type pairing, the type class and the accent hue. Fetch one with designmd_get_design_md({ slug, theme }) — it returns a delta (palette + type + what changes), never a copy of the parent's components.
+Not a corpus-wide palette search: the other designs are single-look systems, searched with designmd_search_designs (mode, hue). Fetch one with designmd_get_design_md({ slug, theme }) to get a delta, not a copy of the parent.
 
 Args:
-  - brand (string, optional): brand key; only brands with official variants return rows (astryx).
-  - mode (light+dark | dark-only | light-only, optional): dual-mode vs dark-only themes.
-  - hue (string, optional): accent hue family of the theme palette.
-  - kind (mood | style | color, optional): what axis the variant varies on.
-  - typeClass (serif | sans | script | mono | mixed, optional): the display face class.
-  - limit (number, optional): 1-50, default 20.
+  - brand (optional): only brands with official variants return rows (astryx).
+  - mode (optional): light+dark | dark-only | light-only.
+  - hue (optional): accent hue family of the theme palette.
+  - kind (optional): mood | style | color.
+  - typeClass (optional): serif | sans | script | mono | mixed — the display face.
+  - limit (optional): 1-50, default 20.
 
 Returns:
-  {
-    "themes": [{ "brand", "parent", "id", "name", "kind", "mode", "type", "typeClass", "accentHue" }],
-    "coverage": { "parents": number, "themes": number, "designs_listed_as_single_look": number },
-    "note": string
-  }
+  { themes: [{ brand, parent, id, name, kind, mode, type, typeClass, accentHue }], coverage: { parents, themes, designs_listed_as_single_look }, note }
 
 Error Handling:
-  - Never errors on an empty result: an unknown brand returns [] plus a note naming the honest reason.
+  - Never errors on an empty result; an unknown brand returns [] plus the honest reason.
 
 Examples:
-  - Use when: "what themes does Astryx ship?" -> brand="astryx"
-  - Use when: "which theme is dark-only?" -> mode="dark-only"
-  - Use when: "a theme with a serif display face" -> typeClass="serif"
-  - Don't use when: you want brand palettes across the corpus (use designmd_search_designs with mode/hue), or you already know the design (use designmd_get_design_md).`,
+  - "what themes does Astryx ship?" -> brand="astryx"
+  - "which theme is dark-only?" -> mode="dark-only"
+  - Don't use when: you want brand palettes across the corpus (designmd_search_designs), or you know the design already (designmd_get_design_md).`,
       inputSchema: ListThemesInputSchema.shape,
       annotations: {
         readOnlyHint: true,
