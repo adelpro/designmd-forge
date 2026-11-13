@@ -1,6 +1,7 @@
 title: DesignMD Forge
 description: Offline MCP server for DESIGN.md design-system specs — component search, palettes, themes and authoring tools.
 theme: minima
+url: https://adelpro.us.kg
 baseurl: /designmd-forge
 markdown: kramdown
 plugins:

@@ -1,6 +1,6 @@
 # DesignMD Forge docs
 
-A free, offline MCP server for **DESIGN.md** design-system specs — colours, typography, components, motion — plus the tools to search them across 290 designs, derive palettes, list official themes, and lint your own file.
+A free, offline MCP server for **DESIGN.md** design-system specs — colours, typography, components, motion — plus the tools to search them across 301 designs, derive palettes, list official themes, and lint your own file.
 
 ```json
 { "mcpServers": { "designmd": { "command": "npx", "args": ["-y", "designmd-forge"] } } }
@@ -37,4 +37,4 @@ Four **prompts** ship alongside: `pick-a-design`, `section-inspiration`, `theme-
 - Palette filters cover 80 of 301 designs and say so in every response.
 - Only Astryx ships official themes; a derived brand palette is never called a theme.
 
-Source: [github.com/adelpro/designmd-forge](https://github.com/adelpro/designmd-forge) · MIT
+Source: [github.com/adelpro/designmd-forge](https://github.com/adelpro/designmd-forge) · npm: [designmd-forge](https://www.npmjs.com/package/designmd-forge) · MIT

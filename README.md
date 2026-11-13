@@ -1,12 +1,14 @@
 # DesignMD Forge
 
+**[Docs](https://adelpro.us.kg/designmd-forge/)** · [What's new in v2](https://adelpro.us.kg/designmd-forge/whats-new-v2.html) · [Examples](https://adelpro.us.kg/designmd-forge/examples.html) · [Tool surface](https://adelpro.us.kg/designmd-forge/mcp-tool-surface.html) · [npm](https://www.npmjs.com/package/designmd-forge)
+
 DesignMD Forge is a free MCP server for browsing and searching **DESIGN.md** files. These are plain text design system documents (colors, typography, components, layout) that AI coding agents read to generate UI matching a target visual style.
 
 Data is a bundled, offline snapshot of five sources — 84 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 10 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), an original authored **shadcn/ui (New York)** reference, and six authored specs — five of the maintainer's own projects under **Quran & Arabic Tech** (`midad`, `open-mushaf-native`, `open-tarteel`, `open-tilawa`, `uslub`) and **Astryx (Meta)** under **Component Library**, MIT and pinned to its published theme release — **301 design specs in total** (1,532 component groups indexed). No paid API, no rate limits, no network calls at runtime. The upstream sources extract only publicly visible CSS / app values (colors, type scale, spacing) and the authored entries are written from each project's own token source — no logos, trademarks, or copyrighted imagery are included, so it is safe to redistribute and reuse.
 
 ## What's new in v2.0
 
-Five capabilities, two behaviour changes, and a list of what is deliberately absent — full notes at [docs/whats-new-v2.html](https://adelpro.github.io/designmd-forge/whats-new-v2.html).
+Five capabilities, two behaviour changes, and a list of what is deliberately absent — full notes at [docs/whats-new-v2.html](https://adelpro.us.kg/designmd-forge/whats-new-v2.html).
 
 - **Component patterns across the collection** — `designmd_search_sections` finds "footers with social links" or "3D or hover buttons" by reading the `### Footer` / `### Buttons` prose of every design, which the brand search could never do.
 - **Brands, not collections** — the same product in two sets (`spotify` + `ios-spotify`) is one row, with both platforms listed.
@@ -14,7 +16,7 @@ Five capabilities, two behaviour changes, and a list of what is deliberately abs
 - **Official themes** — Astryx's seven with mode and type pairing; `theme` returns a delta, never a copy of the parent.
 - **MCP prompts** — `pick-a-design`, `section-inspiration`, `theme-pick`, `author-design-md`.
 
-Behaviour changes: `search_designs` accepts an empty query when a filter is set, and multi-word section text is AND with a stopword list. Worked, reproducible transcripts: [docs/examples.html](https://adelpro.github.io/designmd-forge/examples.html).
+Behaviour changes: `search_designs` accepts an empty query when a filter is set, and multi-word section text is AND with a stopword list. Worked, reproducible transcripts: [docs/examples.html](https://adelpro.us.kg/designmd-forge/examples.html).
 
 ## Tools
 

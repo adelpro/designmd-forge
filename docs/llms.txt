@@ -1,14 +1,14 @@
 # DesignMD Forge
 
 > A free, offline MCP server for DESIGN.md design-system specs. Search component
-> patterns across 290 designs, derive palettes, list official themes, and lint
+> patterns across 301 designs, derive palettes, list official themes, and lint
 > your own spec. 11 tools, 4 prompts, no network calls at runtime.
 
 ## What this is
 
 DESIGN.md files are plain-text design-system documents (colours, typography,
 components, motion) that coding agents read to generate UI matching a target
-style. DesignMD Forge bundles 290 of them offline and exposes search and
+style. DesignMD Forge bundles 301 of them offline and exposes search and
 authoring tools over MCP.
 
 Install: `npx -y designmd-forge` (stdio). A hosted Streamable HTTP connector is
@@ -45,13 +45,13 @@ also available.
 
 ## Links
 
-- Docs: https://adelpro.github.io/designmd-forge/
-- Worked examples: https://adelpro.github.io/designmd-forge/examples.html
-- What's new in v2.0: https://adelpro.github.io/designmd-forge/whats-new-v2.html
-- Tool boundaries: https://adelpro.github.io/designmd-forge/mcp-tool-surface.html
+- Docs: https://adelpro.us.kg/designmd-forge/
+- Worked examples: https://adelpro.us.kg/designmd-forge/examples.html
+- What's new in v2.0: https://adelpro.us.kg/designmd-forge/whats-new-v2.html
+- Tool boundaries: https://adelpro.us.kg/designmd-forge/mcp-tool-surface.html
 - Source: https://github.com/adelpro/designmd-forge
 - Authoring skill: skill/designmd-authoring/SKILL.md
 
 ## Optional
 
-- llms-full: https://adelpro.github.io/designmd-forge/whats-new-v2.html
+- llms-full: https://adelpro.us.kg/designmd-forge/whats-new-v2.html

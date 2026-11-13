@@ -3,6 +3,7 @@
   "name": "io.github.adelpro/designmd-forge",
   "title": "DesignMD Forge",
   "description": "Offline DESIGN.md design-system specs: component search, palettes, themes, authoring tools.",
+  "websiteUrl": "https://adelpro.us.kg/designmd-forge/",
   "repository": {
     "url": "https://github.com/adelpro/designmd-forge",
     "source": "github"

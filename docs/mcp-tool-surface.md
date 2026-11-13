@@ -32,8 +32,8 @@ written for selection quality, not for prose.
 - **Guardrails vs file.** `get_guardrails` is `get_design_md(section: "dos_and_donts")`
   with less surrounding payload. Same content; keep both, prefer the shortcut.
 - **Themes vs palettes.** `list_themes` covers _official variants_ (Astryx's seven).
-  `search_designs(mode|hue)` covers _derived palettes_ of frontmatter designs — 70 of
-  290 today. They are different axes; using one for the other silently narrows the
+  `search_designs(mode|hue)` covers _derived palettes_ of frontmatter designs — 80 of
+  301 today. They are different axes; using one for the other silently narrows the
   result set.
 - **Listing vs searching.** `list_*` tools take filters but no free text; `search_*`
   tools take text and score it. `list_designs` with no filter is the "show me
@@ -55,7 +55,7 @@ same procedures are written in `skill/designmd-authoring`.
 ## Resources
 
 None, deliberately. Resources are URI-addressed context a client attaches; here they
-would duplicate `get_design_md` for 290 designs and 890 files, `resources/subscribe`
+would duplicate `get_design_md` for 301 designs and 901 files, `resources/subscribe`
 needs session state this stateless server does not keep, and client support is the
 weakest of the three primitives. If that changes, expose two templates
-(`designmd://designs/{slug}`, `designmd://themes/{parent}/{id}`), never 290 entries.
+(`designmd://designs/{slug}`, `designmd://themes/{parent}/{id}`), never 301 entries.

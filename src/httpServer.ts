@@ -9,7 +9,7 @@ const PORT = Number(process.env.PORT ?? 3000);
 const MCP_PATH = process.env.MCP_PATH ?? '/';
 
 // The docs site is the single source of prose; this server never duplicates it.
-const DOCS_SITE = 'https://adelpro.github.io/designmd-forge/';
+const DOCS_SITE = 'https://adelpro.us.kg/designmd-forge/';
 
 const app = express();
 app.use(express.json({ limit: '2mb' }));
