@@ -22,3 +22,5 @@ dist/
 
 # Tests
 coverage/
+# Local implementation plans (never publish)
+docs/
