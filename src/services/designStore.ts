@@ -74,7 +74,9 @@ export function searchDesigns(
       if (!palette) return false;
       // "dark" means dark-compatible: a system that documents both modes is a
       // valid answer to "show me something dark", a light-only one is not.
-      return opts.mode === 'both' ? palette.mode === 'both' : palette.mode === opts.mode || palette.mode === 'both';
+      return opts.mode === 'both'
+        ? palette.mode === 'both'
+        : palette.mode === opts.mode || palette.mode === 'both';
     })
     .filter((d) => (opts.hue ? paletteOf(d.slug)?.accentHue === opts.hue : true))
     .map((d) => {
