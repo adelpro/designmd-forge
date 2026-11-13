@@ -1,5 +1,16 @@
-export type HueFamily =
-  'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'purple' | 'pink' | 'neutral';
+export const HUE_FAMILIES = [
+  'red',
+  'orange',
+  'yellow',
+  'green',
+  'teal',
+  'blue',
+  'purple',
+  'pink',
+  'neutral',
+] as const;
+
+export type HueFamily = (typeof HUE_FAMILIES)[number];
 
 export type Mode = 'light' | 'dark' | 'both';
 
