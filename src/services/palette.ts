@@ -29,7 +29,7 @@ const CANVAS_KEYS = [
   'page-background',
 ];
 const INK_KEYS = ['ink', 'text', 'body', 'fg', 'foreground', 'body-text'];
-const ACCENT_KEYS = ['accent', 'brand', 'primary-action', 'cta', 'link'];
+const ACCENT_KEYS = ['accent', 'brand', 'primary-action', 'cta'];
 
 interface Rgb {
   r: number;
@@ -135,7 +135,10 @@ export function derivePalette(colors: Record<string, string>): DerivedPalette | 
   if (!canvas && !ink) return null;
 
   const keys = Object.keys(colors).map((key) => key.toLowerCase());
-  const declaresDark = keys.some((key) => key.includes('dark'));
+  // "on-dark" is a contrast pair for dark imagery (white text on a photo), not
+  // a dark mode. Only a real dark surface token (paper-dark, ink-dark,
+  // background-dark) means the file documents both modes.
+  const declaresDark = keys.some((key) => key.replace(/on-dark|on_dark/g, '').includes('dark'));
   const mode: Mode = declaresDark
     ? 'both'
     : canvas && luminance(canvas) < DARK_CANVAS_LUMINANCE

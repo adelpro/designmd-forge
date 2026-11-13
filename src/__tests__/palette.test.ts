@@ -33,6 +33,16 @@ test('a dark canvas with no -dark keys is dark, not both', () => {
   assert.equal(palette?.mode, 'dark');
 });
 
+test('an on-dark contrast pair is not a dark mode', () => {
+  const palette = derivePalette({
+    canvas: '#ffffff',
+    ink: '#222222',
+    primary: '#ff385c',
+    'on-dark': '#ffffff',
+  });
+  assert.equal(palette?.mode, 'light');
+});
+
 test('a palette with no canvas and no ink derives nothing', () => {
   assert.equal(derivePalette({ primary: '#ff385c' }), null);
 });

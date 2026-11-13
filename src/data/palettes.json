@@ -1,0 +1,699 @@
+{
+  "coverage": {
+    "designs_total": 289,
+    "designs_with_palette": 69,
+    "skipped_prose_only": 220
+  },
+  "palettes": {
+    "airbnb": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#222222",
+      "accent": "#ff385c",
+      "accentHue": "red",
+      "temperature": "neutral",
+      "declared_colors": 23,
+      "derived": true
+    },
+    "airtable": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#181d26",
+      "accent": "#181d26",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 28,
+      "derived": true
+    },
+    "apple": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#1d1d1f",
+      "accent": "#1d1d1f",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 21,
+      "derived": true
+    },
+    "binance": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#181a20",
+      "accent": "#2dbdb6",
+      "accentHue": "teal",
+      "temperature": "neutral",
+      "declared_colors": 24,
+      "derived": true
+    },
+    "bmw": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#262626",
+      "accent": "#1c69d4",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 25,
+      "derived": true
+    },
+    "bmw-m": {
+      "mode": "both",
+      "canvas": "#000000",
+      "ink": "#ffffff",
+      "accent": "#ffffff",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 21,
+      "derived": true
+    },
+    "bugatti": {
+      "mode": "dark",
+      "canvas": "#000000",
+      "ink": "#ffffff",
+      "accent": "#ffffff",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 18,
+      "derived": true
+    },
+    "cal": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#111111",
+      "accent": "#3b82f6",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 26,
+      "derived": true
+    },
+    "claude": {
+      "mode": "both",
+      "canvas": "#faf9f5",
+      "ink": "#141413",
+      "accent": "#5db8a6",
+      "accentHue": "teal",
+      "temperature": "warm",
+      "declared_colors": 25,
+      "derived": true
+    },
+    "clay": {
+      "mode": "both",
+      "canvas": "#fffaf0",
+      "ink": "#0a0a0a",
+      "accent": "#ff4d8b",
+      "accentHue": "pink",
+      "temperature": "warm",
+      "declared_colors": 29,
+      "derived": true
+    },
+    "clickhouse": {
+      "mode": "dark",
+      "canvas": "#0a0a0a",
+      "ink": "#ffffff",
+      "accent": "#22c55e",
+      "accentHue": "green",
+      "temperature": "neutral",
+      "declared_colors": 24,
+      "derived": true
+    },
+    "cohere": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#212121",
+      "accent": "#212121",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 23,
+      "derived": true
+    },
+    "coinbase": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#0a0b0d",
+      "accent": "#f4b000",
+      "accentHue": "orange",
+      "temperature": "neutral",
+      "declared_colors": 22,
+      "derived": true
+    },
+    "composio": {
+      "mode": "dark",
+      "canvas": "#0f0f0f",
+      "ink": "#ffffff",
+      "accent": "#00d4ff",
+      "accentHue": "teal",
+      "temperature": "neutral",
+      "declared_colors": 22,
+      "derived": true
+    },
+    "cursor": {
+      "mode": "light",
+      "canvas": "#f7f7f4",
+      "ink": "#26251e",
+      "accent": "#f54e00",
+      "accentHue": "orange",
+      "temperature": "warm",
+      "declared_colors": 22,
+      "derived": true
+    },
+    "dell-1996": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#e91d2a",
+      "accentHue": "red",
+      "temperature": "neutral",
+      "declared_colors": 9,
+      "derived": true
+    },
+    "elevenlabs": {
+      "mode": "both",
+      "canvas": "#f5f5f5",
+      "ink": "#0c0a09",
+      "accent": "#0c0a09",
+      "accentHue": "orange",
+      "temperature": "neutral",
+      "declared_colors": 27,
+      "derived": true
+    },
+    "expo": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#171717",
+      "accent": "#ab6400",
+      "accentHue": "orange",
+      "temperature": "neutral",
+      "declared_colors": 28,
+      "derived": true
+    },
+    "ferrari": {
+      "mode": "dark",
+      "canvas": "#181818",
+      "ink": "#ffffff",
+      "accent": "#fff200",
+      "accentHue": "yellow",
+      "temperature": "neutral",
+      "declared_colors": 26,
+      "derived": true
+    },
+    "figma": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#ff3d8b",
+      "accentHue": "pink",
+      "temperature": "neutral",
+      "declared_colors": 20,
+      "derived": true
+    },
+    "framer": {
+      "mode": "dark",
+      "canvas": "#090909",
+      "ink": "#ffffff",
+      "accent": "#0099ff",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 17,
+      "derived": true
+    },
+    "hashicorp": {
+      "mode": "dark",
+      "canvas": "#000000",
+      "ink": "#ffffff",
+      "accent": "#2b89ff",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 30,
+      "derived": true
+    },
+    "hp": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#1a1a1a",
+      "accent": "#1a1a1a",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 28,
+      "derived": true
+    },
+    "ibm": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#161616",
+      "accent": "#0f62fe",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 21,
+      "derived": true
+    },
+    "intercom": {
+      "mode": "light",
+      "canvas": "#f5f1ec",
+      "ink": "#111111",
+      "accent": "#0007cb",
+      "accentHue": "blue",
+      "temperature": "warm",
+      "declared_colors": 25,
+      "derived": true
+    },
+    "linear.app": {
+      "mode": "dark",
+      "canvas": "#010102",
+      "ink": "#f7f8f8",
+      "accent": "#7a7fad",
+      "accentHue": "blue",
+      "temperature": "cool",
+      "declared_colors": 23,
+      "derived": true
+    },
+    "meta": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#1c1e21",
+      "accent": "#1c1e21",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 27,
+      "derived": true
+    },
+    "minimax": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#0a0a0a",
+      "accent": "#ff5530",
+      "accentHue": "red",
+      "temperature": "neutral",
+      "declared_colors": 28,
+      "derived": true
+    },
+    "mintlify": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#0a0a0a",
+      "accent": "#00d4a4",
+      "accentHue": "teal",
+      "temperature": "neutral",
+      "declared_colors": 32,
+      "derived": true
+    },
+    "miro": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#1c1c1e",
+      "accent": "#00b473",
+      "accentHue": "green",
+      "temperature": "neutral",
+      "declared_colors": 40,
+      "derived": true
+    },
+    "mistral.ai": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#1f1f1f",
+      "accent": "#fa520f",
+      "accentHue": "orange",
+      "temperature": "neutral",
+      "declared_colors": 36,
+      "derived": true
+    },
+    "mongodb": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#001e2b",
+      "accent": "#7b3ff2",
+      "accentHue": "purple",
+      "temperature": "neutral",
+      "declared_colors": 34,
+      "derived": true
+    },
+    "nike": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#111111",
+      "accent": "#ed1aa0",
+      "accentHue": "pink",
+      "temperature": "neutral",
+      "declared_colors": 23,
+      "derived": true
+    },
+    "nintendo-2001": {
+      "mode": "dark",
+      "canvas": "#7a8aba\"           # Periwinkle metallic — primary interface body",
+      "ink": "#21242e\"              # primary text on light",
+      "accent": "#21242e\"              # primary text on light",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 22,
+      "derived": true
+    },
+    "notion": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#1a1a1a",
+      "accent": "#0a1530",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 47,
+      "derived": true
+    },
+    "nvidia": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#feeeb2",
+      "accentHue": "yellow",
+      "temperature": "neutral",
+      "declared_colors": 28,
+      "derived": true
+    },
+    "ollama": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#000000",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 21,
+      "derived": true
+    },
+    "opencode.ai": {
+      "mode": "both",
+      "canvas": "#fdfcfc",
+      "ink": "#201d1d",
+      "accent": "#007aff",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 28,
+      "derived": true
+    },
+    "pinterest": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#617bff",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 31,
+      "derived": true
+    },
+    "playstation": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#0070d1",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 36,
+      "derived": true
+    },
+    "posthog": {
+      "mode": "both",
+      "canvas": "#eeefe9",
+      "ink": "#23251d",
+      "accent": "#2c84e0",
+      "accentHue": "blue",
+      "temperature": "warm",
+      "declared_colors": 29,
+      "derived": true
+    },
+    "raycast": {
+      "mode": "dark",
+      "canvas": "#07080a",
+      "ink": "#f4f4f6",
+      "accent": "#57c1ff",
+      "accentHue": "blue",
+      "temperature": "cool",
+      "declared_colors": 31,
+      "derived": true
+    },
+    "renault": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#ffed00",
+      "accentHue": "yellow",
+      "temperature": "neutral",
+      "declared_colors": 25,
+      "derived": true
+    },
+    "replicate": {
+      "mode": "both",
+      "canvas": "#f9f7f3",
+      "ink": "#202020",
+      "accent": "#ea2804",
+      "accentHue": "red",
+      "temperature": "warm",
+      "declared_colors": 26,
+      "derived": true
+    },
+    "resend": {
+      "mode": "dark",
+      "canvas": "#000000",
+      "ink": "#fcfdff",
+      "accent": "#ff801f",
+      "accentHue": "orange",
+      "temperature": "neutral",
+      "declared_colors": 28,
+      "derived": true
+    },
+    "revolut": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#191c1f",
+      "accent": "#00a87e",
+      "accentHue": "green",
+      "temperature": "neutral",
+      "declared_colors": 35,
+      "derived": true
+    },
+    "sentry": {
+      "mode": "both",
+      "canvas": "#1f1633",
+      "ink": "#1f1633",
+      "accent": "#c2ef4e",
+      "accentHue": "green",
+      "temperature": "neutral",
+      "declared_colors": 21,
+      "derived": true
+    },
+    "shopify": {
+      "mode": "both",
+      "canvas": "#000000",
+      "ink": "#000000",
+      "accent": "#000000",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 22,
+      "derived": true
+    },
+    "slack": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#1d1d1d",
+      "accent": "#1d1d1d",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 19,
+      "derived": true
+    },
+    "spacex": {
+      "mode": "dark",
+      "canvas": "#000000",
+      "ink": "#000000",
+      "accent": "#000000",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 13,
+      "derived": true
+    },
+    "stripe": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#0d253d",
+      "accent": "#1c1e54",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 20,
+      "derived": true
+    },
+    "supabase": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#171717",
+      "accent": "#6b01c2",
+      "accentHue": "purple",
+      "temperature": "neutral",
+      "declared_colors": 27,
+      "derived": true
+    },
+    "superhuman": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#292827",
+      "accent": "#292827",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 15,
+      "derived": true
+    },
+    "together.ai": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#fc4c02",
+      "accentHue": "orange",
+      "temperature": "neutral",
+      "declared_colors": 13,
+      "derived": true
+    },
+    "uber": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#000000",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 13,
+      "derived": true
+    },
+    "vercel": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#171717",
+      "accent": "#171717",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 36,
+      "derived": true
+    },
+    "vodafone": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#25282b",
+      "accent": "#e60000",
+      "accentHue": "red",
+      "temperature": "neutral",
+      "declared_colors": 8,
+      "derived": true
+    },
+    "voltagent": {
+      "mode": "dark",
+      "canvas": "#101010",
+      "ink": "#f2f2f2",
+      "accent": "#00d992",
+      "accentHue": "green",
+      "temperature": "neutral",
+      "declared_colors": 13,
+      "derived": true
+    },
+    "warp": {
+      "mode": "dark",
+      "canvas": "#2b2622",
+      "ink": "#f7f5f0",
+      "accent": "#f7f5f0",
+      "accentHue": "orange",
+      "temperature": "neutral",
+      "declared_colors": 9,
+      "derived": true
+    },
+    "webflow": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#080808",
+      "accent": "#7a3dff",
+      "accentHue": "purple",
+      "temperature": "neutral",
+      "declared_colors": 19,
+      "derived": true
+    },
+    "wired": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#000000",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 9,
+      "derived": true
+    },
+    "wise": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#0e0f0c",
+      "accent": "#ffc091",
+      "accentHue": "orange",
+      "temperature": "neutral",
+      "declared_colors": 22,
+      "derived": true
+    },
+    "x.ai": {
+      "mode": "dark",
+      "canvas": "#0a0a0a",
+      "ink": "#ffffff",
+      "accent": "#ff7a17",
+      "accentHue": "orange",
+      "temperature": "neutral",
+      "declared_colors": 18,
+      "derived": true
+    },
+    "zapier": {
+      "mode": "light",
+      "canvas": "#fffefb",
+      "ink": "#201515",
+      "accent": "#ff4f00",
+      "accentHue": "orange",
+      "temperature": "warm",
+      "declared_colors": 10,
+      "derived": true
+    },
+    "shadcn": {
+      "mode": "dark",
+      "canvas": "hsl(0 0% 100%)",
+      "ink": "hsl(240 10% 3.9%)",
+      "accent": "hsl(240 4.8% 95.9%)",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 24,
+      "derived": true
+    },
+    "midad": {
+      "mode": "both",
+      "canvas": "#F7F6F3",
+      "ink": "#111111",
+      "accent": "#B0894F",
+      "accentHue": "orange",
+      "temperature": "warm",
+      "declared_colors": 42,
+      "derived": true
+    },
+    "mushaf-native": {
+      "mode": "both",
+      "canvas": "#FAF8F6",
+      "ink": "#1B1B1B",
+      "accent": "#1B1B1B",
+      "accentHue": "neutral",
+      "temperature": "warm",
+      "declared_colors": 27,
+      "derived": true
+    },
+    "uslub": {
+      "mode": "both",
+      "canvas": "#ffffff",
+      "ink": "#1d1d1f",
+      "accent": "#1d1d1f",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 32,
+      "derived": true
+    },
+    "open-tarteel": {
+      "mode": "both",
+      "canvas": "#f4f4f5",
+      "ink": "#18181b",
+      "accent": "#0ea5e9",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 34,
+      "derived": true
+    }
+  }
+}
