@@ -25,7 +25,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "refresh-data:astryx": "node scripts/build-data-astryx.mjs"
   },
   "keywords": [
     "mcp",

@@ -24,3 +24,4 @@ dist/
 coverage/
 # Local implementation plans (never publish); other docs/ still ship
 docs/superpowers/plans/
+.astryx-tmp/
