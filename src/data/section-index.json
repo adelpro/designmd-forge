@@ -1,9 +1,9 @@
 {
-  "neutral_designs": 289,
-  "designs_with_groups": 288,
+  "neutral_designs": 290,
+  "designs_with_groups": 289,
   "excluded_flavor_files": 600,
   "counts": {
-    "groups": 1470,
+    "groups": 1474,
     "by_group": {
       "buttons": 289,
       "cards": 214,
@@ -11,6 +11,10 @@
       "navigation": 272,
       "other": 280,
       "inputs": 271,
+      "banned_motion": 5,
+      "durations_easings": 5,
+      "motion_roles": 5,
+      "reduced_motion": 5,
       "tabs": 15,
       "badges": 40,
       "lists": 15,
@@ -18,15 +22,11 @@
       "header": 9,
       "avatars": 3,
       "modals": 1,
-      "empty_states": 1,
-      "banned_motion": 4,
-      "durations_easings": 4,
-      "motion_roles": 4,
-      "reduced_motion": 4
+      "empty_states": 1
     },
     "by_section": {
       "components": 1444,
-      "motion": 26
+      "motion": 30
     }
   },
   "groups": [
@@ -431,6 +431,91 @@
           "glass"
         ],
         "surface": "canvas"
+      },
+      "derived": true
+    },
+    {
+      "slug": "astryx",
+      "brand": "astryx",
+      "title": "Astryx (Meta)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "motion",
+      "section_heading": "Motion & Interaction",
+      "group": "banned_motion",
+      "variant": null,
+      "heading": "Banned Motion",
+      "matched_alias": "banned motion",
+      "text": "No bounce, no spring overshoot, no looping decorative animation, no parallax, and no animating `width`, `height`, `top` or `left`. A spinner is the only indefinite animation allowed.",
+      "facets": {
+        "items": [],
+        "states": [
+          "loading"
+        ],
+        "traits": []
+      },
+      "derived": true
+    },
+    {
+      "slug": "astryx",
+      "brand": "astryx",
+      "title": "Astryx (Meta)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "motion",
+      "section_heading": "Motion & Interaction",
+      "group": "durations_easings",
+      "variant": null,
+      "heading": "Durations & Easings",
+      "matched_alias": "durations & easings",
+      "text": "Motion is a small scale, not a per-component decision:\n\n- fast — 175ms (bounded 130–230ms) for hover, focus and state flips.\n- medium — 410ms (bounded 310–550ms) for sheets, drawers and expanding panels.\n- standard easing — `cubic-bezier(0.24, 1, 0.4, 1)` for entrances and moves.\n- exit easing — `cubic-bezier(0.3, 0, 0.6, 0.6)` for dismissals.",
+      "facets": {
+        "items": [],
+        "states": [
+          "focus",
+          "hover"
+        ],
+        "traits": []
+      },
+      "derived": true
+    },
+    {
+      "slug": "astryx",
+      "brand": "astryx",
+      "title": "Astryx (Meta)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "motion",
+      "section_heading": "Motion & Interaction",
+      "group": "motion_roles",
+      "variant": null,
+      "heading": "Motion Roles",
+      "matched_alias": "motion roles",
+      "text": "Entrances are `ease-entrance` from slightly below with a fade; exits are faster than entrances and use `ease-exit`. Layout shifts animate transform and opacity only. A press state is a 1–2px scale or offset, settled by the fast duration.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": []
+      },
+      "derived": true
+    },
+    {
+      "slug": "astryx",
+      "brand": "astryx",
+      "title": "Astryx (Meta)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "motion",
+      "section_heading": "Motion & Interaction",
+      "group": "reduced_motion",
+      "variant": null,
+      "heading": "Reduced Motion",
+      "matched_alias": "reduced motion",
+      "text": "`prefers-reduced-motion` removes transforms and keeps opacity changes, capped at the fast duration. Nothing in the system requires motion to be understood.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": []
       },
       "derived": true
     },

@@ -1,7 +1,7 @@
 {
   "coverage": {
-    "designs_total": 289,
-    "designs_with_palette": 69,
+    "designs_total": 290,
+    "designs_with_palette": 70,
     "skipped_prose_only": 220
   },
   "palettes": {
@@ -693,6 +693,16 @@
       "accentHue": "blue",
       "temperature": "neutral",
       "declared_colors": 34,
+      "derived": true
+    },
+    "astryx": {
+      "mode": "both",
+      "canvas": "#f1f1f1",
+      "ink": "#000000",
+      "accent": "#1b1b1b",
+      "accentHue": "neutral",
+      "temperature": "neutral",
+      "declared_colors": 20,
       "derived": true
     }
   }

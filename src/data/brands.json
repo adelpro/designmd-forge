@@ -1,8 +1,8 @@
 {
   "groups_source": "section-index.json",
   "coverage": {
-    "brands": 274,
-    "designs": 289
+    "brands": 275,
+    "designs": 290
   },
   "brands": {
     "airbnb": {
@@ -2801,6 +2801,16 @@
       "variants": [
         {
           "slug": "open-tarteel",
+          "platform": "web"
+        }
+      ]
+    },
+    "astryx": {
+      "key": "astryx",
+      "title": "Astryx (Meta)",
+      "variants": [
+        {
+          "slug": "astryx",
           "platform": "web"
         }
       ]

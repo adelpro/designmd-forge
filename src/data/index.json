@@ -10,7 +10,7 @@
   },
   "note": "Design tokens extracted from publicly visible CSS values of each site, or authored in-repo from the project's own token source, per each source's LICENSE. No trademarked assets, logos, or copyrighted imagery are included. iOS = Meliwat/awesome-ios-design-md · Mobile = TrustOtc/awesome-mobile-design-md · Web = VoltAgent/awesome-design-md · shadcn = shadcn/ui New York (authored reference) · adelpro = Quran & Arabic Tech (authored in-repo, MIT).",
   "generated_at": "2026-08-26T19:54:44.347Z",
-  "count": 289,
+  "count": 290,
   "platforms": [
     "ios",
     "mobile",
@@ -2649,6 +2649,22 @@
       "short_description": "An authored reference to Open Tarteel, a free and open-source Quran recitation player built with Next.js and Tailwind CSS. The atmosphere is quiet and devotiona",
       "long_description": "Open Tarteel is a browser based Quran recitation player. It lists reciters from several audio sources, keeps a per reciter playlist of surahs, plays them from a fixed control panel, and caches whole playlists in Cache Storage for offline listening behind an app shell service worker. The interface is Arabic first, with English and German locales, and it runs as an installable progressive web app.",
       "word_count": 2871
+    },
+    {
+      "slug": "astryx",
+      "title": "Astryx (Meta)",
+      "category": "Component Library",
+      "platform": "web",
+      "source": "adelpro",
+      "short_description": "Astryx is Meta's open-source design system, and it separates two things most systems mix — a component library that owns behaviour and accessibility, and a them",
+      "long_description": "Astryx grew inside Meta for eight years before being open-sourced under MIT, and its shape explains its rules: a company full of internal tools kept rebuilding the same date picker, table and form, so the system put behaviour and accessibility in components and left appearance to a theme. The component library covers buttons, cards, navigation shells, inputs, tables, overlays, badges and status dots; the theme is a set of CSS custom property overrides, and a page opts in by importing a stylesheet and passing a theme object to `Theme`.",
+      "word_count": 1894,
+      "upstream": {
+        "name": "Astryx by Meta",
+        "url": "https://github.com/meta/astryx",
+        "tag": "0.7.15",
+        "license": "MIT"
+      }
     }
   ]
 }

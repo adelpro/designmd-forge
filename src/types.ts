@@ -21,6 +21,13 @@ export interface DesignIndexEntry {
    * is absent, preserving the historical behaviour.
    */
   flavors?: string[];
+  /**
+   * Where an authored reference spec came from, when it describes a third-party
+   * open-source system rather than one of the maintainer's own projects.
+   * `source` stays 'adelpro' because that is who wrote the file; this block
+   * carries the upstream attribution and the pinned version the values came from.
+   */
+  upstream?: { name: string; url: string; tag: string; license: string };
 }
 
 export interface DesignIndex {
