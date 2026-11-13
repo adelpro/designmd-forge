@@ -48,10 +48,38 @@ below so an existing caller is not surprised.
 
 ### Note on 1.5.0
 
-`1.5.0` was published to npm (2026-11-08, commit `c89a36c`) from a tree that is not present in
-this repository — `origin/main` is `7966310` and its `package.json` still says `1.4.0`. Its
-contents cannot be reconstructed honestly, and `1.6.0` supersedes it. This entry does not
-pretend to know what it changed.
+`1.5.0` (2026-11-08, commit `c89a36c`) was published before this branch was cut and is now part
+of the history this release builds on: nine upstream web designs, the `open-tilawa` authored
+spec, palette-reference fixes, and the `refresh-data:adelpro` step. 2.0.0 supersedes it.
+
+## [1.5.0] - 2026-11-08
+
+### Added
+
+- Authored `open-tilawa` (Tilawah) spec under `Quran & Arabic Tech` (web).
+  It documents the shipped one-screen player system from
+  `apps/web/src/app/globals.css`: nine semantic tokens, IBM Plex Sans Arabic,
+  the spectrum, transport and scrubber anatomy, the sprung phone sheet and the
+  hold-to-mute volume gauge.
+- Ten new upstream web specs from the refreshed VoltAgent snapshot: `1win`,
+  `aljazeera`, `dji`, `jobright`, `mercury`, `mydealz`, `nerdwallet`, `oracle`,
+  `oura` and `sap`. Design data is now 300 specs: 84 upstream web, 10 upstream
+  mobile, 200 iOS, 1 shadcn and 5 authored Quran & Arabic Tech entries.
+
+### Changed
+
+- Refreshed the bundled upstream snapshot. The web collection grew from 74 to
+  84 entries; mobile stayed at 10 and iOS at 200.
+- Added `refresh-data:adelpro` and wired it into `npm run refresh-data`, so the
+  authored Quran & Arabic Tech specs survive a full refresh and reach
+  `load-data` through `.staging/adelpro.json` with their own source key.
+- README counts now describe upstream and authored sources separately
+  (84 + 10 + 200 + 1 + 5 = 300) instead of reporting platform totals.
+- Documented the search boundary in the README, the authoring skill and the
+  `designmd_search_designs` / `designmd_get_design_md` tool descriptions:
+  search covers metadata only, while `section` and `component` retrieval is
+  per design, with a shortlist-then-fetch workflow for regions such as footers
+  and menus.
 
 ## [1.4.0]
 

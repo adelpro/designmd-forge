@@ -18,7 +18,7 @@ Version 2.0.0 · 2026-11-13. No tool was removed; the surface moved, so the majo
 
 - `designmd_search_designs` accepts an **empty query when a filter is present** ("show me dark red systems" has no words for the description search). With no query and no filter it still refuses.
 - Multi-word `text` in `designmd_search_sections` is **AND**, with a stopword list so "social links" is a search for _social_, not for _links_. `"3d hover"` returns 2 genuinely 3D-and-hover buttons, not 47 loose ones.
-- Palette-filtered responses print their own coverage: **69 of 290**, of which 221 are prose-only.
+- Palette-filtered responses print their own coverage: **80 of 301**, of which 221 are prose-only.
 
 ## Deliberately absent
 

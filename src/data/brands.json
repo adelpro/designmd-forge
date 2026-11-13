@@ -1,10 +1,20 @@
 {
   "groups_source": "section-index.json",
   "coverage": {
-    "brands": 275,
-    "designs": 290
+    "brands": 285,
+    "designs": 301
   },
   "brands": {
+    "1win": {
+      "key": "1win",
+      "title": "1win",
+      "variants": [
+        {
+          "slug": "1win",
+          "platform": "web"
+        }
+      ]
+    },
     "airbnb": {
       "key": "airbnb",
       "title": "Airbnb",
@@ -25,6 +35,16 @@
       "variants": [
         {
           "slug": "airtable",
+          "platform": "web"
+        }
+      ]
+    },
+    "aljazeera": {
+      "key": "aljazeera",
+      "title": "Al Jazeera",
+      "variants": [
+        {
+          "slug": "aljazeera",
           "platform": "web"
         }
       ]
@@ -207,6 +227,16 @@
       "variants": [
         {
           "slug": "dell-1996",
+          "platform": "web"
+        }
+      ]
+    },
+    "dji": {
+      "key": "dji",
+      "title": "DJI",
+      "variants": [
+        {
+          "slug": "dji",
           "platform": "web"
         }
       ]
@@ -1475,11 +1505,15 @@
     },
     "oura": {
       "key": "oura",
-      "title": "Design System Inspiration of Oura (iOS)",
+      "title": "Oura",
       "variants": [
         {
           "slug": "ios-oura",
           "platform": "ios"
+        },
+        {
+          "slug": "oura",
+          "platform": "web"
         }
       ]
     },
@@ -2305,6 +2339,16 @@
         }
       ]
     },
+    "jobright": {
+      "key": "jobright",
+      "title": "Jobright",
+      "variants": [
+        {
+          "slug": "jobright",
+          "platform": "web"
+        }
+      ]
+    },
     "kraken": {
       "key": "kraken",
       "title": "Kraken",
@@ -2365,6 +2409,16 @@
         }
       ]
     },
+    "mercury": {
+      "key": "mercury",
+      "title": "Mercury",
+      "variants": [
+        {
+          "slug": "mercury",
+          "platform": "web"
+        }
+      ]
+    },
     "meta": {
       "key": "meta",
       "title": "Meta",
@@ -2372,6 +2426,16 @@
         {
           "slug": "meta",
           "platform": "web"
+        }
+      ]
+    },
+    "midad": {
+      "key": "midad",
+      "title": "midad (مِداد)",
+      "variants": [
+        {
+          "slug": "midad",
+          "platform": "mobile"
         }
       ]
     },
@@ -2435,6 +2499,36 @@
         }
       ]
     },
+    "mushaf-native": {
+      "key": "mushaf-native",
+      "title": "Open Mushaf Native",
+      "variants": [
+        {
+          "slug": "mushaf-native",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "mydealz": {
+      "key": "mydealz",
+      "title": "mydealz",
+      "variants": [
+        {
+          "slug": "mydealz",
+          "platform": "web"
+        }
+      ]
+    },
+    "nerdwallet": {
+      "key": "nerdwallet",
+      "title": "NerdWallet",
+      "variants": [
+        {
+          "slug": "nerdwallet",
+          "platform": "web"
+        }
+      ]
+    },
     "nike": {
       "key": "nike",
       "title": "Nike",
@@ -2485,12 +2579,42 @@
         }
       ]
     },
+    "open-tarteel": {
+      "key": "open-tarteel",
+      "title": "Open Tarteel",
+      "variants": [
+        {
+          "slug": "open-tarteel",
+          "platform": "web"
+        }
+      ]
+    },
+    "open-tilawa": {
+      "key": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "variants": [
+        {
+          "slug": "open-tilawa",
+          "platform": "web"
+        }
+      ]
+    },
     "opencode.ai": {
       "key": "opencode.ai",
       "title": "OpenCode AI",
       "variants": [
         {
           "slug": "opencode.ai",
+          "platform": "web"
+        }
+      ]
+    },
+    "oracle": {
+      "key": "oracle",
+      "title": "Oracle",
+      "variants": [
+        {
+          "slug": "oracle",
           "platform": "web"
         }
       ]
@@ -2585,6 +2709,16 @@
         }
       ]
     },
+    "sap": {
+      "key": "sap",
+      "title": "SAP",
+      "variants": [
+        {
+          "slug": "sap",
+          "platform": "web"
+        }
+      ]
+    },
     "sentry": {
       "key": "sentry",
       "title": "Sentry",
@@ -2592,6 +2726,16 @@
         {
           "slug": "sentry",
           "platform": "web"
+        }
+      ]
+    },
+    "shadcn": {
+      "key": "shadcn",
+      "title": "shadcn/ui (New York)",
+      "variants": [
+        {
+          "slug": "shadcn",
+          "platform": "shadcn"
         }
       ]
     },
@@ -2685,6 +2829,16 @@
         }
       ]
     },
+    "uslub": {
+      "key": "uslub",
+      "title": "Uslub",
+      "variants": [
+        {
+          "slug": "uslub",
+          "platform": "web"
+        }
+      ]
+    },
     "vodafone": {
       "key": "vodafone",
       "title": "Vodafone",
@@ -2751,56 +2905,6 @@
       "variants": [
         {
           "slug": "zapier",
-          "platform": "web"
-        }
-      ]
-    },
-    "shadcn": {
-      "key": "shadcn",
-      "title": "shadcn/ui (New York)",
-      "variants": [
-        {
-          "slug": "shadcn",
-          "platform": "shadcn"
-        }
-      ]
-    },
-    "midad": {
-      "key": "midad",
-      "title": "midad (مِداد)",
-      "variants": [
-        {
-          "slug": "midad",
-          "platform": "mobile"
-        }
-      ]
-    },
-    "mushaf-native": {
-      "key": "mushaf-native",
-      "title": "Open Mushaf Native",
-      "variants": [
-        {
-          "slug": "mushaf-native",
-          "platform": "mobile"
-        }
-      ]
-    },
-    "uslub": {
-      "key": "uslub",
-      "title": "Uslub",
-      "variants": [
-        {
-          "slug": "uslub",
-          "platform": "web"
-        }
-      ]
-    },
-    "open-tarteel": {
-      "key": "open-tarteel",
-      "title": "Open Tarteel",
-      "variants": [
-        {
-          "slug": "open-tarteel",
           "platform": "web"
         }
       ]

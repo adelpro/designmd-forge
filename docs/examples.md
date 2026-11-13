@@ -55,7 +55,7 @@ designmd_search_designs({ "query": "", "mode": "dark", "hue": "red" })
 ```
 
 ```
-note: Palette filters cover 69 of 290 designs; 221 are prose-only and cannot
+note: Palette filters cover 80 of 301 designs; 221 are prose-only and cannot
       match a palette filter.
 
 results: replicate (mode dark, accentHue red)

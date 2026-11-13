@@ -47,7 +47,7 @@ const GetDesignMdInputSchema = z
       .max(60)
       .optional()
       .describe(
-        "Optional: fetch just ONE '### ' sub-group instead of a whole section — e.g. 'navigation', 'buttons', 'cards', 'inputs'. Searches inside the section named by 'section' (default 'components', the Component Stylings section), so component groups also work in the 'motion' section ('durations & easings', 'reduced motion'). Names vary per design, so the match is best-effort. Not valid together with 'flavor'."
+        "Optional: fetch just ONE '### ' sub-group instead of a whole section — e.g. 'navigation', 'buttons', 'cards', 'inputs'. Searches inside the section named by 'section' (default 'components', the Component Stylings section), so component groups also work in the 'motion' section ('durations & easings', 'reduced motion'). Names vary per design, so the match is best-effort, and the error lists the headings that file actually uses. This is a per-design fetch: there is no cross-design component search (designmd_search_designs is metadata-only), so shortlist slugs first and fetch the region from each candidate. Not valid together with 'flavor'."
       ),
     theme: z
       .string()
@@ -106,7 +106,7 @@ Args:
   - slug (string, required): Exact slug, e.g. "stripe", "ios-spotify", "midnight-pro". Get valid slugs from designmd_list_designs or designmd_search_designs first if unsure.
   - section (string, optional): One of ${CANONICAL_SECTIONS.join(', ')}. Fetch just this section instead of the whole file — useful to avoid flooding context with irrelevant tokens when only one aspect (e.g. "components", "motion" or "dos_and_donts") is needed. Omit for the full file.
   - flavor (swiftui|expo|android, optional): Fetch the framework implementation variant instead of the neutral spec, when the entry declares that flavour. Every iOS design ships all three; authored entries declare their own (an Expo / React Native project may ship only "expo"). Omit for the neutral file.
-  - component (string, optional): Fetch just ONE "### " sub-group of the requested section (default section: "components") — e.g. "navigation", "buttons", "cards" inside Component Stylings, or "reduced motion" / "durations & easings" inside Motion. Best-effort match against the file's "### " sub-headings. Not valid with flavor.
+  - component (string, optional): Fetch just ONE "### " sub-group of the requested section (default section: "components") — e.g. "navigation", "buttons", "cards", "footer" inside Component Stylings, or "reduced motion" / "durations & easings" inside Motion. Best-effort match against the file's "### " sub-headings. Per design only — designmd_search_designs is metadata-only, so shortlist slugs first and fetch the region from each candidate. Not valid with flavor.
 
 Returns:
   The raw Markdown content (full file, requested section, component group, or flavor variant) as text, plus a structuredContent object:

@@ -35,7 +35,7 @@ const SearchDesignsInputSchema = z
       .max(200, 'Query must not exceed 200 characters')
       .default('')
       .describe(
-        "Free-text search terms matched against each design's title, slug, category, and description (e.g. 'dark fintech dashboard', 'warm minimal serif', 'automotive luxury black', 'mobile dark pro tool')."
+        "Free-text search terms matched against each design's title, slug, category, and description (e.g. 'dark fintech dashboard', 'warm minimal serif', 'automotive luxury black', 'mobile dark pro tool'). Metadata only: this does NOT search DESIGN.md bodies, sections, or ### component groups. To read a region such as a footer or menu, shortlist here then use designmd_get_design_md with component: 'footer'."
       ),
     category: z
       .string()
@@ -230,6 +230,8 @@ Examples:
     {
       title: 'Search DESIGN.md Files',
       description: `Search the local DESIGN.md collection by free-text query against title, slug, category, and description text.
+
+This is metadata search, not full-text search: it does NOT search the markdown bodies, sections, or ### component sub-groups inside a DESIGN.md. There is no cross-design "find every design with a footer/menu" query — shortlist products here, then call designmd_get_design_md on each candidate with section: "components", component: "footer" (or "navigation", "header") to read that region.
 
 Use this when you have a vibe/keyword in mind ("dark cinematic AI product", "warm editorial serif brand", "minimal black and white luxury automotive") rather than an exact site name. Results are ranked by relevance score (title and slug matches weigh highest). Does NOT return full DESIGN.md content — call designmd_get_design_md with the returned slug for that.
 

@@ -4,65 +4,65 @@ name: open-tarteel-design-system
 description: An authored reference to Open Tarteel, a free and open-source Quran recitation player built with Next.js and Tailwind CSS. The atmosphere is quiet and devotional, a warm zinc canvas lit by soft sky-blue glow, and at night a blue-black surface under a brighter cyan accent. Roles live in CSS custom properties swapped whole by the dark class, corners are soft, and motion stays short and functional.
 
 colors:
-  primary: "#0190dd"
-  primary-dark: "#0190dd"
-  primary-foreground: "#ffffff"
-  background: "#f4f4f5"
-  background-dark: "#0f1117"
-  surface: "#ffffff"
-  surface-dark: "#1a1f2e"
-  card: "#ffffff"
-  card-dark: "#1a1f2e"
-  foreground: "#18181b"
-  foreground-dark: "#f1f5f9"
-  muted: "#71717a"
-  muted-dark: "#64748b"
-  border: "#e4e4e7"
-  border-dark: "#1e293b"
-  accent: "#0ea5e9"
-  accent-dark: "#38bdf8"
-  accent-hover: "#0284c7"
-  accent-hover-dark: "#7dd3fc"
-  brand-cta-blue-500: "#0190dd"
-  brand-cta-blue-600: "#07507f"
-  brand-cta-green-500: "#10B981"
-  brand-cta-green-600: "#059669"
-  brand-cta-red-500: "#FF4B4B"
-  brand-cta-red-600: "#DB2727"
-  brand-dark-100: "#f5f6f7"
-  brand-cta-dark-200: "#e5e7eb"
-  brand-cta-dark-500: "#6B7280"
-  brand-cta-dark-600: "#222222"
-  brand-success: "#4BB543"
-  brand-info: "#4D71F9"
-  brand-warning: "#FFA800"
-  brand-danger: "#FF4B4B"
-  spectrum-meter: "#0191e2"
+  primary: '#0190dd'
+  primary-dark: '#0190dd'
+  primary-foreground: '#ffffff'
+  background: '#f4f4f5'
+  background-dark: '#0f1117'
+  surface: '#ffffff'
+  surface-dark: '#1a1f2e'
+  card: '#ffffff'
+  card-dark: '#1a1f2e'
+  foreground: '#18181b'
+  foreground-dark: '#f1f5f9'
+  muted: '#71717a'
+  muted-dark: '#64748b'
+  border: '#e4e4e7'
+  border-dark: '#1e293b'
+  accent: '#0ea5e9'
+  accent-dark: '#38bdf8'
+  accent-hover: '#0284c7'
+  accent-hover-dark: '#7dd3fc'
+  brand-cta-blue-500: '#0190dd'
+  brand-cta-blue-600: '#07507f'
+  brand-cta-green-500: '#10B981'
+  brand-cta-green-600: '#059669'
+  brand-cta-red-500: '#FF4B4B'
+  brand-cta-red-600: '#DB2727'
+  brand-dark-100: '#f5f6f7'
+  brand-cta-dark-200: '#e5e7eb'
+  brand-cta-dark-500: '#6B7280'
+  brand-cta-dark-600: '#222222'
+  brand-success: '#4BB543'
+  brand-info: '#4D71F9'
+  brand-warning: '#FFA800'
+  brand-danger: '#FF4B4B'
+  spectrum-meter: '#0191e2'
 
 typography:
   display:
-    fontFamily: "Tajawal, ui-sans-serif, sans-serif"
-    fontSize: "60px"
+    fontFamily: 'Tajawal, ui-sans-serif, sans-serif'
+    fontSize: '60px'
     fontWeight: 900
     lineHeight: 1
   title:
-    fontFamily: "Tajawal, ui-sans-serif, sans-serif"
-    fontSize: "30px"
+    fontFamily: 'Tajawal, ui-sans-serif, sans-serif'
+    fontSize: '30px'
     fontWeight: 700
     lineHeight: 1.2
   body:
-    fontFamily: "Tajawal, ui-sans-serif, sans-serif"
-    fontSize: "16px"
+    fontFamily: 'Tajawal, ui-sans-serif, sans-serif'
+    fontSize: '16px'
     fontWeight: 400
     lineHeight: 1.5
   label:
-    fontFamily: "Tajawal, ui-sans-serif, sans-serif"
-    fontSize: "14px"
+    fontFamily: 'Tajawal, ui-sans-serif, sans-serif'
+    fontSize: '14px'
     fontWeight: 600
     lineHeight: 1.43
   caption:
-    fontFamily: "Tajawal, ui-sans-serif, sans-serif"
-    fontSize: "12px"
+    fontFamily: 'Tajawal, ui-sans-serif, sans-serif'
+    fontSize: '12px'
     fontWeight: 700
     lineHeight: 1.33
 ---
@@ -81,16 +81,16 @@ Every role is a CSS custom property declared twice in `globals.css`, once under 
 - **Accent**: `--accent` is sky blue (`#0ea5e9` light, `#38bdf8` dark) with `--accent-hover` and a translucent `--accent-ring` for focus. The accent appears in focus rings, the search field, and the theme toggle.
 - **Brand ramp and ambient light**: `brand-CTA-blue-500` (`#0190dd`) is the action and wordmark colour, with `brand-CTA-blue-600` (`#07507f`) as its darker companion; the config also declares green, red, neutral and status entries that no component uses. The body gradient and the three blurred orbs in `layout.tsx` use `rgba(14, 165, 233, ...)` and indigo/violet at 4 to 7 per cent alpha, and the spectrum bars use `#0191e2`.
 
-| Token | Light | Dark | Role |
-| --- | --- | --- | --- |
-| `background` | #f4f4f5 | #0f1117 | page canvas |
-| `surface` / `card` | #ffffff | #1a1f2e | cards, dialog body, player panel |
-| `foreground` | #18181b | #f1f5f9 | body and heading text |
-| `muted` | #71717a | #64748b | secondary text, placeholders |
-| `border` | #e4e4e7 | #1e293b | hairlines on cards and inputs |
-| `accent` | #0ea5e9 | #38bdf8 | focus, active filter, search field |
-| `brand-cta-blue-500` | #0190dd | same | primary action, hero wordmark |
-| `spectrum-meter` | #0191e2 | same | audio bars |
+| Token                | Light   | Dark    | Role                               |
+| -------------------- | ------- | ------- | ---------------------------------- |
+| `background`         | #f4f4f5 | #0f1117 | page canvas                        |
+| `surface` / `card`   | #ffffff | #1a1f2e | cards, dialog body, player panel   |
+| `foreground`         | #18181b | #f1f5f9 | body and heading text              |
+| `muted`              | #71717a | #64748b | secondary text, placeholders       |
+| `border`             | #e4e4e7 | #1e293b | hairlines on cards and inputs      |
+| `accent`             | #0ea5e9 | #38bdf8 | focus, active filter, search field |
+| `brand-cta-blue-500` | #0190dd | same    | primary action, hero wordmark      |
+| `spectrum-meter`     | #0191e2 | same    | audio bars                         |
 
 ## Typography
 
@@ -159,6 +159,7 @@ The layout is mobile first and every breakpoint is Tailwind's default. Below `sm
 ## Do's & Don'ts
 
 **Do:**
+
 - Read colour from the CSS variables and their Tailwind aliases, let the `dark` class swap them, and keep the accent single (use `accent` for focus and `brand-CTA-blue-500` for action, never a new hue).
 - Use `rounded-xl` for playlist rows, `rounded-2xl` for reciter cards and dialogs, `rounded-md` for the player panel.
 - Give every icon only button an `aria-label`, and a `title` where the tooltip component is not used.
@@ -167,6 +168,7 @@ The layout is mobile first and every breakpoint is Tailwind's default. Below `sm
 - Respect right to left. Use logical properties (`ms-2`, `start`, `end`) as the components do.
 
 **Don't:**
+
 - Don't add new keyframes or springs, don't exceed 700ms, and never animate layout properties such as width or height.
 - Don't animate anything on scroll, and don't add parallax or sticky reveal effects.
 - Don't loop decorative animation beyond the existing pulse and spinner.

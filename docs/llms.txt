@@ -38,8 +38,8 @@ also available.
 ## What is not covered
 
 - 600 of the 890 markdown files are SwiftUI/Expo/Android flavours and are not indexed.
-- 221 of 290 designs have no declared tokens: no facets, no palette.
-- Palette filters cover 69 of 290 designs.
+- 221 of 301 designs have no declared tokens: no facets, no palette.
+- Palette filters cover 80 of 301 designs.
 - Only Astryx ships official themes; a derived palette is not a theme.
 - Prompts are user-invoked templates, not skills.
 

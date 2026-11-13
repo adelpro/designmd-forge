@@ -3,44 +3,44 @@ version: alpha
 name: astryx-design-system
 description: Astryx is Meta's open-source design system, and it separates two things most systems mix — a component library that owns behaviour and accessibility, and a theme that owns appearance through CSS custom properties. The neutral theme described here is a muted, low-chroma system (near-white canvas, near-black accent) whose interface reads as calm because contrast comes from hairlines and text weight rather than stacked surfaces. Light and dark are one token set, expressed as light-dark() pairs, so a page switches mode without a second stylesheet. Seven themes ship as token overrides over the same components, and type is a per-theme role pairing rather than a single family.
 colors:
-  canvas: "#f1f1f1"
-  canvas-dark: "#1b1b1b"
-  surface: "#ffffff"
-  surface-dark: "#262626"
-  card: "#ffffff"
-  card-dark: "#1b1b1b"
-  ink: "#000000"
-  ink-dark: "#ffffff"
-  ink-secondary: "#474747"
-  ink-secondary-dark: "#9e9e9e"
-  accent: "#1b1b1b"
-  accent-dark: "#f1f1f1"
-  accent-muted: "#d4d4d4"
-  accent-muted-dark: "#474747"
-  primary: "#1b1b1b"
-  primary-dark: "#f1f1f1"
-  border: "#e5e5e5"
-  border-dark: "#333333"
-  border-emphasized: "#d4d4d4"
-  border-emphasized-dark: "#525252"
+  canvas: '#f1f1f1'
+  canvas-dark: '#1b1b1b'
+  surface: '#ffffff'
+  surface-dark: '#262626'
+  card: '#ffffff'
+  card-dark: '#1b1b1b'
+  ink: '#000000'
+  ink-dark: '#ffffff'
+  ink-secondary: '#474747'
+  ink-secondary-dark: '#9e9e9e'
+  accent: '#1b1b1b'
+  accent-dark: '#f1f1f1'
+  accent-muted: '#d4d4d4'
+  accent-muted-dark: '#474747'
+  primary: '#1b1b1b'
+  primary-dark: '#f1f1f1'
+  border: '#e5e5e5'
+  border-dark: '#333333'
+  border-emphasized: '#d4d4d4'
+  border-emphasized-dark: '#525252'
 typography:
   body:
-    fontFamily: "Figtree, system-ui, sans-serif"
+    fontFamily: 'Figtree, system-ui, sans-serif'
     fontSize: 14px
     fontWeight: 400
     lineHeight: 1.5
   small:
-    fontFamily: "Figtree, system-ui, sans-serif"
+    fontFamily: 'Figtree, system-ui, sans-serif'
     fontSize: 12px
     fontWeight: 400
     lineHeight: 1.5
   heading:
-    fontFamily: "Figtree, system-ui, sans-serif"
+    fontFamily: 'Figtree, system-ui, sans-serif'
     fontSize: 20px
     fontWeight: 600
     lineHeight: 1.4
   display:
-    fontFamily: "Figtree, system-ui, sans-serif"
+    fontFamily: 'Figtree, system-ui, sans-serif'
     fontSize: 28px
     fontWeight: 600
     lineHeight: 1.3333

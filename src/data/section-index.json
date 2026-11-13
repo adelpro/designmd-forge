@@ -1,35 +1,181 @@
 {
-  "neutral_designs": 290,
-  "designs_with_groups": 289,
+  "neutral_designs": 301,
+  "designs_with_groups": 300,
   "excluded_flavor_files": 600,
   "counts": {
-    "groups": 1474,
+    "groups": 1532,
     "by_group": {
-      "buttons": 289,
-      "cards": 214,
-      "footer": 37,
-      "navigation": 272,
-      "other": 280,
-      "inputs": 271,
-      "banned_motion": 5,
-      "durations_easings": 5,
-      "motion_roles": 5,
-      "reduced_motion": 5,
+      "badges": 41,
+      "buttons": 300,
+      "cards": 223,
+      "inputs": 280,
+      "navigation": 281,
+      "other": 291,
+      "footer": 40,
+      "banned_motion": 6,
+      "durations_easings": 6,
+      "motion_roles": 6,
+      "reduced_motion": 6,
       "tabs": 15,
-      "badges": 40,
       "lists": 15,
       "tables": 7,
-      "header": 9,
+      "header": 10,
       "avatars": 3,
       "modals": 1,
       "empty_states": 1
     },
     "by_section": {
-      "components": 1444,
-      "motion": 30
+      "components": 1498,
+      "motion": 34
     }
   },
   "groups": [
+    {
+      "slug": "1win",
+      "brand": "1win",
+      "title": "1win",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "badges",
+      "variant": null,
+      "heading": "Pills & Badges",
+      "matched_alias": "badges",
+      "text": "**`pill-badge`** — the solid blue status/count badge.\n- Background `{colors.secondary}`, text `{colors.on-primary}`, type `{typography.caption}`, rounded `{rounded.full}`, padding `0` `{spacing.xs}` (0×4px).\n\n**`pill-outline`** — the bordered filter/category pill.\n- Text `{colors.ink}`, type `{typography.title}`, rounded `{rounded.full}`, padding 0×8px, with a `{colors.hairline}` border.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "outline",
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "1win",
+      "brand": "1win",
+      "title": "1win",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "**`button-primary`** — the green \"Registration\" / primary-confirm CTA, the highest-visibility control.\n- Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.body}`, rounded `{rounded.lg}`, padding `{spacing.sm}` `{spacing.md}` (8×12px).\n\n**`button-secondary`** — the blue \"Log In\" / secondary action and the \"Show more\" pill.\n- Background `{colors.secondary}`, text `{colors.on-primary}`, type `{typography.body}`, rounded `{rounded.lg}`, padding 8×12px.\n\n**`button-tertiary`** — the dark-grey utility button (\"More events\", \"Read more\").\n- Background `{colors.surface}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.xl}`, padding 8×12px.\n\n**`button-ghost`** — a low-emphasis grey control on dense rows.\n- Background `{colors.surface}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.lg}`, padding `0` `{spacing.sm}` (0×8px).",
+      "facets": {
+        "items": [
+          "cta"
+        ],
+        "states": [],
+        "traits": [
+          "ghost",
+          "pill"
+        ],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "1win",
+      "brand": "1win",
+      "title": "1win",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Cards & Containers",
+      "matched_alias": "cards & containers",
+      "text": "**`game-tile`** — the core discovery unit: a full-bleed game thumbnail.\n- Background `{colors.surface}` (placeholder), rounded `{rounded.card}`. Artwork fills edge-to-edge with no padding.\n\n**`hero-banner`** — the top welcome-bonus / promo banner.\n- Background `{colors.surface}` with edge-to-edge gradient imagery, headline `{colors.ink}` in `{typography.display}`, rounded `{rounded.card}`, padding `{spacing.xxl}`.\n\n**`promo-card`** — a promotions-page card (full-bleed photo + title + chips).\n- Background `{colors.surface}`, title `{colors.ink}`, rounded `{rounded.card}`, padding `{spacing.lg}`.\n\n**`feature-card`** — generic dark content card.\n- Background `{colors.surface}`, text `{colors.ink}`, border `{colors.hairline}`, rounded `{rounded.card}`, padding `{spacing.lg}`.\n\n**`feature-card-elevated`** — a feature card lifted above the page (floating shadow), base for modal/toast surfaces.\n- Background `{colors.surface}`, text `{colors.ink}`, rounded `{rounded.card}`, padding `{spacing.lg}`, soft `rgba(0,0,0,0.4)` shadow.\n\n**`betslip-panel`** — the docked sportsbook betslip / wheel-of-fortune panel.\n- Background `{colors.surface}`, text `{colors.ink}`, rounded `{rounded.card}`, padding `{spacing.lg}`. Confirm action uses `button-primary`.\n\n**`footer`** — the page footer (support, information, categories columns).\n- Background `{colors.canvas}`, text `{colors.muted}`, headings `{colors.ink}`, padding `{spacing.xxl}`.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "gradient"
+        ],
+        "divider": "shadow",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "1win",
+      "brand": "1win",
+      "title": "1win",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Inputs & Forms",
+      "matched_alias": "inputs",
+      "text": "**`text-input`** — search and betslip amount fields.\n- Background `{colors.surface}`, text `{colors.ink}`, placeholder `{colors.faint}`, border `{colors.hairline}`, type `{typography.body}`, rounded `{rounded.md}`, padding 8×12px.\n\n**`bet-odds-button`** — the odds chip in sportsbook match rows.\n- Background `{colors.surface}`, text `{colors.ink}`, type `{typography.ui}`, rounded `{rounded.md}`, padding 8×12px. Selected state highlights in `{colors.secondary}`.",
+      "facets": {
+        "items": [],
+        "states": [
+          "selected"
+        ],
+        "traits": [],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "1win",
+      "brand": "1win",
+      "title": "1win",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "navigation",
+      "variant": null,
+      "heading": "Navigation",
+      "matched_alias": "navigation",
+      "text": "**`top-nav`** — the sticky header carrying the 1win wordmark, search, balance, and the green Registration + blue Log In CTAs.\n- Background `{colors.canvas}`, text `{colors.ink}`, padding 8×16px, with a `{colors.hairline}` base edge.\n\n**`sidebar-rail`** — the fixed left icon rail (Casino, Sports, categories).\n- Background `{colors.canvas}`, glyphs `{colors.muted}`, padding `{spacing.sm}`. Active item marked in `{colors.primary}`.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [],
+        "position": "fixed",
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "1win",
+      "brand": "1win",
+      "title": "1win",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Examples (illustrative)",
+      "matched_alias": null,
+      "text": "> Kit-mirror demonstration surfaces. Each `ex-*` entry references 1win's brand-native primitives (`{colors.surface}`, `{colors.primary}`, `{rounded.card}`, the spacing scale) so downstream consumers re-skin the same 10 illustrative surfaces consistently. These are not extracted brand components.\n\n**`ex-pricing-tier`** — Default Pricing tier card. Re-uses feature-card chrome with brand canvas-soft surface.\n- Properties: `backgroundColor`, `textColor`, `borderColor`, `rounded`, `padding`\n\n**`ex-pricing-tier-featured`** — Featured/highlighted tier — polarity-flipped surface (dark fill + light text in light mode, light fill + dark text in dark mode).\n- Properties: `backgroundColor`, `textColor`, `rounded`, `padding`\n\n**`ex-product-selector`** — What's Included summary card — re-purposed for SaaS / B2B verticals (NOT a literal product gallery).\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-cart-drawer`** — Subscription summary — re-purposed for SaaS / B2B (line items per add-on, not literal cart).\n- Properties: `backgroundColor`, `rounded`, `padding`, `item-divider`\n\n**`ex-app-shell-row`** — Sidebar nav row inside the App Shell example. Active state uses brand primary as the indicator.\n- Properties: `backgroundColor`, `activeIndicator`, `rounded`, `padding`\n\n**`ex-data-table-cell`** — Default data-table th + td chrome. Header uses mono-caps eyebrow typography; body uses body-sm.\n- Properties: `headerBackground`, `headerTypography`, `bodyTypography`, `cellPadding`, `rowBorder`\n\n**`ex-auth-form-card`** — Sign-in / sign-up card. Re-uses feature-card chrome with text-input primitives inside.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-modal-card`** — Modal dialog surface — same chrome as feature-card with elevated shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-empty-state-card`** — Empty-state illustration frame.\n- Properties: `backgroundColor`, `rounded`, `padding`, `captionTypography`\n\n**`ex-toast`** — Toast notification surface — feature-card shape + medium shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`, `typography`",
+      "facets": {
+        "items": [],
+        "states": [
+          "pressed"
+        ],
+        "traits": [],
+        "divider": "shadow",
+        "surface": "canvas"
+      },
+      "derived": true
+    },
     {
       "slug": "airbnb",
       "brand": "airbnb",
@@ -296,6 +442,131 @@
         ],
         "divider": "hairline",
         "surface": "accent"
+      },
+      "derived": true
+    },
+    {
+      "slug": "aljazeera",
+      "brand": "aljazeera",
+      "title": "Al Jazeera",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "**`button-pill-dark`** — Sign up, Subscribe, the LIVE masthead control\n- Fill `{colors.ink}`, label `{colors.on-primary}` at `{typography.button}`, rounded `{rounded.lg}`, padding 6px 17px. The standing action shape across the news surface.\n\n**`button-pill-mini`**\n- The tiny `{colors.ink}` counter pill at `{rounded.full}`, padding 1px 6px — photo-count overlays and compact toggles.",
+      "facets": {
+        "items": [
+          "newsletter"
+        ],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "aljazeera",
+      "brand": "aljazeera",
+      "title": "Al Jazeera",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Cards & Containers",
+      "matched_alias": "cards & containers",
+      "text": "**`news-card`**\n- Square photography above or beside an `{typography.headline-md}`/`{typography.headline-sm}` ink headline with `{typography.caption}` metadata; no fill, no border — position and weight define it.\n\n**`media-thumb`**\n- The `{rounded.md}` still used in video carousels and thumb-link rows.\n\n**`newsletter-card`**\n- `{colors.soft}` panel, `{typography.headline-md}` title, supporting `{typography.body-sm}`, containing `text-input` and a `button-pill-dark`, padded `{spacing.xl}`.\n\n**`most-popular-row`** + **`popular-numeral`**\n- Ranked list rows divided by `{colors.hairline}` with an oversized `{colors.slate}` numeral at `{typography.headline-lg}` beside an `{typography.headline-sm}` headline.\n\n**`award-card`**\n- Network awards grid cell: square news photo, `{typography.headline-sm}` title, `{typography.caption}` date, `{colors.graphite}` summary.\n\n**`leader-card`** + **`leader-band`**\n- Portrait cards on `{colors.network-canvas}` with base scrims and `{colors.on-primary}` name/role text; senior leaders get full-width gray studio bands with `{typography.network-display}` names over a short white rule.",
+      "facets": {
+        "items": [
+          "newsletter"
+        ],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "aljazeera",
+      "brand": "aljazeera",
+      "title": "Al Jazeera",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Inputs & Forms",
+      "matched_alias": "inputs",
+      "text": "**`text-input`** — the email capsule\n- `{colors.canvas}` fill, 1px `{colors.slate}` border, rounded `{rounded.xl}`, padding 0px 15px, `{typography.body}` text.\n\n**`network-select`**\n- The network filter control: `{colors.canvas}` fill with a heavy 3px `{colors.select-gold}` border — the system's loudest control edge.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [],
+        "divider": "hairline",
+        "surface": "canvas"
+      },
+      "derived": true
+    },
+    {
+      "slug": "aljazeera",
+      "brand": "aljazeera",
+      "title": "Al Jazeera",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "navigation",
+      "variant": null,
+      "heading": "Navigation",
+      "matched_alias": "navigation",
+      "text": "**`nav-bar`** — Top Nav (Desktop, news)\n- White strip: `logo-block` left (the `{colors.primary}` square with the white eagle), black `{typography.body}` links with caret dropdowns, then the LIVE pill, search, and Sign up pill right. A Trending strip runs beneath with a `{typography.label-black}` label and topic links.\n\n**`network-utility-strip`** + **`network-nav`** + **`network-nav-active`**\n- The corporate header stacks a `{colors.night-navy}` utility strip (language + social) over a white caps-link nav where the active item switches to `{colors.amber}`; the gold eagle mark sits left.\n\n**Top Nav (Mobile)**\n- News nav collapses to hamburger + logo block + LIVE pill.\n\n**`footer`** / **`network-footer`**\n- News footer: white, hairline-topped link columns with the eagle mark. Network footer: `{colors.ink}` black with `{colors.mist}` links and the gold network lockup.",
+      "facets": {
+        "items": [
+          "locale",
+          "social"
+        ],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "aljazeera",
+      "brand": "aljazeera",
+      "title": "Al Jazeera",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Examples (illustrative)",
+      "matched_alias": null,
+      "text": "> Kit-mirror demonstration surfaces. Each `ex-*` entry references brand-native primitives via token syntax so downstream consumers re-skin the same 10 surfaces consistently — these are illustrative compositions stamped with this brand's tokens, not components extracted from the site.\n\n**`ex-pricing-tier`** — Default Pricing tier card. Re-uses feature-card chrome with brand canvas-soft surface.\n- Properties: `backgroundColor`, `textColor`, `borderColor`, `rounded`, `padding`\n\n**`ex-pricing-tier-featured`** — Featured/highlighted tier — polarity-flipped surface (dark fill + light text in light mode, light fill + dark text in dark mode).\n- Properties: `backgroundColor`, `textColor`, `rounded`, `padding`\n\n**`ex-product-selector`** — What's Included summary card — re-purposed for SaaS / B2B verticals (NOT a literal product gallery).\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-cart-drawer`** — Subscription summary — re-purposed for SaaS / B2B (line items per add-on, not literal cart).\n- Properties: `backgroundColor`, `rounded`, `padding`, `item-divider`\n\n**`ex-app-shell-row`** — Sidebar nav row inside the App Shell example. Active state uses brand primary as the indicator.\n- Properties: `backgroundColor`, `activeIndicator`, `rounded`, `padding`\n\n**`ex-data-table-cell`** — Default data-table th + td chrome. Header uses mono-caps eyebrow typography; body uses body-sm.\n- Properties: `headerBackground`, `headerTypography`, `bodyTypography`, `cellPadding`, `rowBorder`\n\n**`ex-auth-form-card`** — Sign-in / sign-up card. Re-uses feature-card chrome with text-input primitives inside.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-modal-card`** — Modal dialog surface — same chrome as feature-card with elevated shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-empty-state-card`** — Empty-state illustration frame.\n- Properties: `backgroundColor`, `rounded`, `padding`, `captionTypography`\n\n**`ex-toast`** — Toast notification surface — feature-card shape + medium shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`, `typography`",
+      "facets": {
+        "items": [],
+        "states": [
+          "pressed"
+        ],
+        "traits": [],
+        "divider": "shadow",
+        "surface": "canvas"
       },
       "derived": true
     },
@@ -2804,6 +3075,168 @@
         ],
         "traits": [],
         "divider": "shadow"
+      },
+      "derived": true
+    },
+    {
+      "slug": "dji",
+      "brand": "dji",
+      "title": "DJI",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "**`button-primary`** — blue pill (\"Buy Now\", active model selector, \"Where to Buy\")\n- Background `{colors.primary}`, text `{colors.on-primary}` in `{typography.button}`, `{rounded.xl}`, padding 0 `{spacing.md}`, 40px tall.\n\n**`button-outline`** — outline pill (\"Learn More\", inactive model selector)\n- Transparent, 1px `{colors.ink}` border, text `{colors.ink}` in `{typography.button}`, `{rounded.xl}`, padding 0 15px, 40px tall.\n\n**`button-outline-lg`** — larger outline pill (\"Compare DJI Camera Drones ›\")\n- 1px `{colors.ink}` border, `{typography.button}`, `{rounded.full}`, padding 14px `{spacing.md}`, 48px tall.\n\n**`button-hero-ghost`** — white ghost pill over hero photography (\"Learn More ›\", \"Buy Now ›\")\n- Transparent, 1px `{colors.on-primary}` border and text, `{typography.ui}`, `{rounded.xxl}`, padding 5px `{spacing.md}`, 32px tall.\n\n**`button-store-buy`** — store Buy Now\n- Background `{colors.store-blue}`, text `{colors.on-primary}` in `{typography.button}`, `{rounded.full}`, padding 14px `{spacing.xxl}`, 48px tall.\n\n**`button-store-cart`** — store Add to Cart\n- Background `{colors.store-blue-tint}`, text `{colors.store-blue}`, same shape as `button-store-buy`. The pair always sits side by side, cart first.\n\n**`button-dark-pill`** — compact dark pill (\"switch now\")\n- Background `{colors.ink}`, text `{colors.on-primary}` in `{typography.ui}`, `{rounded.full}`, padding 6px `{spacing.sm}`, 32px tall.\n\n**`button-download-app`** — footer pill (\"Download App\")\n- Background `{colors.footer-pill}`, text `{colors.on-primary}` in `{typography.button}`, `{rounded.pill}`, padding 10px `{spacing.md}`, 40px tall.\n\n**`compare-options-button`** — full-width store panel button (\"Compare Options\")\n- Background `{colors.canvas-soft}`, text `{colors.ink}` in `{typography.ui}`, `{rounded.sm}`, padding `{spacing.xl}`, with a blue circular chevron at right.\n\n**`text-link`**, **`text-link-store`**, **`card-text-link`** — inline links\n- `{colors.primary}` on the brand site, `{colors.store-blue}` in the store, and `{colors.link-blue}` \"Learn More ›\" on product and explore cards; all followed by a small chevron.",
+      "facets": {
+        "items": [],
+        "states": [
+          "disabled"
+        ],
+        "traits": [
+          "ghost",
+          "outline",
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "dji",
+      "brand": "dji",
+      "title": "DJI",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Cards & Containers",
+      "matched_alias": "cards & containers",
+      "text": "**`product-tile`** — home and category photo tile\n- `{colors.fog}`-toned studio render at `{rounded.none}`, separated by `{spacing.md}` white gutters. A centred `tile-eyebrow`, a logotype product name, a short tagline and two text links or pills sit above the render.\n\n**`tile-eyebrow`** — tile kicker (\"Beginner-Friendly Camera Drones\")\n- `{colors.ink-tertiary}` in `{typography.ui}`.\n\n**`tier-eyebrow`** — product rank label (\"Flagship\", \"Triple-Lens Flagship Camera Drone\")\n- `{colors.tier-orange}` in `{typography.caption}`.\n\n**`product-card`** — category-page product card\n- `{colors.fog}` backdrop, square corners, `tier-eyebrow` above the logotype name, a tagline, then `button-primary` + `button-outline` side by side over the render.\n\n**`comparison-tabs`** + **`comparison-tab-active`** — table switcher (\"Aerial Imaging\", \"Immersive Flight\")\n- Inactive tabs in `{colors.ink-secondary}`, active tab in `{colors.ink}` with an ink underline, on a 1px `{colors.hairline}` track, `{typography.ui}`.\n\n**`spec-column`** + **`spec-caption`** — comparison column\n- Product render, `tier-eyebrow`, model name in `{typography.product-name}`, a `button-primary` \"Where to Buy\" and a `card-text-link`, then stacked spec rows: icon, value in `{typography.spec-value}` and caption in `{colors.steel}`.\n\n**`explore-card`** — white card on the `{colors.fog}` band\n- Background `{colors.canvas}`, square corners, photo on top, centred title in `{typography.title-md}`, one-line description and a `card-text-link`.\n\n**`field-card`** — photo card with overlaid title (\"Video Production\", \"Enterprise\")\n- Full photo, white title in `{typography.card-title-lg}`, subtitle and \"Learn More ›\" in white, square corners.\n\n**`news-card`** — editorial photo card\n- Light photo with a `tile-eyebrow`, title in `{typography.news-title}` and a text link, square corners.\n\n**`feature-link-band`** — \"Where to Buy / Support / Fly Safe\" band\n- Background `{colors.canvas-soft}`, padding `{spacing.section}` vertical, three centred columns of outline icon, title in `{typography.feature-title}` and a link.\n\n**`media-tile`** — store feature tile\n- Background `{colors.media-black}`, white heading and paragraph over product renders or lifestyle photography, square corners, arranged in mixed one- and two-column rows.\n\n**`in-box-tile`** — \"In the Box\" item\n- Background `{colors.canvas-soft}`, square product cut-out, name below in `{typography.ui}` and a \"× 1\" count.\n\n**`footnote-panel`** — numbered spec footnotes\n- Background `{colors.canvas-soft}`, `{typography.caption}` in `{colors.ink-secondary}`.",
+      "facets": {
+        "items": [],
+        "states": [
+          "disabled"
+        ],
+        "traits": [
+          "outline",
+          "underline"
+        ],
+        "divider": "hairline",
+        "columns": 2,
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "dji",
+      "brand": "dji",
+      "title": "DJI",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "footer",
+      "variant": null,
+      "heading": "Footer",
+      "matched_alias": "footer",
+      "text": "**`footer`** — brand-site footer\n- Background `{colors.footer}`, padding `{spacing.xxl}` by `{spacing.md}`. A \"Only in the DJI Store App\" row with `button-download-app` sits above `{colors.footer-divider}` rules, then six link columns with `{typography.footer-heading}` headings in white and links in `{colors.footer-link}`, a subscribe field, social icons and a legal row.\n\n**`footer-store`** — store footer\n- Background `{colors.canvas-soft}`, headings in `{colors.graphite}`, links in `{colors.slate}` `{typography.caption}`, a subscribe field outlined in `{colors.input-border}` and a legal row.",
+      "facets": {
+        "items": [
+          "legal",
+          "newsletter",
+          "social"
+        ],
+        "states": [],
+        "traits": [
+          "outline"
+        ],
+        "surface": "canvas"
+      },
+      "derived": true
+    },
+    {
+      "slug": "dji",
+      "brand": "dji",
+      "title": "DJI",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Inputs & Forms",
+      "matched_alias": "inputs",
+      "text": "**`newsletter-input`** — footer email field on the dark footer\n- Transparent, white `{typography.ui}` text, 1px `{colors.slate}` border rounded only on the left (4px), padding 4px 0 4px `{spacing.sm}`, 32px tall, joined to a square grey submit button.",
+      "facets": {
+        "items": [
+          "newsletter"
+        ],
+        "states": [],
+        "traits": [],
+        "divider": "hairline"
+      },
+      "derived": true
+    },
+    {
+      "slug": "dji",
+      "brand": "dji",
+      "title": "DJI",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "navigation",
+      "variant": null,
+      "heading": "Navigation",
+      "matched_alias": "navigation",
+      "text": "**`announcement-bar`** — slim strip above the nav\n- Background `{colors.announce}`, text `{colors.ink}` in `{typography.ui}`, a `text-link` (\"Shop Now ›\") and a close icon.\n\n**`nav-bar-overlay`** — the home nav over the hero photo\n- Transparent, white `{typography.nav}` labels, 64px tall; logo left, category links, then search, account, `region-pill` and `button-store-pill` at right.\n\n**`nav-bar`** — the white nav on inner pages\n- Background `{colors.canvas}`, labels in `{colors.nav-ink}` `{typography.nav}`, 64px tall.\n\n**`button-store-pill`** — the blue Store button in the nav\n- Background `{colors.primary}`, text `{colors.on-primary}` in `{typography.nav}`, `{rounded.full}`, padding 8px 16px 8px 34px (room for a bag icon), 32px tall.\n\n**`region-pill`** — \"Other Regions\" selector\n- Background `{colors.fog}`, text `{colors.ink}` in `{typography.nav}`, `{rounded.pill}`, padding 0 `{spacing.sm}`, 32px tall, with a globe icon.\n\n**`store-nav`** — store header\n- Background `{colors.canvas}`, `{typography.ui}` category links with a 2px indicator, a `care-tag` beside \"Services\", and search, cart and account icons.\n\n**`category-strip`** — icon row under the category-page nav\n- Background `{colors.announce}`, 124px tall, product icons over `{typography.caption}` labels.",
+      "facets": {
+        "items": [
+          "locale"
+        ],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "dji",
+      "brand": "dji",
+      "title": "DJI",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Store Purchase Components",
+      "matched_alias": null,
+      "text": "**`benefits-panel`** — shipping and feature summary beside the title\n- Background `{colors.panel}`, text `{colors.graphite}` in `{typography.ui}`, padding `{spacing.md}`, `{rounded.sm}` container, icon-led lists with a chevron.\n\n**`option-card`** + **`option-card-active`** + **`option-card-disabled`** — selectable product option\n- Background `{colors.canvas}`, `{rounded.sm}`, title in `{typography.option-title}` `{colors.store-ink}` beside a product thumbnail, price below. Default has a 1px `{colors.card-border}` border and `{spacing.xl}` padding; selected has a 2px `{colors.store-blue}` ring with 23px padding; unavailable has a 1px dashed `{colors.dashed-border}` border and a red \"Out of Stock\" line in `{colors.error}`.\n\n**`option-badge`** — corner badge on a highlighted option\n- Background `{colors.badge-orange}`, white `{typography.badge}`, padding 2px `{spacing.xs}`, rounded only at the bottom-left (8px), pinned to the card's top-right corner.\n\n**`care-tag`** — small \"DJI Care\" tag in the store nav\n- Background `{colors.store-blue}`, white `{typography.micro}`, `{rounded.xs}`, padding 0 `{spacing.xxs}`.\n\n**`media-toggle`** + **`media-toggle-active`** — gallery switch (\"Photos\" / \"Intro\")\n- `{rounded.pill}`, padding `{spacing.xs}` by `{spacing.md}`, 32px tall; active fills `{colors.ink}` with a white label, inactive is plain text.\n\n**`quantity-stepper`** — accessory quantity control\n- Minus, value and plus cells outlined in `{colors.control-border}`, `{typography.ui}`.\n\n**`purchase-bar`** — sticky bar with delivery, price and CTAs\n- Background `{colors.canvas}`, 1px `{colors.divider}` rule, soft shadow, padding `{spacing.md}` vertical; delivery selector at left, price in `{typography.price}`, then `button-store-cart` + `button-store-buy` at right.\n\n**`region-banner`** — region suggestion bar at the top of the store\n- Background `{colors.canvas}`, text `{colors.graphite}` in `{typography.ui}`, padding `{spacing.lg}` by `{spacing.sm}`, close icon at left and a `button-dark-pill` at right.\n\n**`faq-row`** — FAQ question row\n- Question in `{typography.faq}` `{colors.ink}`, chevron at right, 1px `{colors.divider}` rule beneath.",
+      "facets": {
+        "items": [
+          "locale"
+        ],
+        "states": [
+          "disabled",
+          "selected"
+        ],
+        "traits": [
+          "outline",
+          "pill"
+        ],
+        "position": "sticky",
+        "divider": "shadow",
+        "surface": "ink"
       },
       "derived": true
     },
@@ -28154,6 +28587,127 @@
       "derived": true
     },
     {
+      "slug": "jobright",
+      "brand": "jobright",
+      "title": "Jobright",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "**`button-primary`** — the large black pill CTA (\"Try For Free\", \"Find My Matches\", \"Start Autofilling\")\n- Background `{colors.ink}`, white label `{colors.on-dark}`, type `{typography.button}`, rounded `{rounded.lg}`, wide padding `{spacing.sm} {spacing.section}`.\n\n**`button-primary-sm`** — the compact black nav pill (\"Join Now\")\n- Background `{colors.ink}`, white label `{colors.on-dark}`, type `{typography.nav-link}`, rounded `{rounded.pill-nav}`, padding `{spacing.xxs} {spacing.md}`.\n\n**`button-green`** — the signature mint-green pill (\"Try For Free\" on the closing CTA)\n- Background `{colors.primary}`, black label `{colors.on-primary}`, 1px black border `{colors.ink}`, type `{typography.button}`, rounded `{rounded.pill}`, padding `{spacing.sm} {spacing.xxl}`.\n\n**`button-dark-square`** — a squarer black utility button\n- Background `{colors.ink}`, white label `{colors.on-dark}`, type `{typography.button}`, rounded `{rounded.sm}`, padding `{spacing.sm} {spacing.md}`.",
+      "facets": {
+        "items": [
+          "cta"
+        ],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "jobright",
+      "brand": "jobright",
+      "title": "Jobright",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Cards & Containers",
+      "matched_alias": "cards & containers",
+      "text": "**`feature-card`** — the white product-mockup card demoing an AI feature\n- Background `{colors.canvas}`, type `{typography.body-md}`, rounded `{rounded.card}` (40px, with one asymmetric sharp corner), padding `{spacing.lg}`, floating on a soft shadow over the mint band.\n\n**`video-card`** — the rounded hero video frame\n- Background `{colors.canvas}`, 1px `{colors.ink}` border, rounded `{rounded.md}`.\n\n**`testimonial-card`** — a user-love quote card\n- Background `{colors.canvas}`, 1px `{colors.hairline}` border, rounded `{rounded.lg}`, padding `{spacing.lg}`, with an avatar, name, and quote.\n\n**`score-ring`** — the circular AI-match score indicator\n- White surface `{colors.canvas}`, mint value `{colors.primary}` in `{typography.heading-4}`, rounded `{rounded.full}`, size 64px.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [],
+        "divider": "shadow",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "jobright",
+      "brand": "jobright",
+      "title": "Jobright",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Inputs & Forms",
+      "matched_alias": "inputs",
+      "text": "**`text-input`** — search and form fields\n- Background `{colors.canvas}`, 1px `{colors.hairline}` border, text `{colors.ink}`, type `{typography.body-md}`, rounded `{rounded.sm}`, padding `{spacing.sm} {spacing.md}`.\n\n**`job-search-bar`** — the footer job-search control row\n- White pill `{colors.canvas}`, 1px `{colors.hairline}` border, rounded `{rounded.full}`, padding `{spacing.xs} {spacing.md}`, holding Work Model / Location / Experience select controls and a submit.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "jobright",
+      "brand": "jobright",
+      "title": "Jobright",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "navigation",
+      "variant": null,
+      "heading": "Navigation",
+      "matched_alias": "navigation",
+      "text": "**`nav-bar`** — top navigation (desktop)\n- Background `{colors.canvas}`, links `{colors.ink}` in `{typography.nav-link}`, padding `{spacing.md}`. Logo left, link cluster center, \"Sign In\" plus a persistent black `{component.button-primary-sm}` \"Join Now\" pill right. Collapses to a hamburger under 768px.\n\n**`footer`** — the site footer\n- Background `{colors.canvas}`, muted `{colors.muted}` links in `{typography.body-sm}`, padding `{spacing.section}`. Multi-column link groups, logo, social icons, and the `{component.job-search-bar}` above it.",
+      "facets": {
+        "items": [
+          "social"
+        ],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "jobright",
+      "brand": "jobright",
+      "title": "Jobright",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Examples (illustrative)",
+      "matched_alias": null,
+      "text": "> Auto-derived kit-mirror demonstration surfaces (`scripts/derive-examples-block.mjs`). Each `ex-*` entry references brand-native primitives so downstream consumers (`/preview-design`, `/generate-kit`) re-skin the same 10 surfaces consistently. `TO_FILL` markers indicate missing primitives — resolve in the LLM judgment pass.\n\n**`ex-pricing-tier`** — Default Pricing tier card. Re-uses feature-card chrome with brand canvas-soft surface.\n- Properties: `backgroundColor`, `textColor`, `borderColor`, `rounded`, `padding`\n\n**`ex-pricing-tier-featured`** — Featured/highlighted tier — polarity-flipped surface (dark fill + light text in light mode, light fill + dark text in dark mode).\n- Properties: `backgroundColor`, `textColor`, `rounded`, `padding`\n\n**`ex-product-selector`** — What's Included summary card — re-purposed for SaaS / B2B verticals (NOT a literal product gallery).\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-cart-drawer`** — Subscription summary — re-purposed for SaaS / B2B (line items per add-on, not literal cart).\n- Properties: `backgroundColor`, `rounded`, `padding`, `item-divider`\n\n**`ex-app-shell-row`** — Sidebar nav row inside the App Shell example. Active state uses brand primary as the indicator.\n- Properties: `backgroundColor`, `activeIndicator`, `rounded`, `padding`\n\n**`ex-data-table-cell`** — Default data-table th + td chrome. Header uses mono-caps eyebrow typography; body uses body-sm.\n- Properties: `headerBackground`, `headerTypography`, `bodyTypography`, `cellPadding`, `rowBorder`\n\n**`ex-auth-form-card`** — Sign-in / sign-up card. Re-uses feature-card chrome with text-input primitives inside.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-modal-card`** — Modal dialog surface — same chrome as feature-card with elevated shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-empty-state-card`** — Empty-state illustration frame.\n- Properties: `backgroundColor`, `rounded`, `padding`, `captionTypography`\n\n**`ex-toast`** — Toast notification surface — feature-card shape + medium shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`, `typography`",
+      "facets": {
+        "items": [],
+        "states": [
+          "pressed"
+        ],
+        "traits": [],
+        "divider": "shadow",
+        "surface": "canvas"
+      },
+      "derived": true
+    },
+    {
       "slug": "kraken",
       "brand": "kraken",
       "title": "Kraken",
@@ -28886,6 +29440,125 @@
         "items": [],
         "states": [],
         "traits": []
+      },
+      "derived": true
+    },
+    {
+      "slug": "mercury",
+      "brand": "mercury",
+      "title": "Mercury",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "**`button-primary`**: a `{colors.primary}` pill with a `{colors.on-primary}` `{typography.ui}` label, `{rounded.xl}` corners, 0 × 20px padding and 40px height. Used for \"Open account\".\n\n**`button-glass-dark`**: a translucent lavender-grey pill (20% fill, with a 1px border at 36%) holding an `{colors.on-dark}` label. Used on the dark hero (\"Launch demo\").\n\n**`button-tint-dark`**: a periwinkle pill at 20% opacity with an `{colors.on-dark}` label. Used for \"Contact sales\" on dark sections.\n\n**`button-tint-light`**: an indigo pill at 10% opacity with an `{colors.ink}` label. Used for \"Explore demo\" and the in-card \"Open account\" on light pages.\n\n**`button-outline-light`**: a grey-violet pill at 10% opacity with a 1px border at 22% and an `{colors.ink}` label. Used for \"Contact sales\" on light heroes.\n\n**`button-small`**: a 32px-tall version of `button-tint-light` in `{typography.ui-sm}` with 0 × 16px padding (\"Expand all\").\n\n**`button-icon-round`**: circular icon controls (`{rounded.full}`) for play/pause and the \"+\" affordance on spotlight cards.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "glass",
+          "outline",
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "mercury",
+      "brand": "mercury",
+      "title": "Mercury",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Cards & Containers",
+      "matched_alias": "cards & containers",
+      "text": "**`feature-card-dark`**: `{colors.night-raised}` fill, `{rounded.md}` corners, `{spacing.xxl}` padding, a `{typography.heading-2}` title in `{colors.on-dark}` and `{colors.fog}` body copy. Used for homepage spotlight and feature cards.\n\n**`feature-card-light`**: the same shape on `{colors.lavender}`, with `{colors.ink}` titles and `{colors.ink-secondary}` `{typography.body-lg}` descriptions. Used for product-platform cards.\n\n**`pricing-card`**: a `{colors.surface-tint}` wrapper with `{rounded.md}` corners and a very faint shadow. It holds a header row with a `eyebrow-label` and `toggle-switch`, then three `pricing-tier-column`s.\n\n**`pricing-tier-column`**: a white column with the plan name in `{typography.heading-2}` (the plan suffix in `{colors.primary}`), the price, a `{colors.ink-secondary}` description, a `button-tint-light` or `button-primary`, and an icon-led feature list.\n\n**`accordion-row`**: a full-width row with a leading icon, a `{typography.ui-sm}` label, a trailing chevron, 10px vertical padding and a 1px `{colors.fog}` rule between rows. Used for plan comparison and FAQs.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "raised"
+        ],
+        "divider": "shadow",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "mercury",
+      "brand": "mercury",
+      "title": "Mercury",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Inputs & Forms",
+      "matched_alias": "inputs",
+      "text": "**`text-input`**: an email field with `{typography.ui}` text, 20px left padding, 46px height, and `{rounded.xl}` on the left edge only, so it fuses to the button beside it.\n\n**`email-capture`**: the hero sign-up capsule, a `text-input` joined to a `button-primary` inside one rounded-full shell.\n\n**`toggle-switch`**: a `{colors.primary}` pill switch beside an `{colors.ink-secondary}` `{typography.ui}` label (\"Annual Pricing (15% off)\").",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "mercury",
+      "brand": "mercury",
+      "title": "Mercury",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "navigation",
+      "variant": null,
+      "heading": "Navigation",
+      "matched_alias": "navigation",
+      "text": "**`nav-bar`**: a 72px `{colors.night}` bar on every page, with 16px × 32px padding. It holds the wordmark on the left, dropdown `nav-link` pills in the centre, and \"Log in\" plus a `button-primary` on the right.\n\n**`nav-link`**: transparent 40px pills (`{rounded.pill}`, 0 × 20px padding) in `{colors.on-dark}` `{typography.ui}` with small chevrons.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "pill"
+        ]
+      },
+      "derived": true
+    },
+    {
+      "slug": "mercury",
+      "brand": "mercury",
+      "title": "Mercury",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Examples (illustrative)",
+      "matched_alias": null,
+      "text": "> Auto-derived kit-mirror demonstration surfaces (`scripts/derive-examples-block.mjs`). Each `ex-*` entry references brand-native primitives so downstream consumers (`/preview-design`, `/generate-kit`) re-skin the same 10 surfaces consistently.\n\n**`ex-pricing-tier`** — Default Pricing tier card. Re-uses feature-card chrome with brand canvas-soft surface.\n- Properties: `backgroundColor`, `textColor`, `borderColor`, `rounded`, `padding`\n\n**`ex-pricing-tier-featured`** — Featured/highlighted tier — polarity-flipped surface (dark fill + light text in light mode, light fill + dark text in dark mode).\n- Properties: `backgroundColor`, `textColor`, `rounded`, `padding`\n\n**`ex-product-selector`** — What's Included summary card — re-purposed for SaaS / B2B verticals (NOT a literal product gallery).\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-cart-drawer`** — Subscription summary — re-purposed for SaaS / B2B (line items per add-on, not literal cart).\n- Properties: `backgroundColor`, `rounded`, `padding`, `item-divider`\n\n**`ex-app-shell-row`** — Sidebar nav row inside the App Shell example. Active state uses brand primary as the indicator.\n- Properties: `backgroundColor`, `activeIndicator`, `rounded`, `padding`\n\n**`ex-data-table-cell`** — Default data-table th + td chrome. Header uses mono-caps eyebrow typography; body uses body-sm.\n- Properties: `headerBackground`, `headerTypography`, `bodyTypography`, `cellPadding`, `rowBorder`\n\n**`ex-auth-form-card`** — Sign-in / sign-up card. Re-uses feature-card chrome with text-input primitives inside.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-modal-card`** — Modal dialog surface — same chrome as feature-card with elevated shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-empty-state-card`** — Empty-state illustration frame.\n- Properties: `backgroundColor`, `rounded`, `padding`, `captionTypography`\n\n**`ex-toast`** — Toast notification surface — feature-card shape + medium shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`, `typography`",
+      "facets": {
+        "items": [],
+        "states": [
+          "pressed"
+        ],
+        "traits": [],
+        "divider": "shadow",
+        "surface": "canvas"
       },
       "derived": true
     },
@@ -30753,6 +31426,251 @@
       "derived": true
     },
     {
+      "slug": "mydealz",
+      "brand": "mydealz",
+      "title": "mydealz",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "**`button-primary`** — the green action (\"Zum Deal\", \"Deal-Alarm anlegen\", \"Hinzufügen\")\n- Fill `{colors.primary}`, label `{colors.on-primary}` in `{typography.ui}`, shape `{rounded.full}`, padding `0px 14px`, often with a trailing external-link or plus glyph\n\n**`button-outline-green`** — brand-tinted secondary (\"+ Beitrag\")\n- `{colors.surface}` fill, `{colors.primary}` label + border, `{rounded.full}`, padding `0px 14px`\n\n**`button-outline-neutral`** — quiet chrome (\"Menü\")\n- `{colors.surface}` fill, `{colors.ink}` label, `{colors.hairline}` border, `{rounded.full}`, padding `0px 12px`\n\n**`button-muted`** — de-emphasized action (\"Ohne Zustimmung weiter\")\n- `{colors.surface}` fill, `{colors.body}` label, `{colors.hairline}` border, `{rounded.full}`\n\n**`button-tag`** — compact utility control\n- `{colors.surface}` fill, `{colors.ink}` label, `{rounded.md}`, tight `0px 4px` padding",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "outline"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "mydealz",
+      "brand": "mydealz",
+      "title": "mydealz",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Cards & Containers",
+      "matched_alias": "cards & containers",
+      "text": "**`deal-card`** — the feed's atom\n- `{colors.surface}` on `{colors.hairline}`, `{rounded.md}`, `{spacing.lg}` padding; media-left thumbnail, bold black title, a `price-lockup`, a `temperature-control`, merchant + author line, and a `button-primary` foot with comment/share/bookmark icons\n\n**`sidebar-card`** — coupon / news / discussion tiles\n- Same white-on-hairline `{rounded.md}` chrome as `deal-card`, in the right rail\n\n**`timestamp-pill`** — \"Gepostet vor …\" marker\n- `{colors.canvas}` fill, `{colors.body}` `{typography.caption}`, `{rounded.md}`, pinned top-right on a card",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "canvas"
+      },
+      "derived": true
+    },
+    {
+      "slug": "mydealz",
+      "brand": "mydealz",
+      "title": "mydealz",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Inputs & Forms",
+      "matched_alias": "inputs",
+      "text": "**`search-pill`** — the header search\n- `{colors.surface}` pill at `{rounded.full}`, `{colors.hairline}` border, `{colors.body}` placeholder in `{typography.body}`, magnifier glyph left\n\n**`text-input`**\n- `{colors.surface}` field, `{colors.ink}` text, navy-translucent border, fully-round `{rounded.full}`, padding `9px 35px`\n\n**`email-input`**\n- `{colors.surface}` field at `{rounded.md}` (square-cornered against the pill search), padding `9px 16px`",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "mydealz",
+      "brand": "mydealz",
+      "title": "mydealz",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "navigation",
+      "variant": null,
+      "heading": "Navigation",
+      "matched_alias": "navigation",
+      "text": "**`nav-bar`**\n- `{colors.surface}` bar with `{colors.hairline}` bottom rule: mydealz frog logo, `button-outline-neutral` \"Menü\", `search-pill`, \"Deal-Alarm anlegen\" and \"Einloggen\" text links, `button-outline-green` \"+ Beitrag\"; a category strip (Kategorien, Gutscheine, Freebies, Deals, Diskussionen, Club) sits below\n\n**`footer`**\n- `{colors.surface}` over a `{colors.hairline}` top rule; link columns (Firma, Community, Rechtliches) in `{colors.body}` with green links, social circle icons, app-store badges, and a `country-selector`\n\n**`country-selector`**\n- `{colors.surface}` `{rounded.md}` dropdown with flag + label, `{colors.hairline}` border",
+      "facets": {
+        "items": [
+          "social"
+        ],
+        "states": [],
+        "traits": [
+          "outline",
+          "pill"
+        ],
+        "divider": "hairline"
+      },
+      "derived": true
+    },
+    {
+      "slug": "mydealz",
+      "brand": "mydealz",
+      "title": "mydealz",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Examples (illustrative)",
+      "matched_alias": null,
+      "text": "> Kit-mirror demonstration surfaces. These are not brand-native components — each `ex-*` entry references the brand primitives above so every example surface is shaped by this spec rather than template defaults.\n\n**`ex-pricing-tier`** — Default Pricing tier card. Re-uses feature-card chrome with brand canvas-soft surface.\n- Properties: `backgroundColor`, `textColor`, `borderColor`, `rounded`, `padding`\n\n**`ex-pricing-tier-featured`** — Featured/highlighted tier — polarity-flipped surface (dark fill + light text in light mode, light fill + dark text in dark mode).\n- Properties: `backgroundColor`, `textColor`, `rounded`, `padding`\n\n**`ex-product-selector`** — What's Included summary card — re-purposed for SaaS / B2B verticals (NOT a literal product gallery).\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-cart-drawer`** — Subscription summary — re-purposed for SaaS / B2B (line items per add-on, not literal cart).\n- Properties: `backgroundColor`, `rounded`, `padding`, `item-divider`\n\n**`ex-app-shell-row`** — Sidebar nav row inside the App Shell example. Active state uses brand primary as the indicator.\n- Properties: `backgroundColor`, `activeIndicator`, `rounded`, `padding`\n\n**`ex-data-table-cell`** — Default data-table th + td chrome. Header uses mono-caps eyebrow typography; body uses body-sm.\n- Properties: `headerBackground`, `headerTypography`, `bodyTypography`, `cellPadding`, `rowBorder`\n\n**`ex-auth-form-card`** — Sign-in / sign-up card. Re-uses feature-card chrome with text-input primitives inside.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-modal-card`** — Modal dialog surface — same chrome as feature-card with elevated shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-empty-state-card`** — Empty-state illustration frame.\n- Properties: `backgroundColor`, `rounded`, `padding`, `captionTypography`\n\n**`ex-toast`** — Toast notification surface — feature-card shape + medium shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`, `typography`",
+      "facets": {
+        "items": [],
+        "states": [
+          "pressed"
+        ],
+        "traits": [],
+        "divider": "shadow",
+        "surface": "canvas"
+      },
+      "derived": true
+    },
+    {
+      "slug": "nerdwallet",
+      "brand": "nerdwallet",
+      "title": "NerdWallet",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "**`button-primary`** — the green action (\"SIGN UP\", \"APPLY NOW\", \"LEARN MORE\")\n- Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.ui-label}`, rounded `{rounded.xs}`, padding `{spacing.md}`, Elevation Level 3.\n- Uppercase label. The flat 16px padding on all four sides is what gives it its blocky proportion, and the 2px radius keeps it reading as a rectangle rather than a pill.\n\n**`button-secondary`** — the quiet companion (\"SIGN IN\")\n- Background `{colors.canvas-soft}`, text `{colors.primary}`, type `{typography.ui-label}`, rounded `{rounded.xs}`, padding `{spacing.md}`.\n- Same geometry as `{button-primary}` with the fill and text roles swapped, so the pair reads as one control with two weights.\n\n**`button-outline`** — the compact utility control\n- Text `{colors.primary}`, type `{typography.ui-label}`, rounded `{rounded.lg}`, padding `8px 16px`, 1px `{colors.hairline-strong}` border, no fill.\n- The only button that departs from both the square radius and the flat padding — noticeably shorter and softer than the filled pair.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "outline",
+          "pill",
+          "uppercase"
+        ],
+        "divider": "hairline",
+        "surface": "canvas"
+      },
+      "derived": true
+    },
+    {
+      "slug": "nerdwallet",
+      "brand": "nerdwallet",
+      "title": "NerdWallet",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Cards & Containers",
+      "matched_alias": "cards & containers",
+      "text": "**`product-card`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body-md}`, rounded `{rounded.lg}`, 1px `{colors.hairline-strong}` border, Elevation Level 2.\n- The workhorse of the comparison pages: product name, star rating, a `{button-primary}` action column on the right, then a spec grid of `{spec-cell}` blocks and a stack of `{accordion-row}` disclosures.\n\n**`category-tile`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body-sm}`, rounded `{rounded.xxl}`.\n- Flat illustration on top, bold title, two lines of `{colors.muted}` description, with a small diagonal arrow pinned to the upper-right corner.\n\n**`section-panel-mint`**\n- Background `{colors.mint-50}`, text `{colors.ink}`, rounded `{rounded.xxxl}`.\n- The pale wash that holds the homepage category grid, providing separation without a border or shadow.\n\n**`media-frame-mint`**\n- Background `{colors.mint-100}`, rounded `{rounded.xxxl}`. Holds editorial photography with the mint visible as a border-like margin around the image.\n\n**`expert-tip-panel`**\n- Background `{colors.lime-panel}`, text `{colors.ink}`, type `{typography.body-md}`, rounded `{rounded.lg}`.\n- A signature editorial component: a wide pale-lime band opened by a bold arrow-prefixed label, carrying advisory copy and hosting `{stat-block-dark}` and `{stat-chip-light}` inside it.\n\n**`stat-block-dark`**\n- Background `{colors.primary-deep}`, text `{colors.on-primary}`, type `{typography.stat-value}`, rounded `{rounded.lg}`.\n- Sits inside `{expert-tip-panel}`, stacking a multiplier and a rate with small `{typography.caption}` labels beneath each, over an outline arrow motif.\n\n**`stat-chip-light`**\n- Background `{colors.canvas}`, label `{colors.muted}` at `{typography.caption}`, rounded `{rounded.lg}`.\n- The white counterpart that carries the comparison figure beside `{stat-block-dark}`.\n\n**`accordion-row`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.ui-label}`, rounded `{rounded.lg}`.\n- A leading glyph, a label and a trailing chevron, separated from its neighbours by a `{colors.hairline}` rule.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "outline"
+        ],
+        "divider": "shadow",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "nerdwallet",
+      "brand": "nerdwallet",
+      "title": "NerdWallet",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Inputs & Forms",
+      "matched_alias": "inputs",
+      "text": "**`text-input`**\n- Text `{colors.ink}`, type `{typography.body-md}`, rounded `{rounded.none}`.\n- Square-cornered. The system gives inputs no fill and no border of their own — they sit inside a bordered container that supplies the chrome, which is why the input itself carries almost no styling.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "nerdwallet",
+      "brand": "nerdwallet",
+      "title": "NerdWallet",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "navigation",
+      "variant": null,
+      "heading": "Navigation",
+      "matched_alias": "navigation",
+      "text": "**`nav-bar`** (Desktop)\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.ui-label}`.\n- Wordmark left, eight category links centre, then search, `{button-secondary}` and `{button-primary}` right. White on every page regardless of the band beneath it.\n\n**`nav-bar`** (Mobile)\n- Retains wordmark, search and both account controls; category links move behind a menu.\n\n**`icon-circle-active`** / **`icon-circle-inactive`**\n- Active fills `{colors.primary}` with an `{colors.on-primary}` glyph; inactive fills `{colors.mint-50}` with a `{colors.primary}` glyph. Both `{rounded.full}`.\n- Form the horizontal category rail above comparison pages, each with a label beneath and an underline marking the active item.\n\n**`breadcrumb`**\n- Text `{colors.on-primary}` at `{typography.caption}`, set on the green hero band with chevron separators.\n\n**`footer`**\n- Background `{colors.canvas-soft}`, text `{colors.body}`, type `{typography.body-sm}`.",
+      "facets": {
+        "items": [],
+        "states": [
+          "disabled"
+        ],
+        "traits": [
+          "underline"
+        ],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "nerdwallet",
+      "brand": "nerdwallet",
+      "title": "NerdWallet",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Signature Components",
+      "matched_alias": null,
+      "text": "**`hero-band`**\n- Background `{colors.primary}` running as a horizontal gradient toward a lighter green, text `{colors.on-primary}`, type `{typography.body-md}`.\n- Opens every editorial page. Carries `{breadcrumb}`, the `{typography.display-lg}` headline, a byline row with circular avatars, `{editorial-badge}` trust marks and a lead paragraph. Full-bleed, square-cornered, and the only saturated plane on the page.\n\n**`editorial-badge`**\n- Text `{colors.lime-panel}` at `{typography.micro}`, uppercase, with a leading verification glyph. Sits on the green band and is the reason a lime tier exists — green-on-green would vanish.\n\n**`award-ribbon-pill`**\n- Background `{colors.mint-100}`, text `{colors.primary}`, type `{typography.eyebrow}`, rounded `{rounded.none}`.\n- A square-ended mint banner introduced by a folded green flag mark, pinned to the top-left of a winning `{product-card}`.\n\n**`comparison-row`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body-sm}`.\n- Five columns — institution, rating, rate, bonus, action — separated from adjacent rows by a `{colors.hairline}` rule with no vertical dividers.\n\n**`spec-cell`**\n- Background `{colors.canvas}`, label `{colors.body}` at `{typography.caption}`, value `{colors.ink}`.\n- The label-above-value block that tiles inside `{product-card}`, ruled on its leading edge by `{colors.hairline}`.\n\n**`link-inline`** / **`link-green`**\n- `{link-inline}` uses `{colors.link}` with an underline for supporting references; `{link-green}` uses `{colors.primary}` with a heavier underline for in-body navigation. The two coexist on the same card and carry different intent.\n\n**`eyebrow-label`**\n- Text `{colors.muted}` at `{typography.eyebrow}`, uppercase, opening partner and resource sections.\n\n**`logo-wordmark`**\n- Text `{colors.primary}` at `{typography.heading-4}`, preceded by a mark carrying `{colors.logo-lime}`.\n\n**`rate-card`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body-sm}`, rounded `{rounded.xxl}`.\n- A clickable comparison tile inside the mint rates panel: product name, a `{colors.primary}` circular arrow pinned right, then two rate rows pairing a `{colors.muted}` label with a large `{colors.primary}` figure and a trend glyph.\n\n**`badge-compare`**\n- Background `{colors.lime-panel}`, text `{colors.primary}`, type `{typography.eyebrow}`, rounded `{rounded.xl}`.\n- A pale-lime pill pinned to the top-left corner of the leading `{rate-card}`, marking the recommended comparison.\n\n**`carousel-control`**\n- Background `{colors.mint-50}`, glyph `{colors.primary}`, rounded `{rounded.full}`.\n- Paired previous/next circles flanking a dot pagination strip whose active dot fills `{colors.primary}`.\n\n**`marquee-ribbon`**\n- Background `{colors.lime-ribbon}` running as a gradient into `{colors.primary}`, text `{colors.primary}`, type `{typography.ui-label}`.\n- A full-bleed diagonal band of repeated uppercase slogans separated by small sparkle glyphs, tilted a few degrees off horizontal and bleeding past both viewport edges. It is the loudest element in the system and the only place the lime family fills a large surface.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "gradient",
+          "pill",
+          "underline",
+          "uppercase"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
       "slug": "nike",
       "brand": "nike",
       "title": "Nike",
@@ -31948,6 +32866,223 @@
       "derived": true
     },
     {
+      "slug": "open-tilawa",
+      "brand": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons and links",
+      "matched_alias": "buttons",
+      "text": "Primary is an ink fill with invert text, one per region; secondary is transparent with a line border; quiet is muted turning ink on hover, with inline verbs underlined at 4px. Settings is its own route: a 520px column (700 above 1024) of hairline-separated groups with a 20px muted icon, a 16px semibold title, a 14px muted hint and 32px chips. Static pages reuse the page screen and a 14px muted back link with a 44px hit area. `.press` shrinks to 0.96 over 100ms and tints over 120ms, opt-in so a selected ink chip never flashes to the line colour. Icons come from `components/icons.tsx` (Phosphor, 16/20/24, `regular` and `fill`), are `aria-hidden` and out of the pointer path, and directional icons flip through one class; the owning control carries the label.",
+      "facets": {
+        "items": [
+          "locale"
+        ],
+        "states": [
+          "hover",
+          "selected"
+        ],
+        "traits": [
+          "underline"
+        ],
+        "position": "static",
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "open-tilawa",
+      "brand": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "footer",
+      "variant": null,
+      "heading": "Mini-player footer",
+      "matched_alias": "footer",
+      "text": "56px plus the bottom inset, capped at 520px, top hairline, 16px gutter. On a phone it keeps two rows: the surah (16px semibold, book glyph, 36px) and the reciter (14px muted, mic glyph, 36px), both truncated and both named by their visible label with the action as a visually hidden suffix. On a desktop the names disappear and the utilities centre at 560px. At the end: volume 44 by 44 (tap opens the gauge, a 500ms hold mutes with a 10ms vibration), fullscreen 44 by 44, a 12px semibold rate pill only off 1x, and a 44 by 44 stream glyph inside a 2px progress ring (ink at 22% for the track, torrent progress for the arc, state and percentage in the name). It is a glyph, never a caption.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "open-tilawa",
+      "brand": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "header",
+      "variant": null,
+      "heading": "Top bar",
+      "matched_alias": "top bar",
+      "text": "56px, sticky at `z-20`, bottom hairline, 16px gutter. The 24px mark is drained to grey; the version sits outside the link's accessible name at 13px muted tabular, because an `aria-label` that omits visible text fails WCAG 2.5.3. Desktop navigation is 14px muted icon-plus-word links that turn ink on hover over a line wash. `More` opens a 160px `role=\"menu\"` with 14px rows and the one `shadow-lg`. On a phone the sandwich becomes an X in place and opens the nav sheet; the version is decoration.",
+      "facets": {
+        "items": [],
+        "states": [
+          "hover"
+        ],
+        "traits": [],
+        "position": "sticky",
+        "divider": "shadow",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "open-tilawa",
+      "brand": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Inputs and chips",
+      "matched_alias": "inputs",
+      "text": "Fields are 44px minimum, 8px radius, a line border on transparent ground, 16px text (so iOS does not zoom) and a 14px semibold label. Hints and errors are 12px; an error is `--danger` with `role=\"alert\"`, and `aria-describedby` / `aria-invalid` are wired by the field wrapper. Placeholders are muted and never mistaken for a value. Focus is a 2px ink outline at 2px offset, globally. Settings chips are 32px pills, a deliberate density choice that conflicts with the 44px rule; see Known Gaps.",
+      "facets": {
+        "items": [],
+        "states": [
+          "focus"
+        ],
+        "traits": [
+          "outline"
+        ],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "open-tilawa",
+      "brand": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Sheets",
+      "matched_alias": null,
+      "text": "One component, two presentations. On a phone it is a native `<dialog>` in the top layer: full width up to 520px, bottom-anchored, 16px top corners, a 4px handle at 20% ink, 90dvh when full and row-hugging when auto. The panel is moved by a spring, never a keyframe, because an animation the finger cannot grab is the thing being replaced: drag is 1:1 down and rubber-banded up, dismissal is above 800px/s or past 40% of the height plus projected travel, and an upward flick never dismisses. On a desktop it is a non-modal 360px aside under the bar with its own pin and close, because a sheet on a 1440px screen does not need a phone gesture and docking keeps the stage visible.\n\nBackdrop: 32% black with `blur(4px) saturate(1.05)`, 50% in dark, 60% with no blur under `prefers-reduced-transparency: reduce`; opacity over 160ms. Anatomy: 52px header with a 16px semibold title and 44px icon controls, an optional 44px search toolbar pinned outside the scroll, then rows of at least 64px with 16px padding, 12px gap, 16px text and a 12px muted meta line. Filter chips are 44px pills; the active one is an ink fill with invert text. Escape and a backdrop click close; the phone gets the platform focus trap and body-scroll lock, the desktop adds a window Escape listener. A pinned panel stays open while rows are picked; an unpinned one closes.",
+      "facets": {
+        "items": [],
+        "states": [
+          "focus"
+        ],
+        "traits": [],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "open-tilawa",
+      "brand": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "motion",
+      "section_heading": "Motion & Interaction",
+      "group": "banned_motion",
+      "variant": null,
+      "heading": "Banned Motion",
+      "matched_alias": "banned motion",
+      "text": "- No scroll-triggered reveals, parallax, sticky scroll effects or page entrances.\n- No bounce, elastic or underdamped spring anywhere. The sheet is the only spring and it is critically damped.\n- No animated width or height. The spectrum changes pixels, not layout; the sheet moves by transform.\n- No looping decoration beyond the waiting glyph and the spinner, no motion on the scrubber beyond the thumb, no animated clock.\n- No cross-fade for a theme that arrives from the account or network at load; that would be a flash with extra steps.",
+      "facets": {
+        "items": [],
+        "states": [
+          "loading"
+        ],
+        "traits": [],
+        "position": "sticky"
+      },
+      "derived": true
+    },
+    {
+      "slug": "open-tilawa",
+      "brand": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "motion",
+      "section_heading": "Motion & Interaction",
+      "group": "durations_easings",
+      "variant": null,
+      "heading": "Durations & Easings",
+      "matched_alias": "durations & easings",
+      "text": "- **Press:** transform 100ms ease-out; background and colour 120ms ease-out.\n- **Play button:** transform 150ms `cubic-bezier(0.2, 0, 0.2, 1)`; background 120ms ease.\n- **Hover and caret:** 120ms for colour, opacity and the 180-degree caret rotation.\n- **Sheet backdrop:** opacity 160ms ease.\n- **Theme:** a 180ms root cross-fade through the View Transitions API. One attribute changes and the page changes clothes instead of flashing.\n- **Spinner:** 900ms linear, one turn. **Waiting glyph:** three wifi arcs at 1.5s ease-in-out, the second delayed 0.5s.\n\nNothing else has a duration token. The system has two curves, ease-out for interaction and the play button's gentler cubic-bezier, and one spring.",
+      "facets": {
+        "items": [],
+        "states": [
+          "hover",
+          "loading"
+        ],
+        "traits": []
+      },
+      "derived": true
+    },
+    {
+      "slug": "open-tilawa",
+      "brand": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "motion",
+      "section_heading": "Motion & Interaction",
+      "group": "motion_roles",
+      "variant": null,
+      "heading": "Motion Roles",
+      "matched_alias": "motion roles",
+      "text": "- **Did the press land?** Every tappable surface shrinks to 0.96; the play button lifts to 1.03 on hover first. That is the entire feedback vocabulary.\n- **Did a layer arrive or leave?** Phone sheets rise from 15% of their height (capped at 72px) and leave by spring, carrying the release velocity. The backdrop fades in step with the panel so the scrim never detaches.\n- **Is the recitation alive?** The spectrum moves with the audio, the waiting glyph answers in turn while no peer is found, and the theme cross-fades when the listener asks. Nothing loops otherwise.\n\nThe sheet spring is critically damped (`damping: 1`, `response: 0.3s`, dt clamped to 1/30) so it settles without bounce; a drag past the top is rubber-banded with a 0.55 constant. A hard stop reads as frozen, and a springy overshoot reads as playful, which this product is not.",
+      "facets": {
+        "items": [],
+        "states": [
+          "hover"
+        ],
+        "traits": []
+      },
+      "derived": true
+    },
+    {
+      "slug": "open-tilawa",
+      "brand": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "motion",
+      "section_heading": "Motion & Interaction",
+      "group": "reduced_motion",
+      "variant": null,
+      "heading": "Reduced Motion",
+      "matched_alias": "reduced motion",
+      "text": "`prefers-reduced-motion: reduce` is handled globally in `globals.css`: every animation and transition is cut to 0.001ms and iteration count to 1, and the play and press transforms are removed. The wifi arcs freeze on their visible frame, so the icon still reports the state; the spinner becomes still and the button says it is busy in words. The sheet jumps to its target, and the theme hook skips view transitions with the CSS duration as a second belt. Reduced motion never removes information, only movement.",
+      "facets": {
+        "items": [],
+        "states": [
+          "loading"
+        ],
+        "traits": []
+      },
+      "derived": true
+    },
+    {
       "slug": "opencode.ai",
       "brand": "opencode.ai",
       "title": "OpenCode AI",
@@ -32120,6 +33255,249 @@
           "underline"
         ],
         "surface": "accent"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oracle",
+      "brand": "oracle",
+      "title": "Oracle",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "Every button in the system is `{rounded.xs}` with `10px 16px` padding and a `{typography.label}` label. Only the fill and border change between variants.\n\n**`button-primary`**\n- Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.label}`, rounded `{rounded.xs}`, padding `10px 16px`\n- The primary action everywhere. Frequently markup'd as an anchor rather than a button element\n\n**`button-primary-pressed`**\n- Background `{colors.primary-pressed}`, otherwise identical\n\n**`button-primary-disabled`**\n- Background `{colors.canvas-soft}`, text `{colors.disabled-ink}`, 1px `{colors.hairline}` border, rounded `{rounded.xs}`, padding `10px 16px`\n\n**`button-secondary`**\n- Transparent fill, text `{colors.ink}`, 1px `{colors.ink}` border, rounded `{rounded.xs}`, padding `10px 16px`\n- The outlined companion, always paired to the right of a primary\n\n**`button-tertiary`**\n- Text `{colors.ink}`, rounded `{rounded.xs}`, padding `10px 16px`\n- A borderless tonal variant whose fill is an 8% wash of `{colors.ink}` over whatever surface it sits on, so it reads as a soft block rather than a defined edge\n\n**`button-primary-inverse`**\n- Background `{colors.canvas}`, text `{colors.ink}`, rounded `{rounded.xs}`, padding `10px 16px`\n- The primary action on a dark band — the polarity flips rather than the colour changing\n\n**`button-secondary-inverse`**\n- Transparent fill, text `{colors.on-primary}`, 1px `{colors.on-primary}` border, rounded `{rounded.xs}`, padding `10px 16px`",
+      "facets": {
+        "items": [],
+        "states": [
+          "disabled",
+          "pressed"
+        ],
+        "traits": [
+          "outline"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oracle",
+      "brand": "oracle",
+      "title": "Oracle",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Cards & Media",
+      "matched_alias": "cards",
+      "text": "**`content-card`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body-loose}`, rounded `{rounded.xl}`, padding `{spacing.xxxl}`\n- The corporate index workhorse. A wide card holding a headline, copy, a primary action and a half-width image\n\n**`stat-panel`**\n- Background `{colors.canvas-warm}`, text `{colors.ink}`, type `{typography.body-loose}`, rounded `{rounded.xl}`, padding `{spacing.xl}`\n- A tinted block nested inside a content card, holding a short bulleted list of figures\n\n**`product-card`** and **`product-card-warm`**\n- Backgrounds `{colors.canvas}` and `{colors.canvas-warm}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.md}`, padding `{spacing.xxl}`\n- The product page equivalent, at the smaller radius. The warm variant is used when the card sits on a white band\n\n**`nav-tile`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.label-strong}`, 1px `{colors.hairline}` border, rounded `{rounded.lg}`, padding `{spacing.md}`\n- The row of eight product entry tiles below the corporate index masthead, grouped under two light sans labels\n\n**`media-frame`**\n- Background `{colors.canvas}`, rounded `{rounded.md}`\n- The frame around an embedded video or product screenshot\n\n**`play-button-circular`**\n- Background `{colors.ink}`, icon `{colors.on-primary}`, rounded `{rounded.full}`, 40px\n- The only circular element in the system",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oracle",
+      "brand": "oracle",
+      "title": "Oracle",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "footer",
+      "variant": null,
+      "heading": "Footer",
+      "matched_alias": "footer",
+      "text": "**`footer`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.caption}`, rounded `{rounded.none}`, 105px tall\n- A single horizontal row of fine-print links above a row of social icons. No rule, no fill change, no column structure\n\n**`footer-link`**\n- Text `{colors.ink}`, type `{typography.caption}`, rounded `{rounded.none}`\n- Set in ink rather than `{colors.link}`, which is what keeps the footer quiet",
+      "facets": {
+        "items": [
+          "social"
+        ],
+        "states": [],
+        "traits": [],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oracle",
+      "brand": "oracle",
+      "title": "Oracle",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "navigation",
+      "variant": null,
+      "heading": "Masthead & Navigation",
+      "matched_alias": "navigation",
+      "text": "**`masthead`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.none}`, 85px tall\n- Full width and identical on every page. Carries a hamburger, the wordmark, a wide search field and three utility icons\n\n**`logo-wordmark`**\n- Text `{colors.brand-mark}`, type `{typography.heading-lg}`, rounded `{rounded.none}`\n- The only appearance of red in the interface\n\n**`text-input`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body}`, 1px `{colors.field-border}` border, rounded `{rounded.sm}`, padding `12px 18px`\n- The masthead search field. A leading icon is inset with 48px of left padding\n\n**`product-subnav`**\n- Background `{colors.ink-deep}`, text `{colors.on-primary}`, type `{typography.body}`, rounded `{rounded.none}`, 64px tall\n- A sticky full-bleed strip below the masthead on a product page, holding the section links for that product\n\n**`product-subnav-light`**\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.none}`, 64px tall\n- The same strip in its light polarity, where the active item is marked by an ink underline instead of a gold bar\n\n**`subnav-active-bar`**\n- Background `{colors.accent-gold-soft}`, rounded `{rounded.none}`, 67 × 5px\n- Marks the selected item in the dark sub-navigation",
+      "facets": {
+        "items": [],
+        "states": [
+          "selected"
+        ],
+        "traits": [
+          "underline"
+        ],
+        "position": "sticky",
+        "divider": "hairline",
+        "surface": "accent"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oracle",
+      "brand": "oracle",
+      "title": "Oracle",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Examples (illustrative)",
+      "matched_alias": null,
+      "text": "> These ten surfaces are kit-mirror demonstrations, not components found on the brand's own pages. Each is composed from the primitives above so downstream consumers re-skin the shapes this system actually uses — the square `{rounded.none}` band, the `{rounded.xs}` button, the `{rounded.md}` card, and a neutral ladder that separates surfaces by tone and a hairline rule instead of by shadow.\n\n**`ex-pricing-tier`** — default tier card\n- Background `{colors.canvas}`, text `{colors.ink}`, 1px `{colors.hairline}` border, rounded `{rounded.md}`, padding `{spacing.xxl}`\n- CTA from `{components.button-secondary}`\n\n**`ex-pricing-tier-featured`** — the highlighted tier\n- Background `{colors.primary}`, text `{colors.on-primary}`, rounded `{rounded.md}`, padding `{spacing.xxl}`\n- Polarity-flipped to the action charcoal, the same inversion `{components.section-band-forest}` performs, with its CTA from `{components.button-primary-inverse}`\n\n**`ex-product-selector`** — what's-included summary card\n- Background `{colors.canvas-soft}`, text `{colors.ink}`, rounded `{rounded.md}`, padding `{spacing.xxl}`\n- One rung up the ladder, with rows borrowing `{components.nav-tile}` chrome\n\n**`ex-cart-drawer`** — subscription summary\n- Background `{colors.canvas}`, text `{colors.ink}`, rounded `{rounded.md}`, padding `{spacing.xxl}`, line items separated by `{colors.divider}`\n- The same warm rule `{components.channel-column}` uses between columns\n\n**`ex-app-shell-row`** — sidebar nav row\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.md}`, padding `{spacing.sm} {spacing.md}`, active indicator `{colors.primary}`\n\n**`ex-data-table-cell`** — table header and body chrome\n- Header background `{colors.canvas-tint}` in `{typography.caption}`, body cells `{typography.body}`, cell padding `{spacing.sm} {spacing.md}`, row border `{colors.hairline}`\n\n**`ex-auth-form-card`** — sign-in card\n- Background `{colors.canvas}`, text `{colors.ink}`, 1px `{colors.hairline}` border, rounded `{rounded.md}`, padding `{spacing.xxl}`\n- Inputs take the `{components.text-input}` treatment\n\n**`ex-modal-card`** — modal dialog surface\n- Background `{colors.canvas}`, text `{colors.ink}`, 1px `{colors.hairline}` border, rounded `{rounded.md}`, padding `{spacing.xxl}`\n- No shadow, since the system has none — the modal is bounded by its rule alone\n\n**`ex-empty-state-card`** — empty-state frame\n- Background `{colors.canvas-soft}`, text `{colors.ink}`, rounded `{rounded.md}`, padding `{spacing.section}`, caption in `{typography.body}`\n\n**`ex-toast`** — toast notification surface\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body}`, 1px `{colors.hairline}` border, rounded `{rounded.md}`, padding `{spacing.sm} {spacing.xl}`",
+      "facets": {
+        "items": [
+          "cta"
+        ],
+        "states": [],
+        "traits": [],
+        "divider": "shadow",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oura",
+      "brand": "oura",
+      "title": "Oura",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "**`button-primary`** — Primary conversion CTA\n- Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.button}`, fully rounded (`{rounded.full}`). The only blue in the interface. Used for \"Explore\" and \"Shop All Products\".\n\n**`button-secondary`** — Editorial / secondary action\n- Background `{colors.stone}`, text `{colors.on-stone}`, `{typography.button}`, `{rounded.full}`. The warm-neutral pill for content actions (\"Why Oura\", \"How It Works\").\n\n**`button-on-dark`** — Cream pill on dark surfaces\n- Background `{colors.canvas}`, text `{colors.stone}`, `{typography.button}`, `{rounded.full}`. Used for \"Read More\" and card actions floating on the black news band. (Extracted button variant: cream fill, stone text, full radius.)\n\n**`button-outline`** — Outline pill on dark/photo\n- Transparent over `{colors.ink-band}`, 1px `{colors.on-dark}` border, white text, `{rounded.full}`. For low-emphasis actions over dark imagery.\n\n**`button-outline-stone`** — Outline pill on cream\n- Cream background, 1px `{colors.stone}` border, `{colors.stone}` text, `{rounded.full}`. Low-emphasis action on the paper canvas.\n\n**`button-icon-circular`** — Circular icon control\n- Circular (`{rounded.full}`) control for carousel arrows and the person-card \"+\" affordance. Two flavours: a white surface circle (`{colors.surface}`) with a hairline edge for the \"+\" overlays, and a stone-outlined circle for the carousel arrows.",
+      "facets": {
+        "items": [
+          "cta"
+        ],
+        "states": [],
+        "traits": [
+          "outline",
+          "pill"
+        ],
+        "divider": "hairline",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oura",
+      "brand": "oura",
+      "title": "Oura",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Cards & Containers",
+      "matched_alias": "cards & containers",
+      "text": "**`feature-card`** — Content / benefit card\n- White surface (`{colors.surface}`), `{colors.hairline}` border, `{colors.ink}` text, `{typography.body}`, radius `{rounded.lg}`, padding `{spacing.lg}`. The default soft-cornered content container on cream.\n\n**`feature-card-elevated`** — Floating content card\n- Cream surface (`{colors.canvas}`) with a soft Level-1/2 shadow, `{rounded.lg}`, padding `{spacing.lg}`. Used where a card floats over imagery or the black band (news clippings, spec card).\n\n**`product-card`** — Product-showcase media card\n- Cool grey surface (`{colors.surface-grey}`), large radius `{rounded.xl}` (40px), holds a machined product render on the silver stage, often with a subtle radial glow behind the ring.\n\n**`person-card`** — Expert / leadership card\n- Cream background, portrait photo with radius `{rounded.lg}`, a white circular `button-icon-circular` \"+\" in the corner, name in `{typography.body}`/`{typography.title}` and role in `{colors.ash}` `{typography.caption}`. Appears in horizontal carousels.\n\n**`news-card`** — News clipping on the dark band\n- Cream card (`{colors.canvas}`) floating on `{colors.ink-band}`, `{colors.ink}` text, `{typography.body}`, `{rounded.lg}`, padding `{spacing.lg}`. Carries a publication quote plus a circular arrow link.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [],
+        "divider": "shadow",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oura",
+      "brand": "oura",
+      "title": "Oura",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Inputs & Forms",
+      "matched_alias": "inputs",
+      "text": "**`text-input`** — Newsletter / email field\n- Background `{colors.stone}`, text `{colors.on-stone}`, `{typography.body-sm}`, radius `{rounded.md}` (12px), padding roughly 8px vertical / 20px left with a trailing submit affordance on the right. The dark taupe fill makes the field feel like part of the footer rather than a bright form box.\n\n**`text-input-focused`** — Focused / error field\n- On focus the field lifts to a light surface (`{colors.surface}`) with `{colors.ink}` text and a `{colors.error}` border for the validation-error state. Radius stays `{rounded.md}`.",
+      "facets": {
+        "items": [
+          "newsletter"
+        ],
+        "states": [
+          "focus"
+        ],
+        "traits": [],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oura",
+      "brand": "oura",
+      "title": "Oura",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "navigation",
+      "variant": null,
+      "heading": "Navigation",
+      "matched_alias": "navigation",
+      "text": "**`nav-bar`** — Top navigation on cream\n- Background `{colors.canvas}`, links in `{colors.stone}` at `{typography.ui}`, no radius. Slots: OURA wordmark (left, `{colors.stone}`), center dropdown links (Shop, Your Health, Why Oura, For Organizations), cart icon (right). Sits flush on the cream canvas with no divider until scrolled.\n\n**`announcement-bar`** — Top promo strip\n- Full-width cream strip above the nav, centered `{typography.eyebrow}` text in `{colors.ink}` (e.g. free-trial offer copy). No radius, no background shift — it reads as the top edge of the paper.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [],
+        "divider": "none",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "oura",
+      "brand": "oura",
+      "title": "Oura",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Examples (illustrative)",
+      "matched_alias": null,
+      "text": "> Auto-derived kit-mirror demonstration surfaces (`scripts/derive-examples-block.mjs`). Each `ex-*` entry references brand-native primitives so downstream consumers (`/preview-design`, `/generate-kit`) re-skin the same 10 surfaces consistently.\n\n**`ex-pricing-tier`** — Default Pricing tier card. Re-uses feature-card chrome with brand canvas-soft surface.\n- Properties: `backgroundColor`, `textColor`, `borderColor`, `rounded`, `padding`\n\n**`ex-pricing-tier-featured`** — Featured/highlighted tier — polarity-flipped surface (dark fill + light text in light mode, light fill + dark text in dark mode).\n- Properties: `backgroundColor`, `textColor`, `rounded`, `padding`\n\n**`ex-product-selector`** — Color/size picker chrome — fashion / DTC variant selector.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-cart-drawer`** — Shopping cart drawer — DTC / fashion brand actual cart chrome.\n- Properties: `backgroundColor`, `rounded`, `padding`, `item-divider`\n\n**`ex-app-shell-row`** — Sidebar nav row inside the App Shell example. Active state uses brand primary as the indicator.\n- Properties: `backgroundColor`, `activeIndicator`, `rounded`, `padding`\n\n**`ex-data-table-cell`** — Default data-table th + td chrome. Header uses mono-caps eyebrow typography; body uses body-sm.\n- Properties: `headerBackground`, `headerTypography`, `bodyTypography`, `cellPadding`, `rowBorder`\n\n**`ex-auth-form-card`** — Sign-in / sign-up card. Re-uses feature-card chrome with text-input primitives inside.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-modal-card`** — Modal dialog surface — same chrome as feature-card with elevated shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`\n\n**`ex-empty-state-card`** — Empty-state illustration frame.\n- Properties: `backgroundColor`, `rounded`, `padding`, `captionTypography`\n\n**`ex-toast`** — Toast notification surface — feature-card shape + medium shadow.\n- Properties: `backgroundColor`, `rounded`, `padding`, `typography`",
+      "facets": {
+        "items": [],
+        "states": [
+          "pressed"
+        ],
+        "traits": [],
+        "divider": "shadow",
+        "surface": "canvas"
       },
       "derived": true
     },
@@ -33655,6 +35033,51 @@
         ],
         "divider": "hairline",
         "surface": "accent"
+      },
+      "derived": true
+    },
+    {
+      "slug": "sap",
+      "brand": "sap",
+      "title": "SAP",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "**`button-primary`** — The standard filled action.\n- Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.button}`, rounded `{rounded.md}`, padding `12px 14px`, height 44.\n\n**`button-outline`** — Its quiet partner, used beside a filled button in a hero.\n- Background `{colors.canvas}`, text `{colors.primary-deep}`, type `{typography.button}`, rounded `{rounded.md}`, padding `8px 9px`. Bounded by a `{colors.hairline}` rule; the label is the deeper blue rather than the standard one.\n\n**`button-floating`** — The persistent contact affordance pinned to the lower right.\n- Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.caption}`, rounded `{rounded.md}`, padding `16px 20px`, height 58. The tallest control in the system and the only one that follows the page.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "outline"
+        ],
+        "divider": "hairline",
+        "surface": "canvas"
+      },
+      "derived": true
+    },
+    {
+      "slug": "sap",
+      "brand": "sap",
+      "title": "SAP",
+      "platform": "web",
+      "source": "upstream",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Content",
+      "matched_alias": null,
+      "text": "**`section-heading`** — A section title.\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.section-title}`, rounded `{rounded.none}`, height 35.\n\n**`lead-paragraph`** — The paragraph that follows a display headline.\n- Background `{colors.canvas}`, text `{colors.ink-lead}`, type `{typography.lead}`, rounded `{rounded.none}`. Set at 28px in the one grey that appears nowhere else.\n\n**`body-copy`** — Standard prose.\n- Background `{colors.canvas}`, text `{colors.ink-body}`, type `{typography.body}`, rounded `{rounded.none}`.\n\n**`feature-title`** — The heading inside a feature block.\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.subhead}`, rounded `{rounded.none}`, height 22.\n\n**`list-item`** — An entry in a linked list.\n- Background `{colors.canvas}`, text `{colors.ink-list}`, type `{typography.list-item}`, rounded `{rounded.none}`, height 38. Weight 350, the lightest setting in the system.\n\n**`meta-note`** — Captions and footnotes.\n- Background `{colors.canvas}`, text `{colors.ink-meta}`, type `{typography.caption}`, rounded `{rounded.none}`.\n\n**`text-link`** — An inline link.\n- Background `{colors.canvas}`, text `{colors.primary}`, type `{typography.link}`, rounded `{rounded.none}`. Usually trailed by a chevron.\n\n**`inline-anchor`** — A small anchored surface within running content.\n- Background `{colors.canvas}`, text `{colors.primary}`, type `{typography.caption}`, rounded `{rounded.sm}`. The only place the 4px corner is used.\n\n**`media-frame`** — The container around a photograph or illustration.\n- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.caption}`, rounded `{rounded.lg}`.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [],
+        "surface": "ink"
       },
       "derived": true
     },

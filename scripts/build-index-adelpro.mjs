@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Builds the ADELPRO source: DESIGN.md specs authored in-repo for the
- * maintainer's own projects (open-mushaf-native, open-tarteel, midad, uslub).
+ * maintainer's own projects (open-mushaf-native, open-tarteel, open-tilawa,
+ * midad, uslub).
  *
  * Unlike the web/mobile/ios sources (which clone an upstream repo and stage a
  * fragment for load-data), this source has no upstream clone — each spec is
@@ -53,6 +54,12 @@ const ENTRIES = [
   {
     slug: 'open-tarteel',
     title: 'Open Tarteel',
+    platform: 'web',
+    flavors: [],
+  },
+  {
+    slug: 'open-tilawa',
+    title: 'Tilawah (Open Tilawa)',
     platform: 'web',
     flavors: [],
   },

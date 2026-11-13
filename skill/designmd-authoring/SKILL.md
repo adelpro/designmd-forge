@@ -79,6 +79,13 @@ different product; it won't be true of this one, and reusing another
 brand's constraints verbatim defeats the purpose of writing this file at
 all.
 
+`designmd_search_designs` only matches title/slug/category/description, so it
+cannot find "designs with a footer". Shortlist by what the product is, then
+fetch the region from each candidate with
+`component: "footer"`, `"header"` or `"navigation"` (the default section is
+`components`); if the design has no such `###` group, the error lists the
+headings it does use.
+
 ### 5. Diagnosing an existing file that isn't working
 
 Before rewriting, check for the token-only trap specifically: does the

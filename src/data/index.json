@@ -2,15 +2,15 @@
   "source": "https://github.com/VoltAgent/awesome-design-md",
   "license": "MIT",
   "sources": {
+    "adelpro": "https://github.com/adelpro",
     "ios": "https://github.com/meliwat/awesome-ios-design-md",
     "mobile": "https://github.com/TrustOtc/awesome-mobile-design-md",
-    "web": "https://github.com/VoltAgent/awesome-design-md",
     "shadcn": "https://ui.shadcn.com",
-    "adelpro": "https://github.com/adelpro"
+    "web": "https://github.com/VoltAgent/awesome-design-md"
   },
-  "note": "Design tokens extracted from publicly visible CSS values of each site, or authored in-repo from the project's own token source, per each source's LICENSE. No trademarked assets, logos, or copyrighted imagery are included. iOS = Meliwat/awesome-ios-design-md · Mobile = TrustOtc/awesome-mobile-design-md · Web = VoltAgent/awesome-design-md · shadcn = shadcn/ui New York (authored reference) · adelpro = Quran & Arabic Tech (authored in-repo, MIT).",
-  "generated_at": "2026-08-26T19:54:44.347Z",
-  "count": 290,
+  "note": "Design tokens extracted from publicly visible CSS values of each site, or authored in-repo from the project's own token source, per each source's LICENSE. No trademarked assets, logos, or copyrighted imagery are included. adelpro = authored in-repo (Quran & Arabic Tech, Component Library), MIT · iOS = Meliwat/awesome-ios-design-md · Mobile = TrustOtc/awesome-mobile-design-md · shadcn = shadcn/ui New York (authored reference) · Web = VoltAgent/awesome-design-md.",
+  "generated_at": "2026-11-08T08:13:21.334Z",
+  "count": 301,
   "platforms": [
     "ios",
     "mobile",
@@ -46,6 +46,15 @@
   ],
   "designs": [
     {
+      "slug": "1win",
+      "title": "1win",
+      "category": "Media & Consumer Tech",
+      "platform": "web",
+      "short_description": "Crypto casino and sportsbook. Near-black canvas, vivid green action color, dense game-tile rails",
+      "long_description": "An analysis of 1win's design language — a near-black crypto casino and sportsbook built on Inter at heavy weights, where a vivid green action color and an electric blue secondary carry every CTA across dense, full-bleed game-tile rails, promo cards, and live betting panels on a flat dark-grey surface ladder.",
+      "word_count": 2917
+    },
+    {
       "slug": "airbnb",
       "title": "Airbnb",
       "category": "E-commerce & Retail",
@@ -62,6 +71,15 @@
       "short_description": "Spreadsheet-database hybrid. Colorful, friendly, structured data aesthetic",
       "long_description": "A sober, editorial workflow-software interface anchored on white canvas and dark-ink type, where brand voltage comes from full-bleed signature cards in coral, dark green, peach, and dark navy that punctuate long-scroll explainer pages. Primary actions use a near-black pill CTA; secondary actions sit in a white outlined button. Type runs Haas Grotesk in modest weights — never bold for its own sake.",
       "word_count": 4462
+    },
+    {
+      "slug": "aljazeera",
+      "title": "Al Jazeera",
+      "category": "Media & Consumer Tech",
+      "platform": "web",
+      "short_description": "Global news network. Flat white paper, dense Roboto headlines, orange signature and live red",
+      "long_description": "An analysis of Al Jazeera's design language — a hard-news editorial system built on flat white paper and dense Roboto headline stacks, signed by one saturated orange used as logo block and section-eyebrow bar, punctuated by a live-red that marks breaking coverage with timeline dots and LIVE badges, and interfaced through compact black pills; the corporate network pages extend the same identity onto a near-black canvas with royal-indigo hero panels, gold rules and amber links, and vivid teal and crimson section rails beside monochrome leadership portraiture.",
+      "word_count": 3425
     },
     {
       "slug": "apple",
@@ -215,6 +233,15 @@
       "short_description": "Catalog-era enterprise web. Literal black page frame, flat color-block \"ribbon cards\", chunky Helvetica-Black titles over Times Roman body, and hand-cut GIF stickers (NEW! bursts, award seals, beveled product photos).",
       "long_description": "An inspired interpretation of Dell.com's 1996 design language — a catalog-era enterprise web design built around a literal black page frame, vivid flat color-block \"ribbon cards\" tinted in sage, salmon, periwinkle, sky, peach and lime, chunky Helvetica-Black display titles, Times Roman body copy, and an entire visual vocabulary of pre-Photoshop hand-cut GIF stickers (NEW! bursts, award seals, beveled product photos).",
       "word_count": 4428
+    },
+    {
+      "slug": "dji",
+      "title": "DJI",
+      "category": "Media & Consumer Tech",
+      "platform": "web",
+      "short_description": "Drone and camera maker. Studio product tiles, engineering-blue pills, tight Open Sans",
+      "long_description": "An analysis of DJI's design language — a product-photography showroom for drones and cameras, where full-bleed studio renders sit in square, gutter-separated tiles on a white canvas, every action is a rounded pill in a single engineering blue, type is a tightly tracked Open Sans set in near-black ink at stepped opacities, small orange tier labels mark product rank, and the store layers 8px option cards, a sticky purchase bar and pale grey panels on top of the same restrained system before closing on a charcoal footer.",
+      "word_count": 4996
     },
     {
       "slug": "elevenlabs",
@@ -2107,6 +2134,15 @@
       "word_count": 4520
     },
     {
+      "slug": "jobright",
+      "title": "Jobright",
+      "category": "AI & LLM Platforms",
+      "platform": "web",
+      "short_description": "AI job-hunting platform. Spring-mint green, black pill buttons, condensed Titillium headlines",
+      "long_description": "An analysis of Jobright's design language — an AI job-hunting platform built on an energetic spring-mint green against black and white, with pale-mint section bands carrying the page rhythm. Bold condensed Titillium Web display headings pair with a clean Inter UI, and the CTA system runs on high-contrast pill buttons — black pills for primary actions, a mint-green pill for the signature accent. Rounded product-mockup cards, a scrolling black job ticker, and generous whitespace give it a friendly, high-energy startup feel.",
+      "word_count": 3249
+    },
+    {
       "slug": "kraken",
       "title": "Kraken",
       "category": "Fintech & Crypto",
@@ -2161,6 +2197,15 @@
       "word_count": 655
     },
     {
+      "slug": "mercury",
+      "title": "Mercury",
+      "category": "Fintech & Crypto",
+      "platform": "web",
+      "short_description": "Startup banking platform. Ink-violet night world, indigo action pill, light custom sans",
+      "long_description": "An analysis of Mercury's design language — a fintech system that moves between a deep ink-violet night world on the homepage and a pale, near-white light world on its product and pricing pages, held together by one confident indigo action pill, soft translucent secondary pills, gently rounded cards and a quiet custom sans set at unusually light weights.",
+      "word_count": 3106
+    },
+    {
       "slug": "meta",
       "title": "Meta",
       "category": "E-commerce & Retail",
@@ -2168,6 +2213,16 @@
       "short_description": "Tech retail store. Photography-first, binary light/dark surfaces, Meta Blue CTAs",
       "long_description": "Meta's design system spans hardware commerce (Quest VR, Ray-Ban Meta AI glasses) and brand surfaces with a confident product-merchandising voice. The system pairs a stark white canvas with full-bleed photographic product cards, a confident Optimistic VF wordmark/headline face, dual-CTA hero patterns (black primary + outlined secondary), and a saturated cobalt blue (#0064E0) for in-product purchase actions. Pill-shaped 100px-radius buttons, generous 24-32px card rounding, and tight three-tier text hierarchy carry across homepage, product detail (PDP), buy-now configurator, and accessory subpage",
       "word_count": 4479
+    },
+    {
+      "slug": "midad",
+      "title": "midad (مِداد)",
+      "category": "Quran & Arabic Tech",
+      "platform": "mobile",
+      "source": "adelpro",
+      "short_description": "مِداد (midad) is an Arabic-first calligraphy editor whose interface behaves like a quiet desk: warm bone paper, iron-gall ink, and a single saffron accent that ",
+      "long_description": "Midad is an Arabic-first calligraphy editor: a canvas where the writer places glyphs, ornaments, icons and images, then exports the composition. The interface is the quiet room around the artwork.",
+      "word_count": 2400
     },
     {
       "slug": "midnight-pro",
@@ -2233,6 +2288,34 @@
       "word_count": 3503
     },
     {
+      "slug": "mushaf-native",
+      "title": "Open Mushaf Native",
+      "category": "Quran & Arabic Tech",
+      "platform": "mobile",
+      "source": "adelpro",
+      "short_description": "A reference to open-mushaf-native, an offline Quran mushaf reader for mobile and web. It reads as paper, with warm ivory page tints, one deep green primary, a m",
+      "long_description": "Open-Mushaf Native is an MIT-licensed Quran mushaf reader built with React Native and Expo for Android, iOS, web and macOS. It reads offline from cached page images in the Hafs and Warsh riwayas, and adds verse search, tafsir popups, page navigation, a daily wird tracker and a reading-position banner on top of that canvas. The interface is Arabic and RTL throughout; there is no second language mode.",
+      "word_count": 2891
+    },
+    {
+      "slug": "mydealz",
+      "title": "mydealz",
+      "category": "E-commerce & Retail",
+      "platform": "web",
+      "short_description": "German deals community. Dense white-card feed, hot and cold voting pill, brand green",
+      "long_description": "An analysis of mydealz's design language — a high-density German deals-community system built on a confident brand green, where a stacked white-card feed carries thousands of deals and every card wears the signature hot/cold temperature control that turns pricing into a crowd vote. Fully-round 540px pill buttons, Averta CY at two weights, cool-gray page canvas, and a compact red/blue/orange status vocabulary keep the information-dense feed scannable and playful at once.",
+      "word_count": 3070
+    },
+    {
+      "slug": "nerdwallet",
+      "title": "NerdWallet",
+      "category": "Fintech & Crypto",
+      "platform": "web",
+      "short_description": "Personal finance comparison platform. Deep spruce green, mint washes, near-square corners",
+      "long_description": "An analysis of NerdWallet's design language — a personal-finance comparison platform built almost entirely from one deep green and a ladder of mints beneath it. Editorial pages open on a green gradient band, then drop to near-white where dense comparison tables do the real work. Corners are almost square, shadows are nearly absent, and the whole system separates content with hairlines and pale mint washes rather than elevation.",
+      "word_count": 4513
+    },
+    {
       "slug": "nike",
       "title": "Nike",
       "category": "E-commerce & Retail",
@@ -2287,6 +2370,26 @@
       "word_count": 4277
     },
     {
+      "slug": "open-tarteel",
+      "title": "Open Tarteel",
+      "category": "Quran & Arabic Tech",
+      "platform": "web",
+      "source": "adelpro",
+      "short_description": "An authored reference to Open Tarteel, a free and open-source Quran recitation player built with Next.js and Tailwind CSS. The atmosphere is quiet and devotiona",
+      "long_description": "Open Tarteel is a browser based Quran recitation player. It lists reciters from several audio sources, keeps a per reciter playlist of surahs, plays them from a fixed control panel, and caches whole playlists in Cache Storage for offline listening behind an app shell service worker. The interface is Arabic first, with English and German locales, and it runs as an installable progressive web app.",
+      "word_count": 2871
+    },
+    {
+      "slug": "open-tilawa",
+      "title": "Tilawah (Open Tilawa)",
+      "category": "Quran & Arabic Tech",
+      "platform": "web",
+      "source": "adelpro",
+      "short_description": "Tilawah (Open Tilawa) is a peer-to-peer Quran recitation player whose interface is one white page and seven values: ink, muted, line, invert, two blues for the ",
+      "long_description": "Tilawah, the app in the `open-tilawa` repository, is a peer-to-peer Quran recitation player. The browser streams audio from WebTorrent peers, falls back to the operator's HTTP web seed when no peer answers, and keeps playing from an audio element that outlives every route. It is Arabic first, with an English mode that flips the document to LTR; its public name is Tilawah and the repository is open-tilawa.",
+      "word_count": 4013
+    },
+    {
       "slug": "opencode.ai",
       "title": "OpenCode AI",
       "category": "AI & LLM Platforms",
@@ -2294,6 +2397,24 @@
       "short_description": "AI coding platform. Developer-centric dark theme",
       "long_description": "A terminal-native marketing system rendered entirely in Berkeley Mono — every word on the page, from the hero headline down to the footer fine print, is monospaced. The page itself reads like a manpage or a static-site README: warm cream canvas (`#fdfcfc`), nearly-black ink (`#201d1d`), 4px-radius rectangles for the few interactive elements, and bracketed `[+]`/`[-]` ASCII markers used as bullets. The brand's only \"visual moment\" is a single dark hero card that mocks up the OpenCode TUI itself — black background, monospaced terminal output, ASCII pipe characters, and a wordmark rendered as blo",
       "word_count": 4321
+    },
+    {
+      "slug": "oracle",
+      "title": "Oracle",
+      "category": "Backend, Database & DevOps",
+      "platform": "web",
+      "short_description": "Enterprise cloud and database software. Warm neutral ladder, charcoal-only actions, red saved for the wordmark",
+      "long_description": "An analysis of Oracle's design language — an enterprise system built on a warm neutral ladder rather than a colour palette. Six numbered greys carry almost every surface, a single dark charcoal carries every action, and the famous red is held back for the wordmark alone. Two display registers coexist, being a very light sans on the corporate index and a Georgia serif across the product pages, and the only chromatic moments are a thin gold rule under a headline and the occasional full-width band of teal or forest green.",
+      "word_count": 5497
+    },
+    {
+      "slug": "oura",
+      "title": "Oura",
+      "category": "Media & Consumer Tech",
+      "platform": "web",
+      "short_description": "Smart ring wellness brand. Warm paper cream, editorial serif, earth-tone accents",
+      "long_description": "An analysis of Oura's design language — a warm-paper wellness system that pairs a high-contrast Editorial serif with a quiet grotesque sans, wraps every surface in a cream-and-earth palette drawn from mustard, clay and olive, and drives conversion with a single decisive action blue against otherwise calm, photography-led layouts.",
+      "word_count": 3898
     },
     {
       "slug": "pinterest",
@@ -2395,6 +2516,15 @@
       "word_count": 3205
     },
     {
+      "slug": "sap",
+      "title": "SAP",
+      "category": "Productivity & SaaS",
+      "platform": "web",
+      "short_description": "Enterprise business software. White canvas, flat blue bands, application-frame chrome",
+      "long_description": "An analysis of SAP's design language — an enterprise system that keeps almost everything on white and spends its structure on two greys and one blue. The chrome is deliberately quiet, a 60px light-grey bar over a product tab rail, so the page reads as an application frame rather than a marketing surface. Depth comes from broad flat bands rather than shadow, corners stay at 8px on controls and 12px on media, and the brand's own variable typeface carries a 350-to-700 weight range that lets a 15px list item and a 15px nav link read as different classes of text at the same size.",
+      "word_count": 4367
+    },
+    {
       "slug": "sentry",
       "title": "Sentry",
       "category": "Backend, Database & DevOps",
@@ -2402,6 +2532,15 @@
       "short_description": "Error monitoring. Dark dashboard, data-dense, pink-purple accent",
       "long_description": "An inspired interpretation of Sentri's design language — a developer-tools brand built on a deep purple-violet midnight canvas, electric lime accents, and a slightly subversive illustrated personality. The system pairs a custom display sans (chunky, playful, near-condensed) with the open Rubik family for UI copy and Monaco for code, then leans on dark-on-light pricing surfaces, sticker-style mascots, and a single-color CTA hierarchy where black-violet buttons read as the primary action against either polarity.",
       "word_count": 4471
+    },
+    {
+      "slug": "shadcn",
+      "title": "shadcn/ui (New York)",
+      "category": "Component Library",
+      "platform": "shadcn",
+      "short_description": "An authored reference to the open-source shadcn/ui component design system (New York variant), built on Tailwind CSS and Radix UI primitives. The system is toke",
+      "long_description": "## Overview",
+      "word_count": 1241
     },
     {
       "slug": "shopify",
@@ -2521,6 +2660,16 @@
       "word_count": 4235
     },
     {
+      "slug": "uslub",
+      "title": "Uslub",
+      "category": "Quran & Arabic Tech",
+      "platform": "web",
+      "source": "adelpro",
+      "short_description": "Uslub is a writing-voice web client built from paper and hairlines rather than chrome. A white canvas sits inside a parchment shell, one measured blue carries e",
+      "long_description": "Uslub is a web client for keeping a writer's voice consistent wherever they write. This entry covers the browser app: the public landing page, the signed-in shell with its sidebar and account block, the auth screens, and the two handoff surfaces where a key or a bootstrap prompt is revealed.",
+      "word_count": 3153
+    },
+    {
       "slug": "vercel",
       "title": "Vercel",
       "category": "Developer Tools & IDEs",
@@ -2600,55 +2749,6 @@
       "short_description": "Automation platform. Warm orange, friendly illustration-driven",
       "long_description": "An inspired interpretation of Zapier's design language — a workflow-automation platform whose surface combines warm-cream neutrals (`#fffefb` canvas, `#f8f4f0` soft cream) with deep coffee ink (`#201515`) and a single saturated orange CTA accent (`#ff4f00`); typography pairs the proprietary Degular Display family at hero scale with Inter for sub-displays and body, giving the brand a confident-warm rather than cool-tech voice.",
       "word_count": 2663
-    },
-    {
-      "slug": "shadcn",
-      "title": "shadcn/ui (New York)",
-      "category": "Component Library",
-      "platform": "shadcn",
-      "short_description": "An authored reference to the open-source shadcn/ui component design system (New York variant), built on Tailwind CSS and Radix UI primitives. The system is toke",
-      "long_description": "## Overview",
-      "word_count": 1241
-    },
-    {
-      "slug": "midad",
-      "title": "midad (مِداد)",
-      "category": "Quran & Arabic Tech",
-      "platform": "mobile",
-      "source": "adelpro",
-      "short_description": "مِداد (midad) is an Arabic-first calligraphy editor whose interface behaves like a quiet desk: warm bone paper, iron-gall ink, and a single saffron accent that ",
-      "long_description": "Midad is an Arabic-first calligraphy editor: a canvas where the writer places glyphs, ornaments, icons and images, then exports the composition. The interface is the quiet room around the artwork.",
-      "word_count": 2400
-    },
-    {
-      "slug": "mushaf-native",
-      "title": "Open Mushaf Native",
-      "category": "Quran & Arabic Tech",
-      "platform": "mobile",
-      "source": "adelpro",
-      "short_description": "A reference to open-mushaf-native, an offline Quran mushaf reader for mobile and web. It reads as paper, with warm ivory page tints, one deep green primary, a m",
-      "long_description": "Open-Mushaf Native is an MIT-licensed Quran mushaf reader built with React Native and Expo for Android, iOS, web and macOS. It reads offline from cached page images in the Hafs and Warsh riwayas, and adds verse search, tafsir popups, page navigation, a daily wird tracker and a reading-position banner on top of that canvas. The interface is Arabic and RTL throughout; there is no second language mode.",
-      "word_count": 2891
-    },
-    {
-      "slug": "uslub",
-      "title": "Uslub",
-      "category": "Quran & Arabic Tech",
-      "platform": "web",
-      "source": "adelpro",
-      "short_description": "Uslub is a writing-voice web client built from paper and hairlines rather than chrome. A white canvas sits inside a parchment shell, one measured blue carries e",
-      "long_description": "Uslub is a web client for keeping a writer's voice consistent wherever they write. This entry covers the browser app: the public landing page, the signed-in shell with its sidebar and account block, the auth screens, and the two handoff surfaces where a key or a bootstrap prompt is revealed.",
-      "word_count": 3147
-    },
-    {
-      "slug": "open-tarteel",
-      "title": "Open Tarteel",
-      "category": "Quran & Arabic Tech",
-      "platform": "web",
-      "source": "adelpro",
-      "short_description": "An authored reference to Open Tarteel, a free and open-source Quran recitation player built with Next.js and Tailwind CSS. The atmosphere is quiet and devotiona",
-      "long_description": "Open Tarteel is a browser based Quran recitation player. It lists reciters from several audio sources, keeps a per reciter playlist of surahs, plays them from a fixed control panel, and caches whole playlists in Cache Storage for offline listening behind an app shell service worker. The interface is Arabic first, with English and German locales, and it runs as an installable progressive web app.",
-      "word_count": 2871
     },
     {
       "slug": "astryx",

@@ -33,8 +33,8 @@ Four **prompts** ship alongside: `pick-a-design`, `section-inspiration`, `theme-
 ## Honest limits
 
 - 600 of the 890 markdown files are SwiftUI/Expo/Android flavours of the same iOS design and are **not indexed**.
-- 221 of 290 designs describe colour in prose only: no facets, no palette.
-- Palette filters cover 69 of 290 designs and say so in every response.
+- 221 of 301 designs describe colour in prose only: no facets, no palette.
+- Palette filters cover 80 of 301 designs and say so in every response.
 - Only Astryx ships official themes; a derived brand palette is never called a theme.
 
 Source: [github.com/adelpro/designmd-forge](https://github.com/adelpro/designmd-forge) · MIT

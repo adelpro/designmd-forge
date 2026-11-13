@@ -35,7 +35,8 @@ yarn build
 ```
 
 Authored sources are the exception: `shadcn` and the `adelpro` set
-(`midad`, `mushaf-native`, `open-tarteel`, `uslub`) have no upstream clone.
+(`midad`, `mushaf-native`, `open-tarteel`, `open-tilawa`, `uslub`) have no
+upstream clone.
 Their specs live in `scripts/shadcn/` and `scripts/adelpro/`, and
 `scripts/build-index-<name>.mjs` writes the design file and merges the index
 entry. A full `refresh-data` keeps them because each script also stages a

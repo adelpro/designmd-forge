@@ -2,7 +2,7 @@
 
 DesignMD Forge is a free MCP server for browsing and searching **DESIGN.md** files. These are plain text design system documents (colors, typography, components, layout) that AI coding agents read to generate UI matching a target visual style.
 
-Data is a bundled, offline snapshot of six sources — 77 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 12 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), an original authored **shadcn/ui (New York)** reference, four authored specs for the maintainer's own projects under **Quran & Arabic Tech** (`midad`, `open-mushaf-native`, `open-tarteel`, `uslub`), and an authored **Astryx (Meta)** reference in **Component Library** — **290 design specs in total**. Astryx is MIT and pinned to its published release; its seven themes ship as a separate facet. No paid API, no rate limits, no network calls at runtime. The upstream sources extract only publicly visible CSS / app values (colors, type scale, spacing) and the authored entries are written from each project's own token source — no logos, trademarks, or copyrighted imagery are included, so it is safe to redistribute and reuse.
+Data is a bundled, offline snapshot of five sources — 84 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 10 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), an original authored **shadcn/ui (New York)** reference, and six authored specs — five of the maintainer's own projects under **Quran & Arabic Tech** (`midad`, `open-mushaf-native`, `open-tarteel`, `open-tilawa`, `uslub`) and **Astryx (Meta)** under **Component Library**, MIT and pinned to its published theme release — **301 design specs in total** (1,532 component groups indexed). No paid API, no rate limits, no network calls at runtime. The upstream sources extract only publicly visible CSS / app values (colors, type scale, spacing) and the authored entries are written from each project's own token source — no logos, trademarks, or copyrighted imagery are included, so it is safe to redistribute and reuse.
 
 ## What's new in v2.0
 
@@ -10,7 +10,7 @@ Five capabilities, two behaviour changes, and a list of what is deliberately abs
 
 - **Component patterns across the collection** — `designmd_search_sections` finds "footers with social links" or "3D or hover buttons" by reading the `### Footer` / `### Buttons` prose of every design, which the brand search could never do.
 - **Brands, not collections** — the same product in two sets (`spotify` + `ios-spotify`) is one row, with both platforms listed.
-- **Derived palettes** — `mode`, `hue` and `brand` filters computed from declared tokens, and every filtered response prints its coverage (69 of 290).
+- **Derived palettes** — `mode`, `hue` and `brand` filters computed from declared tokens, and every filtered response prints its coverage (80 of 301).
 - **Official themes** — Astryx's seven with mode and type pairing; `theme` returns a delta, never a copy of the parent.
 - **MCP prompts** — `pick-a-design`, `section-inspiration`, `theme-pick`, `author-design-md`.
 
@@ -49,7 +49,7 @@ Two different things, deliberately not merged:
 
 - **Flavour files are not indexed.** 600 of the 890 markdown files are SwiftUI / Expo / Android implementations of the same iOS design; indexing them would triple every count. Fetch one with `designmd_get_design_md` + `flavor`.
 - **Prose-only designs have no facets or palettes.** The 200 iOS app specs and 12 mobile archetypes describe colour in sentences; a palette regexed out of prose would look authoritative and be wrong.
-- **Palette filters cover a subset.** The tool prints its own coverage (`palette filters cover 69 of 290` today); a filtered result is not a corpus-wide answer.
+- **Palette filters cover a subset.** The tool prints its own coverage (`palette filters cover 80 of 301` today); a filtered result is not a corpus-wide answer.
 - **No mood taxonomy.** "Minimalist" stays free text over descriptions — there is no invented `mood` field.
 
 ### Prompts
