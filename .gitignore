@@ -22,5 +22,5 @@ dist/
 
 # Tests
 coverage/
-# Local implementation plans (never publish)
-docs/
+# Local implementation plans (never publish); other docs/ still ship
+docs/superpowers/plans/
