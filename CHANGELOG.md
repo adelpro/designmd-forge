@@ -6,6 +6,26 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [2.0.1]
+
+Patch release: the documentation site moved to its own domain, and everything that
+advertised the old GitHub Pages path now points at the new one. No tool or behaviour
+changed.
+
+### Changed
+
+- Documentation links use `https://adelpro.us.kg/designmd-forge/`: the README, `docs/llms.txt`,
+  the 2.0.0 notes, and `DOCS_SITE` in `src/httpServer.ts` — so the HTTP server's index JSON and
+  its `/llms` redirect no longer advertise a URL that 404s.
+- `package.json` `homepage` and `server.json` `websiteUrl` name the docs site.
+- `docs/_config.yml` sets `url:`, so the generated canonical and Open Graph tags are absolute
+  instead of relative.
+
+### Fixed
+
+- The docs claimed 290 designs and 890 files. The corpus is 301 designs and 901 files, and
+  palette coverage is 80 designs, not 70.
+
 ## [2.0.0]
 
 Sections searched across the collection, brands deduplicated, palettes derived, official
