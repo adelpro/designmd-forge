@@ -59,6 +59,7 @@ type SearchSectionsInput = z.infer<typeof SearchSectionsInputSchema>;
 
 interface SectionMatch {
   slug: string;
+  brand: string;
   title: string;
   platform: string;
   group: string;
@@ -191,6 +192,7 @@ Examples:
         const terms = termGroups.flat();
         scored.push({
           slug: record.slug,
+          brand: record.brand,
           title: record.title,
           platform: record.platform,
           group: record.group,
@@ -205,9 +207,10 @@ Examples:
 
       const collapsed = collapse(
         scored,
-        // One row per design per group: a file with "### Buttons" and
-        // "### Primary Buttons" is one choice for the reader, not two.
-        (row) => `${row.slug}|${row.group}`
+        // One row per brand per group: spotify (web) and ios-spotify (iOS) are
+        // the same product, and a file with "### Buttons" plus "### Primary
+        // Buttons" is one choice for the reader.
+        (row) => `${row.brand}|${row.group}`
       ).sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug));
 
       const matches = collapsed.slice(0, params.limit);

@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { callTool } from './helpers.js';
+import { brandOf } from '../services/brandStore.js';
 
 test('footer + social returns real choices with snippets', async () => {
   const res = await callTool('designmd_search_sections', { group: 'footer', text: 'social icons' });
@@ -51,4 +52,14 @@ test('collapsing keeps one row per design for the same group', async () => {
   const matches = res.matches as Array<{ slug: string; group: string }>;
   const keys = matches.map((m) => `${m.slug}:${m.group}`);
   assert.equal(new Set(keys).size, keys.length, 'a design must not appear twice for one group');
+});
+
+test('rows carry their brand key and no brand repeats', async () => {
+  const res = await callTool('designmd_search_sections', { group: 'buttons', limit: 50 });
+  const matches = res.matches as Array<{ slug: string; brand: string }>;
+  const brands = matches.map((m) => m.brand);
+  assert.equal(new Set(brands).size, brands.length, 'one row per brand, not per collection');
+  for (const match of matches) {
+    assert.equal(match.brand, brandOf(match.slug)?.key, `brand mismatch for ${match.slug}`);
+  }
 });

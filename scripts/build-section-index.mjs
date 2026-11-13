@@ -25,10 +25,12 @@ import {
 } from '../dist/services/sectionParser.js';
 import { resolveGroupHeading } from '../dist/services/groupVocabulary.js';
 import { extractFacets } from '../dist/services/groupFacets.js';
+import { brandKey } from '../dist/services/brandKey.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = join(root, 'src', 'data');
 const outPath = join(dataDir, 'section-index.json');
+const brandPath = join(dataDir, 'brands.json');
 
 const designs = loadDesigns(dataDir);
 const byKey = new Map();
@@ -57,6 +59,7 @@ for (const design of designs) {
       const resolved = resolveGroupHeading(group.heading);
       const record = {
         slug: design.slug,
+        brand: brandKey(design.slug, design.platform),
         title: design.title,
         platform: design.platform ?? 'web',
         source: design.source ?? 'upstream',
@@ -102,6 +105,31 @@ const artifact = {
 };
 
 writeFileSync(outPath, JSON.stringify(artifact, null, 2), 'utf-8');
+
+// One brand can own several designs (spotify on the web + ios-spotify in the
+// iOS set). Titles prefer the web variant so a brand reads the same whichever
+// collection you arrive from.
+const brands = {};
+for (const design of designs) {
+  const key = brandKey(design.slug, design.platform);
+  if (!brands[key]) brands[key] = { key, title: design.title, variants: [] };
+  brands[key].variants.push({ slug: design.slug, platform: design.platform ?? 'web' });
+  if (design.platform === 'web') brands[key].title = design.title;
+}
+
+writeFileSync(
+  brandPath,
+  JSON.stringify(
+    {
+      groups_source: 'section-index.json',
+      coverage: { brands: Object.keys(brands).length, designs: designs.length },
+      brands,
+    },
+    null,
+    2
+  ),
+  'utf-8'
+);
 
 console.log(
   `[section-index] ${groups.length} groups from ${designsWithGroups}/${designs.length} designs ` +

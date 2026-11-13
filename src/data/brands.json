@@ -1,0 +1,2809 @@
+{
+  "groups_source": "section-index.json",
+  "coverage": {
+    "brands": 274,
+    "designs": 289
+  },
+  "brands": {
+    "airbnb": {
+      "key": "airbnb",
+      "title": "Airbnb",
+      "variants": [
+        {
+          "slug": "airbnb",
+          "platform": "web"
+        },
+        {
+          "slug": "ios-airbnb",
+          "platform": "ios"
+        }
+      ]
+    },
+    "airtable": {
+      "key": "airtable",
+      "title": "Airtable",
+      "variants": [
+        {
+          "slug": "airtable",
+          "platform": "web"
+        }
+      ]
+    },
+    "apple": {
+      "key": "apple",
+      "title": "Apple",
+      "variants": [
+        {
+          "slug": "apple",
+          "platform": "web"
+        }
+      ]
+    },
+    "binance": {
+      "key": "binance",
+      "title": "Binance",
+      "variants": [
+        {
+          "slug": "binance",
+          "platform": "web"
+        },
+        {
+          "slug": "ios-binance",
+          "platform": "ios"
+        }
+      ]
+    },
+    "bmw": {
+      "key": "bmw",
+      "title": "BMW",
+      "variants": [
+        {
+          "slug": "bmw",
+          "platform": "web"
+        }
+      ]
+    },
+    "bmw-m": {
+      "key": "bmw-m",
+      "title": "BMW M",
+      "variants": [
+        {
+          "slug": "bmw-m",
+          "platform": "web"
+        }
+      ]
+    },
+    "bugatti": {
+      "key": "bugatti",
+      "title": "Bugatti",
+      "variants": [
+        {
+          "slug": "bugatti",
+          "platform": "web"
+        }
+      ]
+    },
+    "cal": {
+      "key": "cal",
+      "title": "Cal.com",
+      "variants": [
+        {
+          "slug": "cal",
+          "platform": "web"
+        }
+      ]
+    },
+    "card-heavy": {
+      "key": "card-heavy",
+      "title": "Card Heavy Mobile Design System",
+      "variants": [
+        {
+          "slug": "card-heavy",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "claude": {
+      "key": "claude",
+      "title": "Claude",
+      "variants": [
+        {
+          "slug": "claude",
+          "platform": "web"
+        },
+        {
+          "slug": "ios-claude",
+          "platform": "ios"
+        }
+      ]
+    },
+    "clay": {
+      "key": "clay",
+      "title": "Clay",
+      "variants": [
+        {
+          "slug": "clay",
+          "platform": "web"
+        }
+      ]
+    },
+    "clickhouse": {
+      "key": "clickhouse",
+      "title": "ClickHouse",
+      "variants": [
+        {
+          "slug": "clickhouse",
+          "platform": "web"
+        }
+      ]
+    },
+    "cohere": {
+      "key": "cohere",
+      "title": "Cohere",
+      "variants": [
+        {
+          "slug": "cohere",
+          "platform": "web"
+        }
+      ]
+    },
+    "coinbase": {
+      "key": "coinbase",
+      "title": "Coinbase",
+      "variants": [
+        {
+          "slug": "coinbase",
+          "platform": "web"
+        },
+        {
+          "slug": "ios-coinbase",
+          "platform": "ios"
+        }
+      ]
+    },
+    "composio": {
+      "key": "composio",
+      "title": "Composio",
+      "variants": [
+        {
+          "slug": "composio",
+          "platform": "web"
+        }
+      ]
+    },
+    "content-first": {
+      "key": "content-first",
+      "title": "Content First Mobile Design System",
+      "variants": [
+        {
+          "slug": "content-first",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "cursor": {
+      "key": "cursor",
+      "title": "Cursor",
+      "variants": [
+        {
+          "slug": "cursor",
+          "platform": "web"
+        }
+      ]
+    },
+    "data-dashboard": {
+      "key": "data-dashboard",
+      "title": "Data Dashboard Mobile Design System",
+      "variants": [
+        {
+          "slug": "data-dashboard",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "dell-1996": {
+      "key": "dell-1996",
+      "title": "Dell (1996)",
+      "variants": [
+        {
+          "slug": "dell-1996",
+          "platform": "web"
+        }
+      ]
+    },
+    "elevenlabs": {
+      "key": "elevenlabs",
+      "title": "ElevenLabs",
+      "variants": [
+        {
+          "slug": "elevenlabs",
+          "platform": "web"
+        }
+      ]
+    },
+    "enterprise-neutral": {
+      "key": "enterprise-neutral",
+      "title": "Enterprise Neutral Mobile Design System",
+      "variants": [
+        {
+          "slug": "enterprise-neutral",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "expo": {
+      "key": "expo",
+      "title": "Expo",
+      "variants": [
+        {
+          "slug": "expo",
+          "platform": "web"
+        }
+      ]
+    },
+    "ferrari": {
+      "key": "ferrari",
+      "title": "Ferrari",
+      "variants": [
+        {
+          "slug": "ferrari",
+          "platform": "web"
+        }
+      ]
+    },
+    "figma": {
+      "key": "figma",
+      "title": "Figma",
+      "variants": [
+        {
+          "slug": "figma",
+          "platform": "web"
+        },
+        {
+          "slug": "ios-figma",
+          "platform": "ios"
+        }
+      ]
+    },
+    "framer": {
+      "key": "framer",
+      "title": "Framer",
+      "variants": [
+        {
+          "slug": "framer",
+          "platform": "web"
+        }
+      ]
+    },
+    "hashicorp": {
+      "key": "hashicorp",
+      "title": "HashiCorp",
+      "variants": [
+        {
+          "slug": "hashicorp",
+          "platform": "web"
+        }
+      ]
+    },
+    "hp": {
+      "key": "hp",
+      "title": "HP",
+      "variants": [
+        {
+          "slug": "hp",
+          "platform": "web"
+        }
+      ]
+    },
+    "ibm": {
+      "key": "ibm",
+      "title": "IBM",
+      "variants": [
+        {
+          "slug": "ibm",
+          "platform": "web"
+        }
+      ]
+    },
+    "intercom": {
+      "key": "intercom",
+      "title": "Intercom",
+      "variants": [
+        {
+          "slug": "intercom",
+          "platform": "web"
+        }
+      ]
+    },
+    "acorns": {
+      "key": "acorns",
+      "title": "Design System Inspiration of Acorns (iOS)",
+      "variants": [
+        {
+          "slug": "ios-acorns",
+          "platform": "ios"
+        }
+      ]
+    },
+    "alltrails": {
+      "key": "alltrails",
+      "title": "Design System Inspiration of AllTrails (iOS)",
+      "variants": [
+        {
+          "slug": "ios-alltrails",
+          "platform": "ios"
+        }
+      ]
+    },
+    "amazon": {
+      "key": "amazon",
+      "title": "Design System Inspiration of Amazon (iOS)",
+      "variants": [
+        {
+          "slug": "ios-amazon",
+          "platform": "ios"
+        }
+      ]
+    },
+    "amazon-music": {
+      "key": "amazon-music",
+      "title": "Design System Inspiration of Amazon Music (iOS)",
+      "variants": [
+        {
+          "slug": "ios-amazon-music",
+          "platform": "ios"
+        }
+      ]
+    },
+    "apple-fitness": {
+      "key": "apple-fitness",
+      "title": "Design System Inspiration of Apple Fitness (iOS)",
+      "variants": [
+        {
+          "slug": "ios-apple-fitness",
+          "platform": "ios"
+        }
+      ]
+    },
+    "apple-maps": {
+      "key": "apple-maps",
+      "title": "Design System Inspiration of Apple Maps (iOS)",
+      "variants": [
+        {
+          "slug": "ios-apple-maps",
+          "platform": "ios"
+        }
+      ]
+    },
+    "apple-music": {
+      "key": "apple-music",
+      "title": "Design System Inspiration of Apple Music (iOS)",
+      "variants": [
+        {
+          "slug": "ios-apple-music",
+          "platform": "ios"
+        }
+      ]
+    },
+    "apple-notes": {
+      "key": "apple-notes",
+      "title": "Design System Inspiration of Apple Notes (iOS)",
+      "variants": [
+        {
+          "slug": "ios-apple-notes",
+          "platform": "ios"
+        }
+      ]
+    },
+    "apple-tv": {
+      "key": "apple-tv",
+      "title": "Design System Inspiration of Apple TV (iOS)",
+      "variants": [
+        {
+          "slug": "ios-apple-tv",
+          "platform": "ios"
+        }
+      ]
+    },
+    "apple-wallet": {
+      "key": "apple-wallet",
+      "title": "Design System Inspiration of Apple Wallet (iOS)",
+      "variants": [
+        {
+          "slug": "ios-apple-wallet",
+          "platform": "ios"
+        }
+      ]
+    },
+    "asana": {
+      "key": "asana",
+      "title": "Design System Inspiration of Asana (iOS)",
+      "variants": [
+        {
+          "slug": "ios-asana",
+          "platform": "ios"
+        }
+      ]
+    },
+    "audible": {
+      "key": "audible",
+      "title": "Design System Inspiration of Audible (iOS)",
+      "variants": [
+        {
+          "slug": "ios-audible",
+          "platform": "ios"
+        }
+      ]
+    },
+    "bandcamp": {
+      "key": "bandcamp",
+      "title": "Design System Inspiration of Bandcamp (iOS)",
+      "variants": [
+        {
+          "slug": "ios-bandcamp",
+          "platform": "ios"
+        }
+      ]
+    },
+    "bear": {
+      "key": "bear",
+      "title": "Design System Inspiration of Bear (iOS)",
+      "variants": [
+        {
+          "slug": "ios-bear",
+          "platform": "ios"
+        }
+      ]
+    },
+    "bereal": {
+      "key": "bereal",
+      "title": "Design System Inspiration of BeReal (iOS)",
+      "variants": [
+        {
+          "slug": "ios-bereal",
+          "platform": "ios"
+        }
+      ]
+    },
+    "bluesky": {
+      "key": "bluesky",
+      "title": "Design System Inspiration of Bluesky (iOS)",
+      "variants": [
+        {
+          "slug": "ios-bluesky",
+          "platform": "ios"
+        }
+      ]
+    },
+    "booking": {
+      "key": "booking",
+      "title": "Design System Inspiration of Booking.com (iOS)",
+      "variants": [
+        {
+          "slug": "ios-booking",
+          "platform": "ios"
+        }
+      ]
+    },
+    "bumble": {
+      "key": "bumble",
+      "title": "Design System Inspiration of Bumble (iOS)",
+      "variants": [
+        {
+          "slug": "ios-bumble",
+          "platform": "ios"
+        }
+      ]
+    },
+    "cal-ai": {
+      "key": "cal-ai",
+      "title": "Design System Inspiration of Cal AI (iOS)",
+      "variants": [
+        {
+          "slug": "ios-cal-ai",
+          "platform": "ios"
+        }
+      ]
+    },
+    "calm": {
+      "key": "calm",
+      "title": "Design System Inspiration of Calm (iOS)",
+      "variants": [
+        {
+          "slug": "ios-calm",
+          "platform": "ios"
+        }
+      ]
+    },
+    "canva": {
+      "key": "canva",
+      "title": "Design System Inspiration of Canva (iOS)",
+      "variants": [
+        {
+          "slug": "ios-canva",
+          "platform": "ios"
+        }
+      ]
+    },
+    "cash-app": {
+      "key": "cash-app",
+      "title": "Design System Inspiration of Cash App (iOS)",
+      "variants": [
+        {
+          "slug": "ios-cash-app",
+          "platform": "ios"
+        }
+      ]
+    },
+    "character-ai": {
+      "key": "character-ai",
+      "title": "Design System Inspiration of Character.AI (iOS)",
+      "variants": [
+        {
+          "slug": "ios-character-ai",
+          "platform": "ios"
+        }
+      ]
+    },
+    "charles-schwab": {
+      "key": "charles-schwab",
+      "title": "Design System Inspiration of Charles Schwab (iOS)",
+      "variants": [
+        {
+          "slug": "ios-charles-schwab",
+          "platform": "ios"
+        }
+      ]
+    },
+    "chatgpt": {
+      "key": "chatgpt",
+      "title": "Design System Inspiration of ChatGPT (iOS)",
+      "variants": [
+        {
+          "slug": "ios-chatgpt",
+          "platform": "ios"
+        }
+      ]
+    },
+    "chime": {
+      "key": "chime",
+      "title": "Design System Inspiration of Chime (iOS)",
+      "variants": [
+        {
+          "slug": "ios-chime",
+          "platform": "ios"
+        }
+      ]
+    },
+    "chipotle": {
+      "key": "chipotle",
+      "title": "Design System Inspiration of Chipotle (iOS)",
+      "variants": [
+        {
+          "slug": "ios-chipotle",
+          "platform": "ios"
+        }
+      ]
+    },
+    "citymapper": {
+      "key": "citymapper",
+      "title": "Design System Inspiration of Citymapper (iOS)",
+      "variants": [
+        {
+          "slug": "ios-citymapper",
+          "platform": "ios"
+        }
+      ]
+    },
+    "clickup": {
+      "key": "clickup",
+      "title": "Design System Inspiration of ClickUp (iOS)",
+      "variants": [
+        {
+          "slug": "ios-clickup",
+          "platform": "ios"
+        }
+      ]
+    },
+    "clubhouse": {
+      "key": "clubhouse",
+      "title": "Design System Inspiration of Clubhouse (iOS)",
+      "variants": [
+        {
+          "slug": "ios-clubhouse",
+          "platform": "ios"
+        }
+      ]
+    },
+    "coffee-meets-bagel": {
+      "key": "coffee-meets-bagel",
+      "title": "Design System Inspiration of Coffee Meets Bagel (iOS)",
+      "variants": [
+        {
+          "slug": "ios-coffee-meets-bagel",
+          "platform": "ios"
+        }
+      ]
+    },
+    "copilot": {
+      "key": "copilot",
+      "title": "Design System Inspiration of Microsoft Copilot (iOS)",
+      "variants": [
+        {
+          "slug": "ios-copilot",
+          "platform": "ios"
+        }
+      ]
+    },
+    "craft": {
+      "key": "craft",
+      "title": "Design System Inspiration of Craft (iOS)",
+      "variants": [
+        {
+          "slug": "ios-craft",
+          "platform": "ios"
+        }
+      ]
+    },
+    "crunchyroll": {
+      "key": "crunchyroll",
+      "title": "Design System Inspiration of Crunchyroll (iOS)",
+      "variants": [
+        {
+          "slug": "ios-crunchyroll",
+          "platform": "ios"
+        }
+      ]
+    },
+    "crypto-com": {
+      "key": "crypto-com",
+      "title": "Design System Inspiration of Crypto.com (iOS)",
+      "variants": [
+        {
+          "slug": "ios-crypto-com",
+          "platform": "ios"
+        }
+      ]
+    },
+    "deepseek": {
+      "key": "deepseek",
+      "title": "Design System Inspiration of DeepSeek (iOS)",
+      "variants": [
+        {
+          "slug": "ios-deepseek",
+          "platform": "ios"
+        }
+      ]
+    },
+    "deezer": {
+      "key": "deezer",
+      "title": "Design System Inspiration of Deezer (iOS)",
+      "variants": [
+        {
+          "slug": "ios-deezer",
+          "platform": "ios"
+        }
+      ]
+    },
+    "deliveroo": {
+      "key": "deliveroo",
+      "title": "Design System Inspiration of Deliveroo (iOS)",
+      "variants": [
+        {
+          "slug": "ios-deliveroo",
+          "platform": "ios"
+        }
+      ]
+    },
+    "delta": {
+      "key": "delta",
+      "title": "Design System Inspiration of Delta (iOS)",
+      "variants": [
+        {
+          "slug": "ios-delta",
+          "platform": "ios"
+        }
+      ]
+    },
+    "discord": {
+      "key": "discord",
+      "title": "Design System Inspiration of Discord (iOS)",
+      "variants": [
+        {
+          "slug": "ios-discord",
+          "platform": "ios"
+        }
+      ]
+    },
+    "disney-plus": {
+      "key": "disney-plus",
+      "title": "Design System Inspiration of Disney+ (iOS)",
+      "variants": [
+        {
+          "slug": "ios-disney-plus",
+          "platform": "ios"
+        }
+      ]
+    },
+    "dominos": {
+      "key": "dominos",
+      "title": "Design System Inspiration of Domino's (iOS)",
+      "variants": [
+        {
+          "slug": "ios-dominos",
+          "platform": "ios"
+        }
+      ]
+    },
+    "doordash": {
+      "key": "doordash",
+      "title": "Design System Inspiration of DoorDash (iOS)",
+      "variants": [
+        {
+          "slug": "ios-doordash",
+          "platform": "ios"
+        }
+      ]
+    },
+    "dropbox": {
+      "key": "dropbox",
+      "title": "Design System Inspiration of Dropbox (iOS)",
+      "variants": [
+        {
+          "slug": "ios-dropbox",
+          "platform": "ios"
+        }
+      ]
+    },
+    "duolingo": {
+      "key": "duolingo",
+      "title": "Design System Inspiration of Duolingo (iOS)",
+      "variants": [
+        {
+          "slug": "ios-duolingo",
+          "platform": "ios"
+        }
+      ]
+    },
+    "ebay": {
+      "key": "ebay",
+      "title": "Design System Inspiration of eBay (iOS)",
+      "variants": [
+        {
+          "slug": "ios-ebay",
+          "platform": "ios"
+        }
+      ]
+    },
+    "espn": {
+      "key": "espn",
+      "title": "Design System Inspiration of ESPN (iOS)",
+      "variants": [
+        {
+          "slug": "ios-espn",
+          "platform": "ios"
+        }
+      ]
+    },
+    "etsy": {
+      "key": "etsy",
+      "title": "Design System Inspiration of Etsy (iOS)",
+      "variants": [
+        {
+          "slug": "ios-etsy",
+          "platform": "ios"
+        }
+      ]
+    },
+    "evernote": {
+      "key": "evernote",
+      "title": "Design System Inspiration of Evernote (iOS)",
+      "variants": [
+        {
+          "slug": "ios-evernote",
+          "platform": "ios"
+        }
+      ]
+    },
+    "expedia": {
+      "key": "expedia",
+      "title": "Design System Inspiration of Expedia (iOS)",
+      "variants": [
+        {
+          "slug": "ios-expedia",
+          "platform": "ios"
+        }
+      ]
+    },
+    "facebook": {
+      "key": "facebook",
+      "title": "Design System Inspiration of Facebook (iOS)",
+      "variants": [
+        {
+          "slug": "ios-facebook",
+          "platform": "ios"
+        }
+      ]
+    },
+    "feeld": {
+      "key": "feeld",
+      "title": "Design System Inspiration of Feeld (iOS)",
+      "variants": [
+        {
+          "slug": "ios-feeld",
+          "platform": "ios"
+        }
+      ]
+    },
+    "fidelity": {
+      "key": "fidelity",
+      "title": "Design System Inspiration of Fidelity (iOS)",
+      "variants": [
+        {
+          "slug": "ios-fidelity",
+          "platform": "ios"
+        }
+      ]
+    },
+    "fitbit": {
+      "key": "fitbit",
+      "title": "Design System Inspiration of Fitbit (iOS)",
+      "variants": [
+        {
+          "slug": "ios-fitbit",
+          "platform": "ios"
+        }
+      ]
+    },
+    "flickr": {
+      "key": "flickr",
+      "title": "Design System Inspiration of Flickr (iOS)",
+      "variants": [
+        {
+          "slug": "ios-flickr",
+          "platform": "ios"
+        }
+      ]
+    },
+    "flighty": {
+      "key": "flighty",
+      "title": "Design System Inspiration of Flighty (iOS)",
+      "variants": [
+        {
+          "slug": "ios-flighty",
+          "platform": "ios"
+        }
+      ]
+    },
+    "flo": {
+      "key": "flo",
+      "title": "Design System Inspiration of Flo (iOS)",
+      "variants": [
+        {
+          "slug": "ios-flo",
+          "platform": "ios"
+        }
+      ]
+    },
+    "garmin-connect": {
+      "key": "garmin-connect",
+      "title": "Design System Inspiration of Garmin Connect (iOS)",
+      "variants": [
+        {
+          "slug": "ios-garmin-connect",
+          "platform": "ios"
+        }
+      ]
+    },
+    "gas": {
+      "key": "gas",
+      "title": "Design System Inspiration of Gas (iOS)",
+      "variants": [
+        {
+          "slug": "ios-gas",
+          "platform": "ios"
+        }
+      ]
+    },
+    "gemini": {
+      "key": "gemini",
+      "title": "Design System Inspiration of Google Gemini (iOS)",
+      "variants": [
+        {
+          "slug": "ios-gemini",
+          "platform": "ios"
+        }
+      ]
+    },
+    "github": {
+      "key": "github",
+      "title": "Design System Inspiration of GitHub (iOS)",
+      "variants": [
+        {
+          "slug": "ios-github",
+          "platform": "ios"
+        }
+      ]
+    },
+    "gmail": {
+      "key": "gmail",
+      "title": "Design System Inspiration of Gmail (iOS)",
+      "variants": [
+        {
+          "slug": "ios-gmail",
+          "platform": "ios"
+        }
+      ]
+    },
+    "goodreads": {
+      "key": "goodreads",
+      "title": "Design System Inspiration of Goodreads (iOS)",
+      "variants": [
+        {
+          "slug": "ios-goodreads",
+          "platform": "ios"
+        }
+      ]
+    },
+    "google-calendar": {
+      "key": "google-calendar",
+      "title": "Design System Inspiration of Google Calendar (iOS)",
+      "variants": [
+        {
+          "slug": "ios-google-calendar",
+          "platform": "ios"
+        }
+      ]
+    },
+    "google-maps": {
+      "key": "google-maps",
+      "title": "Design System Inspiration of Google Maps (iOS)",
+      "variants": [
+        {
+          "slug": "ios-google-maps",
+          "platform": "ios"
+        }
+      ]
+    },
+    "grammarly": {
+      "key": "grammarly",
+      "title": "Design System Inspiration of Grammarly (iOS)",
+      "variants": [
+        {
+          "slug": "ios-grammarly",
+          "platform": "ios"
+        }
+      ]
+    },
+    "grindr": {
+      "key": "grindr",
+      "title": "Design System Inspiration of Grindr (iOS)",
+      "variants": [
+        {
+          "slug": "ios-grindr",
+          "platform": "ios"
+        }
+      ]
+    },
+    "grok": {
+      "key": "grok",
+      "title": "Design System Inspiration of Grok (iOS)",
+      "variants": [
+        {
+          "slug": "ios-grok",
+          "platform": "ios"
+        }
+      ]
+    },
+    "groupme": {
+      "key": "groupme",
+      "title": "Design System Inspiration of GroupMe (iOS)",
+      "variants": [
+        {
+          "slug": "ios-groupme",
+          "platform": "ios"
+        }
+      ]
+    },
+    "grubhub": {
+      "key": "grubhub",
+      "title": "Design System Inspiration of Grubhub (iOS)",
+      "variants": [
+        {
+          "slug": "ios-grubhub",
+          "platform": "ios"
+        }
+      ]
+    },
+    "happn": {
+      "key": "happn",
+      "title": "Design System Inspiration of happn (iOS)",
+      "variants": [
+        {
+          "slug": "ios-happn",
+          "platform": "ios"
+        }
+      ]
+    },
+    "headspace": {
+      "key": "headspace",
+      "title": "Design System Inspiration of Headspace (iOS)",
+      "variants": [
+        {
+          "slug": "ios-headspace",
+          "platform": "ios"
+        }
+      ]
+    },
+    "hevy": {
+      "key": "hevy",
+      "title": "Design System Inspiration of Hevy (iOS)",
+      "variants": [
+        {
+          "slug": "ios-hevy",
+          "platform": "ios"
+        }
+      ]
+    },
+    "hinge": {
+      "key": "hinge",
+      "title": "Design System Inspiration of Hinge (iOS)",
+      "variants": [
+        {
+          "slug": "ios-hinge",
+          "platform": "ios"
+        }
+      ]
+    },
+    "hopper": {
+      "key": "hopper",
+      "title": "Design System Inspiration of Hopper (iOS)",
+      "variants": [
+        {
+          "slug": "ios-hopper",
+          "platform": "ios"
+        }
+      ]
+    },
+    "hulu": {
+      "key": "hulu",
+      "title": "Design System Inspiration of Hulu (iOS)",
+      "variants": [
+        {
+          "slug": "ios-hulu",
+          "platform": "ios"
+        }
+      ]
+    },
+    "iheartradio": {
+      "key": "iheartradio",
+      "title": "Design System Inspiration of iHeartRadio (iOS)",
+      "variants": [
+        {
+          "slug": "ios-iheartradio",
+          "platform": "ios"
+        }
+      ]
+    },
+    "imessage": {
+      "key": "imessage",
+      "title": "Design System Inspiration of iMessage (iOS)",
+      "variants": [
+        {
+          "slug": "ios-imessage",
+          "platform": "ios"
+        }
+      ]
+    },
+    "instacart": {
+      "key": "instacart",
+      "title": "Design System Inspiration of Instacart (iOS)",
+      "variants": [
+        {
+          "slug": "ios-instacart",
+          "platform": "ios"
+        }
+      ]
+    },
+    "instagram": {
+      "key": "instagram",
+      "title": "Design System Inspiration of Instagram (iOS)",
+      "variants": [
+        {
+          "slug": "ios-instagram",
+          "platform": "ios"
+        }
+      ]
+    },
+    "jira": {
+      "key": "jira",
+      "title": "Design System Inspiration of Jira (iOS)",
+      "variants": [
+        {
+          "slug": "ios-jira",
+          "platform": "ios"
+        }
+      ]
+    },
+    "kakaotalk": {
+      "key": "kakaotalk",
+      "title": "Design System Inspiration of KakaoTalk (iOS)",
+      "variants": [
+        {
+          "slug": "ios-kakaotalk",
+          "platform": "ios"
+        }
+      ]
+    },
+    "kayak": {
+      "key": "kayak",
+      "title": "Design System Inspiration of KAYAK (iOS)",
+      "variants": [
+        {
+          "slug": "ios-kayak",
+          "platform": "ios"
+        }
+      ]
+    },
+    "kick": {
+      "key": "kick",
+      "title": "Design System Inspiration of Kick (iOS)",
+      "variants": [
+        {
+          "slug": "ios-kick",
+          "platform": "ios"
+        }
+      ]
+    },
+    "kik": {
+      "key": "kik",
+      "title": "Design System Inspiration of Kik (iOS)",
+      "variants": [
+        {
+          "slug": "ios-kik",
+          "platform": "ios"
+        }
+      ]
+    },
+    "kindle": {
+      "key": "kindle",
+      "title": "Design System Inspiration of Kindle (iOS)",
+      "variants": [
+        {
+          "slug": "ios-kindle",
+          "platform": "ios"
+        }
+      ]
+    },
+    "klarna": {
+      "key": "klarna",
+      "title": "Design System Inspiration of Klarna (iOS)",
+      "variants": [
+        {
+          "slug": "ios-klarna",
+          "platform": "ios"
+        }
+      ]
+    },
+    "lemon8": {
+      "key": "lemon8",
+      "title": "Design System Inspiration of Lemon8 (iOS)",
+      "variants": [
+        {
+          "slug": "ios-lemon8",
+          "platform": "ios"
+        }
+      ]
+    },
+    "life360": {
+      "key": "life360",
+      "title": "Design System Inspiration of Life360 (iOS)",
+      "variants": [
+        {
+          "slug": "ios-life360",
+          "platform": "ios"
+        }
+      ]
+    },
+    "line": {
+      "key": "line",
+      "title": "Design System Inspiration of LINE (iOS)",
+      "variants": [
+        {
+          "slug": "ios-line",
+          "platform": "ios"
+        }
+      ]
+    },
+    "linear": {
+      "key": "linear",
+      "title": "Design System Inspiration of Linear (iOS)",
+      "variants": [
+        {
+          "slug": "ios-linear",
+          "platform": "ios"
+        }
+      ]
+    },
+    "linkedin": {
+      "key": "linkedin",
+      "title": "Design System Inspiration of LinkedIn (iOS)",
+      "variants": [
+        {
+          "slug": "ios-linkedin",
+          "platform": "ios"
+        }
+      ]
+    },
+    "locket": {
+      "key": "locket",
+      "title": "Design System Inspiration of Locket (iOS)",
+      "variants": [
+        {
+          "slug": "ios-locket",
+          "platform": "ios"
+        }
+      ]
+    },
+    "lyft": {
+      "key": "lyft",
+      "title": "Design System Inspiration of Lyft (iOS)",
+      "variants": [
+        {
+          "slug": "ios-lyft",
+          "platform": "ios"
+        }
+      ]
+    },
+    "marriott-bonvoy": {
+      "key": "marriott-bonvoy",
+      "title": "Design System Inspiration of Marriott Bonvoy (iOS)",
+      "variants": [
+        {
+          "slug": "ios-marriott-bonvoy",
+          "platform": "ios"
+        }
+      ]
+    },
+    "mastodon": {
+      "key": "mastodon",
+      "title": "Design System Inspiration of Mastodon (iOS)",
+      "variants": [
+        {
+          "slug": "ios-mastodon",
+          "platform": "ios"
+        }
+      ]
+    },
+    "match": {
+      "key": "match",
+      "title": "Design System Inspiration of Match (iOS)",
+      "variants": [
+        {
+          "slug": "ios-match",
+          "platform": "ios"
+        }
+      ]
+    },
+    "max": {
+      "key": "max",
+      "title": "Design System Inspiration of Max (iOS)",
+      "variants": [
+        {
+          "slug": "ios-max",
+          "platform": "ios"
+        }
+      ]
+    },
+    "mcdonalds": {
+      "key": "mcdonalds",
+      "title": "Design System Inspiration of McDonald's (iOS)",
+      "variants": [
+        {
+          "slug": "ios-mcdonalds",
+          "platform": "ios"
+        }
+      ]
+    },
+    "messenger": {
+      "key": "messenger",
+      "title": "Design System Inspiration of Messenger (iOS)",
+      "variants": [
+        {
+          "slug": "ios-messenger",
+          "platform": "ios"
+        }
+      ]
+    },
+    "microsoft-teams": {
+      "key": "microsoft-teams",
+      "title": "Design System Inspiration of Microsoft Teams (iOS)",
+      "variants": [
+        {
+          "slug": "ios-microsoft-teams",
+          "platform": "ios"
+        }
+      ]
+    },
+    "midjourney": {
+      "key": "midjourney",
+      "title": "Design System Inspiration of Midjourney (iOS)",
+      "variants": [
+        {
+          "slug": "ios-midjourney",
+          "platform": "ios"
+        }
+      ]
+    },
+    "miro": {
+      "key": "miro",
+      "title": "Miro",
+      "variants": [
+        {
+          "slug": "ios-miro",
+          "platform": "ios"
+        },
+        {
+          "slug": "miro",
+          "platform": "web"
+        }
+      ]
+    },
+    "monday": {
+      "key": "monday",
+      "title": "Design System Inspiration of monday.com (iOS)",
+      "variants": [
+        {
+          "slug": "ios-monday",
+          "platform": "ios"
+        }
+      ]
+    },
+    "monzo": {
+      "key": "monzo",
+      "title": "Design System Inspiration of Monzo (iOS)",
+      "variants": [
+        {
+          "slug": "ios-monzo",
+          "platform": "ios"
+        }
+      ]
+    },
+    "myfitnesspal": {
+      "key": "myfitnesspal",
+      "title": "Design System Inspiration of MyFitnessPal (iOS)",
+      "variants": [
+        {
+          "slug": "ios-myfitnesspal",
+          "platform": "ios"
+        }
+      ]
+    },
+    "netflix": {
+      "key": "netflix",
+      "title": "Design System Inspiration of Netflix (iOS)",
+      "variants": [
+        {
+          "slug": "ios-netflix",
+          "platform": "ios"
+        }
+      ]
+    },
+    "nextdoor": {
+      "key": "nextdoor",
+      "title": "Design System Inspiration of Nextdoor (iOS)",
+      "variants": [
+        {
+          "slug": "ios-nextdoor",
+          "platform": "ios"
+        }
+      ]
+    },
+    "nike-run-club": {
+      "key": "nike-run-club",
+      "title": "Design System Inspiration of Nike Run Club (iOS)",
+      "variants": [
+        {
+          "slug": "ios-nike-run-club",
+          "platform": "ios"
+        }
+      ]
+    },
+    "noom": {
+      "key": "noom",
+      "title": "Design System Inspiration of Noom (iOS)",
+      "variants": [
+        {
+          "slug": "ios-noom",
+          "platform": "ios"
+        }
+      ]
+    },
+    "notion": {
+      "key": "notion",
+      "title": "Notion",
+      "variants": [
+        {
+          "slug": "ios-notion",
+          "platform": "ios"
+        },
+        {
+          "slug": "notion",
+          "platform": "web"
+        }
+      ]
+    },
+    "nubank": {
+      "key": "nubank",
+      "title": "Design System Inspiration of Nubank (iOS)",
+      "variants": [
+        {
+          "slug": "ios-nubank",
+          "platform": "ios"
+        }
+      ]
+    },
+    "obsidian": {
+      "key": "obsidian",
+      "title": "Design System Inspiration of Obsidian (iOS)",
+      "variants": [
+        {
+          "slug": "ios-obsidian",
+          "platform": "ios"
+        }
+      ]
+    },
+    "okcupid": {
+      "key": "okcupid",
+      "title": "Design System Inspiration of OkCupid (iOS)",
+      "variants": [
+        {
+          "slug": "ios-okcupid",
+          "platform": "ios"
+        }
+      ]
+    },
+    "opentable": {
+      "key": "opentable",
+      "title": "Design System Inspiration of OpenTable (iOS)",
+      "variants": [
+        {
+          "slug": "ios-opentable",
+          "platform": "ios"
+        }
+      ]
+    },
+    "oura": {
+      "key": "oura",
+      "title": "Design System Inspiration of Oura (iOS)",
+      "variants": [
+        {
+          "slug": "ios-oura",
+          "platform": "ios"
+        }
+      ]
+    },
+    "overcast": {
+      "key": "overcast",
+      "title": "Design System Inspiration of Overcast (iOS)",
+      "variants": [
+        {
+          "slug": "ios-overcast",
+          "platform": "ios"
+        }
+      ]
+    },
+    "pandora": {
+      "key": "pandora",
+      "title": "Design System Inspiration of Pandora (iOS)",
+      "variants": [
+        {
+          "slug": "ios-pandora",
+          "platform": "ios"
+        }
+      ]
+    },
+    "panera": {
+      "key": "panera",
+      "title": "Design System Inspiration of Panera (iOS)",
+      "variants": [
+        {
+          "slug": "ios-panera",
+          "platform": "ios"
+        }
+      ]
+    },
+    "paramount-plus": {
+      "key": "paramount-plus",
+      "title": "Design System Inspiration of Paramount+ (iOS)",
+      "variants": [
+        {
+          "slug": "ios-paramount-plus",
+          "platform": "ios"
+        }
+      ]
+    },
+    "paypal": {
+      "key": "paypal",
+      "title": "Design System Inspiration of PayPal (iOS)",
+      "variants": [
+        {
+          "slug": "ios-paypal",
+          "platform": "ios"
+        }
+      ]
+    },
+    "peacock": {
+      "key": "peacock",
+      "title": "Design System Inspiration of Peacock (iOS)",
+      "variants": [
+        {
+          "slug": "ios-peacock",
+          "platform": "ios"
+        }
+      ]
+    },
+    "peloton": {
+      "key": "peloton",
+      "title": "Design System Inspiration of Peloton (iOS)",
+      "variants": [
+        {
+          "slug": "ios-peloton",
+          "platform": "ios"
+        }
+      ]
+    },
+    "perplexity": {
+      "key": "perplexity",
+      "title": "Design System Inspiration of Perplexity (iOS)",
+      "variants": [
+        {
+          "slug": "ios-perplexity",
+          "platform": "ios"
+        }
+      ]
+    },
+    "pinterest": {
+      "key": "pinterest",
+      "title": "Pinterest",
+      "variants": [
+        {
+          "slug": "ios-pinterest",
+          "platform": "ios"
+        },
+        {
+          "slug": "pinterest",
+          "platform": "web"
+        }
+      ]
+    },
+    "plenty-of-fish": {
+      "key": "plenty-of-fish",
+      "title": "Design System Inspiration of Plenty of Fish (iOS)",
+      "variants": [
+        {
+          "slug": "ios-plenty-of-fish",
+          "platform": "ios"
+        }
+      ]
+    },
+    "plex": {
+      "key": "plex",
+      "title": "Design System Inspiration of Plex (iOS)",
+      "variants": [
+        {
+          "slug": "ios-plex",
+          "platform": "ios"
+        }
+      ]
+    },
+    "pluto-tv": {
+      "key": "pluto-tv",
+      "title": "Design System Inspiration of Pluto TV (iOS)",
+      "variants": [
+        {
+          "slug": "ios-pluto-tv",
+          "platform": "ios"
+        }
+      ]
+    },
+    "pocket-casts": {
+      "key": "pocket-casts",
+      "title": "Design System Inspiration of Pocket Casts (iOS)",
+      "variants": [
+        {
+          "slug": "ios-pocket-casts",
+          "platform": "ios"
+        }
+      ]
+    },
+    "postman": {
+      "key": "postman",
+      "title": "Design System Inspiration of Postman (iOS)",
+      "variants": [
+        {
+          "slug": "ios-postman",
+          "platform": "ios"
+        }
+      ]
+    },
+    "prime-video": {
+      "key": "prime-video",
+      "title": "Design System Inspiration of Prime Video (iOS)",
+      "variants": [
+        {
+          "slug": "ios-prime-video",
+          "platform": "ios"
+        }
+      ]
+    },
+    "quora": {
+      "key": "quora",
+      "title": "Design System Inspiration of Quora (iOS)",
+      "variants": [
+        {
+          "slug": "ios-quora",
+          "platform": "ios"
+        }
+      ]
+    },
+    "raya": {
+      "key": "raya",
+      "title": "Design System Inspiration of Raya (iOS)",
+      "variants": [
+        {
+          "slug": "ios-raya",
+          "platform": "ios"
+        }
+      ]
+    },
+    "reddit": {
+      "key": "reddit",
+      "title": "Design System Inspiration of Reddit (iOS)",
+      "variants": [
+        {
+          "slug": "ios-reddit",
+          "platform": "ios"
+        }
+      ]
+    },
+    "resy": {
+      "key": "resy",
+      "title": "Design System Inspiration of Resy (iOS)",
+      "variants": [
+        {
+          "slug": "ios-resy",
+          "platform": "ios"
+        }
+      ]
+    },
+    "revolut": {
+      "key": "revolut",
+      "title": "Revolut",
+      "variants": [
+        {
+          "slug": "ios-revolut",
+          "platform": "ios"
+        },
+        {
+          "slug": "revolut",
+          "platform": "web"
+        }
+      ]
+    },
+    "robinhood": {
+      "key": "robinhood",
+      "title": "Design System Inspiration of Robinhood (iOS)",
+      "variants": [
+        {
+          "slug": "ios-robinhood",
+          "platform": "ios"
+        }
+      ]
+    },
+    "runna": {
+      "key": "runna",
+      "title": "Design System Inspiration of Runna (iOS)",
+      "variants": [
+        {
+          "slug": "ios-runna",
+          "platform": "ios"
+        }
+      ]
+    },
+    "shazam": {
+      "key": "shazam",
+      "title": "Design System Inspiration of Shazam (iOS)",
+      "variants": [
+        {
+          "slug": "ios-shazam",
+          "platform": "ios"
+        }
+      ]
+    },
+    "signal": {
+      "key": "signal",
+      "title": "Design System Inspiration of Signal (iOS)",
+      "variants": [
+        {
+          "slug": "ios-signal",
+          "platform": "ios"
+        }
+      ]
+    },
+    "skype": {
+      "key": "skype",
+      "title": "Design System Inspiration of Skype (iOS)",
+      "variants": [
+        {
+          "slug": "ios-skype",
+          "platform": "ios"
+        }
+      ]
+    },
+    "skyscanner": {
+      "key": "skyscanner",
+      "title": "Design System Inspiration of Skyscanner (iOS)",
+      "variants": [
+        {
+          "slug": "ios-skyscanner",
+          "platform": "ios"
+        }
+      ]
+    },
+    "slack": {
+      "key": "slack",
+      "title": "Slack",
+      "variants": [
+        {
+          "slug": "ios-slack",
+          "platform": "ios"
+        },
+        {
+          "slug": "slack",
+          "platform": "web"
+        }
+      ]
+    },
+    "sleep-cycle": {
+      "key": "sleep-cycle",
+      "title": "Design System Inspiration of Sleep Cycle (iOS)",
+      "variants": [
+        {
+          "slug": "ios-sleep-cycle",
+          "platform": "ios"
+        }
+      ]
+    },
+    "snapchat": {
+      "key": "snapchat",
+      "title": "Design System Inspiration of Snapchat (iOS)",
+      "variants": [
+        {
+          "slug": "ios-snapchat",
+          "platform": "ios"
+        }
+      ]
+    },
+    "sofi": {
+      "key": "sofi",
+      "title": "Design System Inspiration of SoFi (iOS)",
+      "variants": [
+        {
+          "slug": "ios-sofi",
+          "platform": "ios"
+        }
+      ]
+    },
+    "soundcloud": {
+      "key": "soundcloud",
+      "title": "Design System Inspiration of SoundCloud (iOS)",
+      "variants": [
+        {
+          "slug": "ios-soundcloud",
+          "platform": "ios"
+        }
+      ]
+    },
+    "southwest": {
+      "key": "southwest",
+      "title": "Design System Inspiration of Southwest (iOS)",
+      "variants": [
+        {
+          "slug": "ios-southwest",
+          "platform": "ios"
+        }
+      ]
+    },
+    "spotify": {
+      "key": "spotify",
+      "title": "Spotify",
+      "variants": [
+        {
+          "slug": "ios-spotify",
+          "platform": "ios"
+        },
+        {
+          "slug": "spotify",
+          "platform": "web"
+        }
+      ]
+    },
+    "starbucks": {
+      "key": "starbucks",
+      "title": "Starbucks",
+      "variants": [
+        {
+          "slug": "ios-starbucks",
+          "platform": "ios"
+        },
+        {
+          "slug": "starbucks",
+          "platform": "web"
+        }
+      ]
+    },
+    "strava": {
+      "key": "strava",
+      "title": "Design System Inspiration of Strava (iOS)",
+      "variants": [
+        {
+          "slug": "ios-strava",
+          "platform": "ios"
+        }
+      ]
+    },
+    "strong": {
+      "key": "strong",
+      "title": "Design System Inspiration of Strong (iOS)",
+      "variants": [
+        {
+          "slug": "ios-strong",
+          "platform": "ios"
+        }
+      ]
+    },
+    "substack": {
+      "key": "substack",
+      "title": "Design System Inspiration of Substack (iOS)",
+      "variants": [
+        {
+          "slug": "ios-substack",
+          "platform": "ios"
+        }
+      ]
+    },
+    "swiggy": {
+      "key": "swiggy",
+      "title": "Design System Inspiration of Swiggy (iOS)",
+      "variants": [
+        {
+          "slug": "ios-swiggy",
+          "platform": "ios"
+        }
+      ]
+    },
+    "taco-bell": {
+      "key": "taco-bell",
+      "title": "Design System Inspiration of Taco Bell (iOS)",
+      "variants": [
+        {
+          "slug": "ios-taco-bell",
+          "platform": "ios"
+        }
+      ]
+    },
+    "telegram": {
+      "key": "telegram",
+      "title": "Design System Inspiration of Telegram (iOS)",
+      "variants": [
+        {
+          "slug": "ios-telegram",
+          "platform": "ios"
+        }
+      ]
+    },
+    "the-league": {
+      "key": "the-league",
+      "title": "Design System Inspiration of The League (iOS)",
+      "variants": [
+        {
+          "slug": "ios-the-league",
+          "platform": "ios"
+        }
+      ]
+    },
+    "things-3": {
+      "key": "things-3",
+      "title": "Design System Inspiration of Things 3 (iOS)",
+      "variants": [
+        {
+          "slug": "ios-things-3",
+          "platform": "ios"
+        }
+      ]
+    },
+    "threads": {
+      "key": "threads",
+      "title": "Design System Inspiration of Threads (iOS)",
+      "variants": [
+        {
+          "slug": "ios-threads",
+          "platform": "ios"
+        }
+      ]
+    },
+    "threema": {
+      "key": "threema",
+      "title": "Design System Inspiration of Threema (iOS)",
+      "variants": [
+        {
+          "slug": "ios-threema",
+          "platform": "ios"
+        }
+      ]
+    },
+    "tidal": {
+      "key": "tidal",
+      "title": "Design System Inspiration of TIDAL (iOS)",
+      "variants": [
+        {
+          "slug": "ios-tidal",
+          "platform": "ios"
+        }
+      ]
+    },
+    "tiktok": {
+      "key": "tiktok",
+      "title": "Design System Inspiration of TikTok (iOS)",
+      "variants": [
+        {
+          "slug": "ios-tiktok",
+          "platform": "ios"
+        }
+      ]
+    },
+    "tinder": {
+      "key": "tinder",
+      "title": "Design System Inspiration of Tinder (iOS)",
+      "variants": [
+        {
+          "slug": "ios-tinder",
+          "platform": "ios"
+        }
+      ]
+    },
+    "todoist": {
+      "key": "todoist",
+      "title": "Design System Inspiration of Todoist (iOS)",
+      "variants": [
+        {
+          "slug": "ios-todoist",
+          "platform": "ios"
+        }
+      ]
+    },
+    "trello": {
+      "key": "trello",
+      "title": "Design System Inspiration of Trello (iOS)",
+      "variants": [
+        {
+          "slug": "ios-trello",
+          "platform": "ios"
+        }
+      ]
+    },
+    "tripadvisor": {
+      "key": "tripadvisor",
+      "title": "Design System Inspiration of Tripadvisor (iOS)",
+      "variants": [
+        {
+          "slug": "ios-tripadvisor",
+          "platform": "ios"
+        }
+      ]
+    },
+    "tubi": {
+      "key": "tubi",
+      "title": "Design System Inspiration of Tubi (iOS)",
+      "variants": [
+        {
+          "slug": "ios-tubi",
+          "platform": "ios"
+        }
+      ]
+    },
+    "tumblr": {
+      "key": "tumblr",
+      "title": "Design System Inspiration of Tumblr (iOS)",
+      "variants": [
+        {
+          "slug": "ios-tumblr",
+          "platform": "ios"
+        }
+      ]
+    },
+    "turo": {
+      "key": "turo",
+      "title": "Design System Inspiration of Turo (iOS)",
+      "variants": [
+        {
+          "slug": "ios-turo",
+          "platform": "ios"
+        }
+      ]
+    },
+    "twitch": {
+      "key": "twitch",
+      "title": "Design System Inspiration of Twitch (iOS)",
+      "variants": [
+        {
+          "slug": "ios-twitch",
+          "platform": "ios"
+        }
+      ]
+    },
+    "uber": {
+      "key": "uber",
+      "title": "Uber",
+      "variants": [
+        {
+          "slug": "ios-uber",
+          "platform": "ios"
+        },
+        {
+          "slug": "uber",
+          "platform": "web"
+        }
+      ]
+    },
+    "uber-eats": {
+      "key": "uber-eats",
+      "title": "Design System Inspiration of Uber Eats (iOS)",
+      "variants": [
+        {
+          "slug": "ios-uber-eats",
+          "platform": "ios"
+        }
+      ]
+    },
+    "united-airlines": {
+      "key": "united-airlines",
+      "title": "Design System Inspiration of United (iOS)",
+      "variants": [
+        {
+          "slug": "ios-united-airlines",
+          "platform": "ios"
+        }
+      ]
+    },
+    "venmo": {
+      "key": "venmo",
+      "title": "Design System Inspiration of Venmo (iOS)",
+      "variants": [
+        {
+          "slug": "ios-venmo",
+          "platform": "ios"
+        }
+      ]
+    },
+    "vercel": {
+      "key": "vercel",
+      "title": "Vercel",
+      "variants": [
+        {
+          "slug": "ios-vercel",
+          "platform": "ios"
+        },
+        {
+          "slug": "vercel",
+          "platform": "web"
+        }
+      ]
+    },
+    "vero": {
+      "key": "vero",
+      "title": "Design System Inspiration of Vero (iOS)",
+      "variants": [
+        {
+          "slug": "ios-vero",
+          "platform": "ios"
+        }
+      ]
+    },
+    "viber": {
+      "key": "viber",
+      "title": "Design System Inspiration of Viber (iOS)",
+      "variants": [
+        {
+          "slug": "ios-viber",
+          "platform": "ios"
+        }
+      ]
+    },
+    "vimeo": {
+      "key": "vimeo",
+      "title": "Design System Inspiration of Vimeo (iOS)",
+      "variants": [
+        {
+          "slug": "ios-vimeo",
+          "platform": "ios"
+        }
+      ]
+    },
+    "vrbo": {
+      "key": "vrbo",
+      "title": "Design System Inspiration of Vrbo (iOS)",
+      "variants": [
+        {
+          "slug": "ios-vrbo",
+          "platform": "ios"
+        }
+      ]
+    },
+    "vsco": {
+      "key": "vsco",
+      "title": "Design System Inspiration of VSCO (iOS)",
+      "variants": [
+        {
+          "slug": "ios-vsco",
+          "platform": "ios"
+        }
+      ]
+    },
+    "walmart": {
+      "key": "walmart",
+      "title": "Design System Inspiration of Walmart (iOS)",
+      "variants": [
+        {
+          "slug": "ios-walmart",
+          "platform": "ios"
+        }
+      ]
+    },
+    "waze": {
+      "key": "waze",
+      "title": "Design System Inspiration of Waze (iOS)",
+      "variants": [
+        {
+          "slug": "ios-waze",
+          "platform": "ios"
+        }
+      ]
+    },
+    "webull": {
+      "key": "webull",
+      "title": "Design System Inspiration of Webull (iOS)",
+      "variants": [
+        {
+          "slug": "ios-webull",
+          "platform": "ios"
+        }
+      ]
+    },
+    "wechat": {
+      "key": "wechat",
+      "title": "Design System Inspiration of WeChat (iOS)",
+      "variants": [
+        {
+          "slug": "ios-wechat",
+          "platform": "ios"
+        }
+      ]
+    },
+    "whatsapp": {
+      "key": "whatsapp",
+      "title": "Design System Inspiration of WhatsApp (iOS)",
+      "variants": [
+        {
+          "slug": "ios-whatsapp",
+          "platform": "ios"
+        }
+      ]
+    },
+    "whoop": {
+      "key": "whoop",
+      "title": "Design System Inspiration of WHOOP (iOS)",
+      "variants": [
+        {
+          "slug": "ios-whoop",
+          "platform": "ios"
+        }
+      ]
+    },
+    "wise": {
+      "key": "wise",
+      "title": "Wise",
+      "variants": [
+        {
+          "slug": "ios-wise",
+          "platform": "ios"
+        },
+        {
+          "slug": "wise",
+          "platform": "web"
+        }
+      ]
+    },
+    "x-twitter": {
+      "key": "x-twitter",
+      "title": "Design System Inspiration of X (Twitter) (iOS)",
+      "variants": [
+        {
+          "slug": "ios-x-twitter",
+          "platform": "ios"
+        }
+      ]
+    },
+    "yelp": {
+      "key": "yelp",
+      "title": "Design System Inspiration of Yelp (iOS)",
+      "variants": [
+        {
+          "slug": "ios-yelp",
+          "platform": "ios"
+        }
+      ]
+    },
+    "youtube": {
+      "key": "youtube",
+      "title": "Design System Inspiration of YouTube (iOS)",
+      "variants": [
+        {
+          "slug": "ios-youtube",
+          "platform": "ios"
+        }
+      ]
+    },
+    "youtube-music": {
+      "key": "youtube-music",
+      "title": "Design System Inspiration of YouTube Music (iOS)",
+      "variants": [
+        {
+          "slug": "ios-youtube-music",
+          "platform": "ios"
+        }
+      ]
+    },
+    "zalo": {
+      "key": "zalo",
+      "title": "Design System Inspiration of Zalo (iOS)",
+      "variants": [
+        {
+          "slug": "ios-zalo",
+          "platform": "ios"
+        }
+      ]
+    },
+    "zomato": {
+      "key": "zomato",
+      "title": "Design System Inspiration of Zomato (iOS)",
+      "variants": [
+        {
+          "slug": "ios-zomato",
+          "platform": "ios"
+        }
+      ]
+    },
+    "zoom": {
+      "key": "zoom",
+      "title": "Design System Inspiration of Zoom (iOS)",
+      "variants": [
+        {
+          "slug": "ios-zoom",
+          "platform": "ios"
+        }
+      ]
+    },
+    "zwift": {
+      "key": "zwift",
+      "title": "Design System Inspiration of Zwift (iOS)",
+      "variants": [
+        {
+          "slug": "ios-zwift",
+          "platform": "ios"
+        }
+      ]
+    },
+    "kraken": {
+      "key": "kraken",
+      "title": "Kraken",
+      "variants": [
+        {
+          "slug": "kraken",
+          "platform": "web"
+        }
+      ]
+    },
+    "lamborghini": {
+      "key": "lamborghini",
+      "title": "Lamborghini",
+      "variants": [
+        {
+          "slug": "lamborghini",
+          "platform": "web"
+        }
+      ]
+    },
+    "linear.app": {
+      "key": "linear.app",
+      "title": "Linear",
+      "variants": [
+        {
+          "slug": "linear.app",
+          "platform": "web"
+        }
+      ]
+    },
+    "lovable": {
+      "key": "lovable",
+      "title": "Lovable",
+      "variants": [
+        {
+          "slug": "lovable",
+          "platform": "web"
+        }
+      ]
+    },
+    "mastercard": {
+      "key": "mastercard",
+      "title": "Mastercard",
+      "variants": [
+        {
+          "slug": "mastercard",
+          "platform": "web"
+        }
+      ]
+    },
+    "material-clean": {
+      "key": "material-clean",
+      "title": "Material Clean Mobile Design System",
+      "variants": [
+        {
+          "slug": "material-clean",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "meta": {
+      "key": "meta",
+      "title": "Meta",
+      "variants": [
+        {
+          "slug": "meta",
+          "platform": "web"
+        }
+      ]
+    },
+    "midnight-pro": {
+      "key": "midnight-pro",
+      "title": "Midnight Pro Mobile Design System",
+      "variants": [
+        {
+          "slug": "midnight-pro",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "minimal-brutalist": {
+      "key": "minimal-brutalist",
+      "title": "Minimal Brutalist Mobile Design System",
+      "variants": [
+        {
+          "slug": "minimal-brutalist",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "minimax": {
+      "key": "minimax",
+      "title": "Minimax",
+      "variants": [
+        {
+          "slug": "minimax",
+          "platform": "web"
+        }
+      ]
+    },
+    "mintlify": {
+      "key": "mintlify",
+      "title": "Mintlify",
+      "variants": [
+        {
+          "slug": "mintlify",
+          "platform": "web"
+        }
+      ]
+    },
+    "mistral.ai": {
+      "key": "mistral.ai",
+      "title": "Mistral AI",
+      "variants": [
+        {
+          "slug": "mistral.ai",
+          "platform": "web"
+        }
+      ]
+    },
+    "mongodb": {
+      "key": "mongodb",
+      "title": "MongoDB",
+      "variants": [
+        {
+          "slug": "mongodb",
+          "platform": "web"
+        }
+      ]
+    },
+    "nike": {
+      "key": "nike",
+      "title": "Nike",
+      "variants": [
+        {
+          "slug": "nike",
+          "platform": "web"
+        }
+      ]
+    },
+    "nintendo-2001": {
+      "key": "nintendo-2001",
+      "title": "Nintendo.com (2001)",
+      "variants": [
+        {
+          "slug": "nintendo-2001",
+          "platform": "web"
+        }
+      ]
+    },
+    "nova-mobile-design-md": {
+      "key": "nova-mobile-design-md",
+      "title": "DESIGN.md",
+      "variants": [
+        {
+          "slug": "nova-mobile-design-md",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "nvidia": {
+      "key": "nvidia",
+      "title": "NVIDIA",
+      "variants": [
+        {
+          "slug": "nvidia",
+          "platform": "web"
+        }
+      ]
+    },
+    "ollama": {
+      "key": "ollama",
+      "title": "Ollama",
+      "variants": [
+        {
+          "slug": "ollama",
+          "platform": "web"
+        }
+      ]
+    },
+    "opencode.ai": {
+      "key": "opencode.ai",
+      "title": "OpenCode AI",
+      "variants": [
+        {
+          "slug": "opencode.ai",
+          "platform": "web"
+        }
+      ]
+    },
+    "playful-color": {
+      "key": "playful-color",
+      "title": "Playful Color Mobile Design System",
+      "variants": [
+        {
+          "slug": "playful-color",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "playstation": {
+      "key": "playstation",
+      "title": "PlayStation",
+      "variants": [
+        {
+          "slug": "playstation",
+          "platform": "web"
+        }
+      ]
+    },
+    "posthog": {
+      "key": "posthog",
+      "title": "PostHog",
+      "variants": [
+        {
+          "slug": "posthog",
+          "platform": "web"
+        }
+      ]
+    },
+    "raycast": {
+      "key": "raycast",
+      "title": "Raycast",
+      "variants": [
+        {
+          "slug": "raycast",
+          "platform": "web"
+        }
+      ]
+    },
+    "renault": {
+      "key": "renault",
+      "title": "Renault",
+      "variants": [
+        {
+          "slug": "renault",
+          "platform": "web"
+        }
+      ]
+    },
+    "replicate": {
+      "key": "replicate",
+      "title": "Replicate",
+      "variants": [
+        {
+          "slug": "replicate",
+          "platform": "web"
+        }
+      ]
+    },
+    "resend": {
+      "key": "resend",
+      "title": "Resend",
+      "variants": [
+        {
+          "slug": "resend",
+          "platform": "web"
+        }
+      ]
+    },
+    "runwayml": {
+      "key": "runwayml",
+      "title": "Runway",
+      "variants": [
+        {
+          "slug": "runwayml",
+          "platform": "web"
+        }
+      ]
+    },
+    "sanity": {
+      "key": "sanity",
+      "title": "Sanity",
+      "variants": [
+        {
+          "slug": "sanity",
+          "platform": "web"
+        }
+      ]
+    },
+    "sentry": {
+      "key": "sentry",
+      "title": "Sentry",
+      "variants": [
+        {
+          "slug": "sentry",
+          "platform": "web"
+        }
+      ]
+    },
+    "shopify": {
+      "key": "shopify",
+      "title": "Shopify",
+      "variants": [
+        {
+          "slug": "shopify",
+          "platform": "web"
+        }
+      ]
+    },
+    "soft-glass": {
+      "key": "soft-glass",
+      "title": "Soft Glass Mobile Design System",
+      "variants": [
+        {
+          "slug": "soft-glass",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "spacex": {
+      "key": "spacex",
+      "title": "SpaceX",
+      "variants": [
+        {
+          "slug": "spacex",
+          "platform": "web"
+        }
+      ]
+    },
+    "stripe": {
+      "key": "stripe",
+      "title": "Stripe",
+      "variants": [
+        {
+          "slug": "stripe",
+          "platform": "web"
+        }
+      ]
+    },
+    "supabase": {
+      "key": "supabase",
+      "title": "Supabase",
+      "variants": [
+        {
+          "slug": "supabase",
+          "platform": "web"
+        }
+      ]
+    },
+    "superhuman": {
+      "key": "superhuman",
+      "title": "Superhuman",
+      "variants": [
+        {
+          "slug": "superhuman",
+          "platform": "web"
+        }
+      ]
+    },
+    "tesla": {
+      "key": "tesla",
+      "title": "Tesla",
+      "variants": [
+        {
+          "slug": "tesla",
+          "platform": "web"
+        }
+      ]
+    },
+    "theverge": {
+      "key": "theverge",
+      "title": "The Verge",
+      "variants": [
+        {
+          "slug": "theverge",
+          "platform": "web"
+        }
+      ]
+    },
+    "together.ai": {
+      "key": "together.ai",
+      "title": "Together AI",
+      "variants": [
+        {
+          "slug": "together.ai",
+          "platform": "web"
+        }
+      ]
+    },
+    "vodafone": {
+      "key": "vodafone",
+      "title": "Vodafone",
+      "variants": [
+        {
+          "slug": "vodafone",
+          "platform": "web"
+        }
+      ]
+    },
+    "voltagent": {
+      "key": "voltagent",
+      "title": "VoltAgent",
+      "variants": [
+        {
+          "slug": "voltagent",
+          "platform": "web"
+        }
+      ]
+    },
+    "warp": {
+      "key": "warp",
+      "title": "Warp",
+      "variants": [
+        {
+          "slug": "warp",
+          "platform": "web"
+        }
+      ]
+    },
+    "webflow": {
+      "key": "webflow",
+      "title": "Webflow",
+      "variants": [
+        {
+          "slug": "webflow",
+          "platform": "web"
+        }
+      ]
+    },
+    "wired": {
+      "key": "wired",
+      "title": "WIRED",
+      "variants": [
+        {
+          "slug": "wired",
+          "platform": "web"
+        }
+      ]
+    },
+    "x.ai": {
+      "key": "x.ai",
+      "title": "xAI",
+      "variants": [
+        {
+          "slug": "x.ai",
+          "platform": "web"
+        }
+      ]
+    },
+    "zapier": {
+      "key": "zapier",
+      "title": "Zapier",
+      "variants": [
+        {
+          "slug": "zapier",
+          "platform": "web"
+        }
+      ]
+    },
+    "shadcn": {
+      "key": "shadcn",
+      "title": "shadcn/ui (New York)",
+      "variants": [
+        {
+          "slug": "shadcn",
+          "platform": "shadcn"
+        }
+      ]
+    },
+    "midad": {
+      "key": "midad",
+      "title": "midad (مِداد)",
+      "variants": [
+        {
+          "slug": "midad",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "mushaf-native": {
+      "key": "mushaf-native",
+      "title": "Open Mushaf Native",
+      "variants": [
+        {
+          "slug": "mushaf-native",
+          "platform": "mobile"
+        }
+      ]
+    },
+    "uslub": {
+      "key": "uslub",
+      "title": "Uslub",
+      "variants": [
+        {
+          "slug": "uslub",
+          "platform": "web"
+        }
+      ]
+    },
+    "open-tarteel": {
+      "key": "open-tarteel",
+      "title": "Open Tarteel",
+      "variants": [
+        {
+          "slug": "open-tarteel",
+          "platform": "web"
+        }
+      ]
+    }
+  }
+}

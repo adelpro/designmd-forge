@@ -5,6 +5,7 @@ import type { GroupFacets } from './groupFacets.js';
 
 export interface SectionGroupRecord {
   slug: string;
+  brand: string;
   title: string;
   platform: string;
   source: string;
