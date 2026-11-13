@@ -147,6 +147,8 @@ for (const spec of THEMES) {
       accent: palette.accent,
       ink: palette.ink,
       canvasDark: palette.canvasDark,
+      surfaceDark: palette.surfaceDark,
+      inkDark: palette.inkDark,
       accentDark: palette.accentDark,
     },
     derived: false,

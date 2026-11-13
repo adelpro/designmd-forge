@@ -40,3 +40,16 @@ test('a design with no themes refuses a theme request', async () => {
   assert.equal(res.isError, true);
   assert.match(String(res.text), /no themes/i);
 });
+
+test('the delta does not print the light surface in the dark column', async () => {
+  const res = await callTool('designmd_get_design_md', { slug: 'astryx', theme: 'butter' });
+  const content = String(res.content);
+  assert.match(content, /#ffffff/); // light surface
+  assert.match(content, /#2e2117/); // butter dark surface, from theme.css
+  assert.doesNotMatch(content, /\|\s*surface\s*\|\s*`#ffffff`\s*\|\s*`#ffffff`\s*\|/);
+});
+
+test('a dark-only theme says so instead of inventing a light column', async () => {
+  const res = await callTool('designmd_get_design_md', { slug: 'astryx', theme: 'gothic' });
+  assert.match(String(res.content), /dark-only/i);
+});

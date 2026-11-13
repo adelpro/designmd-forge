@@ -46,3 +46,18 @@ test('an on-dark contrast pair is not a dark mode', () => {
 test('a palette with no canvas and no ink derives nothing', () => {
   assert.equal(derivePalette({ primary: '#ff385c' }), null);
 });
+
+test('an unparsable canvas is absent, never black (shadcn hsl)', () => {
+  const palette = derivePalette({ canvas: 'hsl(0 0% 100%)', ink: '#111111' });
+  assert.equal(palette?.mode, 'light');
+});
+
+test('a brand ramp key is not a dark mode', () => {
+  const palette = derivePalette({
+    canvas: '#ffffff',
+    ink: '#111111',
+    'brand-dark-900': '#222222',
+    'negative-darkest': '#330000',
+  });
+  assert.equal(palette?.mode, 'light');
+});

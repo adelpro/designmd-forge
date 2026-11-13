@@ -26,6 +26,8 @@
             "accent": "#225bff",
             "ink": "#1d1c11",
             "canvasDark": "#261a13",
+            "surfaceDark": "#2e2117",
+            "inkDark": "#f3f2e2",
             "accentDark": "#fdee8c"
           },
           "derived": false
@@ -47,6 +49,8 @@
             "accent": "#8C5927",
             "ink": "#4a3520",
             "canvasDark": "#141010",
+            "surfaceDark": "#1c1610",
+            "inkDark": "#EDE4D4",
             "accentDark": "#d4a06a"
           },
           "derived": false
@@ -68,6 +72,8 @@
             "accent": "#e8f1f6",
             "ink": "#e8f1f6",
             "canvasDark": "#101314",
+            "surfaceDark": "#101314",
+            "inkDark": "#e8f1f6",
             "accentDark": "#e8f1f6"
           },
           "derived": false
@@ -89,6 +95,8 @@
             "accent": "#3e481d",
             "ink": "#3e481d",
             "canvasDark": "#12140e",
+            "surfaceDark": "#1a1c14",
+            "inkDark": "#c0cba9",
             "accentDark": "#c0cba9"
           },
           "derived": false
@@ -110,6 +118,8 @@
             "accent": "#1b1b1b",
             "ink": "#000000",
             "canvasDark": "#1b1b1b",
+            "surfaceDark": "#262626",
+            "inkDark": "#ffffff",
             "accentDark": "#f1f1f1"
           },
           "derived": false
@@ -131,6 +141,8 @@
             "accent": "#25252a",
             "ink": "#25252a",
             "canvasDark": "#101018",
+            "surfaceDark": "#1b1b21",
+            "inkDark": "#f0f0f9",
             "accentDark": "#f0f0f9"
           },
           "derived": false
@@ -152,6 +164,8 @@
             "accent": "#2d241b",
             "ink": "#2d241b",
             "canvasDark": "#0e0f1a",
+            "surfaceDark": "#16182b",
+            "inkDark": "#edeffc",
             "accentDark": "#edeffc"
           },
           "derived": false

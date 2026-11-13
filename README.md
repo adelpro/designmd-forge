@@ -37,7 +37,7 @@ Two different things, deliberately not merged:
 
 - **Flavour files are not indexed.** 600 of the 890 markdown files are SwiftUI / Expo / Android implementations of the same iOS design; indexing them would triple every count. Fetch one with `designmd_get_design_md` + `flavor`.
 - **Prose-only designs have no facets or palettes.** The 200 iOS app specs and 12 mobile archetypes describe colour in sentences; a palette regexed out of prose would look authoritative and be wrong.
-- **Palette filters cover a subset.** The tool prints its own coverage (`palette filters cover 70 of 290` today); a filtered result is not a corpus-wide answer.
+- **Palette filters cover a subset.** The tool prints its own coverage (`palette filters cover 69 of 290` today); a filtered result is not a corpus-wide answer.
 - **No mood taxonomy.** "Minimalist" stays free text over descriptions — there is no invented `mood` field.
 
 ### Prompts

@@ -15,7 +15,7 @@ themes exposed, and MCP prompts added.
 
 - `designmd_search_sections` — search `### Footer` / `### Buttons` / `### Navigation` groups
   ACROSS designs, by text (synonym-expanded: hamburger → menu button / drawer / bottom bar;
-  3d → bevel / raised) and by derived facets (`has`, `position`). 1,470 groups from 289
+  3d → bevel / raised) and by derived facets (`has`, `position`). 1,474 groups from 289
   designs; 600 flavour files are excluded from the index and the response says so.
 - `designmd_list_themes` — the official variants a system ships. Astryx's seven
   (butter, chocolate, gothic, matcha, neutral, stone, y2k) with mode, display/body pairing and

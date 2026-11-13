@@ -1,8 +1,8 @@
 {
   "coverage": {
     "designs_total": 290,
-    "designs_with_palette": 70,
-    "skipped_prose_only": 220
+    "designs_with_palette": 69,
+    "skipped_prose_only": 221
   },
   "palettes": {
     "airbnb": {
@@ -26,7 +26,7 @@
       "derived": true
     },
     "apple": {
-      "mode": "light",
+      "mode": "both",
       "canvas": "#ffffff",
       "ink": "#1d1d1f",
       "accent": "#1d1d1f",
@@ -56,7 +56,7 @@
       "derived": true
     },
     "bmw-m": {
-      "mode": "both",
+      "mode": "dark",
       "canvas": "#000000",
       "ink": "#ffffff",
       "accent": "#ffffff",
@@ -116,7 +116,7 @@
       "derived": true
     },
     "cohere": {
-      "mode": "both",
+      "mode": "light",
       "canvas": "#ffffff",
       "ink": "#212121",
       "accent": "#212121",
@@ -296,7 +296,7 @@
       "derived": true
     },
     "miro": {
-      "mode": "both",
+      "mode": "light",
       "canvas": "#ffffff",
       "ink": "#1c1c1e",
       "accent": "#00b473",
@@ -336,12 +336,12 @@
       "derived": true
     },
     "nintendo-2001": {
-      "mode": "dark",
-      "canvas": "#7a8aba\"           # Periwinkle metallic — primary interface body",
-      "ink": "#21242e\"              # primary text on light",
-      "accent": "#21242e\"              # primary text on light",
-      "accentHue": "neutral",
-      "temperature": "neutral",
+      "mode": "light",
+      "canvas": "#7a8aba",
+      "ink": "#21242e",
+      "accent": "#e60012",
+      "accentHue": "red",
+      "temperature": "cool",
       "declared_colors": 22,
       "derived": true
     },
@@ -506,7 +506,7 @@
       "derived": true
     },
     "stripe": {
-      "mode": "both",
+      "mode": "light",
       "canvas": "#ffffff",
       "ink": "#0d253d",
       "accent": "#1c1e54",
@@ -526,7 +526,7 @@
       "derived": true
     },
     "superhuman": {
-      "mode": "both",
+      "mode": "light",
       "canvas": "#ffffff",
       "ink": "#292827",
       "accent": "#292827",
@@ -616,7 +616,7 @@
       "derived": true
     },
     "wise": {
-      "mode": "both",
+      "mode": "light",
       "canvas": "#ffffff",
       "ink": "#0e0f0c",
       "accent": "#ffc091",
@@ -643,16 +643,6 @@
       "accentHue": "orange",
       "temperature": "warm",
       "declared_colors": 10,
-      "derived": true
-    },
-    "shadcn": {
-      "mode": "dark",
-      "canvas": "hsl(0 0% 100%)",
-      "ink": "hsl(240 10% 3.9%)",
-      "accent": "hsl(240 4.8% 95.9%)",
-      "accentHue": "neutral",
-      "temperature": "neutral",
-      "declared_colors": 24,
       "derived": true
     },
     "midad": {

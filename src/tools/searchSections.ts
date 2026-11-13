@@ -72,7 +72,10 @@ interface SectionMatch {
 }
 
 function normalizeFacetValue(value: string): string {
-  return value.trim().toLowerCase().replace(/\s+/g, '_');
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[\s-]+/g, '_');
 }
 
 function snippetFor(text: string, terms: string[], heading: string): string {
@@ -166,6 +169,9 @@ Examples:
             ...record.facets.items,
             ...record.facets.states,
             ...record.facets.traits,
+            ...(record.facets.position ? [record.facets.position] : []),
+            ...(record.facets.divider ? [record.facets.divider] : []),
+            ...(record.facets.surface ? [record.facets.surface] : []),
           ].map(normalizeFacetValue);
           if (!hasFilters.every((filter) => stated.includes(filter))) continue;
         }
@@ -174,11 +180,19 @@ Examples:
         if (termGroups.length) {
           const body = record.text.toLowerCase();
           const heading = record.heading.toLowerCase();
+          let bodyHits = 0;
           for (const expansions of termGroups) {
-            if (expansions.some((term) => body.includes(term))) score += 3;
-            else if (expansions.some((term) => heading.includes(term))) score += 1;
+            if (expansions.some((term) => body.includes(term))) {
+              score += 3;
+              bodyHits += 1;
+            } else if (expansions.some((term) => heading.includes(term))) {
+              score += 1;
+            }
           }
           if (score === 0) continue;
+          // Multi-word queries mean AND: "social links" must not rank a footer
+          // that has links but no social anything.
+          if (termGroups.length > 1 && bodyHits < termGroups.length) continue;
         }
 
         const terms = termGroups.flat();
@@ -217,17 +231,24 @@ Examples:
       ) {
         note = `No '${params.group}' group in the ${params.section} section: component groups live in 'components' and motion groups in 'motion'.`;
       } else {
+        const groupRecords = params.group ? (coverage.by_group[params.group] ?? 0) : 0;
         const denominator = params.group
-          ? (coverage.by_group[params.group] ?? 0)
+          ? groupRecords > 0
+            ? groupRecords
+            : coverage.neutral_designs
           : coverage.neutral_designs;
+        const scope =
+          params.group && groupRecords === 0
+            ? `no '${params.group}' groups are indexed; searched all ${coverage.neutral_designs} designs. `
+            : '';
         note =
-          `${collapsed.length} of ${denominator} designs match; showing ${matches.length}. ` +
+          `${scope}${collapsed.length} of ${denominator} group records match; showing ${matches.length}. ` +
           `Facets are derived from prose — an unstated facet is absent, not false. ` +
           `${coverage.excluded_flavor_files} flavour files were not indexed.`;
       }
 
       return {
-        content: [{ type: 'text', text: JSON.stringify({ matches, note }, null, 2) }],
+        content: [{ type: 'text', text: JSON.stringify({ matches, coverage, note }, null, 2) }],
         structuredContent: {
           matches,
           coverage,

@@ -16,6 +16,8 @@ export interface ThemeVariant {
     accent: string;
     ink: string;
     canvasDark: string;
+    surfaceDark: string;
+    inkDark: string;
     accentDark: string;
   };
   derived: false;

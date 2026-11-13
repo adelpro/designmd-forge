@@ -9,6 +9,7 @@
  * Usage: node scripts/verify-data.mjs
  */
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { corpusProblems } from '../dist/services/dataChecks.js';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -31,9 +32,10 @@ function check(name, fn) {
 
 const index = JSON.parse(readFileSync(join(dataDir, 'index.json'), 'utf-8'));
 
-check('index count matches design list', () => {
-  if (index.count !== index.designs.length) {
-    throw new Error(`count ${index.count} != designs ${index.designs.length}`);
+check('corpus is complete (count, per-source minima, declared sources)', () => {
+  const problems = corpusProblems(index);
+  if (problems.length) {
+    throw new Error(problems.map((problem) => `${problem.check}: ${problem.detail}`).join('; '));
   }
   return `${index.count} designs`;
 });

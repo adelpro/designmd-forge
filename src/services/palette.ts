@@ -69,7 +69,7 @@ function parseHex(hex: string): Rgb | null {
 /** WCAG relative luminance, 0 (black) to 1 (white). */
 export function luminance(hex: string): number {
   const rgb = parseHex(hex);
-  if (!rgb) return 0;
+  if (!rgb) return Number.NaN;
   const channel = (value: number) => {
     const c = value / 255;
     return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
@@ -141,15 +141,22 @@ function findColor(colors: Record<string, string>, preferred: string[]): string 
  * with any `-dark` key documents both modes rather than one.
  */
 export function derivePalette(colors: Record<string, string>): DerivedPalette | null {
-  const canvas = findColor(colors, CANVAS_KEYS);
-  const ink = findColor(colors, INK_KEYS);
+  // A value we cannot parse (an `hsl(...)` triple, a hex with a YAML trailing
+  // comment) is absent, not black: treating it as black turned two white
+  // systems into "dark" ones.
+  const usable = (value: string | undefined): string | undefined =>
+    value && parseHex(value) ? value : undefined;
+  const canvas = usable(findColor(colors, CANVAS_KEYS));
+  const ink = usable(findColor(colors, INK_KEYS));
   if (!canvas && !ink) return null;
 
   const keys = Object.keys(colors).map((key) => key.toLowerCase());
-  // "on-dark" is a contrast pair for dark imagery (white text on a photo), not
-  // a dark mode. Only a real dark surface token (paper-dark, ink-dark,
-  // background-dark) means the file documents both modes.
-  const declaresDark = keys.some((key) => key.replace(/on-dark|on_dark/g, '').includes('dark'));
+  // "on-dark" is a contrast pair for dark imagery and `brand-dark-900` is a
+  // ramp step — neither is a dark mode. Only a surface/ink token with a dark
+  // suffix (paper-dark, ink-dark, background-body-dark) means both modes.
+  const darkToken =
+    /^(canvas|paper|surface|background|bg|card|ink|text|foreground|body)[-a-z0-9]*dark$/;
+  const declaresDark = keys.some((key) => darkToken.test(key));
   const mode: Mode = declaresDark
     ? 'both'
     : canvas && luminance(canvas) < DARK_CANVAS_LUMINANCE

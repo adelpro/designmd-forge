@@ -34,7 +34,8 @@ function parseColors(markdown) {
     if (!/^\s+\S/.test(line)) break;
     const match = line.match(/^\s+([A-Za-z0-9_-]+):\s*(.+?)\s*$/);
     if (!match) continue;
-    colors[match[1]] = match[2].replace(/^["']|["']$/g, '');
+    // A trailing `# comment` is valid YAML and is not part of the value.
+    colors[match[1]] = match[2].replace(/\s+#.*$/, '').replace(/^["']|["']$/g, '');
   }
   return Object.keys(colors).length ? colors : null;
 }

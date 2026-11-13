@@ -67,21 +67,24 @@ function renderThemeDelta(
   theme: ThemeVariant,
   pin: { version: string; license: string; repo: string }
 ): string {
-  const rows: Array<[string, string, string]> = [
-    ['canvas', theme.palette.canvas, theme.palette.canvasDark],
-    ['surface', theme.palette.surface, theme.palette.surface ?? '—'],
-    ['accent', theme.palette.accent, theme.palette.accentDark],
-    ['ink', theme.palette.ink, '—'],
+  const darkOnly = theme.mode === 'dark-only';
+  const rows: Array<[string, string | null, string]> = [
+    ['canvas', darkOnly ? null : theme.palette.canvas, theme.palette.canvasDark],
+    ['surface', darkOnly ? null : theme.palette.surface, theme.palette.surfaceDark],
+    ['accent', darkOnly ? null : theme.palette.accent, theme.palette.accentDark],
+    ['ink', darkOnly ? null : theme.palette.ink, theme.palette.inkDark],
   ];
 
   return [
     `# ${theme.name} theme — ${entry.title}`,
     '',
-    `Pinned to Astryx ${pin.version} (MIT). Mode: ${theme.mode}. Type: ${theme.type.display} for display, ${theme.type.body} for body (${theme.typeClass}).`,
+    `Pinned to Astryx ${pin.version} (MIT). Mode: ${theme.mode}${darkOnly ? ' (no light palette — this theme is dark-only)' : ''}. Type: ${theme.type.display} for display, ${theme.type.body} for body (${theme.typeClass}).`,
     '',
-    '| role | light | dark |',
-    '| --- | --- | --- |',
-    ...rows.map(([role, light, dark]) => `| ${role} | \`${light}\` | \`${dark}\` |`),
+    darkOnly ? '| role | dark |' : '| role | light | dark |',
+    darkOnly ? '| --- | --- |' : '| --- | --- | --- |',
+    ...rows.map(([role, light, dark]) =>
+      darkOnly ? `| ${role} | \`${dark}\` |` : `| ${role} | \`${light}\` | \`${dark}\` |`
+    ),
     '',
     `This is a delta, not a second design system: components, elevation, motion and guardrails are the parent entry's and are not repeated here. Fetch \`designmd_get_design_md({ slug: "${entry.slug}" })\` for those. The default theme is \`neutral\`; \`designmd_list_themes\` lists all seven.`,
     '',

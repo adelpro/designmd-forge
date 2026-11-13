@@ -94,7 +94,7 @@ export function registerPrompts(server: McpServer): void {
               platform ? `Platform: ${platform}` : 'Platform: not specified.',
               '',
               'Do this in order:',
-              `1. designmd_search_sections with group="${component}"${qualities ? ` and text="${qualities}"` : ''}${platform ? ` and platform="${platform}"` : ''}. If a quality is a facet (social, sticky, hover, 3d), also try it through "has" or "position".`,
+              `1. designmd_search_sections with group="${component}"${qualities ? ` and text="${qualities}"` : ''}${platform ? ` and platform="${platform}"` : ''}. Text is AND across words, so "3d or hover" is two searches, not one. If a quality is a facet (social, sticky, hover, 3d), also try it through "has" or "position".`,
               '2. For the two most relevant hits, designmd_get_design_md with component="' +
                 component +
                 '" to read the whole group.',
