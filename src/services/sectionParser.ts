@@ -102,6 +102,44 @@ function normalizeHeading(raw: string): CanonicalSection | null {
 }
 
 /**
+ * Canonical section for a "## " heading, or null when the file used a heading
+ * nobody mapped. Exported for the section index, which must not lose a whole
+ * block just because its "## " title is unknown to the tool-side enum.
+ */
+export function canonicalSectionFor(heading: string): CanonicalSection | null {
+  return normalizeHeading(heading);
+}
+
+export interface RawSection {
+  heading: string; // original "## " text
+  content: string; // body, excluding the heading line
+}
+
+/**
+ * Splits a document on every "## " heading without filtering. `parseSections`
+ * intentionally drops blocks it cannot name; the index builder cannot afford
+ * that, because an unmapped "## Components & Patterns" title would hide the
+ * "### Footer" group underneath it.
+ */
+export function splitRawSections(content: string): RawSection[] {
+  const sections: RawSection[] = [];
+  let current: { heading: string; lines: string[] } | null = null;
+
+  for (const line of content.split('\n')) {
+    const match = line.match(/^##\s+(.+?)\s*$/);
+    if (match) {
+      if (current) sections.push({ heading: current.heading, content: current.lines.join('\n') });
+      current = { heading: match[1], lines: [] };
+      continue;
+    }
+    if (current) current.lines.push(line);
+  }
+  if (current) sections.push({ heading: current.heading, content: current.lines.join('\n') });
+
+  return sections;
+}
+
+/**
  * Splits a DESIGN.md file's body into canonical sections. Content before
  * the first "## " heading (e.g. YAML frontmatter, an "# Title" line, or
  * intro prose) is not included in any section.
