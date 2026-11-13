@@ -17,7 +17,12 @@ import { writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadDesigns, readSpec, countDesignFiles } from './build/lib-corpus.mjs';
-import { parseSections, splitRawSections, canonicalSectionFor, getComponentGroups } from '../dist/services/sectionParser.js';
+import {
+  parseSections,
+  splitRawSections,
+  canonicalSectionFor,
+  getComponentGroups,
+} from '../dist/services/sectionParser.js';
 import { resolveGroupHeading } from '../dist/services/groupVocabulary.js';
 import { extractFacets } from '../dist/services/groupFacets.js';
 
@@ -109,6 +114,8 @@ console.log(
 );
 
 if (!byGroup.footer || !byGroup.buttons) {
-  console.error('[section-index] footer or buttons resolved to zero groups — the alias table regressed.');
+  console.error(
+    '[section-index] footer or buttons resolved to zero groups — the alias table regressed.'
+  );
   process.exit(1);
 }

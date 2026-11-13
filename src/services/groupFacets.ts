@@ -97,7 +97,8 @@ export function extractFacets(_group: CanonicalGroup, text: string): GroupFacets
     if (wordColumns) facets.columns = wordColumns[1];
   }
 
-  if (has(t, 'accent') || has(t, 'brand color') || has(t, 'brand colour')) facets.surface = 'accent';
+  if (has(t, 'accent') || has(t, 'brand color') || has(t, 'brand colour'))
+    facets.surface = 'accent';
   else if (has(t, 'ink') || has(t, 'inverse surface')) facets.surface = 'ink';
   else if (has(t, 'muted') || has(t, 'subtle surface')) facets.surface = 'muted';
   else if (has(t, 'canvas') || has(t, 'page background')) facets.surface = 'canvas';

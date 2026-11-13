@@ -6,6 +6,7 @@ import { registerGuardrailsTool } from './tools/guardrails.js';
 import { registerLintTool } from './tools/lint.js';
 import { registerDiffTool } from './tools/diff.js';
 import { registerAuthoringTools } from './tools/authoring.js';
+import { registerSearchSectionsTool } from './tools/searchSections.js';
 
 // Derive name/version from package.json so they never drift from the npm
 // manifest (works from src/ in dev and dist/ after build, both one level deep).
@@ -31,6 +32,7 @@ export function createServer(): McpServer {
   registerLintTool(server);
   registerDiffTool(server);
   registerAuthoringTools(server);
+  registerSearchSectionsTool(server);
 
   return server;
 }

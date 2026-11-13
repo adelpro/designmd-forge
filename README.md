@@ -6,17 +6,18 @@ Data is a bundled, offline snapshot of five sources — 76 **web** design system
 
 ## Tools
 
-| Tool                           | Purpose                                                                                                                                                                                |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `designmd_list_categories`     | List all categories with counts, optionally filtered by platform (e.g. "Fintech & Crypto", "Automotive", "Mobile")                                                                     |
-| `designmd_list_designs`        | List all designs, optionally filtered by category, platform (`web` / `mobile` / `ios` / `shadcn`) or provenance (`source`: `upstream` / `adelpro`) — title, slug, one-line description |
-| `designmd_search_designs`      | Free-text search over title/slug/category/description, ranked by relevance, optionally filtered by category/platform/source                                                            |
-| `designmd_get_design_md`       | Fetch the full DESIGN.md, one section, one `### ` sub-group of any section, or a framework flavor (swiftui/expo/android) where the entry declares one, for one design by slug          |
-| `designmd_get_guardrails`      | Fetch only the "Do's and Don'ts" section — behavioral rules, not token values                                                                                                          |
-| `designmd_lint`                | Validate a DESIGN.md's structure using the official `@google/design.md` linter                                                                                                         |
-| `designmd_diff`                | Compare two DESIGN.md files (token-level) with the official CLI and flag regressions                                                                                                   |
-| `designmd_get_authoring_guide` | Fetch condensed, field-tested guidance on _writing_ a DESIGN.md's prose                                                                                                                |
-| `designmd_scaffold_template`   | Generate a fill-in-the-blank DESIGN.md skeleton, prompted around the highest-leverage sections                                                                                         |
+| Tool                           | Purpose                                                                                                                                                                                             |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `designmd_list_categories`     | List all categories with counts, optionally filtered by platform (e.g. "Fintech & Crypto", "Automotive", "Mobile")                                                                                  |
+| `designmd_list_designs`        | List all designs, optionally filtered by category, platform (`web` / `mobile` / `ios` / `shadcn`) or provenance (`source`: `upstream` / `adelpro`) — title, slug, one-line description              |
+| `designmd_search_designs`      | Free-text search over title/slug/category/description, ranked by relevance, optionally filtered by category/platform/source                                                                         |
+| `designmd_search_sections`     | Search component groups (footer, buttons, navigation, cards…) **across** designs, by text and derived facets (items, states, traits, position) — "footers with social links", "3D or hover buttons" |
+| `designmd_get_design_md`       | Fetch the full DESIGN.md, one section, one `### ` sub-group of any section, or a framework flavor (swiftui/expo/android) where the entry declares one, for one design by slug                       |
+| `designmd_get_guardrails`      | Fetch only the "Do's and Don'ts" section — behavioral rules, not token values                                                                                                                       |
+| `designmd_lint`                | Validate a DESIGN.md's structure using the official `@google/design.md` linter                                                                                                                      |
+| `designmd_diff`                | Compare two DESIGN.md files (token-level) with the official CLI and flag regressions                                                                                                                |
+| `designmd_get_authoring_guide` | Fetch condensed, field-tested guidance on _writing_ a DESIGN.md's prose                                                                                                                             |
+| `designmd_scaffold_template`   | Generate a fill-in-the-blank DESIGN.md skeleton, prompted around the highest-leverage sections                                                                                                      |
 
 Two flows this server supports:
 
