@@ -16,6 +16,7 @@ import {
   type Flavor,
   type Platform,
 } from '../constants.js';
+import { findTheme, themesFor, loadThemes, type ThemeVariant } from '../services/themeStore.js';
 
 const flavorSuffix = (flavor: Flavor) => `-${flavor}`;
 
@@ -48,10 +49,44 @@ const GetDesignMdInputSchema = z
       .describe(
         "Optional: fetch just ONE '### ' sub-group instead of a whole section — e.g. 'navigation', 'buttons', 'cards', 'inputs'. Searches inside the section named by 'section' (default 'components', the Component Stylings section), so component groups also work in the 'motion' section ('durations & easings', 'reduced motion'). Names vary per design, so the match is best-effort. Not valid together with 'flavor'."
       ),
+    theme: z
+      .string()
+      .min(1)
+      .max(40)
+      .optional()
+      .describe(
+        "Optional: fetch one official theme of a system that ships variants, as a DELTA — palette, type pairing and what changes, without repeating the parent's components or guardrails (e.g. 'butter', 'gothic' for Astryx). Only Astryx declares themes today; call designmd_list_themes to see them. Not valid with flavor, section or component."
+      ),
   })
   .strict();
 
 type GetDesignMdInput = z.infer<typeof GetDesignMdInputSchema>;
+
+function renderThemeDelta(
+  entry: { slug: string; title: string },
+  theme: ThemeVariant,
+  pin: { version: string; license: string; repo: string }
+): string {
+  const rows: Array<[string, string, string]> = [
+    ['canvas', theme.palette.canvas, theme.palette.canvasDark],
+    ['surface', theme.palette.surface, theme.palette.surface ?? '—'],
+    ['accent', theme.palette.accent, theme.palette.accentDark],
+    ['ink', theme.palette.ink, '—'],
+  ];
+
+  return [
+    `# ${theme.name} theme — ${entry.title}`,
+    '',
+    `Pinned to Astryx ${pin.version} (MIT). Mode: ${theme.mode}. Type: ${theme.type.display} for display, ${theme.type.body} for body (${theme.typeClass}).`,
+    '',
+    '| role | light | dark |',
+    '| --- | --- | --- |',
+    ...rows.map(([role, light, dark]) => `| ${role} | \`${light}\` | \`${dark}\` |`),
+    '',
+    `This is a delta, not a second design system: components, elevation, motion and guardrails are the parent entry's and are not repeated here. Fetch \`designmd_get_design_md({ slug: "${entry.slug}" })\` for those. The default theme is \`neutral\`; \`designmd_list_themes\` lists all seven.`,
+    '',
+  ].join('\n');
+}
 
 export function registerGetDesignTool(server: McpServer): void {
   server.registerTool(
@@ -123,6 +158,72 @@ Examples:
       }
 
       const flavors = availableFlavors(entry);
+
+      if (params.theme) {
+        if (params.flavor || params.section || params.component) {
+          return {
+            content: [
+              {
+                type: 'text',
+                text: "Error: 'theme' cannot be combined with 'flavor', 'section' or 'component' — a theme delta is a whole document, and the parent's sections live on the parent entry. Fetch the theme alone, then the parent for anything else.",
+              },
+            ],
+            isError: true,
+          };
+        }
+
+        const available = themesFor(entry.slug);
+        if (!available.length) {
+          return {
+            content: [
+              {
+                type: 'text',
+                text: `Error: Design '${entry.slug}' has no themes. Only systems that ship official variants declare them (today: astryx, via designmd_list_themes).`,
+              },
+            ],
+            isError: true,
+          };
+        }
+
+        const theme = findTheme(entry.slug, params.theme);
+        if (!theme) {
+          return {
+            content: [
+              {
+                type: 'text',
+                text: `Error: No theme '${params.theme}' for '${entry.slug}'. Available: ${available
+                  .map((candidate) => candidate.id)
+                  .join(', ')}.`,
+              },
+            ],
+            isError: true,
+          };
+        }
+
+        const pin = loadThemes().pin;
+        const delta = renderThemeDelta(entry, theme, pin);
+
+        return {
+          content: [{ type: 'text', text: delta }],
+          structuredContent: {
+            slug: entry.slug,
+            title: entry.title,
+            category: entry.category,
+            platform: (entry.platform ?? 'web') as Platform,
+            flavor: null,
+            component: null,
+            theme: theme.id,
+            themeSource: 'astryx',
+            source: sourceUrlFor(entry),
+            provenance: entry.source ?? 'upstream',
+            flavors: flavors.length ? flavors : null,
+            license: SOURCE_LICENSE,
+            section: null,
+            content: delta,
+          } as unknown as Record<string, unknown>,
+        };
+      }
+
       if (params.flavor && !flavors.includes(params.flavor)) {
         return {
           content: [
