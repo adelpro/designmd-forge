@@ -145,7 +145,7 @@
             "display": "Poppins",
             "body": "Crimson Text"
           },
-          "typeClass": "serif",
+          "typeClass": "mixed",
           "palette": {
             "canvas": "#cccffa",
             "surface": "#ffffff",

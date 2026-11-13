@@ -57,7 +57,7 @@ const THEMES = [
   },
   { id: 'neutral', name: 'Neutral', display: 'Figtree', body: 'Figtree', typeClass: 'sans' },
   { id: 'stone', name: 'Stone', display: 'Montserrat', body: 'Figtree', typeClass: 'sans' },
-  { id: 'y2k', name: 'Y2K', display: 'Poppins', body: 'Crimson Text', typeClass: 'serif' },
+  { id: 'y2k', name: 'Y2K', display: 'Poppins', body: 'Crimson Text', typeClass: 'mixed' },
 ];
 
 const TOKENS = {
