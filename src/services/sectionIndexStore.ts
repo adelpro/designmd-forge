@@ -28,7 +28,6 @@ export interface SectionIndexCoverage {
 }
 
 interface SectionIndexArtifact {
-  generated_at: string;
   neutral_designs: number;
   designs_with_groups: number;
   excluded_flavor_files: number;

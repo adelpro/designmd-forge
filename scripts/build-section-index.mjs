@@ -92,7 +92,8 @@ for (const record of groups) {
 }
 
 const artifact = {
-  generated_at: new Date().toISOString(),
+  // No timestamp: a build product that rewrites itself on every run makes the
+  // working tree dirty after every `npm test` and buries real diffs.
   neutral_designs: designs.length,
   designs_with_groups: designsWithGroups,
   excluded_flavor_files: countDesignFiles(dataDir) - designs.length,
