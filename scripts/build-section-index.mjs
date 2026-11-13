@@ -18,7 +18,6 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadDesigns, readSpec, countDesignFiles } from './build/lib-corpus.mjs';
 import {
-  parseSections,
   splitRawSections,
   canonicalSectionFor,
   getComponentGroups,
