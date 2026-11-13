@@ -10,7 +10,7 @@
     "docs"
   ],
   "scripts": {
-    "build": "tsc && node scripts/build-section-index.mjs && node scripts/build-palettes.mjs && node scripts/copy-data.mjs",
+    "build": "tsc && node scripts/copy-data.mjs && node scripts/build-section-index.mjs && node scripts/build-palettes.mjs && node scripts/copy-data.mjs",
     "start": "node dist/index.js",
     "dev": "tsc --watch",
     "prepare": "npm run build",

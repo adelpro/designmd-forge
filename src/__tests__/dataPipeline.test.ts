@@ -55,3 +55,19 @@ test('the astryx entry keeps its upstream attribution', () => {
   );
   assert.equal(themes.parents.astryx.themes.length, 7);
 });
+
+test('build copies data before generating artifacts (CI runs on an empty dist)', () => {
+  const steps = String(pkg.scripts.build)
+    .split('&&')
+    .map((step) => step.trim());
+  const firstCopy = steps.indexOf('node scripts/copy-data.mjs');
+  const sectionIndex = steps.indexOf('node scripts/build-section-index.mjs');
+  const lastCopy = steps.lastIndexOf('node scripts/copy-data.mjs');
+
+  assert.ok(firstCopy > -1, 'build must copy data');
+  assert.ok(
+    sectionIndex > firstCopy,
+    'copy-data must run before the section index reads dist/data'
+  );
+  assert.ok(lastCopy > sectionIndex, 'a final copy must publish regenerated artifacts to dist');
+});
