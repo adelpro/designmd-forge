@@ -51,3 +51,23 @@ test('searchDesigns returns empty array for a nonsense query', () => {
   const results = searchDesigns('zzzzznonexistentqueryxyz123');
   assert.equal(results.length, 0);
 });
+
+test('mode filter keeps dark and dual-mode designs only', () => {
+  const dark = searchDesigns('', { mode: 'dark', limit: 50 });
+  assert.ok(dark.length > 0);
+  assert.ok(
+    dark.every((d) => d.palette && (d.palette.mode === 'dark' || d.palette.mode === 'both')),
+    'a light-only design must not survive a dark filter'
+  );
+});
+
+test('hue filter matches the derived accent', () => {
+  const red = searchDesigns('', { hue: 'red', limit: 50 });
+  assert.ok(red.some((d) => d.slug === 'airbnb'));
+  assert.ok(red.every((d) => d.palette?.accentHue === 'red'));
+});
+
+test('brand filter returns every variant of the brand', () => {
+  const rows = searchDesigns('', { brand: 'spotify' });
+  assert.deepEqual(rows.map((r) => r.slug).sort(), ['ios-spotify', 'spotify']);
+});

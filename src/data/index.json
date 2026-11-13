@@ -8,9 +8,9 @@
     "shadcn": "https://ui.shadcn.com",
     "web": "https://github.com/VoltAgent/awesome-design-md"
   },
-  "note": "Design tokens extracted from publicly visible CSS values of each site, or authored in-repo from the project's own token source, per each source's LICENSE. No trademarked assets, logos, or copyrighted imagery are included. adelpro = Quran & Arabic Tech (authored in-repo, MIT) · iOS = Meliwat/awesome-ios-design-md · Mobile = TrustOtc/awesome-mobile-design-md · shadcn = shadcn/ui New York (authored reference) · Web = VoltAgent/awesome-design-md.",
+  "note": "Design tokens extracted from publicly visible CSS values of each site, or authored in-repo from the project's own token source, per each source's LICENSE. No trademarked assets, logos, or copyrighted imagery are included. adelpro = authored in-repo (Quran & Arabic Tech, Component Library), MIT · iOS = Meliwat/awesome-ios-design-md · Mobile = TrustOtc/awesome-mobile-design-md · shadcn = shadcn/ui New York (authored reference) · Web = VoltAgent/awesome-design-md.",
   "generated_at": "2026-11-08T08:13:21.334Z",
-  "count": 300,
+  "count": 301,
   "platforms": [
     "ios",
     "mobile",
@@ -2667,7 +2667,7 @@
       "source": "adelpro",
       "short_description": "Uslub is a writing-voice web client built from paper and hairlines rather than chrome. A white canvas sits inside a parchment shell, one measured blue carries e",
       "long_description": "Uslub is a web client for keeping a writer's voice consistent wherever they write. This entry covers the browser app: the public landing page, the signed-in shell with its sidebar and account block, the auth screens, and the two handoff surfaces where a key or a bootstrap prompt is revealed.",
-      "word_count": 3147
+      "word_count": 3153
     },
     {
       "slug": "vercel",
@@ -2749,6 +2749,22 @@
       "short_description": "Automation platform. Warm orange, friendly illustration-driven",
       "long_description": "An inspired interpretation of Zapier's design language — a workflow-automation platform whose surface combines warm-cream neutrals (`#fffefb` canvas, `#f8f4f0` soft cream) with deep coffee ink (`#201515`) and a single saturated orange CTA accent (`#ff4f00`); typography pairs the proprietary Degular Display family at hero scale with Inter for sub-displays and body, giving the brand a confident-warm rather than cool-tech voice.",
       "word_count": 2663
+    },
+    {
+      "slug": "astryx",
+      "title": "Astryx (Meta)",
+      "category": "Component Library",
+      "platform": "web",
+      "source": "adelpro",
+      "short_description": "Astryx is Meta's open-source design system, and it separates two things most systems mix — a component library that owns behaviour and accessibility, and a them",
+      "long_description": "Astryx grew inside Meta for eight years before being open-sourced under MIT, and its shape explains its rules: a company full of internal tools kept rebuilding the same date picker, table and form, so the system put behaviour and accessibility in components and left appearance to a theme. The component library covers buttons, cards, navigation shells, inputs, tables, overlays, badges and status dots; the theme is a set of CSS custom property overrides, and a page opts in by importing a stylesheet and passing a theme object to `Theme`.",
+      "word_count": 1894,
+      "upstream": {
+        "name": "Astryx by Meta",
+        "url": "https://github.com/meta/astryx",
+        "tag": "0.7.15",
+        "license": "MIT"
+      }
     }
   ]
 }

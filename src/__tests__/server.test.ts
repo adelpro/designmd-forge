@@ -18,7 +18,7 @@ async function withConnectedClient<T>(fn: (client: Client) => Promise<T>): Promi
   }
 }
 
-test('server exposes exactly the 9 expected tools', async () => {
+test('server exposes exactly the 11 expected tools', async () => {
   await withConnectedClient(async (client) => {
     const { tools } = await client.listTools();
     const names = tools.map((t) => t.name).sort();
@@ -30,8 +30,10 @@ test('server exposes exactly the 9 expected tools', async () => {
       'designmd_lint',
       'designmd_list_categories',
       'designmd_list_designs',
+      'designmd_list_themes',
       'designmd_scaffold_template',
       'designmd_search_designs',
+      'designmd_search_sections',
     ]);
   });
 });

@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { loadIndex, listCategories, searchDesigns } from '../services/designStore.js';
+import { loadPalettes } from '../services/paletteStore.js';
+import { HUE_FAMILIES } from '../services/palette.js';
 import { SOURCE_REPO, SOURCE_LICENSE, SOURCE_BY_PLATFORM, PLATFORMS } from '../constants.js';
 
 const SOURCE_FILTER_DESCRIPTION =
@@ -30,8 +32,8 @@ const SearchDesignsInputSchema = z
   .object({
     query: z
       .string()
-      .min(1, 'Query must not be empty')
       .max(200, 'Query must not exceed 200 characters')
+      .default('')
       .describe(
         "Free-text search terms matched against each design's title, slug, category, and description (e.g. 'dark fintech dashboard', 'warm minimal serif', 'automotive luxury black', 'mobile dark pro tool'). Metadata only: this does NOT search DESIGN.md bodies, sections, or ### component groups. To read a region such as a footer or menu, shortlist here then use designmd_get_design_md with component: 'footer'."
       ),
@@ -44,6 +46,26 @@ const SearchDesignsInputSchema = z
       .optional()
       .describe("Optional platform to restrict the search to: 'web' or 'mobile'. Omit for both."),
     source: z.string().optional().describe(SOURCE_FILTER_DESCRIPTION),
+    brand: z
+      .string()
+      .min(1)
+      .max(60)
+      .optional()
+      .describe(
+        "Optional brand key: returns every collection a brand appears in as separate rows (brand 'spotify' → spotify plus ios-spotify). Use the brand value returned in results."
+      ),
+    mode: z
+      .enum(['light', 'dark', 'both'])
+      .optional()
+      .describe(
+        "Optional palette mode. 'dark' means dark-compatible (dark or dual-mode) and never returns a light-only design. Derived from frontmatter tokens, so it covers only the designs that declare them — see the response note for exact coverage."
+      ),
+    hue: z
+      .enum(HUE_FAMILIES)
+      .optional()
+      .describe(
+        'Optional accent hue family derived from the declared colors (red, orange, yellow, green, teal, blue, purple, pink, neutral). Prose-only designs cannot match a hue filter.'
+      ),
     limit: z
       .number()
       .int()
@@ -242,10 +264,36 @@ Examples:
       },
     },
     async (params: SearchDesignsInput) => {
+      const hasFilter = Boolean(
+        params.category ||
+        params.platform ||
+        params.source ||
+        params.brand ||
+        params.mode ||
+        params.hue
+      );
+      // A palette filter is useless if a text query is mandatory ("show me dark
+      // red systems" has no words for the descriptions), so an empty query is
+      // allowed when something else narrows the set — and refused when nothing does.
+      if (!params.query.trim() && !hasFilter) {
+        return {
+          content: [
+            {
+              type: 'text',
+              text: 'Error: Provide search terms, or at least one filter (category, platform, source, brand, mode, hue).',
+            },
+          ],
+          isError: true,
+        };
+      }
+
       const results = searchDesigns(params.query, {
         category: params.category,
         platform: params.platform,
         source: params.source,
+        brand: params.brand,
+        mode: params.mode,
+        hue: params.hue,
         limit: params.limit,
       });
 
@@ -271,9 +319,24 @@ Examples:
           category: r.category,
           platform: r.platform ?? 'web',
           source: r.source ?? 'upstream',
+          brand: r.brand ?? r.slug,
           short_description: r.short_description,
           score: r.score,
+          palette: r.palette
+            ? {
+                mode: r.palette.mode,
+                accentHue: r.palette.accentHue,
+                temperature: r.palette.temperature,
+              }
+            : null,
         })),
+        ...(params.mode || params.hue
+          ? {
+              note: `Palette filters cover ${loadPalettes().coverage.designs_with_palette} of ${
+                loadPalettes().coverage.designs_total
+              } designs; ${loadPalettes().coverage.skipped_prose_only} are prose-only and cannot match a palette filter.`,
+            }
+          : {}),
       };
 
       return {

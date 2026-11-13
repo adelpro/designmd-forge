@@ -1,0 +1,116 @@
+{
+  "hamburger": [
+    "hamburger",
+    "menu button",
+    "menu icon",
+    "icon-only nav",
+    "icon only nav",
+    "drawer",
+    "sheet",
+    "bottom bar",
+    "sandwich menu"
+  ],
+  "sandwich": [
+    "sandwich menu",
+    "hamburger",
+    "menu button",
+    "drawer"
+  ],
+  "3d": [
+    "3d",
+    "bevel",
+    "embossed",
+    "depth",
+    "raised",
+    "three-dimensional"
+  ],
+  "hover": [
+    "hover",
+    "hover state",
+    "hovered"
+  ],
+  "focus": [
+    "focus",
+    "focus-visible",
+    "focus ring"
+  ],
+  "pressed": [
+    "pressed",
+    "active state",
+    "pressed state"
+  ],
+  "disabled": [
+    "disabled",
+    "inactive"
+  ],
+  "sticky": [
+    "sticky",
+    "fixed",
+    "pins to"
+  ],
+  "social": [
+    "social",
+    "social icons",
+    "social links",
+    "instagram",
+    "linkedin"
+  ],
+  "newsletter": [
+    "newsletter",
+    "subscribe",
+    "email signup"
+  ],
+  "pill": [
+    "pill",
+    "fully rounded",
+    "rounded-full"
+  ],
+  "outline": [
+    "outline",
+    "outlined",
+    "stroke button"
+  ],
+  "ghost": [
+    "ghost",
+    "text-only",
+    "text only"
+  ],
+  "glass": [
+    "glass",
+    "frosted",
+    "glassmorphism"
+  ],
+  "gradient": [
+    "gradient",
+    "gradients"
+  ],
+  "dark": [
+    "dark",
+    "dark mode",
+    "near-black"
+  ],
+  "hairline": [
+    "hairline",
+    "1px",
+    "one-pixel border"
+  ],
+  "grid": [
+    "grid",
+    "column grid",
+    "four-column",
+    "multi-column"
+  ],
+  "icons": [
+    "icons",
+    "icon",
+    "glyphs",
+    "marks",
+    "links"
+  ],
+  "icon": [
+    "icon",
+    "icons",
+    "glyph",
+    "mark"
+  ]
+}

@@ -8,6 +8,9 @@ const PORT = Number(process.env.PORT ?? 3000);
 // remote connector pattern. Override with MCP_PATH if you need a subpath.
 const MCP_PATH = process.env.MCP_PATH ?? '/';
 
+// The docs site is the single source of prose; this server never duplicates it.
+const DOCS_SITE = 'https://adelpro.github.io/designmd-forge/';
+
 const app = express();
 app.use(express.json({ limit: '2mb' }));
 
@@ -36,8 +39,16 @@ app.get('/', (_req: Request, res: Response) => {
     version: SERVER_VERSION,
     transport: 'streamable-http',
     mcp_endpoint: MCP_PATH,
+    docs: DOCS_SITE,
+    llms: `${DOCS_SITE}llms.txt`,
     status: 'ok',
   });
+});
+
+// agents and crawlers look for llms.txt at the origin root; redirect rather
+// than keep a second copy that can drift from docs/llms.txt
+app.get('/llms.txt', (_req: Request, res: Response) => {
+  res.redirect(302, `${DOCS_SITE}llms.txt`);
 });
 
 app.get('/health', (_req: Request, res: Response) => {

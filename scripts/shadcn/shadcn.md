@@ -49,13 +49,13 @@ typography:
 
 shadcn/ui is an open-source (MIT) design system for React + Tailwind CSS that ships components as **source code in your own project** rather than a published package. The visual language is applied through CSS variables defined once in the global stylesheet and consumed everywhere via Tailwind utility classes (`bg-background`, `text-primary`, `border-input`). The **New York** variant is the current default: tighter radius, denser controls, and a near-neutral grey-bone palette under a single HSL token set.
 
-This entry documents the token system itself (variable names, default light/dark values, geometry, dark-mode strategy, and the semantic rules that keep a shadcn-based UI coherent). It does not enumerate every component export; it captures the *conventions* an agent must honor to produce output that looks like it was built on shadcn/ui.
+This entry documents the token system itself (variable names, default light/dark values, geometry, dark-mode strategy, and the semantic rules that keep a shadcn-based UI coherent). It does not enumerate every component export; it captures the _conventions_ an agent must honor to produce output that looks like it was built on shadcn/ui.
 
 ## Color System
 
 All color is expressed as **HSL channel triples** stored in CSS variables under `:root` (light) and `.dark` (dark). The `hsl(var(--token))` pattern is used inside utilities so the same token name resolves to either theme.
 
-- **Semantic tokens** name the *role*, not the hue: `--background`, `--foreground`, `--card`, `--popover`, `--primary`, `--primary-foreground`, `--secondary`, `--muted`, `--accent`, `--destructive`, `--border`, `--input`, `--ring`.
+- **Semantic tokens** name the _role_, not the hue: `--background`, `--foreground`, `--card`, `--popover`, `--primary`, `--primary-foreground`, `--secondary`, `--muted`, `--accent`, `--destructive`, `--border`, `--input`, `--ring`.
 - **Foreground pairs**: each surface token has a matching `-foreground` for content drawn on it. Never put foreground color on a surface without its pair.
 - **Default palette is neutral-bone**, not brand-colored. `--primary` defaults to a near-black (`240 5.9% 10%` light) so interfaces read as grey/ink — colour is introduced by overriding variables, not by reaching for raw Tailwind color utilities.
 - **Chart tokens** (`--chart-1..5`) are a discrete categorical palette reserved for `Chart`/Recharts components; use them in order, not for UI chrome.
@@ -103,6 +103,7 @@ Components are **Radix primitives + shadcn styling** and follow these structural
 ## Do's & Don'ts
 
 **Do:**
+
 - Use the semantic utilities (`bg-background`, `text-muted-foreground`, `border-input`, `text-destructive`) everywhere — never raw Tailwind color names.
 - Pick a component variant/primitive before writing custom markup; the library already covers the pattern.
 - Keep spacing with layout utilities (`flex gap-*`), `size-*` for equal-dimension boxes, and `truncate` for ellipsis.
@@ -110,6 +111,7 @@ Components are **Radix primitives + shadcn styling** and follow these structural
 - Put an accessible `Title` on every Dialog/Sheet/Drawer.
 
 **Don't:**
+
 - Don't override component colors/typography via `className` to fight the design system.
 - Don't add `space-x-*`/`space-y-*` stacks — use flex with `gap-*`.
 - Don't write manual `dark:` color overrides — that breaks the token contract.

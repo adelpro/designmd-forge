@@ -1,0 +1,57 @@
+# DesignMD Forge
+
+> A free, offline MCP server for DESIGN.md design-system specs. Search component
+> patterns across 290 designs, derive palettes, list official themes, and lint
+> your own spec. 11 tools, 4 prompts, no network calls at runtime.
+
+## What this is
+
+DESIGN.md files are plain-text design-system documents (colours, typography,
+components, motion) that coding agents read to generate UI matching a target
+style. DesignMD Forge bundles 290 of them offline and exposes search and
+authoring tools over MCP.
+
+Install: `npx -y designmd-forge` (stdio). A hosted Streamable HTTP connector is
+also available.
+
+## Tools
+
+- designmd_search_designs — which brands look like this brief? (category, platform, source, brand, mode, hue)
+- designmd_search_sections — who specs a footer, button or nav like this? (group, text, has, position)
+- designmd_list_themes — which official theme variants exist? (brand, mode, hue, typeClass)
+- designmd_get_design_md — the file, one section, one ### group, a framework flavour, or a theme delta
+- designmd_get_guardrails — just the do's and don'ts, at a third of the output
+- designmd_list_designs — what exists? (filters, no scoring)
+- designmd_list_categories — which category names are valid?
+- designmd_lint — structural validation of a draft (0 errors / 0 warnings target)
+- designmd_diff — token-level comparison of two specs
+- designmd_get_authoring_guide — how to write a DESIGN.md well
+- designmd_scaffold_template — a fill-in-the-blank skeleton
+
+## Prompts
+
+- pick-a-design — search → full spec → guardrails, returns a ranked shortlist
+- section-inspiration — sections search → read the group, 3–5 candidates plus a synthesis
+- theme-pick — list themes → theme delta; says "no themes" when there are none
+- author-design-md — guide → scaffold → lint to zero errors and warnings
+
+## What is not covered
+
+- 600 of the 890 markdown files are SwiftUI/Expo/Android flavours and are not indexed.
+- 221 of 301 designs have no declared tokens: no facets, no palette.
+- Palette filters cover 80 of 301 designs.
+- Only Astryx ships official themes; a derived palette is not a theme.
+- Prompts are user-invoked templates, not skills.
+
+## Links
+
+- Docs: https://adelpro.github.io/designmd-forge/
+- Worked examples: https://adelpro.github.io/designmd-forge/examples.html
+- What's new in v2.0: https://adelpro.github.io/designmd-forge/whats-new-v2.html
+- Tool boundaries: https://adelpro.github.io/designmd-forge/mcp-tool-surface.html
+- Source: https://github.com/adelpro/designmd-forge
+- Authoring skill: skill/designmd-authoring/SKILL.md
+
+## Optional
+
+- llms-full: https://adelpro.github.io/designmd-forge/whats-new-v2.html

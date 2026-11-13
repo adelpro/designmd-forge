@@ -1,15 +1,16 @@
 {
   "name": "designmd-forge",
-  "version": "1.5.0",
-  "description": "Free, offline MCP server for browsing/searching/fetching DESIGN.md design-system specs (colors, typography, components, motion) across web, mobile, iOS and authored sources, with lint/diff/scaffold authoring tools.",
+  "version": "2.0.0",
+  "description": "Free, offline MCP server for browsing/searching/fetching DESIGN.md design-system specs (colors, typography, components, motion), searching component groups across designs, deriving palettes, listing official themes, and linting/diffing/scaffolding authored specs — with MCP prompts for the common flows.",
   "type": "module",
   "main": "dist/index.js",
   "bin": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "docs"
   ],
   "scripts": {
-    "build": "tsc && node scripts/copy-data.mjs",
+    "build": "tsc && node scripts/build-section-index.mjs && node scripts/build-palettes.mjs && node scripts/copy-data.mjs",
     "start": "node dist/index.js",
     "dev": "tsc --watch",
     "prepare": "npm run build",
@@ -17,8 +18,7 @@
     "refresh-data:mobile": "rm -rf .repo-tmp-mobile && git clone --depth 1 https://github.com/TrustOtc/awesome-mobile-design-md.git .repo-tmp-mobile && node scripts/build-index-mobile.mjs .repo-tmp-mobile && rm -rf .repo-tmp-mobile",
     "refresh-data:ios": "rm -rf .repo-tmp-ios && git clone --depth 1 https://github.com/meliwat/awesome-ios-design-md.git .repo-tmp-ios && node scripts/build-index-ios.mjs .repo-tmp-ios && rm -rf .repo-tmp-ios",
     "refresh-data:shadcn": "node scripts/build-index-shadcn.mjs",
-    "refresh-data:adelpro": "node scripts/build-index-adelpro.mjs",
-    "refresh-data": "npm run refresh-data:web && npm run refresh-data:mobile && npm run refresh-data:ios && npm run refresh-data:shadcn && npm run refresh-data:adelpro && npm run load-data",
+    "refresh-data": "npm run refresh-data:web && npm run refresh-data:mobile && npm run refresh-data:ios && npm run refresh-data:shadcn && npm run refresh-data:adelpro && npm run refresh-data:astryx && npm run load-data && npm run build && npm run verify-data",
     "load-data": "node scripts/load-data.mjs",
     "start:http": "node dist/httpServer.js",
     "test": "node --test dist/__tests__/*.test.js",
@@ -26,13 +26,20 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "refresh-data:astryx": "node scripts/build-data-astryx.mjs",
+    "refresh-data:adelpro": "node scripts/build-index-adelpro.mjs",
+    "verify-data": "node scripts/verify-data.mjs"
   },
   "keywords": [
     "mcp",
     "design",
     "design-system",
-    "design-tokens"
+    "design-tokens",
+    "mcp-server",
+    "design-md",
+    "prompts",
+    "agent-tools"
   ],
   "license": "MIT",
   "dependencies": {
@@ -64,5 +71,6 @@
     "url": "https://github.com/adelpro/designmd-forge/issues"
   },
   "homepage": "https://github.com/adelpro/designmd-forge#readme",
-  "author": "adelpro"
+  "author": "adelpro",
+  "mcpName": "io.github.adelpro/designmd-forge"
 }

@@ -45,7 +45,7 @@ const DEFAULT_LABELS = {
   mobile: 'Mobile = TrustOtc/awesome-mobile-design-md',
   ios: 'iOS = Meliwat/awesome-ios-design-md',
   shadcn: 'shadcn = shadcn/ui New York (authored reference)',
-  adelpro: 'adelpro = Quran & Arabic Tech (authored in-repo, MIT)',
+  adelpro: 'adelpro = authored in-repo (Quran & Arabic Tech, Component Library), MIT',
 };
 const labels = [];
 for (const file of staged) {

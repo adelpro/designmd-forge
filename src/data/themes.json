@@ -1,0 +1,176 @@
+{
+  "pin": {
+    "repo": "https://github.com/meta/astryx",
+    "version": "0.7.15",
+    "license": "MIT",
+    "source": "npm dist-tags latest, @astryxdesign/theme-*"
+  },
+  "parents": {
+    "astryx": {
+      "default_theme": "neutral",
+      "themes": [
+        {
+          "parent": "astryx",
+          "id": "butter",
+          "name": "Butter",
+          "kind": "mood",
+          "mode": "light+dark",
+          "type": {
+            "display": "Sarina",
+            "body": "Outfit"
+          },
+          "typeClass": "script",
+          "palette": {
+            "canvas": "#fdfbe4",
+            "surface": "#ffffff",
+            "accent": "#225bff",
+            "ink": "#1d1c11",
+            "canvasDark": "#261a13",
+            "surfaceDark": "#2e2117",
+            "inkDark": "#f3f2e2",
+            "accentDark": "#fdee8c"
+          },
+          "derived": false
+        },
+        {
+          "parent": "astryx",
+          "id": "chocolate",
+          "name": "Chocolate",
+          "kind": "mood",
+          "mode": "light+dark",
+          "type": {
+            "display": "Fraunces",
+            "body": "Albert Sans"
+          },
+          "typeClass": "serif",
+          "palette": {
+            "canvas": "#FFFCF7",
+            "surface": "#FFFCF7",
+            "accent": "#8C5927",
+            "ink": "#4a3520",
+            "canvasDark": "#141010",
+            "surfaceDark": "#1c1610",
+            "inkDark": "#EDE4D4",
+            "accentDark": "#d4a06a"
+          },
+          "derived": false
+        },
+        {
+          "parent": "astryx",
+          "id": "gothic",
+          "name": "Gothic",
+          "kind": "mood",
+          "mode": "dark-only",
+          "type": {
+            "display": "Manufacturing Consent",
+            "body": "Fustat"
+          },
+          "typeClass": "mixed",
+          "palette": {
+            "canvas": "#101314",
+            "surface": "#101314",
+            "accent": "#e8f1f6",
+            "ink": "#e8f1f6",
+            "canvasDark": "#101314",
+            "surfaceDark": "#101314",
+            "inkDark": "#e8f1f6",
+            "accentDark": "#e8f1f6"
+          },
+          "derived": false
+        },
+        {
+          "parent": "astryx",
+          "id": "matcha",
+          "name": "Matcha",
+          "kind": "mood",
+          "mode": "light+dark",
+          "type": {
+            "display": "Playwrite US Trad",
+            "body": "DM Sans"
+          },
+          "typeClass": "script",
+          "palette": {
+            "canvas": "#f0f0e0",
+            "surface": "#ffffff",
+            "accent": "#3e481d",
+            "ink": "#3e481d",
+            "canvasDark": "#12140e",
+            "surfaceDark": "#1a1c14",
+            "inkDark": "#c0cba9",
+            "accentDark": "#c0cba9"
+          },
+          "derived": false
+        },
+        {
+          "parent": "astryx",
+          "id": "neutral",
+          "name": "Neutral",
+          "kind": "mood",
+          "mode": "light+dark",
+          "type": {
+            "display": "Figtree",
+            "body": "Figtree"
+          },
+          "typeClass": "sans",
+          "palette": {
+            "canvas": "#f1f1f1",
+            "surface": "#ffffff",
+            "accent": "#1b1b1b",
+            "ink": "#000000",
+            "canvasDark": "#1b1b1b",
+            "surfaceDark": "#262626",
+            "inkDark": "#ffffff",
+            "accentDark": "#f1f1f1"
+          },
+          "derived": false
+        },
+        {
+          "parent": "astryx",
+          "id": "stone",
+          "name": "Stone",
+          "kind": "mood",
+          "mode": "light+dark",
+          "type": {
+            "display": "Montserrat",
+            "body": "Figtree"
+          },
+          "typeClass": "sans",
+          "palette": {
+            "canvas": "#f0f0f7",
+            "surface": "#ffffff",
+            "accent": "#25252a",
+            "ink": "#25252a",
+            "canvasDark": "#101018",
+            "surfaceDark": "#1b1b21",
+            "inkDark": "#f0f0f9",
+            "accentDark": "#f0f0f9"
+          },
+          "derived": false
+        },
+        {
+          "parent": "astryx",
+          "id": "y2k",
+          "name": "Y2K",
+          "kind": "mood",
+          "mode": "light+dark",
+          "type": {
+            "display": "Poppins",
+            "body": "Crimson Text"
+          },
+          "typeClass": "mixed",
+          "palette": {
+            "canvas": "#cccffa",
+            "surface": "#ffffff",
+            "accent": "#2d241b",
+            "ink": "#2d241b",
+            "canvasDark": "#0e0f1a",
+            "surfaceDark": "#16182b",
+            "inkDark": "#edeffc",
+            "accentDark": "#edeffc"
+          },
+          "derived": false
+        }
+      ]
+    }
+  }
+}

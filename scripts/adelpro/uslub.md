@@ -1,65 +1,122 @@
 ---
 version: alpha
 name: uslub-design-system
-description: "Uslub is a writing-voice web client built from paper and hairlines rather than chrome. A white canvas sits inside a parchment shell, one measured blue carries every action, and a four-layer shadow supplies the depth a border cannot. Type is self-hosted Satoshi at a 17px base, with IBM Plex Arabic and a looser, untracked scale for Arabic and IBM Plex Mono for keys and code."
+description: 'Uslub is a writing-voice web client built from paper and hairlines rather than chrome. A white canvas sits inside a parchment shell, one measured blue carries every action, and a four-layer shadow supplies the depth a border cannot. Type is self-hosted Satoshi at a 17px base, with IBM Plex Arabic and a looser, untracked scale for Arabic and IBM Plex Mono for keys and code.'
 colors:
-  canvas: "#ffffff"
-  canvas-dark: "#000000"
-  canvas-parchment: "#f5f5f7"
-  canvas-parchment-dark: "#1c1c1e"
-  canvas-cream: "#ffefc4"
-  surface-pearl: "#fafafc"
-  surface-pearl-dark: "#272729"
-  ink: "#1d1d1f"
-  ink-on-dark: "#f5f5f7"
-  ink-secondary: "#6e6e73"
-  ink-secondary-dark: "#cccccc"
-  primary: "#086288"
-  primary-on-dark: "#97d7ff"
-  primary-hover: "#065273"
-  primary-hover-dark: "#b8e2ff"
-  focus: "#086288"
-  focus-dark: "#97d7ff"
-  support: "#4d8dba"
-  tint-selected: "rgba(151, 215, 255, 0.24)"
-  hairline: "#e0e0e0"
-  hairline-dark: "#3a3a3c"
-  divider-soft: "rgba(0, 0, 0, 0.04)"
-  error: "#d70015"
-  error-dark: "#ff7b72"
-  success: "#0f7b3f"
-  success-dark: "#30d158"
-  warning-surface: "#ffefc4"
-  error-tint: "rgba(215, 0, 21, 0.08)"
-  error-tint-dark: "rgba(255, 123, 114, 0.14)"
-  success-tint: "rgba(15, 123, 63, 0.1)"
-  success-tint-dark: "rgba(48, 209, 88, 0.14)"
-  scrim: "rgba(0, 0, 0, 0.32)"
+  canvas: '#ffffff'
+  canvas-dark: '#000000'
+  canvas-parchment: '#f5f5f7'
+  canvas-parchment-dark: '#1c1c1e'
+  canvas-cream: '#ffefc4'
+  surface-pearl: '#fafafc'
+  surface-pearl-dark: '#272729'
+  ink: '#1d1d1f'
+  ink-on-dark: '#f5f5f7'
+  ink-secondary: '#6e6e73'
+  ink-secondary-dark: '#cccccc'
+  primary: '#086288'
+  primary-on-dark: '#97d7ff'
+  primary-hover: '#065273'
+  primary-hover-dark: '#b8e2ff'
+  focus: '#086288'
+  focus-dark: '#97d7ff'
+  support: '#4d8dba'
+  tint-selected: 'rgba(151, 215, 255, 0.24)'
+  hairline: '#e0e0e0'
+  hairline-dark: '#3a3a3c'
+  divider-soft: 'rgba(0, 0, 0, 0.04)'
+  error: '#d70015'
+  error-dark: '#ff7b72'
+  success: '#0f7b3f'
+  success-dark: '#30d158'
+  warning-surface: '#ffefc4'
+  error-tint: 'rgba(215, 0, 21, 0.08)'
+  error-tint-dark: 'rgba(255, 123, 114, 0.14)'
+  success-tint: 'rgba(15, 123, 63, 0.1)'
+  success-tint-dark: 'rgba(48, 209, 88, 0.14)'
+  scrim: 'rgba(0, 0, 0, 0.32)'
 typography:
-  display-xl: { fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 64px, fontWeight: 600, lineHeight: 1.05, letterSpacing: -0.035em }
-  display-section: { fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 36px, fontWeight: 600, lineHeight: 1.15, letterSpacing: -0.02em }
-  display-lg: { fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 34px, fontWeight: 600, lineHeight: 1.15, letterSpacing: -0.374px }
-  display-feature: { fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 22px, fontWeight: 600, lineHeight: 1.25 }
-  body: { fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 17px, fontWeight: 400, lineHeight: 1.47 }
-  body-strong: { fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 17px, fontWeight: 600, lineHeight: 1.24 }
-  caption-strong: { fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 14px, fontWeight: 600, lineHeight: 1.29 }
-  fine-print: { fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: 13px, fontWeight: 400, lineHeight: 1.45 }
-  code: { fontFamily: "IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 13px, fontWeight: 400, lineHeight: 1.4 }
+  display-xl:
+    {
+      fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      fontSize: 64px,
+      fontWeight: 600,
+      lineHeight: 1.05,
+      letterSpacing: -0.035em,
+    }
+  display-section:
+    {
+      fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      fontSize: 36px,
+      fontWeight: 600,
+      lineHeight: 1.15,
+      letterSpacing: -0.02em,
+    }
+  display-lg:
+    {
+      fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      fontSize: 34px,
+      fontWeight: 600,
+      lineHeight: 1.15,
+      letterSpacing: -0.374px,
+    }
+  display-feature:
+    {
+      fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      fontSize: 22px,
+      fontWeight: 600,
+      lineHeight: 1.25,
+    }
+  body:
+    {
+      fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      fontSize: 17px,
+      fontWeight: 400,
+      lineHeight: 1.47,
+    }
+  body-strong:
+    {
+      fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      fontSize: 17px,
+      fontWeight: 600,
+      lineHeight: 1.24,
+    }
+  caption-strong:
+    {
+      fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      fontSize: 14px,
+      fontWeight: 600,
+      lineHeight: 1.29,
+    }
+  fine-print:
+    {
+      fontFamily: "Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      fontSize: 13px,
+      fontWeight: 400,
+      lineHeight: 1.45,
+    }
+  code:
+    {
+      fontFamily: 'IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, monospace',
+      fontSize: 13px,
+      fontWeight: 400,
+      lineHeight: 1.4,
+    }
 
 spacing:
-  space-1: "4px"
-  space-2: "8px"
-  space-3: "12px"
-  space-4: "16px"
-  space-6: "24px"
-  space-8: "32px"
-  space-12: "48px"
-  space-16: "64px"
+  space-1: '4px'
+  space-2: '8px'
+  space-3: '12px'
+  space-4: '16px'
+  space-6: '24px'
+  space-8: '32px'
+  space-12: '48px'
+  space-16: '64px'
 
 rounded:
-  sm: "8px"
-  lg: "18px"
-  pill: "999px"
+  sm: '8px'
+  lg: '18px'
+  pill: '999px'
 ---
 
 ## Overview
@@ -76,18 +133,18 @@ Interaction is a single accent. `--primary` (#086288, 6.75:1 on white, and the s
 
 Lines are `--hairline` (#e0e0e0) wherever content is separated and `--divider-soft` (4% black) for an inset ring. Status is `--error` (#d70015), `--success` (#0f7b3f) and their tints, with `--warning-surface` equal to cream. A tint is always a wash behind a word, never the word itself.
 
-| Token | Value | Role |
-|---|---|---|
-| `--canvas` | #ffffff | panels, fields, modals, the landing bar |
-| `--canvas-parchment` | #f5f5f7 | page shell, hover wash, footer |
-| `--surface-pearl` | #fafafc | secondary button fill, code background |
-| `--canvas-cream` | #ffefc4 | key reveal, notice, warning wash |
-| `--ink` | #1d1d1f | primary text on every light surface |
-| `--ink-secondary` | #6e6e73 | captions, hints, inactive nav, meta |
-| `--primary` | #086288 | fills, links, active nav, focus ring |
-| `--primary-hover` | #065273 | hover state of a primary fill |
-| `--support` | #4d8dba | graphics and large semibold only |
-| `--hairline` | #e0e0e0 | every divider and control border |
+| Token                | Value   | Role                                    |
+| -------------------- | ------- | --------------------------------------- |
+| `--canvas`           | #ffffff | panels, fields, modals, the landing bar |
+| `--canvas-parchment` | #f5f5f7 | page shell, hover wash, footer          |
+| `--surface-pearl`    | #fafafc | secondary button fill, code background  |
+| `--canvas-cream`     | #ffefc4 | key reveal, notice, warning wash        |
+| `--ink`              | #1d1d1f | primary text on every light surface     |
+| `--ink-secondary`    | #6e6e73 | captions, hints, inactive nav, meta     |
+| `--primary`          | #086288 | fills, links, active nav, focus ring    |
+| `--primary-hover`    | #065273 | hover state of a primary fill           |
+| `--support`          | #4d8dba | graphics and large semibold only        |
+| `--hairline`         | #e0e0e0 | every divider and control border        |
 
 Theme switching reuses the same variable names and swaps values. Dark values are declared twice, once inside `@media (prefers-color-scheme: dark)` scoped to `:root:not([data-theme='light'])` and once under `[data-theme='dark']`, so the system preference applies until a user chooses explicitly; `[data-theme='light']` is an otherwise empty block whose only job is to defeat the media query. Canvas goes to #000000, parchment to #1c1c1e, pearl to #272729, ink to `--ink-on-dark`, and primary becomes sky (`--primary-on-dark` #97d7ff, 9.57:1 on #272729) with hover at #b8e2ff. Cream, `--tint-selected`, `--divider-soft` and `--scrim` keep their light values in both themes, and in this file the dark entries carry the `-dark` suffix while `ink-on-dark` and `primary-on-dark` keep the names the stylesheet itself uses.
 

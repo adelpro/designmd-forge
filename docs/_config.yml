@@ -1,0 +1,20 @@
+title: DesignMD Forge
+description: Offline MCP server for DESIGN.md design-system specs — component search, palettes, themes and authoring tools.
+theme: minima
+baseurl: /designmd-forge
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+  - jekyll-sitemap
+  - jekyll-seo-tag
+relative_links:
+  enabled: true
+author: adelpro
+github_username: adelpro
+header_pages:
+  - index.md
+  - whats-new-v2.md
+  - examples.md
+  - mcp-tool-surface.md
+exclude:
+  - releases/

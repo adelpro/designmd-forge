@@ -21,6 +21,12 @@ file that has all the sections present.
 
 ### 1. Load the authoring guide first
 
+For a component question ("how do other systems handle footers / buttons / navigation"), call
+`designmd_search_sections` with the group plus the quality you need — it searches the group
+prose across the whole collection, which `designmd_search_designs` cannot do. For "which themes
+exist", call `designmd_list_themes`; only systems that ship official variants answer, and a
+derived brand palette is not a theme.
+
 Call `designmd_get_authoring_guide`. Do this before drafting or reviewing
 anything — it has the specific principles (which sections carry the most
 weight, why negative constraints outperform positive ones, how concise the

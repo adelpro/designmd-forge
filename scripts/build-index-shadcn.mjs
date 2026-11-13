@@ -34,7 +34,10 @@ writeFileSync(join(outDesignsDir, 'shadcn.md'), content, 'utf-8');
 const fm = content.match(/^---\n([\s\S]*?)\n---/);
 const descLine = fm?.[1]?.match(/^description:\s*(.+)$/m)?.[1];
 const shortDescription = (descLine ?? 'shadcn/ui New York design system').trim();
-const longDescription = content.replace(/^---[\s\S]*?---\n/, '').trim().split(/\n\s*\n/)[0];
+const longDescription = content
+  .replace(/^---[\s\S]*?---\n/, '')
+  .trim()
+  .split(/\n\s*\n/)[0];
 
 const entry = {
   slug: 'shadcn',

@@ -35,7 +35,7 @@ const indexPath = join(root, 'src', 'data', 'index.json');
 const CATEGORY = 'Quran & Arabic Tech';
 const SOURCE_KEY = 'adelpro';
 const SOURCE_URL = 'https://github.com/adelpro';
-const SOURCE_LABEL = 'adelpro = Quran & Arabic Tech (authored in-repo, MIT)';
+const SOURCE_LABEL = 'adelpro = authored in-repo (Quran & Arabic Tech, Component Library), MIT';
 
 /** The authored set. `flavors` is only set when the flavour file is shipped. */
 const ENTRIES = [
@@ -68,6 +68,19 @@ const ENTRIES = [
     title: 'Uslub',
     platform: 'web',
     flavors: [],
+  },
+  {
+    slug: 'astryx',
+    title: 'Astryx (Meta)',
+    platform: 'web',
+    category: 'Component Library',
+    flavors: [],
+    upstream: {
+      name: 'Astryx by Meta',
+      url: 'https://github.com/meta/astryx',
+      tag: '0.7.15',
+      license: 'MIT',
+    },
   },
 ];
 
@@ -114,7 +127,7 @@ for (const meta of ENTRIES) {
   const entry = {
     slug: meta.slug,
     title: meta.title,
-    category: CATEGORY,
+    category: meta.category ?? CATEGORY,
     platform: meta.platform,
     source: SOURCE_KEY,
     short_description: shortDescription.slice(0, 160),
@@ -122,6 +135,7 @@ for (const meta of ENTRIES) {
     word_count: content.split(/\s+/).length,
   };
   if (meta.flavors?.length) entry.flavors = meta.flavors;
+  if (meta.upstream) entry.upstream = meta.upstream;
 
   const existingIdx = index.designs.findIndex((d) => d.slug === meta.slug);
   if (existingIdx === -1) {

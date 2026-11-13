@@ -1,0 +1,53 @@
+{
+  "groups": {
+    "header": ["header", "site header", "top bar", "app bar", "page header"],
+    "navigation": [
+      "navigation",
+      "nav",
+      "navigation bar",
+      "nav bar",
+      "navbar",
+      "menu",
+      "menu bar",
+      "navigation & menu",
+      "site nav",
+      "side nav",
+      "sidebar navigation",
+      "bottom tab bar",
+      "tab bar navigation"
+    ],
+    "footer": ["footer", "site footer", "legal & footer", "cta / footer", "sticky footer"],
+    "buttons": ["buttons", "button", "button system", "cta buttons", "button states"],
+    "cards": ["cards", "card", "cards & containers", "card system", "tiles", "tile"],
+    "inputs": ["inputs", "input", "input fields", "form fields", "text fields", "search field"],
+    "modals": ["modals", "modal", "dialog", "dialogs", "overlays", "overlay", "sheet", "drawer"],
+    "tables": ["tables", "table", "data table", "data grid"],
+    "tabs": ["tabs", "tab", "segmented control", "tab list"],
+    "badges": ["badges", "badge", "chips", "chip", "status pill"],
+    "avatars": ["avatars", "avatar", "profile image"],
+    "icons": ["icons", "icon", "iconography", "icon set"],
+    "lists": ["lists", "list", "list items", "feed"],
+    "empty_states": ["empty states", "empty state", "zero state"],
+    "durations_easings": ["durations & easings", "durations and easings", "durations", "easings"],
+    "motion_roles": ["motion roles", "motion principles", "animation principles"],
+    "reduced_motion": ["reduced motion", "motion accessibility"],
+    "banned_motion": ["banned motion", "motion anti-patterns", "motion anti patterns"]
+  },
+  "variants": {
+    "footer": {
+      "sticky": ["sticky", "fixed"],
+      "signature": ["signature"],
+      "cta": ["cta", "call to action", "newsletter"]
+    },
+    "header": {
+      "sticky": ["sticky", "fixed"],
+      "transparent": ["transparent", "overlay"]
+    },
+    "buttons": {
+      "3d": ["3d", "bevel"],
+      "pill": ["pill", "rounded-full", "fully rounded"],
+      "outline": ["outline"],
+      "ghost": ["ghost", "text-only"]
+    }
+  }
+}
