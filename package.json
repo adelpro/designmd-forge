@@ -1,7 +1,7 @@
 {
   "name": "designmd-forge",
-  "version": "1.4.0",
-  "description": "Free, offline MCP server for browsing/searching/fetching DESIGN.md design-system specs (colors, typography, components, motion) across web, mobile, iOS and authored sources, with lint/diff/scaffold authoring tools.",
+  "version": "1.6.0",
+  "description": "Free, offline MCP server for browsing/searching/fetching DESIGN.md design-system specs (colors, typography, components, motion), searching component groups across designs, deriving palettes, listing official themes, and linting/diffing/scaffolding authored specs \u2014 with MCP prompts for the common flows.",
   "type": "module",
   "main": "dist/index.js",
   "bin": "dist/index.js",
@@ -34,7 +34,11 @@
     "mcp",
     "design",
     "design-system",
-    "design-tokens"
+    "design-tokens",
+    "mcp-server",
+    "design-md",
+    "prompts",
+    "agent-tools"
   ],
   "license": "MIT",
   "dependencies": {

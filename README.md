@@ -2,7 +2,7 @@
 
 DesignMD Forge is a free MCP server for browsing and searching **DESIGN.md** files. These are plain text design system documents (colors, typography, components, layout) that AI coding agents read to generate UI matching a target visual style.
 
-Data is a bundled, offline snapshot of five sources — 76 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 12 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), an original authored **shadcn/ui (New York)** design-system reference, and four authored specs for the maintainer's own projects under the **Quran & Arabic Tech** category (`midad`, `open-mushaf-native`, `open-tarteel`, `uslub`) — 289 design specs in total. No paid API, no rate limits, no network calls at runtime. The upstream sources extract only publicly visible CSS / app values (colors, type scale, spacing) and the authored entries are written from each project's own token source — no logos, trademarks, or copyrighted imagery are included, so it is safe to redistribute and reuse.
+Data is a bundled, offline snapshot of six sources — 77 **web** design systems from [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md), 12 **mobile** archetypes from [TrustOtc/awesome-mobile-design-md](https://github.com/TrustOtc/awesome-mobile-design-md), 200 **iOS** app design systems from [Meliwat/awesome-ios-design-md](https://github.com/meliwat/awesome-ios-design-md), an original authored **shadcn/ui (New York)** reference, four authored specs for the maintainer's own projects under **Quran & Arabic Tech** (`midad`, `open-mushaf-native`, `open-tarteel`, `uslub`), and an authored **Astryx (Meta)** reference in **Component Library** — **290 design specs in total**. Astryx is MIT and pinned to its published release; its seven themes ship as a separate facet. No paid API, no rate limits, no network calls at runtime. The upstream sources extract only publicly visible CSS / app values (colors, type scale, spacing) and the authored entries are written from each project's own token source — no logos, trademarks, or copyrighted imagery are included, so it is safe to redistribute and reuse.
 
 ## Tools
 
@@ -12,6 +12,7 @@ Data is a bundled, offline snapshot of five sources — 76 **web** design system
 | `designmd_list_designs`        | List all designs, optionally filtered by category, platform (`web` / `mobile` / `ios` / `shadcn`) or provenance (`source`: `upstream` / `adelpro`) — title, slug, one-line description              |
 | `designmd_search_designs`      | Free-text search over title/slug/category/description, ranked by relevance, optionally filtered by category/platform/source                                                                         |
 | `designmd_search_sections`     | Search component groups (footer, buttons, navigation, cards…) **across** designs, by text and derived facets (items, states, traits, position) — "footers with social links", "3D or hover buttons" |
+| `designmd_list_themes`         | List the official theme variants a system ships (Astryx's seven) with mode, type pairing and accent hue — not a corpus palette search                                                               |
 | `designmd_get_design_md`       | Fetch the full DESIGN.md, one section, one `### ` sub-group of any section, or a framework flavor (swiftui/expo/android) where the entry declares one, for one design by slug                       |
 | `designmd_get_guardrails`      | Fetch only the "Do's and Don'ts" section — behavioral rules, not token values                                                                                                                       |
 | `designmd_lint`                | Validate a DESIGN.md's structure using the official `@google/design.md` linter                                                                                                                      |
@@ -19,10 +20,40 @@ Data is a bundled, offline snapshot of five sources — 76 **web** design system
 | `designmd_get_authoring_guide` | Fetch condensed, field-tested guidance on _writing_ a DESIGN.md's prose                                                                                                                             |
 | `designmd_scaffold_template`   | Generate a fill-in-the-blank DESIGN.md skeleton, prompted around the highest-leverage sections                                                                                                      |
 
-Two flows this server supports:
+Three flows this server supports:
 
 - **Reference an existing design system**: `designmd_search_designs` or `designmd_list_designs` to find a slug → `designmd_get_design_md` to pull the full file (or `designmd_get_guardrails` for just the usage rules) → paste into your project root and tell your coding agent to follow it.
+- **Find a component pattern across the collection**: `designmd_search_sections` with a group (`footer`, `buttons`, `navigation`) plus words or facets — "footers with social links", "3D or hover buttons" — returns ranked excerpts with derived items/states/traits, then `designmd_get_design_md` with `component` reads the whole group. This is the query `designmd_search_designs` cannot answer: it searches titles and descriptions only.
 - **Author your own**: `designmd_get_authoring_guide` → `designmd_scaffold_template` → fill in the prose (see the companion skill below) → `designmd_lint` before committing.
+
+### Themes vs palettes
+
+Two different things, deliberately not merged:
+
+- `designmd_list_themes` lists **official variants a system ships**. Only Astryx ships official variants today (butter, chocolate, gothic, matcha, neutral, stone, y2k), each with a mode, a display/body type pairing and an accent. `designmd_get_design_md` with `theme` returns a **delta**, never a second copy of the parent's components.
+- `designmd_search_designs` with `mode` / `hue` filters **derived palettes** of the designs that declare tokens. These are single looks, not variants, so they are never called themes.
+
+### What is not searchable
+
+- **Flavour files are not indexed.** 600 of the 890 markdown files are SwiftUI / Expo / Android implementations of the same iOS design; indexing them would triple every count. Fetch one with `designmd_get_design_md` + `flavor`.
+- **Prose-only designs have no facets or palettes.** The 200 iOS app specs and 12 mobile archetypes describe colour in sentences; a palette regexed out of prose would look authoritative and be wrong.
+- **Palette filters cover a subset.** The tool prints its own coverage (`palette filters cover 70 of 290` today); a filtered result is not a corpus-wide answer.
+- **No mood taxonomy.** "Minimalist" stays free text over descriptions — there is no invented `mood` field.
+
+### Prompts
+
+Four prompts ship with the server. Prompts are not skills: a client surfaces them as a prompt list or slash commands, they are user-invoked procedures rather than auto-loaded context, and clients without prompt support lose nothing because the same procedures live in `skill/designmd-authoring`.
+
+| Prompt                | Argument    | Procedure                                                                                                                      |
+| --------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `pick-a-design`       | `brief`     | `designmd_search_designs` → `designmd_get_design_md` → `designmd_get_guardrails`, returns a ranked shortlist                   |
+| `section-inspiration` | `component` | `designmd_search_sections` → `designmd_get_design_md(component:)`, returns 3–5 candidates plus a synthesis against your tokens |
+| `theme-pick`          | `brand`     | `designmd_list_themes` → `designmd_get_design_md(theme:)`, and says "no themes" when there are none                            |
+| `author-design-md`    | `project`   | authoring guide → scaffold → lint until 0 errors / 0 warnings                                                                  |
+
+### Prompt list vs tool list
+
+If your client only shows tools, nothing is lost — every prompt is a short procedure you can run by hand, and the bundled skill (`skill/designmd-authoring`) covers the authoring loop end to end.
 
 ### Why there's a dedicated guardrails tool, and a linter, and an authoring guide
 
@@ -58,12 +89,30 @@ Page regions belong in this same vocabulary: `### Header`, `### Navigation & Men
 
 ## Setup
 
+The distributed path is **stdio**, installed from npm — no clone, no build:
+
+```bash
+npx -y designmd-forge
+```
+
+Most clients only need a command, not a URL:
+
+```json
+{
+  "mcpServers": {
+    "designmd": { "command": "npx", "args": ["-y", "designmd-forge"] }
+  }
+}
+```
+
+To work on the server itself:
+
 ```bash
 npm install
 npm run build
 ```
 
-This compiles TypeScript to `dist/` and copies the bundled data (`src/data/index.json` + `src/data/designs/*.md`) alongside it.
+That compiles TypeScript to `dist/`, regenerates the section index, brand map and palettes from the bundled corpus, and copies the data (`src/data/*.json` + `src/data/designs/*.md`) alongside it. `npm run verify-data` checks the shipped artifacts offline; `npm run refresh-data` re-clones the upstream collections (network) and re-runs both.
 
 ## Transports
 

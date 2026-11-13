@@ -11,7 +11,7 @@ Either directly:
 ```bash
 yarn install
 yarn build
-PORT=3000 yarn start:http
+PORT=9200 yarn start:http
 ```
 
 Or via Docker (this is how the live instance runs):
@@ -29,6 +29,8 @@ because the repo ships `yarn.lock` and no `package-lock.json` (an `npm ci` build
 stage fails at `COPY`). The deployed container mounts nothing, so the design
 data is baked into the image and **any** data or code change needs a rebuild and
 a container recreate; there is no live reload.
+
+The design data is baked into the image (the container mounts nothing), so **every data or code change needs a rebuild and a container recreate** — there is no live reload, and `npm run refresh-data` locally is not enough until the image is rebuilt.
 
 The server exposes:
 

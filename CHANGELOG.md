@@ -6,6 +6,51 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.6.0]
+
+Sections searched across the collection, brands deduplicated, palettes derived, official
+themes exposed, and MCP prompts added.
+
+### Added
+
+- `designmd_search_sections` — search `### Footer` / `### Buttons` / `### Navigation` groups
+  ACROSS designs, by text (synonym-expanded: hamburger → menu button / drawer / bottom bar;
+  3d → bevel / raised) and by derived facets (`has`, `position`). 1,470 groups from 289
+  designs; 600 flavour files are excluded from the index and the response says so.
+- `designmd_list_themes` — the official variants a system ships. Astryx's seven
+  (butter, chocolate, gothic, matcha, neutral, stone, y2k) with mode, display/body pairing and
+  accent hue; `designmd_get_design_md` gains `theme`, which returns a delta rather than a copy
+  of the parent entry.
+- `designmd_search_designs` gains `brand`, `mode` and `hue` filters, and accepts an empty query
+  when a filter is present. Palette filters print their own coverage.
+- Four MCP prompts: `pick-a-design`, `section-inspiration`, `theme-pick`, `author-design-md`.
+  Prompts are user-invoked procedures, not skills.
+- Authored **Astryx (Meta)** reference spec in `Component Library`, MIT, pinned to theme
+  release 0.7.15 with an `upstream` block for attribution.
+- `scripts/verify-data.mjs` (8 offline checks) and `npm run verify-data`.
+
+### Changed
+
+- `refresh-data` now runs every source that stages fragments, including `adelpro` and `astryx`,
+  then `load-data`, `build` and `verify-data`.
+
+### Fixed
+
+- `npm run refresh-data` silently dropped the four authored entries: it never ran
+  `build-index-adelpro`, and `load-data` rebuilds `index.json` from staged fragments only, so a
+  documented refresh took the index from 289 to 285 designs.
+- `parseSections` drops any `## ` block whose heading is not in the alias table, which hid
+  component groups under unmapped section titles; the index build now uses `splitRawSections`.
+- `palettes.json` no longer treats an `on-dark` contrast pair as a dark mode, and a `link`
+  colour no longer outranks the brand accent.
+
+### Note on 1.5.0
+
+`1.5.0` was published to npm (2026-11-08, commit `c89a36c`) from a tree that is not present in
+this repository — `origin/main` is `7966310` and its `package.json` still says `1.4.0`. Its
+contents cannot be reconstructed honestly, and `1.6.0` supersedes it. This entry does not
+pretend to know what it changed.
+
 ## [1.4.0]
 
 Design data grew from 285 to 289 specs, and the format handling got stricter
