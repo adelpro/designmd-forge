@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title">
+  <title id="title">DesignMD Forge</title>
+  <rect width="1024" height="1024" fill="#FFFFFF"/>
+  <g stroke="#111111" stroke-width="104" stroke-linecap="round">
+    <path d="M400 280V744"/>
+    <path d="M624 280V744"/>
+    <path d="M280 424H744"/>
+    <path d="M280 600H744"/>
+  </g>
+  <circle cx="512" cy="512" r="96" fill="#F97316"/>
+</svg>
