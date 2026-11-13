@@ -45,6 +45,12 @@ export interface ToolInfo {
   annotations?: { readOnlyHint?: boolean };
 }
 
+export interface PromptInfo {
+  name: string;
+  description?: string;
+  arguments?: Array<{ name: string; required?: boolean }>;
+}
+
 export async function listTools(): Promise<ToolInfo[]> {
   const server = createServer();
   const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
@@ -54,6 +60,42 @@ export async function listTools(): Promise<ToolInfo[]> {
   try {
     const { tools } = await client.listTools();
     return tools as ToolInfo[];
+  } finally {
+    await client.close();
+    await server.close();
+  }
+}
+
+export async function listPrompts(): Promise<PromptInfo[]> {
+  const server = createServer();
+  const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
+  const client = new Client({ name: 'test-client', version: '1.0.0' });
+  await server.connect(serverTransport);
+  await client.connect(clientTransport);
+  try {
+    const { prompts } = await client.listPrompts();
+    return prompts as PromptInfo[];
+  } finally {
+    await client.close();
+    await server.close();
+  }
+}
+
+/** Returns the prompt's first message text; rejects with the server's error. */
+export async function getPrompt(
+  name: string,
+  args: Record<string, string>
+): Promise<{ text: string; description?: string }> {
+  const server = createServer();
+  const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
+  const client = new Client({ name: 'test-client', version: '1.0.0' });
+  await server.connect(serverTransport);
+  await client.connect(clientTransport);
+  try {
+    const result = await client.getPrompt({ name, arguments: args });
+    const first = result.messages[0];
+    const text = first && first.content.type === 'text' ? first.content.text : '';
+    return { text, description: result.description };
   } finally {
     await client.close();
     await server.close();

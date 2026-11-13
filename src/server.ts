@@ -8,6 +8,7 @@ import { registerDiffTool } from './tools/diff.js';
 import { registerAuthoringTools } from './tools/authoring.js';
 import { registerSearchSectionsTool } from './tools/searchSections.js';
 import { registerThemeTools } from './tools/themes.js';
+import { registerPrompts } from './prompts/index.js';
 
 // Derive name/version from package.json so they never drift from the npm
 // manifest (works from src/ in dev and dist/ after build, both one level deep).
@@ -35,6 +36,7 @@ export function createServer(): McpServer {
   registerAuthoringTools(server);
   registerSearchSectionsTool(server);
   registerThemeTools(server);
+  registerPrompts(server);
 
   return server;
 }
