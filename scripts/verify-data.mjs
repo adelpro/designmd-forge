@@ -57,7 +57,16 @@ check('every declared source has a design', () => {
 });
 
 check('authored entries are present', () => {
-  const required = ['midad', 'mushaf-native', 'open-tarteel', 'uslub', 'astryx'];
+  const required = [
+    'midad',
+    'mushaf-native',
+    'open-tarteel',
+    'uslub',
+    'astryx',
+    'masjid-al-haram',
+    'markastore-dz',
+    'kiabi-dz',
+  ];
   const missing = required.filter((slug) => !index.designs.some((d) => d.slug === slug));
   if (missing.length) throw new Error(`missing: ${missing.join(', ')}`);
   return required.join(', ');

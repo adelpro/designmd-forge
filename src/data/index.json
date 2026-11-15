@@ -10,7 +10,7 @@
   },
   "note": "Design tokens extracted from publicly visible CSS values of each site, or authored in-repo from the project's own token source, per each source's LICENSE. No trademarked assets, logos, or copyrighted imagery are included. adelpro = authored in-repo (Quran & Arabic Tech, Component Library), MIT · iOS = Meliwat/awesome-ios-design-md · Mobile = TrustOtc/awesome-mobile-design-md · shadcn = shadcn/ui New York (authored reference) · Web = VoltAgent/awesome-design-md.",
   "generated_at": "2026-11-08T08:13:21.334Z",
-  "count": 301,
+  "count": 304,
   "platforms": [
     "ios",
     "mobile",
@@ -2764,6 +2764,48 @@
         "url": "https://github.com/meta/astryx",
         "tag": "0.7.15",
         "license": "MIT"
+      }
+    },
+    {
+      "slug": "masjid-al-haram",
+      "title": "Masjid Al-Haram",
+      "category": "Quran & Arabic Tech",
+      "platform": "web",
+      "source": "adelpro",
+      "short_description": "A warm, low-chroma palette board — ivory ground, sand and taupe mid-tones, softened black ink, one brushed gold accent, calligraphic Arabic display type.",
+      "long_description": "This is a palette-led identity: eight measured colours, one mood, and almost no interface furniture. Everything in it is warm and slightly dusty — ivory limestone, sand, taupe, bronze, a gold that reads as brushed metal rather than jewellery, and a black softened to `#2B2B2B` so it never glares against the ivory. There is no blue, no pure white and no pure black anywhere in the set, and that absence is the system: contrast comes from depth of tone, not from reaching for the extremes.",
+      "word_count": 1859
+    },
+    {
+      "slug": "markastore-dz",
+      "title": "Markastore DZ",
+      "category": "E-commerce & Retail",
+      "platform": "web",
+      "source": "adelpro",
+      "short_description": "A dense Algerian shoe-and-accessories storefront on Woodmart — white ground, hairline greys, one red brand accent, green prices, 11px uppercase navigation and a",
+      "long_description": "A working storefront, not a brand exercise. The page is white, the type is small, and almost every division is a 1px grey hairline rather than a shadow or a background block. The personality comes from three deliberate choices and nothing else: a saturated red band across the very top, prices printed in green, and a product grid dense enough to show sixteen shoes without scrolling. Everything else is a neutral that gets out of the way of product photography.",
+      "word_count": 1799,
+      "upstream": {
+        "name": "Markastore (markastore-dz.com)",
+        "url": "https://markastore-dz.com/boutique/",
+        "tag": "Woodmart 8.6.2, observed 2026-11-15",
+        "license": "site terms; tokens extracted from public CSS, no assets reproduced"
+      }
+    },
+    {
+      "slug": "kiabi-dz",
+      "title": "Kiabi Algérie",
+      "category": "E-commerce & Retail",
+      "platform": "web",
+      "source": "adelpro",
+      "short_description": "Kiabi Algérie's Shopify storefront — white ground, deep navy type, Figtree throughout, heavy black-outlined buttons and oversized 900-weight prices in a wide, a",
+      "long_description": "A family fashion retailer's storefront where the product photography is the interface and the chrome is almost invisible: white page, black body text, and one deep navy (`#040037`) that carries every heading and every price. Type is Figtree at a comfortable 16px base, and the only elements that assert themselves are price figures at 20px/900 and buttons drawn as heavy black outlines rather than filled blocks.",
+      "word_count": 1582,
+      "upstream": {
+        "name": "Kiabi Algérie (kiabi.dz)",
+        "url": "https://kiabi.dz/",
+        "tag": "Shopify kiabify theme, observed 2026-11-15",
+        "license": "site terms; tokens extracted from public CSS, no assets reproduced"
       }
     }
   ]

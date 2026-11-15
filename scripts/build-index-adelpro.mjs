@@ -82,6 +82,38 @@ const ENTRIES = [
       license: 'MIT',
     },
   },
+  {
+    slug: 'masjid-al-haram',
+    title: 'Masjid Al-Haram',
+    platform: 'web',
+    flavors: [],
+  },
+  {
+    slug: 'markastore-dz',
+    title: 'Markastore DZ',
+    platform: 'web',
+    category: 'E-commerce & Retail',
+    flavors: [],
+    upstream: {
+      name: 'Markastore (markastore-dz.com)',
+      url: 'https://markastore-dz.com/boutique/',
+      tag: 'Woodmart 8.6.2, observed 2026-11-15',
+      license: 'site terms; tokens extracted from public CSS, no assets reproduced',
+    },
+  },
+  {
+    slug: 'kiabi-dz',
+    title: 'Kiabi Algérie',
+    platform: 'web',
+    category: 'E-commerce & Retail',
+    flavors: [],
+    upstream: {
+      name: 'Kiabi Algérie (kiabi.dz)',
+      url: 'https://kiabi.dz/',
+      tag: 'Shopify kiabify theme, observed 2026-11-15',
+      license: 'site terms; tokens extracted from public CSS, no assets reproduced',
+    },
+  },
 ];
 
 if (!existsSync(specsDir)) {

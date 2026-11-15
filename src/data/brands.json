@@ -1,8 +1,8 @@
 {
   "groups_source": "section-index.json",
   "coverage": {
-    "brands": 285,
-    "designs": 301
+    "brands": 288,
+    "designs": 304
   },
   "brands": {
     "1win": {
@@ -2915,6 +2915,36 @@
       "variants": [
         {
           "slug": "astryx",
+          "platform": "web"
+        }
+      ]
+    },
+    "masjid-al-haram": {
+      "key": "masjid-al-haram",
+      "title": "Masjid Al-Haram",
+      "variants": [
+        {
+          "slug": "masjid-al-haram",
+          "platform": "web"
+        }
+      ]
+    },
+    "markastore-dz": {
+      "key": "markastore-dz",
+      "title": "Markastore DZ",
+      "variants": [
+        {
+          "slug": "markastore-dz",
+          "platform": "web"
+        }
+      ]
+    },
+    "kiabi-dz": {
+      "key": "kiabi-dz",
+      "title": "Kiabi Algérie",
+      "variants": [
+        {
+          "slug": "kiabi-dz",
           "platform": "web"
         }
       ]

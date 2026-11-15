@@ -1,7 +1,7 @@
 {
   "coverage": {
-    "designs_total": 301,
-    "designs_with_palette": 80,
+    "designs_total": 304,
+    "designs_with_palette": 83,
     "skipped_prose_only": 221
   },
   "palettes": {
@@ -803,6 +803,36 @@
       "accentHue": "neutral",
       "temperature": "neutral",
       "declared_colors": 20,
+      "derived": true
+    },
+    "masjid-al-haram": {
+      "mode": "light",
+      "canvas": "#E8E1D6",
+      "ink": "#2B2B2B",
+      "accent": "#B8945A",
+      "accentHue": "orange",
+      "temperature": "warm",
+      "declared_colors": 12,
+      "derived": true
+    },
+    "markastore-dz": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#0a0a0a",
+      "accent": "#ea2430",
+      "accentHue": "red",
+      "temperature": "neutral",
+      "declared_colors": 13,
+      "derived": true
+    },
+    "kiabi-dz": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#000000",
+      "accent": "#040037",
+      "accentHue": "blue",
+      "temperature": "neutral",
+      "declared_colors": 11,
       "derived": true
     }
   }

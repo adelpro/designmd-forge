@@ -17,9 +17,15 @@ test('coverage is honest about what was skipped', () => {
     artifact.coverage.designs_with_palette + artifact.coverage.skipped_prose_only,
     total
   );
+  // A ceiling relative to the corpus, not an absolute count: the guard is that
+  // prose-only specs (over 200 of them) are never regexed out of sentences.
   assert.ok(
-    artifact.coverage.designs_with_palette >= 60 && artifact.coverage.designs_with_palette <= 80,
+    artifact.coverage.designs_with_palette >= 60,
     `designs_with_palette ${artifact.coverage.designs_with_palette}`
+  );
+  assert.ok(
+    artifact.coverage.skipped_prose_only > 200,
+    `skipped_prose_only ${artifact.coverage.skipped_prose_only} — prose-only entries must stay out`
   );
   assert.equal(artifact.palettes['ios-spotify'], undefined, 'prose-only entries never appear');
 });

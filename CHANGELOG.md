@@ -6,6 +6,33 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [2.1.0]
+
+Additive data release: three new authored specs, and the first entries extracted from a
+live storefront rather than an upstream collection. No tool, argument or response shape
+changed.
+
+### Added
+
+- `masjid-al-haram` (**Quran & Arabic Tech**) — a palette-led board: ivory ground
+  (`#E8E1D6`), sand and taupe mid-tones, `#2B2B2B` ink and one brushed gold accent
+  (`#B8945A`), with Arabic calligraphic display type and tracked serif capitals.
+- `markastore-dz` (**E-commerce & Retail**) — Woodmart storefront: white ground, hairline
+  greys, `#EA2430` brand red, green prices (`#1fa84a`), 11px uppercase nav, four-column
+  product grid, 1222px container.
+- `kiabi-dz` (**E-commerce & Retail**) — Shopify storefront: Figtree throughout, deep navy
+  (`#040037`) on headings and 900-weight prices, 2px black outlined buttons at 0 radius.
+
+### Changed
+
+- Palette coverage is 83 of 304 designs (was 80 of 301); the corpus is 304 design specs and
+  904 spec files.
+- `scripts/verify-data.mjs` now requires the three new slugs, so a future `refresh-data`
+  that drops them fails the check instead of shipping quietly.
+- `paletteArtifact.test.ts` asserts a prose-only floor (>200) instead of an absolute ceiling
+  on derived palettes — the old `<= 80` band failed on legitimate corpus growth while the
+  regression it guarded against (regexing palettes out of prose) is still caught.
+
 ## [2.0.1]
 
 Patch release: the documentation site moved to its own domain, and everything that
