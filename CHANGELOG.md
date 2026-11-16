@@ -6,6 +6,25 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [2.1.1]
+
+Documentation-only patch. No tool, argument, response shape or data changed.
+
+### Changed
+
+- The docs landing page opens with a 152px masthead — wordmark, eyebrow, one-line
+  promise, nav — that collapses to 64px over the first 260px of scroll, driven by
+  a CSS scroll timeline in `docs/assets/main.scss`. No JavaScript, no dependency,
+  and no motion at all under `prefers-reduced-motion: reduce`.
+- `docs/_includes/header.html` overrides minima 2.5.1 to render that masthead
+  when a page sets `hero: true`. Every other docs page keeps the theme's header
+  verbatim.
+- `docs/index.md` carries `hero`, `layout` and `title` in front matter and no
+  longer repeats its title as a content H1, which removes the duplicate heading
+  `jekyll-default-layout` was producing on the home layout.
+- `docs/_config.yml` gains `masthead_eyebrow`, `masthead_tagline`, `masthead_nav`,
+  and excludes `superpowers/` from the published site.
+
 ## [2.1.0]
 
 Additive data release: three new authored specs, and the first entries extracted from a
