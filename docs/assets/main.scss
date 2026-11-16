@@ -1,0 +1,212 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import 'minima';
+
+/* ==========================================================================
+   Collapsing masthead — landing page only (page.hero)
+   A 152px plate that settles to 64px over the first 260px of scroll, driven by
+   a scroll timeline. Height is the only layout property; everything else is
+   opacity and transform. No JavaScript.
+   ========================================================================== */
+
+:root {
+  --masthead-h: 152px;
+  --masthead-h-collapsed: 64px;
+  /* ~2.5 wheel notches, so the collapse spans several ticks instead of one */
+  --masthead-range: 260px;
+  --masthead-plate: #f5f7f9;
+  --masthead-ink: #111418;
+  --masthead-muted: #5b6470;
+  --masthead-hairline: #e8e8e8;
+}
+
+/* The document is the scroll container; name its timeline. */
+html {
+  scroll-timeline: --page block;
+}
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--masthead-h);
+  overflow: clip;
+  /* Chrome treats a size-changing element above the scroll position as a scroll
+     anchor and nudges scrollTop to compensate: reads as rubber-banding here. */
+  overflow-anchor: none;
+  background: var(--masthead-plate);
+  border-bottom: 1px solid var(--masthead-hairline);
+
+  animation: masthead-collapse linear both;
+  animation-timeline: --page;
+  animation-range: 0 var(--masthead-range);
+}
+
+@keyframes masthead-collapse {
+  to {
+    height: var(--masthead-h-collapsed);
+  }
+}
+
+.masthead__inner {
+  position: relative;
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.masthead__eyebrow,
+.masthead__tagline,
+.masthead__bar {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  margin: 0;
+}
+
+.masthead__eyebrow {
+  bottom: 98px;
+  font-family: $base-font-family;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--masthead-muted);
+
+  animation: masthead-lift-out linear both;
+  animation-timeline: --page;
+  animation-range: 20px 105px;
+}
+
+.masthead__tagline {
+  bottom: 62px;
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--masthead-muted);
+
+  animation: masthead-lift-out linear both;
+  animation-timeline: --page;
+  animation-range: 60px 190px;
+}
+
+@keyframes masthead-lift-out {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.masthead__bar {
+  bottom: 16px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.masthead__title {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 620;
+  letter-spacing: -0.032em;
+  color: var(--masthead-ink);
+  transform-origin: left bottom;
+
+  animation: masthead-shrink linear both;
+  animation-timeline: --page;
+  animation-range: 0 var(--masthead-range);
+}
+
+/* 34px -> 22px, without changing font-size (no text reflow mid-scroll) */
+@keyframes masthead-shrink {
+  to {
+    transform: scale(0.647);
+  }
+}
+
+.masthead__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.masthead__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+
+.masthead__nav a {
+  color: var(--masthead-muted);
+  text-decoration: none;
+  padding-block: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.masthead__nav a:hover,
+.masthead__nav a:focus {
+  color: var(--masthead-ink);
+  border-bottom-color: var(--masthead-ink);
+}
+
+/* minima's home layout prints the page title above the content, which would
+   duplicate the masthead's H1 on the landing page. */
+.home .page-heading {
+  display: none;
+}
+
+/* Nav anchors must not land under the collapsed plate. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  scroll-margin-top: calc(var(--masthead-h-collapsed) + 20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead,
+  .masthead__eyebrow,
+  .masthead__tagline,
+  .masthead__title {
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .masthead__inner {
+    padding: 0 15px;
+  }
+
+  .masthead__eyebrow,
+  .masthead__tagline,
+  .masthead__bar {
+    left: 15px;
+    right: 15px;
+  }
+
+  .masthead__eyebrow {
+    bottom: 92px;
+  }
+
+  .masthead__tagline {
+    bottom: 58px;
+    font-size: 14px;
+  }
+
+  .masthead__title {
+    font-size: 27px;
+  }
+
+  .masthead__nav {
+    display: none;
+  }
+}

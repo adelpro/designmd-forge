@@ -1,4 +1,8 @@
-# DesignMD Forge docs
+---
+layout: home
+title: DesignMD Forge docs
+hero: true
+---
 
 A free, offline MCP server for **DESIGN.md** design-system specs — colours, typography, components, motion — plus the tools to search them across 304 designs, derive palettes, list official themes, and lint your own file.
 

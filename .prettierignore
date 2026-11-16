@@ -7,3 +7,4 @@ src/data
 .pnp.loader.mjs
 .yarn
 package-lock.json
+docs/_includes
