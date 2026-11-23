@@ -29,10 +29,10 @@ mkdirSync(outDesignsDir, { recursive: true });
 mkdirSync(stagingDir, { recursive: true });
 
 function extractPlainMarkdownDescription(content) {
-  const section = content.match(/##\s+[^\n]*\n+([\s\S]+?)(\n##|\n#|$)/);
-  const body = section ? section[1] : content.replace(/^#.+\n/, '');
-  const firstPara = body.split(/\n\s*\n/).find((p) => p.trim().length > 0) || '';
-  return firstPara.replace(/\n/g, ' ').trim();
+  const section = content.match(/##\s+[^\r\n]*\r?\n+([\s\S]+?)(\r?\n##|\r?\n#|$)/);
+  const body = section ? section[1] : content.replace(/^#.+\r?\n/, '');
+  const firstPara = body.split(/\r?\n\s*\r?\n/).find((p) => p.trim().length > 0) || '';
+  return firstPara.replace(/\r?\n/g, ' ').trim();
 }
 
 function titleCaseFromFilename(filename) {

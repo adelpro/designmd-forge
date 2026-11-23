@@ -1,7 +1,7 @@
 {
   "coverage": {
-    "designs_total": 304,
-    "designs_with_palette": 83,
+    "designs_total": 305,
+    "designs_with_palette": 84,
     "skipped_prose_only": 221
   },
   "palettes": {
@@ -833,6 +833,16 @@
       "accentHue": "blue",
       "temperature": "neutral",
       "declared_colors": 11,
+      "derived": true
+    },
+    "radomshoes": {
+      "mode": "light",
+      "canvas": "#ffffff",
+      "ink": "#1f1f1f",
+      "accent": "#ff6f61",
+      "accentHue": "red",
+      "temperature": "neutral",
+      "declared_colors": 16,
       "derived": true
     }
   }

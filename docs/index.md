@@ -4,7 +4,7 @@ title: DesignMD Forge docs
 hero: true
 ---
 
-A free, offline MCP server for **DESIGN.md** design-system specs — colours, typography, components, motion — plus the tools to search them across 304 designs, derive palettes, list official themes, and lint your own file.
+A free, offline MCP server for **DESIGN.md** design-system specs — colours, typography, components, motion — plus the tools to search them across 305 designs, derive palettes, list official themes, and lint your own file.
 
 ```json
 { "mcpServers": { "designmd": { "command": "npx", "args": ["-y", "designmd-forge"] } } }
@@ -37,8 +37,8 @@ Four **prompts** ship alongside: `pick-a-design`, `section-inspiration`, `theme-
 ## Honest limits
 
 - 600 of the 890 markdown files are SwiftUI/Expo/Android flavours of the same iOS design and are **not indexed**.
-- 221 of 304 designs describe colour in prose only: no facets, no palette.
-- Palette filters cover 83 of 304 designs and say so in every response.
+- 221 of 305 designs describe colour in prose only: no facets, no palette.
+- Palette filters cover 84 of 305 designs and say so in every response.
 - Only Astryx ships official themes; a derived brand palette is never called a theme.
 
 Source: [github.com/adelpro/designmd-forge](https://github.com/adelpro/designmd-forge) · npm: [designmd-forge](https://www.npmjs.com/package/designmd-forge) · MIT

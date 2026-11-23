@@ -10,7 +10,7 @@
   },
   "note": "Design tokens extracted from publicly visible CSS values of each site, or authored in-repo from the project's own token source, per each source's LICENSE. No trademarked assets, logos, or copyrighted imagery are included. adelpro = authored in-repo (Quran & Arabic Tech, Component Library), MIT · iOS = Meliwat/awesome-ios-design-md · Mobile = TrustOtc/awesome-mobile-design-md · shadcn = shadcn/ui New York (authored reference) · Web = VoltAgent/awesome-design-md.",
   "generated_at": "2026-11-08T08:13:21.334Z",
-  "count": 304,
+  "count": 305,
   "platforms": [
     "ios",
     "mobile",
@@ -2805,6 +2805,22 @@
         "name": "Kiabi Algérie (kiabi.dz)",
         "url": "https://kiabi.dz/",
         "tag": "Shopify kiabify theme, observed 2026-11-15",
+        "license": "site terms; tokens extracted from public CSS, no assets reproduced"
+      }
+    },
+    {
+      "slug": "radomshoes",
+      "title": "Radom Shoes",
+      "category": "E-commerce & Retail",
+      "platform": "web",
+      "source": "adelpro",
+      "short_description": "Radom Shoes' Algerian leather-goods storefront — square-cornered Jost in only three weights, coral CTAs against white and near-black, bilingual French/Arabic pr",
+      "long_description": "An Algerian men's footwear shop that behaves like a straightforward catalogue: a thin shipping bar, a white logo-and-icons header, a photographic carousel, then an almost unstyled grid of boots, derbies and sneakers. The look is retail-generic in the most deliberate sense — Bootstrap-derived proportions, no card shadows, no rounded corners and a single warm accent doing all the pointing.",
+      "word_count": 1999,
+      "upstream": {
+        "name": "Radom Shoes (radomshoes.com)",
+        "url": "https://radomshoes.com/",
+        "tag": "Vite/Bootstrap build with --rs-* theme overrides, observed 2026-11-23",
         "license": "site terms; tokens extracted from public CSS, no assets reproduced"
       }
     }

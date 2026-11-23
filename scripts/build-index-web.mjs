@@ -28,13 +28,13 @@ mkdirSync(stagingDir, { recursive: true });
 
 function extractFrontmatterDescription(content) {
   if (!content.startsWith('---')) return null;
-  const end = content.indexOf('\n---', 3);
-  if (end === -1) return null;
-  const fm = content.slice(3, end);
-  const blockMatch = fm.match(/description:\s*\|\s*\n([\s\S]*?)(\n\w[\w-]*:|$)/);
+  const endMatch = content.slice(3).match(/\r?\n---/);
+  if (!endMatch) return null;
+  const fm = content.slice(3, 3 + endMatch.index);
+  const blockMatch = fm.match(/description:\s*\|\s*\r?\n([\s\S]*?)(\r?\n\w[\w-]*:|$)/);
   if (blockMatch) {
     return blockMatch[1]
-      .split('\n')
+      .split(/\r?\n/)
       .map((l) => l.replace(/^\s{2}/, ''))
       .join(' ')
       .trim();
@@ -45,16 +45,16 @@ function extractFrontmatterDescription(content) {
 }
 
 function extractPlainMarkdownDescription(content) {
-  const section = content.match(/##\s+[^\n]*\n+([\s\S]+?)(\n##|\n#|$)/);
-  const body = section ? section[1] : content.replace(/^#.+\n/, '');
-  const firstPara = body.split(/\n\s*\n/).find((p) => p.trim().length > 0) || '';
-  return firstPara.replace(/\n/g, ' ').trim();
+  const section = content.match(/##\s+[^\r\n]*\r?\n+([\s\S]+?)(\r?\n##|\r?\n#|$)/);
+  const body = section ? section[1] : content.replace(/^#.+\r?\n/, '');
+  const firstPara = body.split(/\r?\n\s*\r?\n/).find((p) => p.trim().length > 0) || '';
+  return firstPara.replace(/\r?\n/g, ' ').trim();
 }
 
 const designMdDir = join(repoPath, 'design-md');
 const readme = readFileSync(join(repoPath, 'README.md'), 'utf-8');
 
-const lines = readme.split('\n');
+const lines = readme.split(/\r?\n/);
 let currentCategory = 'Uncategorized';
 const readmeEntries = [];
 const categoryHeadingRe = /^### (.+)$/;

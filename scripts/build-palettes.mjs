@@ -22,10 +22,10 @@ const outPath = join(dataDir, 'palettes.json');
 
 /** Reads the `colors:` block of a YAML frontmatter. Two-space nested keys only. */
 function parseColors(markdown) {
-  const frontmatter = markdown.match(/^---\n([\s\S]*?)\n---/);
+  const frontmatter = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!frontmatter) return null;
 
-  const lines = frontmatter[1].split('\n');
+  const lines = frontmatter[1].split(/\r?\n/);
   const start = lines.findIndex((line) => /^colors:\s*$/.test(line));
   if (start === -1) return null;
 

@@ -114,6 +114,19 @@ const ENTRIES = [
       license: 'site terms; tokens extracted from public CSS, no assets reproduced',
     },
   },
+  {
+    slug: 'radomshoes',
+    title: 'Radom Shoes',
+    platform: 'web',
+    category: 'E-commerce & Retail',
+    flavors: [],
+    upstream: {
+      name: 'Radom Shoes (radomshoes.com)',
+      url: 'https://radomshoes.com/',
+      tag: 'Vite/Bootstrap build with --rs-* theme overrides, observed 2026-11-23',
+      license: 'site terms; tokens extracted from public CSS, no assets reproduced',
+    },
+  },
 ];
 
 if (!existsSync(specsDir)) {
@@ -139,7 +152,7 @@ for (const meta of ENTRIES) {
 
   // A spec without frontmatter lints as "No YAML content found" and derives no
   // description, so fail loudly rather than shipping an entry with no blurb.
-  const fm = content.match(/^---\n([\s\S]*?)\n---/);
+  const fm = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   const descLine = fm?.[1]?.match(/^description:\s*(.+)$/m)?.[1];
   if (!descLine) {
     console.error(`[adelpro] ${meta.slug}: missing frontmatter description, skipping.`);
@@ -148,7 +161,7 @@ for (const meta of ENTRIES) {
   }
   const shortDescription = descLine.replace(/^["']|["']$/g, '').trim();
   const longDescription = content
-    .replace(/^---[\s\S]*?---\n/, '')
+    .replace(/^---[\s\S]*?---\r?\n/, '')
     .trim()
     .split(/\n\s*\n/)
     .find((block) => !block.startsWith('#'))

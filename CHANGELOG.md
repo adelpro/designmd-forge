@@ -6,6 +6,18 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [2.2.0]
+
+Additive data release with a Windows build fix: a new authored storefront spec and CRLF-safe data scripts. No tool, argument or response shape changed.
+
+### Added
+
+- `radomshoes` — Radom Shoes, an Algerian men's footwear storefront, under E-commerce & Retail. Tokens were read from the live site's rendered CSS (Jost at 400/500/600, coral `#ff6f61` actions, brick-red `#c2544a` links, square shadowless controls, bilingual French/Arabic copy). The corpus is now 305 designs with 84 palette-covered entries and 1,538 component groups.
+
+### Fixed
+
+- The data build no longer assumes LF-only files. Frontmatter regexes in `scripts/build-index-adelpro.mjs`, `scripts/build-palettes.mjs`, `scripts/build-index-shadcn.mjs` and `scripts/build-index-web.mjs`, the prose extraction in the web/mobile/iOS index builders, and line splitting in `src/services/sectionParser.ts` now accept CRLF. On a checkout with `core.autocrlf=true` the old code silently skipped every authored spec and collapsed palette coverage from 83 to 1.
+
 ## [2.1.1]
 
 Documentation-only patch. No tool, argument, response shape or data changed.

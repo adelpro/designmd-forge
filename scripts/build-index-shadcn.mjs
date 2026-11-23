@@ -31,7 +31,7 @@ const content = readFileSync(srcMd, 'utf-8');
 writeFileSync(join(outDesignsDir, 'shadcn.md'), content, 'utf-8');
 
 // One-line description: pull the frontmatter `description:` line.
-const fm = content.match(/^---\n([\s\S]*?)\n---/);
+const fm = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
 const descLine = fm?.[1]?.match(/^description:\s*(.+)$/m)?.[1];
 const shortDescription = (descLine ?? 'shadcn/ui New York design system').trim();
 const longDescription = content

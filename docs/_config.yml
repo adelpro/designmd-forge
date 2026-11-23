@@ -17,7 +17,7 @@ header_pages:
   - whats-new-v2.md
   - examples.md
   - mcp-tool-surface.md
-masthead_eyebrow: MCP server · 304 design specs · 11 tools
+masthead_eyebrow: MCP server · 305 design specs · 11 tools
 masthead_tagline: Offline DESIGN.md design-system specs your coding agent can read. No API keys, no network calls at runtime.
 masthead_nav:
   - title: What's new

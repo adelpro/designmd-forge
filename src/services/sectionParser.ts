@@ -125,7 +125,7 @@ export function splitRawSections(content: string): RawSection[] {
   const sections: RawSection[] = [];
   let current: { heading: string; lines: string[] } | null = null;
 
-  for (const line of content.split('\n')) {
+  for (const line of content.split(/\r?\n/)) {
     const match = line.match(/^##\s+(.+?)\s*$/);
     if (match) {
       if (current) sections.push({ heading: current.heading, content: current.lines.join('\n') });
@@ -145,7 +145,7 @@ export function splitRawSections(content: string): RawSection[] {
  * intro prose) is not included in any section.
  */
 export function parseSections(content: string): ParsedSection[] {
-  const lines = content.split('\n');
+  const lines = content.split(/\r?\n/);
   const sections: ParsedSection[] = [];
   let current: { heading: string; canonical: CanonicalSection; lines: string[] } | null = null;
 
@@ -202,7 +202,7 @@ export interface ComponentGroup {
  * best-effort (exact, then substring either direction).
  */
 export function getComponentGroups(sectionBody: string): ComponentGroup[] {
-  const lines = sectionBody.split('\n');
+  const lines = sectionBody.split(/\r?\n/);
   const groups: ComponentGroup[] = [];
   let current: ComponentGroup | null = null;
   for (const line of lines) {

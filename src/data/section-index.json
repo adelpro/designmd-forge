@@ -1,17 +1,17 @@
 {
-  "neutral_designs": 304,
-  "designs_with_groups": 300,
+  "neutral_designs": 305,
+  "designs_with_groups": 301,
   "excluded_flavor_files": 600,
   "counts": {
-    "groups": 1532,
+    "groups": 1538,
     "by_group": {
       "badges": 41,
-      "buttons": 300,
-      "cards": 223,
-      "inputs": 280,
+      "buttons": 301,
+      "cards": 224,
+      "inputs": 281,
       "navigation": 281,
-      "other": 291,
-      "footer": 40,
+      "other": 292,
+      "footer": 41,
       "banned_motion": 6,
       "durations_easings": 6,
       "motion_roles": 6,
@@ -19,13 +19,13 @@
       "tabs": 15,
       "lists": 15,
       "tables": 7,
-      "header": 10,
+      "header": 11,
       "avatars": 3,
       "modals": 1,
       "empty_states": 1
     },
     "by_section": {
-      "components": 1498,
+      "components": 1504,
       "motion": 34
     }
   },
@@ -34135,6 +34135,151 @@
         "states": [],
         "traits": [],
         "surface": "accent"
+      },
+      "derived": true
+    },
+    {
+      "slug": "radomshoes",
+      "brand": "radomshoes",
+      "title": "Radom Shoes",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "buttons",
+      "variant": null,
+      "heading": "Buttons",
+      "matched_alias": "buttons",
+      "text": "Square corners, 54px height, 1px border, 14px/28px padding, 16px/500 type. Three fills matter: `{colors.brand}` for the primary add-to-cart, `{colors.ink}` for dark actions, and white with a `{colors.border}`-adjacent outline for secondary actions. Hover darkens text to `{colors.link-hover}`; there is no lift, scale or shadow on hover.",
+      "facets": {
+        "items": [],
+        "states": [
+          "hover"
+        ],
+        "traits": [
+          "outline"
+        ],
+        "divider": "shadow",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "radomshoes",
+      "brand": "radomshoes",
+      "title": "Radom Shoes",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "cards",
+      "variant": null,
+      "heading": "Product Card",
+      "matched_alias": "card",
+      "text": "Square product image with a front/back swap on hover, a small category link in `{colors.link}`, an uppercase product name and a `{colors.ink}` price in dinars. No border, no card fill, no shadow. Cards sit in a generous grid with the front image doing all the visual work. Badges are absolutely positioned 20px from the top-left of the image.",
+      "facets": {
+        "items": [],
+        "states": [
+          "hover"
+        ],
+        "traits": [
+          "uppercase"
+        ],
+        "divider": "shadow",
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "radomshoes",
+      "brand": "radomshoes",
+      "title": "Radom Shoes",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "footer",
+      "variant": null,
+      "heading": "Footer",
+      "matched_alias": "footer",
+      "text": "A full-width `{colors.ink}` band with the white logo, the same three social icons, a Support column (contact, tracking, delivery & returns) and a Compagnie column. Phone and email sit beneath, then a 2024 copyright line crediting the site's designer. The footer is the only large dark surface on the page.",
+      "facets": {
+        "items": [
+          "copyright",
+          "social"
+        ],
+        "states": [],
+        "traits": [],
+        "surface": "ink"
+      },
+      "derived": true
+    },
+    {
+      "slug": "radomshoes",
+      "brand": "radomshoes",
+      "title": "Radom Shoes",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "header",
+      "variant": null,
+      "heading": "Header",
+      "matched_alias": "header",
+      "text": "Two rows. The upper `{colors.surface}` bar carries \"Livraison disponible 58 wilayas\", order tracking, shipping and contact links plus Facebook, Instagram and WhatsApp icons, all in `{typography.label}` or smaller. The lower white row holds a 150×50 logo at left and four icon-only controls at right — search, account, wishlist, cart — with no text labels. On phones the logo shrinks to `min(150px, 38vw)` and the four icons stay on one line. There is no horizontal category menu in the main header; categories live under the search drawer.",
+      "facets": {
+        "items": [
+          "social"
+        ],
+        "states": [],
+        "traits": [
+          "icon_only"
+        ]
+      },
+      "derived": true
+    },
+    {
+      "slug": "radomshoes",
+      "brand": "radomshoes",
+      "title": "Radom Shoes",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "inputs",
+      "variant": null,
+      "heading": "Form Fields",
+      "matched_alias": "form fields",
+      "text": "Square inputs with a 1px `{colors.border}` border, 14px/24px padding and no focus glow beyond a border-color change. Search and filter drawers use the same fields. Checkboxes are square; radio dots are the only circular controls in the system.",
+      "facets": {
+        "items": [],
+        "states": [
+          "focus"
+        ],
+        "traits": [],
+        "divider": "hairline"
+      },
+      "derived": true
+    },
+    {
+      "slug": "radomshoes",
+      "brand": "radomshoes",
+      "title": "Radom Shoes",
+      "platform": "web",
+      "source": "adelpro",
+      "section": "components",
+      "section_heading": "Components",
+      "group": "other",
+      "variant": null,
+      "heading": "Product Detail",
+      "matched_alias": null,
+      "text": "Eight-image thumbnail gallery at 200px, category breadcrumb, uppercase title, price followed by \"(En stock)\", colour swatches as 200px images, then size chips 39–44. The purchase block stacks a dark button, the bilingual \"Livraison offerte dès 2 paires\" notice and a coral \"Ajouter au panier\" button. Below it sit three inline assurances — cash on delivery, 58-wilaya shipping, exchanges — each French followed by Arabic. Specs and delivery tables come last in tabs.",
+      "facets": {
+        "items": [],
+        "states": [],
+        "traits": [
+          "uppercase"
+        ]
       },
       "derived": true
     },

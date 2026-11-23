@@ -1,8 +1,8 @@
 {
   "groups_source": "section-index.json",
   "coverage": {
-    "brands": 288,
-    "designs": 304
+    "brands": 289,
+    "designs": 305
   },
   "brands": {
     "1win": {
@@ -2945,6 +2945,16 @@
       "variants": [
         {
           "slug": "kiabi-dz",
+          "platform": "web"
+        }
+      ]
+    },
+    "radomshoes": {
+      "key": "radomshoes",
+      "title": "Radom Shoes",
+      "variants": [
+        {
+          "slug": "radomshoes",
           "platform": "web"
         }
       ]
